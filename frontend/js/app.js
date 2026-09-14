@@ -234,22 +234,14 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    const hasCat = (p, cat) => {
-      const cats = Array.isArray(p.categories) ? p.categories : [p.category];
-      if (cat === 'ai' || cat === 'nlp_data') {
-        return cats.includes('ai') || cats.includes('nlp_data') || p.category === 'ai' || p.category === 'nlp_data';
-      }
-      return cats.includes(cat) || p.category === cat;
-    };
-
     const countMap = {
       all: scopedProjects.length,
-      academic: scopedProjects.filter(p => hasCat(p, 'academic')).length,
-      ai: scopedProjects.filter(p => hasCat(p, 'ai')).length,
-      nlp_data: scopedProjects.filter(p => hasCat(p, 'ai')).length,
-      fintech: scopedProjects.filter(p => hasCat(p, 'fintech')).length,
-      desktop: scopedProjects.filter(p => hasCat(p, 'desktop')).length,
-      web: scopedProjects.filter(p => hasCat(p, 'web')).length
+      academic: scopedProjects.filter(p => p.category === 'academic').length,
+      ai: scopedProjects.filter(p => p.category === 'ai' || p.category === 'nlp_data').length,
+      nlp_data: scopedProjects.filter(p => p.category === 'ai' || p.category === 'nlp_data').length,
+      fintech: scopedProjects.filter(p => p.category === 'fintech').length,
+      desktop: scopedProjects.filter(p => p.category === 'desktop').length,
+      web: scopedProjects.filter(p => p.category === 'web').length
     };
 
     document.querySelectorAll('.chip-count').forEach(span => {

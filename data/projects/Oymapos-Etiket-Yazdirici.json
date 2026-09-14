@@ -1,8 +1,8 @@
 {
   "id": "Oymapos-Etiket-Yazdirici",
   "title": "OymaPOS Etiket — Dinamik Raf & Barkod Yazdırıcı",
-  "category": "desktop",
-  "categoryLabel": "Masaüstü & Sistem",
+  "category": "fintech",
+  "categoryLabel": "FinTech & Termal Baskı Motoru",
   "badge": "Donanım Çözümü",
   "summary": "Market raf etiketlerini ve ürün barkodlarını termal etiket yazıcılarından (ZPL/EPL) toplu ve net şekilde basmak için geliştirdiğim bağımsız masaüstü etiket motoru.",
   "highlightMetric": "🏷️ Tek Tıkla Toplu Raf & Ürün Barkod Baskısı",
@@ -25,9 +25,5 @@
     ]
   },
   "githubUrl": "https://github.com/oguztasdemir/Oymapos-Etiket-Yazdirici",
-  "visibility": "public",
-  "categories": [
-    "desktop",
-    "fintech"
-  ]
+  "visibility": "public"
 }

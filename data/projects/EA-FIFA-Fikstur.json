@@ -2,7 +2,7 @@
   "id": "EA-FIFA-Fikstur",
   "title": "Turnuva & Dinamik Fikstür / Kura Çekim Motoru",
   "category": "web",
-  "categoryLabel": "Web & Platform",
+  "categoryLabel": "Algoritmik Kura & Fikstür Motoru",
   "badge": "Algoritmik Sistem",
   "summary": "Arkadaşlar arasında düzenlediğimiz FIFA ve PES turnuvalarında seri başı kurallarını koruyan, fikstürü otomatik çeken ve averajları hesaplayan dinamik turnuva motoru.",
   "highlightMetric": "⚽ Otomatik Kura & Anlık Averaj Tablosu",
@@ -25,8 +25,5 @@
     ]
   },
   "githubUrl": "https://github.com/oguztasdemir/EA-FIFA-Fikstur",
-  "visibility": "public",
-  "categories": [
-    "web"
-  ]
+  "visibility": "public"
 }

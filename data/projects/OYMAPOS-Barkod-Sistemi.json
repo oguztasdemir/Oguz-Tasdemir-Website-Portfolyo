@@ -2,7 +2,7 @@
   "id": "OYMAPOS-Barkod-Sistemi",
   "title": "OymaPOS — Perakende Barkodlu Satış & Stok Yönetimi",
   "category": "fintech",
-  "categoryLabel": "FinTech & POS",
+  "categoryLabel": "FinTech & Perakende Kasa",
   "badge": "Saha Kullanımında",
   "summary": "Kendi işlettiğimiz marketteki hazır POS programlarının sürekli kilitlenmesi ve fiş keserken kasayı dondurması üzerine geliştirdiğim, seri barkod okuyan ve termal yazıcıya anında fiş basan masaüstü satış sistemi.",
   "highlightMetric": "⚡ 80ms Fiş Basımı & Sıfır Veri Kaybı",
@@ -25,9 +25,5 @@
     ]
   },
   "githubUrl": "https://github.com/oguztasdemir/OYMAPOS-Barkod-Sistemi",
-  "visibility": "public",
-  "categories": [
-    "fintech",
-    "desktop"
-  ]
+  "visibility": "public"
 }

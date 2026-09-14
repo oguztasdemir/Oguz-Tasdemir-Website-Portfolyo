@@ -2,7 +2,7 @@
   "id": "Telegram-Media-Hub",
   "title": "Telegram Medya & Dosya İndirme Yöneticisi",
   "category": "desktop",
-  "categoryLabel": "Masaüstü & Sistem",
+  "categoryLabel": "Masaüstü Medya & Kuyruk Yöneticisi",
   "badge": "Otomasyon Botu",
   "summary": "Telegram kanallarındaki ve gruplarındaki büyük arşiv ve medya dosyalarını, hız limitlerine takılmadan filtrelere göre bilgisayara otonom indiren arka plan yöneticisi.",
   "highlightMetric": "📁 Asenkron Dosya & Medya Arşivleme Kuyruğu",
@@ -26,8 +26,5 @@
       "Detaylı yerel indirme günlüğü (loglama)"
     ]
   },
-  "visibility": "public",
-  "categories": [
-    "desktop"
-  ]
+  "visibility": "public"
 }

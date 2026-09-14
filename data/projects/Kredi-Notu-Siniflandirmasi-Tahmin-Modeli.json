@@ -1,8 +1,8 @@
 {
   "id": "Kredi-Notu-Siniflandirmasi-Tahmin-Modeli",
   "title": "Kredi Notu Sınıflandırma & Risk Tahmin Modeli",
-  "category": "fintech",
-  "categoryLabel": "FinTech & Veri",
+  "category": "academic",
+  "categoryLabel": "Akademik Veri & ML Modellemesi",
   "badge": "Makine Öğrenmesi",
   "summary": "Müşterilerin finansal alışkanlıklarını, borç oranlarını ve hesap hareketlerini inceleyerek kredi risk düzeyini yüksek doğrulukla tahmin eden makine öğrenmesi modeli.",
   "highlightMetric": "🎯 %88+ F1-Skoru & Dengeli Risk Tahmini",
@@ -27,10 +27,5 @@
       "Yeni müşteri verisi için tek satırda tahmin üretme"
     ]
   },
-  "visibility": "public",
-  "categories": [
-    "academic",
-    "ai",
-    "fintech"
-  ]
+  "visibility": "public"
 }

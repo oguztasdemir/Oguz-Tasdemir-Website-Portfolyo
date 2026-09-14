@@ -2,7 +2,7 @@
   "id": "cache-cleaner",
   "title": "Geliştirici Disk & Önbellek Temizleme Aracı",
   "category": "desktop",
-  "categoryLabel": "Masaüstü & Sistem",
+  "categoryLabel": "Geliştirici Disk & Önbellek Aracı",
   "badge": "Açık Kaynak Sistem",
   "summary": "Yazılım geliştirme sırasında şişen pip, npm, HuggingFace, Gradle ve PyTorch önbelleklerini tarayıp gereksiz gigabaytlarca geçici veriyi tek tıkla temizleyen masaüstü aracı.",
   "highlightMetric": "🧹 10+ GB Disk Alanı Geri Kazanımı",
@@ -26,8 +26,5 @@
       "Geri kazanılan disk alanının anlık canlı hesabı"
     ]
   },
-  "visibility": "public",
-  "categories": [
-    "desktop"
-  ]
+  "visibility": "public"
 }

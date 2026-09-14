@@ -1,8 +1,8 @@
 {
   "id": "Hugging-face-Downloader",
   "title": "HuggingFace Model İndirme Yöneticisi",
-  "category": "desktop",
-  "categoryLabel": "Masaüstü & Sistem",
+  "category": "ai",
+  "categoryLabel": "AI Model & Veri Seti Yöneticisi",
   "badge": "Açık Kaynak CLI",
   "summary": "HuggingFace üzerindeki devasa yapay zeka modellerini ve ağırlık dosyalarını internet kopsa bile kaldığı yerden devam ettiren (resume) çok parçalı indirme CLI aracı.",
   "highlightMetric": "⚡ Kopmaya Dayanıklı Çok Kanallı İndirme",
@@ -26,9 +26,5 @@
       "Düşük bellek (RAM) tüketimi"
     ]
   },
-  "visibility": "public",
-  "categories": [
-    "ai",
-    "desktop"
-  ]
+  "visibility": "public"
 }

@@ -1,8 +1,8 @@
 {
   "id": "Akademik-Ingilizce",
   "title": "Akademik İngilizce & Sınav Kelime Kampı",
-  "category": "ai",
-  "categoryLabel": "Doğal Dil İşleme & İndeksleme",
+  "category": "academic",
+  "categoryLabel": "Akademik İngilizce & Sınav",
   "badge": "Eğitim Teknolojisi",
   "summary": "YÖKDİL ve YDS sınavlarındaki geçmiş soruları analiz ederek en kritik kelimeleri bağlamıyla öğreten ve eksikleri tespit eden interaktif sınav hazırlık platformu.",
   "highlightMetric": "📚 10.000+ Soru & Kelime Frekans Analitiği",
@@ -25,10 +25,5 @@
     ]
   },
   "githubUrl": "https://github.com/oguztasdemir/Akademik-Ingilizce",
-  "visibility": "public",
-  "categories": [
-    "academic",
-    "ai",
-    "web"
-  ]
+  "visibility": "public"
 }

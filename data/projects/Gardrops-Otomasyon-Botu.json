@@ -2,7 +2,7 @@
   "id": "Gardrops-Otomasyon-Botu",
   "title": "Gardrops Pazaryeri & Takip Otomasyonu (2022)",
   "category": "web",
-  "categoryLabel": "Web & Otomasyon",
+  "categoryLabel": "Pazaryeri Takip & Etkileşim Botu",
   "badge": "2022 Arşiv Projesi",
   "summary": "2022 yılında Gardrops ikinci el pazarında butik satış yaparken mağaza trafiğini artırmak için geliştirdiğim, hedef kitleyi otonom takip eden otomasyon botu.",
   "highlightMetric": "🤖 3.000+ Hedef Kitle Taraması & Diferansiyel Filtre",
@@ -26,8 +26,5 @@
       "Kullanıcı dostu konfigürasyon ve liste dışa aktarım desteği"
     ]
   },
-  "visibility": "public",
-  "categories": [
-    "web"
-  ]
+  "visibility": "public"
 }

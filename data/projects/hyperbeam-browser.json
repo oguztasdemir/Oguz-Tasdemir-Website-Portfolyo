@@ -2,7 +2,7 @@
   "id": "hyperbeam-browser",
   "title": "CoBrowser — Çok Kullanıcılı Ortak Sanal Tarayıcı Odası",
   "category": "desktop",
-  "categoryLabel": "Sistem & Sanal Tarayıcı",
+  "categoryLabel": "Sistem & Sanal Tarayıcı Odası",
   "badge": "Özel Ar-Ge / Geliştirme",
   "visibility": "private",
   "summary": "İzole Chromium oturumlarını WebSocket üzerinden düşük gecikmeli canlı yayına dönüştüren, paylaşımlı gezinme ve anti-bot bypass yeteneklerine sahip işbirlikçi sanal tarayıcı orkestratörü.",
@@ -26,9 +26,5 @@
       "Otonom web navigasyonu ve içerik madenciliği için Python ajan entegrasyonu",
       "Çoklu izole sekme ve bağımsız oturum yönetimi"
     ]
-  },
-  "categories": [
-    "desktop",
-    "web"
-  ]
+  }
 }

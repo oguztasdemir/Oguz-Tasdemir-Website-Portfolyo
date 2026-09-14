@@ -43,17 +43,12 @@ class ProjectService:
         if visibility and visibility != "all":
             projects = [p for p in projects if p.get("visibility", "public") == visibility]
 
-        # Kategori filtresi (Tekil category veya çoklu categories dizisi desteği)
+        # Kategori filtresi (Net ve kesin 1-e-1 eşleşme)
         if category and category != "all":
-            def match_cat(p: dict) -> bool:
-                p_cats = p.get("categories", [])
-                if isinstance(p_cats, list) and category in p_cats:
-                    return True
-                if category in ["nlp_data", "ai"] and (p.get("category") in ["nlp_data", "ai"] or "ai" in p_cats or "nlp_data" in p_cats):
-                    return True
-                return p.get("category") == category
-
-            projects = [p for p in projects if match_cat(p)]
+            if category in ["nlp_data", "ai"]:
+                projects = [p for p in projects if p.get("category") in ["nlp_data", "ai"]]
+            else:
+                projects = [p for p in projects if p.get("category") == category]
 
         # Metin araması
         if search:

@@ -2,7 +2,7 @@
   "id": "webtoon-lora-suite",
   "title": "Webtoon Hikaye Analizi & Üretken Görsel/Panel Hattı",
   "category": "ai",
-  "categoryLabel": "Üretken Yapay Zeka & Görsel Analitik",
+  "categoryLabel": "Görsel Analitik & LoRA Üretim Hattı",
   "badge": "Özel Ar-Ge / Geliştirme",
   "summary": "Webtoon ve çizgi hikayelerin panel akışlarını, sahne kompozisyonlarını ve anlatı yapısını analiz eden; konuşma balonlarını arındırıp LoRA ve üretken yapay zeka ile yeni görsel sahneler türeten analitik üretim boru hattı.",
   "highlightMetric": "🎨 Anlatı & Panel Analitiği, LoRA Üretim Hattı",
@@ -28,8 +28,5 @@
       "Görsel hikaye anlatımı ve yeni sahne türetimi için üretken yapay zeka boru hattı"
     ]
   },
-  "visibility": "private",
-  "categories": [
-    "ai"
-  ]
+  "visibility": "private"
 }

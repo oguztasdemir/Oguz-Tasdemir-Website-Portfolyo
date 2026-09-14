@@ -2,7 +2,7 @@
   "id": "crypto-analytics-engine",
   "title": "Kripto Varlık Analiz & AI Persona Simülasyon Motoru",
   "category": "fintech",
-  "categoryLabel": "FinTech & Yapay Zeka",
+  "categoryLabel": "FinTech & AI Persona Simülasyonu",
   "badge": "Özel Ar-Ge / Geliştirme",
   "visibility": "private",
   "summary": "Çok modelli kripto varlık analizi, farklı risk iştahlarına sahip LLM yatırımcı persona simülasyonları ve gerçek zamanlı portföy strateji test motoru sunan gelişmiş finansal analitik platformu.",
@@ -26,9 +26,5 @@
       "Geriye dönük test (Backtesting) ve Monte Carlo risk modelleme motoru",
       "WebSocket üzerinden canlı veri akışı ve interaktif finansal dashboard"
     ]
-  },
-  "categories": [
-    "ai",
-    "fintech"
-  ]
+  }
 }

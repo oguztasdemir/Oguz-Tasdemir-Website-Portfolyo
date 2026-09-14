@@ -2,7 +2,7 @@
   "id": "ui-test-automation",
   "title": "Otonom Arayüz & Regresyon Test Motoru",
   "category": "ai",
-  "categoryLabel": "Yapay Zeka & Test Otomasyonu",
+  "categoryLabel": "Otonom AI Test & Kalite Güvence",
   "badge": "Özel Ar-Ge / Geliştirme",
   "visibility": "private",
   "summary": "Hem Web hem de Masaüstü uygulamaları için doğal dille yazılmış senaryoları yapay zeka ile yorumlayıp çalıştıran, hata anı ekran görüntülerini analiz eden ve detaylı PDF raporları üreten test platformu.",
@@ -26,9 +26,5 @@
       "Görsel regresyon tespiti ve hata anı otomatik ekran görüntüsü kaydı",
       "Kurumsal standartlarda detaylı analitik PDF test raporu üretimi"
     ]
-  },
-  "categories": [
-    "ai",
-    "desktop"
-  ]
+  }
 }

@@ -1,8 +1,8 @@
 {
   "id": "Soru-Uygulamasi",
   "title": "Akademik Sınav Hazırlık & Soru Çözüm Platformu (PWA)",
-  "category": "web",
-  "categoryLabel": "Web & Mobil PWA",
+  "category": "academic",
+  "categoryLabel": "Akademik Sınav Platformu (PWA)",
   "badge": "Eğitim & Sınav Platformu",
   "summary": "İş Sağlığı ve Güvenliği (İSG), Makine Öğrenmesi (ML), Üretken AI (GAI) ve Dijital Sürdürülebilirlik (DS) final sınavlarına çalışma, interaktif test çözme ve dinamik QR kodlu yerel PWA platformu.",
   "highlightMetric": "📱 PWA & Dinamik QR ile Anında Mobil Test Deneyimi",
@@ -27,9 +27,5 @@
       "Anlık doğru/yanlış geribildirimi ve konu bazlı test modları"
     ]
   },
-  "visibility": "public",
-  "categories": [
-    "academic",
-    "web"
-  ]
+  "visibility": "public"
 }

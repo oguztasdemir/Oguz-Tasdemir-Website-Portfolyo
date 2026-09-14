@@ -2,7 +2,7 @@
   "id": "cortex-planner",
   "title": "CorPlanner — GitHub Destekli Proje & Görev Planlayıcı",
   "category": "ai",
-  "categoryLabel": "Yapay Zeka & Geliştirici Araçları",
+  "categoryLabel": "AI Destekli Proje & Görev Motoru",
   "badge": "Özel Ar-Ge / Geliştirme",
   "visibility": "private",
   "summary": "Fikir aşamasından mimari kararlara (ADR) ve Git geçmişine kadar tüm yazılım süreçlerini yerel LLM ile ayrıştıran, bağımlılık grafı çıkaran ve GitHub Projects ile senkronize eden otonom planlama istasyonu.",
@@ -26,9 +26,5 @@
       "GitHub Projects & Issues ile çift yönlü anlık API senkronizasyonu",
       "Tamamen yerelde (Local-First) çalışan mimari karar kayıtları (ADR) arşivi"
     ]
-  },
-  "categories": [
-    "ai",
-    "web"
-  ]
+  }
 }

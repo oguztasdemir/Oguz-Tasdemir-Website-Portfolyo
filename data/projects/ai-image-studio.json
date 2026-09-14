@@ -2,7 +2,7 @@
   "id": "ai-image-studio",
   "title": "Yerel AI Görsel Üretim & Stüdyo Yönetim Platformu",
   "category": "ai",
-  "categoryLabel": "Üretken Yapay Zeka & Computer Vision",
+  "categoryLabel": "Üretken Görsel & Stüdyo Yönetimi",
   "badge": "Özel Ar-Ge / Geliştirme",
   "visibility": "private",
   "summary": "Yerel donanım kaynaklarını (GPU/VRAM) yüksek verimle kullanan, Stable Diffusion ve SDXL modelleriyle Text-to-Image ve Inpainting süreçlerini yöneten modern görsel üretim stüdyosu.",
@@ -26,9 +26,5 @@
       "Görsel geçmişi, parametre metadata saklama ve tek tıkla tekrar üretme",
       "Modern, karanlık tema odaklı ve duyarlı (responsive) stüdyo arayüzü"
     ]
-  },
-  "categories": [
-    "ai",
-    "desktop"
-  ]
+  }
 }

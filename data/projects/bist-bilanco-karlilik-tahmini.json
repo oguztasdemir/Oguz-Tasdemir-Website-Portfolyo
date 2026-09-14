@@ -1,8 +1,8 @@
 {
   "id": "bist-bilanco-karlilik-tahmini",
   "title": "Borsa İstanbul Çeyreklik Bilanço Kârlılık Yönü & Net Kâr Tahmin Sistemi",
-  "category": "fintech",
-  "categoryLabel": "FinTech & Lisans Tezi",
+  "category": "academic",
+  "categoryLabel": "Akademik & Lisans Tezi",
   "badge": "Lisans Bitirme Tezi",
   "summary": "İstanbul Medeniyet Üniversitesi Matematik Bölümü Lisans Tezi. Borsa İstanbul'da işlem gören 612 şirketin 10 yıllık (2016–2025) çeyreklik bilançolarını otonom toplayan, TCMB kurlarıyla enflasyondan arındıran (dolarizasyon) ve 7 sektörde makine öğrenmesiyle kârlılık yönü (%68.8) ile kâr-zarar durumunu (%79.5) açıklanabilir rasyolarla önceden tahmin eden karar destek platformu.",
   "highlightMetric": "🎯 %79.5 Kâr/Zarar Doğruluğu, 612 Şirket & 10 Yıllık Veri",
@@ -30,10 +30,5 @@
       "Gerekçeli (açıklanabilir) kâr öngörüsü ve sektörel rakip kıyaslama web konsolu"
     ]
   },
-  "visibility": "public",
-  "categories": [
-    "academic",
-    "ai",
-    "fintech"
-  ]
+  "visibility": "public"
 }

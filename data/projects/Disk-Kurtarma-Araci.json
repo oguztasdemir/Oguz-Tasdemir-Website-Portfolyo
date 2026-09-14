@@ -2,7 +2,7 @@
   "id": "Disk-Kurtarma-Araci",
   "title": "Harddisk & USB Veri Kurtarma Aracı",
   "category": "desktop",
-  "categoryLabel": "Masaüstü & Sistem",
+  "categoryLabel": "Düşük Seviye Sistem & Veri Kurtarma",
   "badge": "Düşük Seviye Sistem",
   "summary": "Bozuk veya yanlışlıkla biçimlendirilmiş harici disk ve flaş belleklerden, doğrudan ham sektör taraması yaparak görsel ve belgeleri kurtaran adli bilişim aracı.",
   "highlightMetric": "🔍 Ham Sektör (Raw Block) İmza Taraması",
@@ -25,8 +25,5 @@
     ]
   },
   "githubUrl": "https://github.com/oguztasdemir/Disk-Kurtarma-Araci",
-  "visibility": "public",
-  "categories": [
-    "desktop"
-  ]
+  "visibility": "public"
 }

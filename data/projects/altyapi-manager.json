@@ -2,7 +2,7 @@
   "id": "altyapi-manager",
   "title": "Altyapı Manager — Spor Kulübü, Taktik & Oyuncu Yönetim Sistemi",
   "category": "web",
-  "categoryLabel": "Web & Platform",
+  "categoryLabel": "Web Tabanlı Spor Yönetim Platformu",
   "badge": "Açık Kaynak Sistem",
   "summary": "Spor kulüplerinde antrenörlerin taktik çizimlerini simüle ettiği, oyuncu gelişim karnelerini tuttuğu ve yapay zeka asistanıyla kulüp verilerini sorguladığı yönetim aracı.",
   "highlightMetric": "📋 İnteraktif Taktik Tahtası & Oyuncu Karnesi",
@@ -25,8 +25,5 @@
     ]
   },
   "githubUrl": "https://github.com/oguztasdemir/Altyapi",
-  "visibility": "public",
-  "categories": [
-    "web"
-  ]
+  "visibility": "public"
 }

@@ -2,7 +2,7 @@
   "id": "Airdrop-Local",
   "title": "Yerel Ağ Hızlı Dosya Transferi (Local Drop)",
   "category": "desktop",
-  "categoryLabel": "Masaüstü & Sistem",
+  "categoryLabel": "Masaüstü & P2P Ağ Paylaşımı",
   "badge": "Yüksek Hız",
   "summary": "Aynı Wi-Fi ağındaki bilgisayar ve telefonlar arasında internet kotası tüketmeden, kablo aramadan tarayıcı üzerinden dosya transferi sağlayan yerel ağ paylaşım aracı.",
   "highlightMetric": "🚀 100+ MB/s Yerel Ağ Gigabit Hızı",
@@ -25,8 +25,5 @@
     ]
   },
   "githubUrl": "https://github.com/oguztasdemir/Airdrop-Local",
-  "visibility": "public",
-  "categories": [
-    "desktop"
-  ]
+  "visibility": "public"
 }

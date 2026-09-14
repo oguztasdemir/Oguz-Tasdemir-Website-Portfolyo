@@ -2,7 +2,7 @@
   "id": "fatura-odeal",
   "title": "Ödeal e-Fatura & Arşiv İndirme Otomasyonu",
   "category": "fintech",
-  "categoryLabel": "FinTech & POS",
+  "categoryLabel": "FinTech & e-Fatura Otomasyonu",
   "badge": "Açık Kaynak Sistem",
   "summary": "Ödeal portalından binlerce e-fatura ve arşivi oturum kopmalarına takılmadan, tarih aralığına göre otonom sorgulayıp PDF formatında klasörleyen otomasyon aracı.",
   "highlightMetric": "⚡ %99.8 Kesintisiz Toplu Fatura Arşivleme",
@@ -26,9 +26,5 @@
       "Excel ve muhasebe uyumlu CSV dökümü üretme"
     ]
   },
-  "visibility": "public",
-  "categories": [
-    "fintech",
-    "web"
-  ]
+  "visibility": "public"
 }
