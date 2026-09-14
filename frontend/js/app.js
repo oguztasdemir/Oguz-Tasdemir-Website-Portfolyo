@@ -219,6 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (featuredSliderCountText) {
       featuredSliderCountText.textContent = `${totalCount} özgün projeden`;
     }
+  }
 
   // Kategori Filtre Çiplerindeki Sayıları Aktif Kademe (Tümü / Public / Private) Seçimine Göre Dinamik Hesapla
   function updateCategoryChipCounts(allProjects) {
