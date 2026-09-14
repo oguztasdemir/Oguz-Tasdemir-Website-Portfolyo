@@ -52,8 +52,8 @@ Bu projeler fikri mülkiyet, Ar-Ge ve özel mimari içeren; yalnızca sizin eri�
 | # | Proje Adı | Açıklama & Mimari | Portfolyoda Var mı? | GitHub Depo Adresi | Durum |
 | :-: | :--- | :--- | :-: | :--- | :---: |
 | **1** | **Oğuz Taşdemir Website Portfolyo** | Kişisel Portfolyo Web Sitesi, Backend API & CMS | 🌐 Site | `oguztasdemir/portfolio-website` | 🟢 **Yedeklendi & Pushlandı** |
-| **2** | **Cortex — LLM Destekli IDE & RAG** | Yerel LLM, AST Tabanlı RAG, Monaco IDE, %100 Çevrimdışı | ✅ Evet | `oguztasdemir/Cortex-LLM-IDE-RAG` | 🟢 **Yedeklendi & Pushlandı** |
-| **3** | **CorPlanner — GitHub Proje & Görev Planlayıcı** | FastAPI + Ollama LLM Destekli Geliştirici Planlama ve Görev Takip Merkezi | ❌ Hayır | `oguztasdemir/CorPlanner-Github-Project-Planner` | 🟢 **Yedeklendi & Pushlandı** |
+| **2** | **Cortex — LLM Destekli IDE & RAG** | Yerel LLM, AST Tabanlı RAG, Monaco IDE, %100 Çevrimdışı | ✅ Evet | `oguztasdemir/Cortex-LLM-Destekli-IDE-RAG` | 🟢 **Yedeklendi & Pushlandı** |
+| **3** | **CorPlanner — GitHub Proje & Görev Planlayıcı** | FastAPI + Ollama LLM Destekli Geliştirici Planlama ve Görev Takip Merkezi | ❌ Hayır | `oguztasdemir/CorPlanner-Github-Proje-Gorev-Planlayici` | 🟢 **Yedeklendi & Pushlandı** |
 | **4** | **AI Görsel Üretim Stüdyosu** | FastAPI, VRAM Optimizatörü, SDXL Turbo, Realistic Vision & Galeri | ❌ Hayır | `oguztasdemir/ai-image-studio` | 🟢 **Yedeklendi & Pushlandı** |
 | **5** | **Hyperbeam Virtual Browser** | Node.js WebSocket Sanal Tarayıcı Yayını, Puppeteer Stealth & Python Agent | ❌ Hayır | `oguztasdemir/hyperbeam-virtual-browser` | 🟢 **Yedeklendi & Pushlandı** |
 | **6** | **Webtoon LoRA Suite** | AI Çizgi Roman / Görsel Üretim Hattı ve Karakter Tutarlılık Motoru | ✅ Evet | `oguztasdemir/webtoon-lora-suite` | 🟢 **Yedeklendi & Pushlandı** |
