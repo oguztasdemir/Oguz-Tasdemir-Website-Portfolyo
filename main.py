@@ -21,12 +21,13 @@ if sys.platform.startswith('win'):
         os.system('chcp 65001 > nul')
     except Exception:
         pass
-# Ctrl+C ile kapanmayı engelleme (Kullanıcı isteğiyle sunucu kesintisiz çalışır)
-def ignore_ctrl_c(signum, frame):
-    pass
+
+# Ctrl+C (SIGINT) ile kazara kapanmayı tamamen engelleme
+def block_sigint(signum, frame):
+    print("\n ⚠️ [Bilgi] Ctrl+C koruması aktif. Sunucuyu web arayüzündeki 'Kapat' butonu ile kapatabilirsiniz.")
 
 try:
-    signal.signal(signal.SIGINT, ignore_ctrl_c)
+    signal.signal(signal.SIGINT, block_sigint)
 except Exception:
     pass
 
@@ -55,54 +56,34 @@ def main():
     print(" 🚀 OĞUZ TAŞDEMİR — PORTFOLYO SUNUCUSU")
     print(f" 🌐 Adres: {url}")
     print(" 🛡️ Durum: Aktif (Tek Port, Sessiz Terminal, Ctrl+C Koruması)")
+    print(" ⚡ [Canlı İzleyici]: Kod/Veri değiştiğinde anında güncellenir.")
     print("=" * 54 + "\n")
 
     # Tarayıcıyı otomatik aç
     webbrowser.open(url)
 
-    try:
-        # Uvicorn varsayılan olarak SIGINT (Ctrl+C) yakalayıp sunucuyu kapatır.
-        # capture_signals metodunu etkisiz kılarak Ctrl+C ile kapanmayı engelliyoruz.
-        # Sunucu sadece arayüzdeki 'Kapat' butonu (/api/system/shutdown) ile güvenli kapatılır.
-        import contextlib
-
-        class PortfolyoServer(uvicorn.Server):
-            @contextlib.contextmanager
-            def capture_signals(self):
-                yield
-
-        config = uvicorn.Config(
-            "backend.app:app",
-            host="127.0.0.1",
-            port=port,
-            reload=True,
-            reload_dirs=[
-                os.path.join(os.path.dirname(__file__), "backend"),
-                os.path.join(os.path.dirname(__file__), "data"),
-                os.path.join(os.path.dirname(__file__), "frontend")
-            ],
-            access_log=False
-        )
-        print(" ⚡ [Canlı İzleyici]: Kod/Veri değişikliklerinde sunucu anında güncellenir.")
-        print(" 🛡️ [Güvenlik]: Ctrl+C devre dışıdır; arayüzdeki 'Kapat' butonuyla güvenle kapatılır.\n")
-        
-        # reload modunda uvicorn.run kullanılır
-        uvicorn.run(
-            "backend.app:app",
-            host="127.0.0.1",
-            port=port,
-            reload=True,
-            reload_dirs=[
-                os.path.join(os.path.dirname(__file__), "backend"),
-                os.path.join(os.path.dirname(__file__), "data"),
-                os.path.join(os.path.dirname(__file__), "frontend")
-            ],
-            access_log=False
-        )
-    except KeyboardInterrupt:
-        pass
-    except Exception as e:
-        print(f"[Hata] Sunucu hatası: {e}")
+    while True:
+        try:
+            uvicorn.run(
+                "backend.app:app",
+                host="127.0.0.1",
+                port=port,
+                reload=True,
+                reload_dirs=[
+                    os.path.join(os.path.dirname(__file__), "backend"),
+                    os.path.join(os.path.dirname(__file__), "data"),
+                    os.path.join(os.path.dirname(__file__), "frontend")
+                ],
+                access_log=False,
+                timeout_graceful_shutdown=0
+            )
+            break
+        except KeyboardInterrupt:
+            print("\n ⚠️ [Bilgi] Ctrl+C koruması aktif (Sunucu çalışmaya devam ediyor).")
+            continue
+        except Exception as e:
+            print(f"[Hata] Sunucu hatası: {e}")
+            break
 
 if __name__ == "__main__":
     main()

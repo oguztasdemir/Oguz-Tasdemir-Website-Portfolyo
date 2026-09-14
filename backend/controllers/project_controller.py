@@ -115,15 +115,18 @@ async def stream_live_events():
     import time
 
     async def event_generator():
-        while True:
-            projects = ProjectService.get_all_projects()
-            data = json.dumps({
-                "timestamp": int(time.time()),
-                "status": "online",
-                "active_projects": len(projects)
-            })
-            yield f"data: {data}\n\n"
-            await asyncio.sleep(10)
+        try:
+            while True:
+                projects = ProjectService.get_all_projects()
+                data = json.dumps({
+                    "timestamp": int(time.time()),
+                    "status": "online",
+                    "active_projects": len(projects)
+                })
+                yield f"data: {data}\n\n"
+                await asyncio.sleep(15)
+        except (asyncio.CancelledError, GeneratorExit):
+            pass
 
     return StreamingResponse(
         event_generator(),
