@@ -29,5 +29,9 @@
     ]
   },
   "githubUrl": "https://github.com/oguztasdemir/Cortex-LLM-IDE-RAG",
-  "visibility": "private"
+  "visibility": "private",
+  "categories": [
+    "ai",
+    "desktop"
+  ]
 }

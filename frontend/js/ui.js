@@ -24,7 +24,12 @@ const UI = {
       return `
         <article class="portfolio-wide-card ${isPrivate ? 'card-tier-private' : 'card-tier-public'}" data-id="${project.id}" tabindex="0" role="button">
           <div class="wide-card-top-meta">
-            <span class="wide-card-category">${project.categoryLabel}</span>
+            <div class="wide-card-categories-row">
+              <span class="wide-card-category">${project.categoryLabel}</span>
+              ${Array.isArray(project.categories) && project.categories.includes('academic') ? `
+                <span class="wide-card-academic-pill" title="Akademik / Tez Projesi">🎓 Akademik</span>
+              ` : ''}
+            </div>
             <div class="wide-card-meta-right">
               ${!isPrivate ? `
                 <span class="wide-card-public-badge" title="Açık Kaynak Kod Deposu">

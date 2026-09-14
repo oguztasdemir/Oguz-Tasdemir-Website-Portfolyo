@@ -27,5 +27,9 @@
       "Anlık doğru/yanlış geribildirimi ve konu bazlı test modları"
     ]
   },
-  "visibility": "public"
+  "visibility": "public",
+  "categories": [
+    "academic",
+    "web"
+  ]
 }

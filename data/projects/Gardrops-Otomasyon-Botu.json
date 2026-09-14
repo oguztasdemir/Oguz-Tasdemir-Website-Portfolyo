@@ -26,5 +26,8 @@
       "Kullanıcı dostu konfigürasyon ve liste dışa aktarım desteği"
     ]
   },
-  "visibility": "public"
+  "visibility": "public",
+  "categories": [
+    "web"
+  ]
 }

@@ -26,5 +26,9 @@
       "Otonom web navigasyonu ve içerik madenciliği için Python ajan entegrasyonu",
       "Çoklu izole sekme ve bağımsız oturum yönetimi"
     ]
-  }
+  },
+  "categories": [
+    "desktop",
+    "web"
+  ]
 }

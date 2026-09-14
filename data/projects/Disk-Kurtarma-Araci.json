@@ -25,5 +25,8 @@
     ]
   },
   "githubUrl": "https://github.com/oguztasdemir/Disk-Kurtarma-Araci",
-  "visibility": "public"
+  "visibility": "public",
+  "categories": [
+    "desktop"
+  ]
 }

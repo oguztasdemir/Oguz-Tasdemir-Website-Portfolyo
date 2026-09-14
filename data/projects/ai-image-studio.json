@@ -26,5 +26,9 @@
       "Görsel geçmişi, parametre metadata saklama ve tek tıkla tekrar üretme",
       "Modern, karanlık tema odaklı ve duyarlı (responsive) stüdyo arayüzü"
     ]
-  }
+  },
+  "categories": [
+    "ai",
+    "desktop"
+  ]
 }

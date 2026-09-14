@@ -25,5 +25,8 @@
     ]
   },
   "githubUrl": "https://github.com/oguztasdemir/Altyapi",
-  "visibility": "public"
+  "visibility": "public",
+  "categories": [
+    "web"
+  ]
 }

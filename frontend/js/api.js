@@ -52,12 +52,14 @@ const ApiService = {
       }
 
       let matchesCat = false;
+      const pCats = Array.isArray(p.categories) ? p.categories : [p.category];
+
       if (category === 'all') {
         matchesCat = true;
       } else if (category === 'ai' || category === 'nlp_data') {
-        matchesCat = (p.category === 'ai' || p.category === 'nlp_data');
+        matchesCat = pCats.includes('ai') || pCats.includes('nlp_data') || p.category === 'ai' || p.category === 'nlp_data';
       } else {
-        matchesCat = (p.category === category);
+        matchesCat = pCats.includes(category) || p.category === category;
       }
 
       const matchesSearch = !query ||

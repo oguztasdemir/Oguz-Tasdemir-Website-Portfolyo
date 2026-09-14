@@ -26,5 +26,9 @@
       "Excel ve muhasebe uyumlu CSV dökümü üretme"
     ]
   },
-  "visibility": "public"
+  "visibility": "public",
+  "categories": [
+    "fintech",
+    "web"
+  ]
 }

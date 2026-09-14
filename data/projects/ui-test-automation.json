@@ -26,5 +26,9 @@
       "Görsel regresyon tespiti ve hata anı otomatik ekran görüntüsü kaydı",
       "Kurumsal standartlarda detaylı analitik PDF test raporu üretimi"
     ]
-  }
+  },
+  "categories": [
+    "ai",
+    "desktop"
+  ]
 }

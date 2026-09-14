@@ -97,14 +97,23 @@ document.addEventListener('DOMContentLoaded', () => {
       featuredSliderCountText.textContent = `${totalCount} özgün projeden`;
     }
 
-    // 7. Kategori Filtre Çiplerindeki Sayıları Otomatik Hesapla
+    // 7. Kategori Filtre Çiplerindeki Sayıları Otomatik Hesapla (Çoklu Kategori Destekli)
+    const hasCat = (p, cat) => {
+      const cats = Array.isArray(p.categories) ? p.categories : [p.category];
+      if (cat === 'ai' || cat === 'nlp_data') {
+        return cats.includes('ai') || cats.includes('nlp_data') || p.category === 'ai' || p.category === 'nlp_data';
+      }
+      return cats.includes(cat) || p.category === cat;
+    };
+
     const countMap = {
       all: totalCount,
-      ai: allProjects.filter(p => p.category === 'nlp_data' || p.category === 'ai').length,
-      nlp_data: allProjects.filter(p => p.category === 'nlp_data' || p.category === 'ai').length,
-      desktop: allProjects.filter(p => p.category === 'desktop').length,
-      fintech: allProjects.filter(p => p.category === 'fintech').length,
-      web: allProjects.filter(p => p.category === 'web').length
+      academic: allProjects.filter(p => hasCat(p, 'academic')).length,
+      ai: allProjects.filter(p => hasCat(p, 'ai')).length,
+      nlp_data: allProjects.filter(p => hasCat(p, 'ai')).length,
+      fintech: allProjects.filter(p => hasCat(p, 'fintech')).length,
+      desktop: allProjects.filter(p => hasCat(p, 'desktop')).length,
+      web: allProjects.filter(p => hasCat(p, 'web')).length
     };
 
     document.querySelectorAll('.chip-count').forEach(span => {

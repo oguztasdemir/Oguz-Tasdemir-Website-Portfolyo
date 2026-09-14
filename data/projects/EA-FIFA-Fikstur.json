@@ -25,5 +25,8 @@
     ]
   },
   "githubUrl": "https://github.com/oguztasdemir/EA-FIFA-Fikstur",
-  "visibility": "public"
+  "visibility": "public",
+  "categories": [
+    "web"
+  ]
 }

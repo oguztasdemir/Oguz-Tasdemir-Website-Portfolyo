@@ -25,5 +25,8 @@
     ]
   },
   "githubUrl": "https://github.com/oguztasdemir/Airdrop-Local",
-  "visibility": "public"
+  "visibility": "public",
+  "categories": [
+    "desktop"
+  ]
 }

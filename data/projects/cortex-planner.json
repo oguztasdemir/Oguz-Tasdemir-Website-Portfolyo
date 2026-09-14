@@ -26,5 +26,9 @@
       "GitHub Projects & Issues ile çift yönlü anlık API senkronizasyonu",
       "Tamamen yerelde (Local-First) çalışan mimari karar kayıtları (ADR) arşivi"
     ]
-  }
+  },
+  "categories": [
+    "ai",
+    "web"
+  ]
 }

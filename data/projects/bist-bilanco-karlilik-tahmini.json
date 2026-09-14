@@ -30,5 +30,10 @@
       "Gerekçeli (açıklanabilir) kâr öngörüsü ve sektörel rakip kıyaslama web konsolu"
     ]
   },
-  "visibility": "public"
+  "visibility": "public",
+  "categories": [
+    "academic",
+    "ai",
+    "fintech"
+  ]
 }

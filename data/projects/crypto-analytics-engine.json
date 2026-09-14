@@ -26,5 +26,9 @@
       "Geriye dönük test (Backtesting) ve Monte Carlo risk modelleme motoru",
       "WebSocket üzerinden canlı veri akışı ve interaktif finansal dashboard"
     ]
-  }
+  },
+  "categories": [
+    "ai",
+    "fintech"
+  ]
 }

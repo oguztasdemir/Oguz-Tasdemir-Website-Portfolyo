@@ -26,5 +26,8 @@
       "Geri kazanılan disk alanının anlık canlı hesabı"
     ]
   },
-  "visibility": "public"
+  "visibility": "public",
+  "categories": [
+    "desktop"
+  ]
 }

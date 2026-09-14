@@ -811,6 +811,13 @@ html, body {
   margin-bottom: 12px;
 }
 
+.wide-card-categories-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
 .wide-card-category {
   font-family: var(--font-body);
   font-size: 0.74rem;
@@ -820,6 +827,17 @@ html, body {
   padding: 3px 8px;
   border-radius: var(--radius-xs);
   border: 1px solid var(--border-dim);
+}
+
+.wide-card-academic-pill {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #a78bfa;
+  background: rgba(167, 139, 250, 0.1);
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  padding: 3px 7px;
+  border-radius: var(--radius-xs);
 }
 
 .wide-card-badge {

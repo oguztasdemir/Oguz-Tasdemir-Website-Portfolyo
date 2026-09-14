@@ -25,5 +25,9 @@
     ]
   },
   "githubUrl": "https://github.com/oguztasdemir/OYMAPOS-Barkod-Sistemi",
-  "visibility": "public"
+  "visibility": "public",
+  "categories": [
+    "fintech",
+    "desktop"
+  ]
 }

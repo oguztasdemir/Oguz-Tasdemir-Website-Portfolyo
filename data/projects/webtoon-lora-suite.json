@@ -28,5 +28,8 @@
       "Görsel hikaye anlatımı ve yeni sahne türetimi için üretken yapay zeka boru hattı"
     ]
   },
-  "visibility": "private"
+  "visibility": "private",
+  "categories": [
+    "ai"
+  ]
 }

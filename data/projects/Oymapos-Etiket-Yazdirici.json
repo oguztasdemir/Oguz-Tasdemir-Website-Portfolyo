@@ -25,5 +25,9 @@
     ]
   },
   "githubUrl": "https://github.com/oguztasdemir/Oymapos-Etiket-Yazdirici",
-  "visibility": "public"
+  "visibility": "public",
+  "categories": [
+    "desktop",
+    "fintech"
+  ]
 }

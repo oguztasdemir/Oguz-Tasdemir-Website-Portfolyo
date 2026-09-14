@@ -26,5 +26,8 @@
       "Detaylı yerel indirme günlüğü (loglama)"
     ]
   },
-  "visibility": "public"
+  "visibility": "public",
+  "categories": [
+    "desktop"
+  ]
 }

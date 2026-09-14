@@ -26,5 +26,9 @@
       "Düşük bellek (RAM) tüketimi"
     ]
   },
-  "visibility": "public"
+  "visibility": "public",
+  "categories": [
+    "ai",
+    "desktop"
+  ]
 }

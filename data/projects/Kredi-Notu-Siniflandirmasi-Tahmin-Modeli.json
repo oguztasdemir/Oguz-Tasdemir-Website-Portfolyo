@@ -27,5 +27,10 @@
       "Yeni müşteri verisi için tek satırda tahmin üretme"
     ]
   },
-  "visibility": "public"
+  "visibility": "public",
+  "categories": [
+    "academic",
+    "ai",
+    "fintech"
+  ]
 }

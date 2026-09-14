@@ -26,5 +26,9 @@
       "Oynatma listesi ve video transkript analiz yeteneği"
     ]
   },
-  "visibility": "private"
+  "visibility": "private",
+  "categories": [
+    "ai",
+    "desktop"
+  ]
 }

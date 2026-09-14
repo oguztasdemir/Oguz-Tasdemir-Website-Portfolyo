@@ -25,5 +25,10 @@
     ]
   },
   "githubUrl": "https://github.com/oguztasdemir/Akademik-Ingilizce",
-  "visibility": "public"
+  "visibility": "public",
+  "categories": [
+    "academic",
+    "ai",
+    "web"
+  ]
 }
