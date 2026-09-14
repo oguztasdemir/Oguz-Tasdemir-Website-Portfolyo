@@ -4,7 +4,7 @@
   "category": "web",
   "categoryLabel": "Web & Mobil PWA",
   "badge": "Eğitim & Sınav Platformu",
-  "summary": "İş Sağlığı ve Güvenliği (İSG), Makine Öğrenmesi (ML), Üretken AI (GAI) ve Veri Yapıları (DS) final sınavlarına çalışma, interaktif test çözme ve dinamik QR kodlu yerel PWA platformu.",
+  "summary": "İş Sağlığı ve Güvenliği (İSG), Makine Öğrenmesi (ML), Üretken AI (GAI) ve Dijital Sürdürülebilirlik (DS) final sınavlarına çalışma, interaktif test çözme ve dinamik QR kodlu yerel PWA platformu.",
   "highlightMetric": "📱 PWA & Dinamik QR ile Anında Mobil Test Deneyimi",
   "techStack": [
     "Python (http.server & socket)",
@@ -13,14 +13,14 @@
     "QR Code Engine",
     "LocalStorage & Cache API"
   ],
-  "githubUrl": "https://github.com/oguztasdemir/Akademik-Sinav-Soru-Hazirlik-PWA",
+  "githubUrl": "https://github.com/oguztasdemir/Akademik-Sinav-Hazirlik-Platformu",
   "demoUrl": null,
   "caseStudy": {
-    "problem": "Üniversite lisans ve yüksek lisans düzeyinde İş Sağlığı ve Güvenliği (İSG), Makine Öğrenmesi (ML), Üretken Yapay Zeka (GAI) ve Veri Yapıları (DS) gibi geniş teknik kapsama sahip derslerin final sınavlarına hazırlanırken yüzlerce soruyu pratik bir şekilde hem bilgisayardan hem de mobilden çözmek, yanlışları anında görüp pekiştirmek gerekiyordu. Mevcut bulut test siteleri internet gerektiriyordu ve özel soru setlerini özelleştirmeye izin vermiyordu. Bu ihtiyacı çözmek için sıfır bağımlılıkla yerelde çalışan ve PWA ile mobilden tam ekran kullanılabilen bir sınav motoru geliştirdim.",
-    "architecture": "Proje hafif ve bağımsız bir mimariye sahiptir: 1) Yerel Sunucu & QR Motoru: Python'ın gömülü HTTP modülü üzerinden yerel IP adresini tespit eder ve terminalde mobil bağlantı için anlık QR kod üretir. 2) PWA & Çevrimdışı Katmanı: Service Worker önbelleklemesiyle internet olmasa bile mobil cihazda uygulama gibi çalışır. 3) Modüler Ders Yapısı: İSG mevzuatı, Makine Öğrenmesi teorik/pratik soruları, Üretken Yapay Zeka ve Veri Yapıları müfredatı modüler JSON veri tabanında ayrıştırılmıştır.",
+    "problem": "Üniversite lisans ve yüksek lisans düzeyinde İş Sağlığı ve Güvenliği (İSG), Makine Öğrenmesi (ML), Üretken Yapay Zeka (GAI) ve Dijital Sürdürülebilirlik (DS) gibi geniş teknik kapsama sahip derslerin final sınavlarına hazırlanırken yüzlerce soruyu pratik bir şekilde hem bilgisayardan hem de mobilden çözmek, yanlışları anında görüp pekiştirmek gerekiyordu. Mevcut bulut test siteleri internet gerektiriyordu ve özel soru setlerini özelleştirmeye izin vermiyordu. Bu ihtiyacı çözmek için sıfır bağımlılıkla yerelde çalışan ve PWA ile mobilden tam ekran kullanılabilen bir sınav motoru geliştirdim.",
+    "architecture": "Proje hafif ve bağımsız bir mimariye sahiptir: 1) Yerel Sunucu & QR Motoru: Python'ın gömülü HTTP modülü üzerinden yerel IP adresini tespit eder ve terminalde mobil bağlantı için anlık QR kod üretir. 2) PWA & Çevrimdışı Katmanı: Service Worker önbelleklemesiyle internet olmasa bile mobil cihazda uygulama gibi çalışır. 3) Modüler Ders Yapısı: İSG mevzuatı, Makine Öğrenmesi teorik/pratik soruları, Üretken Yapay Zeka ve Dijital Sürdürülebilirlik (yeşil bilişim, sürdürülebilir teknoloji) müfredatı modüler JSON veri tabanında ayrıştırılmıştır.",
     "keyChallenge": "Kullanıcının ekstra bir uygulama indirmesine gerek kalmadan, sadece terminaldeki QR kodu kamerayla okutarak yerel ağ üzerinden responsive ve tam ekran (PWA) çalışan interaktif bir soru çözüm arayüzüne saniyeler içinde bağlanabilmesini sağlamaktı.",
     "features": [
-      "İSG, Makine Öğrenmesi, Üretken AI ve Veri Yapıları çoklu final ders havuzu",
+      "İSG, Makine Öğrenmesi, Üretken AI ve Dijital Sürdürülebilirlik çoklu final ders havuzu",
       "Terminal üzerinden otomatik LAN IP tespiti ve dinamik QR kodlu mobil erişim",
       "PWA (Progressive Web App) desteği ile mobil ana ekrana eklenebilme",
       "Service Worker ile %100 çevrimdışı (offline) soru çözebilme",
