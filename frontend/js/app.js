@@ -36,6 +36,129 @@ document.addEventListener('DOMContentLoaded', () => {
   let activeProjectId = 'bist-bilanco-karlilik-tahmini';
   let allLoadedProjects = [];
 
+  // 2. Sekme / Panel Geçişleri
+  function switchWorkspaceView(viewId, updateState = true) {
+    railMenuBtns.forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-panel') === viewId);
+    });
+
+    workspaceViews.forEach(view => {
+      const targetId = `view${viewId.charAt(0).toUpperCase() + viewId.slice(1)}`;
+      const isTarget = view.id.toLowerCase() === targetId.toLowerCase();
+      view.classList.toggle('active', isTarget);
+    });
+
+    if (updateState) {
+      if (viewId === 'projects' && portfolioDetailView && portfolioDetailView.style.display !== 'none' && activeProjectId) {
+        window.location.hash = `project=${activeProjectId}`;
+      } else {
+        window.location.hash = `view=${viewId}`;
+      }
+      localStorage.setItem('active_view', viewId);
+    }
+  }
+
+  railMenuBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetPanel = btn.getAttribute('data-panel');
+      if (targetPanel) switchWorkspaceView(targetPanel);
+    });
+  });
+
+  // Ana Sayfa İçi Hızlı Geçiş Butonları
+  const homeGoProjectsBtn = document.getElementById('homeGoProjectsBtn');
+  const homeGoAboutBtn = document.getElementById('homeGoAboutBtn');
+  const homeGoCertsBtn = document.getElementById('homeGoCertsBtn');
+  const homeGoCertsHeroBtn = document.getElementById('homeGoCertsHeroBtn');
+  const homeFeaturedGoProjectsBtn = document.getElementById('homeFeaturedGoProjectsBtn');
+
+  if (homeGoProjectsBtn) {
+    homeGoProjectsBtn.addEventListener('click', () => switchWorkspaceView('projects'));
+  }
+  if (homeGoAboutBtn) {
+    homeGoAboutBtn.addEventListener('click', () => switchWorkspaceView('about'));
+  }
+  if (homeGoCertsBtn) {
+    homeGoCertsBtn.addEventListener('click', () => switchWorkspaceView('certificates'));
+  }
+  if (homeGoCertsHeroBtn) {
+    homeGoCertsHeroBtn.addEventListener('click', () => switchWorkspaceView('certificates'));
+  }
+  if (homeFeaturedGoProjectsBtn) {
+    homeFeaturedGoProjectsBtn.addEventListener('click', () => switchWorkspaceView('projects'));
+  }
+
+  // Ana Sayfa Yatay Kaydırma (Slider) Kontrolleri: Projeler & Sertifikalar
+  const homeProjectsTrack = document.getElementById('homeProjectsTrack');
+  const homeProjPrevBtn = document.getElementById('homeProjPrevBtn');
+  const homeProjNextBtn = document.getElementById('homeProjNextBtn');
+
+  if (homeProjectsTrack) {
+    if (homeProjPrevBtn) {
+      homeProjPrevBtn.addEventListener('click', () => {
+        homeProjectsTrack.scrollBy({ left: -340, behavior: 'smooth' });
+      });
+    }
+    if (homeProjNextBtn) {
+      homeProjNextBtn.addEventListener('click', () => {
+        homeProjectsTrack.scrollBy({ left: 340, behavior: 'smooth' });
+      });
+    }
+  }
+
+  const homeCertsTrack = document.getElementById('homeCertsTrack');
+  const homeCertPrevBtn = document.getElementById('homeCertPrevBtn');
+  const homeCertNextBtn = document.getElementById('homeCertNextBtn');
+
+  if (homeCertsTrack) {
+    if (homeCertPrevBtn) {
+      homeCertPrevBtn.addEventListener('click', () => {
+        homeCertsTrack.scrollBy({ left: -290, behavior: 'smooth' });
+      });
+    }
+    if (homeCertNextBtn) {
+      homeCertNextBtn.addEventListener('click', () => {
+        homeCertsTrack.scrollBy({ left: 290, behavior: 'smooth' });
+      });
+    }
+  }
+
+  // Öne Çıkan Proje Kartlarına Tıklandığında Doğrudan Projeler Sayfasında Detayını Açma
+  const homeProjectSliderCards = document.querySelectorAll('.home-project-slider-card');
+  homeProjectSliderCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const projId = card.getAttribute('data-project-id');
+      if (projId) {
+        switchWorkspaceView('projects');
+        openProjectDetailModal(projId);
+      }
+    });
+  });
+
+  // Ana Sayfa Odak Kartlarına Tıklandığında İlgili Kategoriyle Projelere Geçiş
+  const showcaseCards = document.querySelectorAll('.showcase-card');
+  const domainCategoryMap = {
+    'ai': 'ai',
+    'pos': 'fintech',
+    'system': 'desktop',
+    'math': 'academic'
+  };
+
+  showcaseCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const domain = card.getAttribute('data-domain');
+      const targetCat = domainCategoryMap[domain] || 'all';
+      
+      currentCategory = targetCat;
+      categoryChips.forEach(chip => {
+        chip.classList.toggle('active', chip.getAttribute('data-category') === targetCat);
+      });
+
+      switchWorkspaceView('projects');
+      loadAndRenderSplitView();
+    });
+  });
+
   // Tier (Public / Private) Butonları Dinleyicisi
   const tierTabBtns = document.querySelectorAll('.tier-tab-btn');
   tierTabBtns.forEach(btn => {

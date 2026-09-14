@@ -75,10 +75,30 @@ def main():
             "backend.app:app",
             host="127.0.0.1",
             port=port,
+            reload=True,
+            reload_dirs=[
+                os.path.join(os.path.dirname(__file__), "backend"),
+                os.path.join(os.path.dirname(__file__), "data"),
+                os.path.join(os.path.dirname(__file__), "frontend")
+            ],
             access_log=False
         )
-        server = PortfolyoServer(config)
-        server.run()
+        print(" ⚡ [Canlı İzleyici]: Kod/Veri değişikliklerinde sunucu anında güncellenir.")
+        print(" 🛡️ [Güvenlik]: Ctrl+C devre dışıdır; arayüzdeki 'Kapat' butonuyla güvenle kapatılır.\n")
+        
+        # reload modunda uvicorn.run kullanılır
+        uvicorn.run(
+            "backend.app:app",
+            host="127.0.0.1",
+            port=port,
+            reload=True,
+            reload_dirs=[
+                os.path.join(os.path.dirname(__file__), "backend"),
+                os.path.join(os.path.dirname(__file__), "data"),
+                os.path.join(os.path.dirname(__file__), "frontend")
+            ],
+            access_log=False
+        )
     except KeyboardInterrupt:
         pass
     except Exception as e:

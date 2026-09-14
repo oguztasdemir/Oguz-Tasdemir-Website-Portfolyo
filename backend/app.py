@@ -31,11 +31,19 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# F5 Anti-Caching Middleware (Taslak Standardı)
+# F5 Anti-Caching & Terminal Canlı Bildirim Middleware
 @app.middleware("http")
 async def add_anti_cache_headers(request: Request, call_next):
+    path = request.url.path
+    # Terminale sade ve şık durum bildirimi
+    if path == "/" or path == "/index.html":
+        print(f" 🔄 [Tarayıcı] Sayfa yenilendi / açıldı (F5) -> {path}")
+    elif path.startswith("/api/projects"):
+        # sessiz veya tek satır
+        pass
+
     response: Response = await call_next(request)
-    if request.url.path.startswith("/css") or request.url.path.startswith("/js") or request.url.path == "/":
+    if path.startswith("/css") or path.startswith("/js") or path == "/":
         response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
         response.headers["Pragma"] = "no-cache"
         response.headers["Expires"] = "0"
