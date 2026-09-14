@@ -1,11 +1,11 @@
 {
   "id": "cortex",
-  "title": "Cortex — Yerel Zeka, RAG & Otonom Geliştirici Asistanı (LLM)",
+  "title": "Cortex — LLM Destekli IDE & RAG",
   "category": "ai",
   "categoryLabel": "Üretken Yapay Zeka & RAG Ajanı",
   "badge": "Özel Sistem / Ar-Ge",
-  "summary": "İnternet bağlantısına ihtiyaç duymadan yerel LLM motoruyla çalışan; kaynak kodları, teknik PDF/belgeleri semantik olarak indeksleyen, YouTube video araması ve web navigasyonu yapabilen çok yönlü üretken yapay zeka asistanı.",
-  "highlightMetric": "🧠 Çok Modlu RAG, Doküman Analizi & Otonom Ajan",
+  "summary": "İnternet bağlantısına ihtiyaç duymadan yerel LLM motoruyla çalışan; kaynak kodları, teknik PDF/belgeleri semantik olarak indeksleyen, Monaco editörü ve derin RAG desteğine sahip otonom geliştirici ortamı.",
+  "highlightMetric": "🧠 Çok Modlu RAG, Kod İndeksleme & Yerel IDE",
   "techStack": [
     "Python",
     "Ollama & Llama.cpp",
@@ -13,20 +13,20 @@
     "Tree-Sitter & Python AST",
     "FastAPI (SSE Akışı)",
     "Document Parser (PDF/MD/TXT)",
-    "YouTube Transkript Motoru",
+    "Monaco Code Editor",
     "Headless Browser Navigasyonu"
   ],
   "caseStudy": {
-    "problem": "Geliştiriciler ve araştırmacılar hem gizli kaynak kodlarını ve özel şirket/proje belgelerini buluta sızdırmadan yerelde analiz etmek hem de aynı ekrandan YouTube teknik eğitim videolarını taramak, dokümantasyonlar arasında semantik gezinti yapmak ve internete bağlı kalmadan çok yönlü bir üretken yapay zekadan faydalanmak istiyordu. Mevcut bulut çözümleri hem maliyetliydi hem de veri sızıntısı riski taşıyordu. Cortex'i; salt bir kod tamamlayıcı olmanın ötesinde, belge okuma, video transkript madenciliği, web/kod navigasyonu ve derin RAG hafızasını tek bir yerel ajan çatısında birleştirmek için geliştirdim.",
-    "architecture": "Cortex modüler ve genişletilebilir bir otonom ajan mimarisine sahiptir: 1) Yerel LLM Çekirdeği: Ollama / Llama.cpp üzerinden DeepSeek, Qwen ve Llama-3 modellerini doğrudan yerel VRAM/RAM üzerinde çalıştırır. 2) Çok Katmanlı RAG & Bilgi Tabanı: Kaynak kodları Tree-Sitter ve AST ile fonksiyon düzeyinde ayrıştırırken; PDF, Word ve Markdown teknik dokümanları hiyerarşik parçalama (hierarchical chunking) ile ChromaDB vektör uzayına gömer. 3) Multimedya & Dış Bilgi Entegrasyonu: YouTube Transkript API'si ile video içeriklerini saniye damgalı metne dönüştürerek anlamsal aramaya dahil eder; headless tarayıcı motoruyla dokümantasyon sayfalarında otonom gezinti (navigation) yapar. 4) Akış & Arayüz: FastAPI Server-Sent Events (SSE) daktilo akışıyla tokenları gecikmesiz istemciye iletir.",
-    "keyChallenge": "Kod sözdizimi, uzun PDF belgeleri ve YouTube video transkriptleri gibi çok farklı veri formatlarını tek bir ortak vektör uzayında bağlam kaybı yaşamadan ilişkilendirmek ve modelin doğru kaynağa referans vermesini sağlamak için hibrit arama (Dense Vector + BM25 Sparse Search) ve kaynak atıflı (source attribution) bir yönlendirici geliştirdim.",
+    "problem": "Geliştiriciler ve araştırmacılar hem gizli kaynak kodlarını ve özel şirket/proje belgelerini buluta sızdırmadan yerelde analiz etmek hem de aynı ekrandan teknik dokümantasyonlar arasında semantik gezinti yapmak ve internete bağlı kalmadan çok yönlü bir üretken yapay zekadan faydalanmak istiyordu. Mevcut bulut çözümleri hem maliyetliydi hem de veri sızıntısı riski taşıyordu. Cortex'i; salt bir kod tamamlayıcı olmanın ötesinde, belge okuma, AST tabanlı kod analizi, yerel IDE arayüzü ve derin RAG hafızasını tek bir yerel ajan çatısında birleştirmek için geliştirdim.",
+    "architecture": "Cortex modüler ve genişletilebilir bir otonom ajan mimarisine sahiptir: 1) Yerel LLM Çekirdeği: Ollama / Llama.cpp üzerinden DeepSeek, Qwen ve Llama-3 modellerini doğrudan yerel VRAM/RAM üzerinde çalıştırır. 2) Çok Katmanlı RAG & Bilgi Tabanı: Kaynak kodları Tree-Sitter ve AST ile fonksiyon düzeyinde ayrıştırırken; PDF, Word ve Markdown teknik dokümanları hiyerarşik parçalama (hierarchical chunking) ile ChromaDB vektör uzayına gömer. 3) Akıllı IDE Editörü: Monaco Editor ile sözdizimi renklendirme, kod tamamlama ve RAG bağlamlı sohbet panelini birleştirir. 4) Akış & Arayüz: FastAPI Server-Sent Events (SSE) daktilo akışıyla tokenları gecikmesiz istemciye iletir.",
+    "keyChallenge": "Kod sözdizimi ve uzun teknik dokümanlar gibi farklı veri formatlarını tek bir ortak vektör uzayında bağlam kaybı yaşamadan ilişkilendirmek ve modelin doğru dosya satırına referans vermesini sağlamak için hibrit arama (Dense Vector + BM25 Sparse Search) ve AST tabanlı kaynak atıflı bir yönlendirici geliştirdim.",
     "features": [
       "Tamamen yerel (%100 Air-Gapped) çalışma prensibiyle sıfır veri sızıntısı",
-      "Gelişmiş RAG motoru: Kaynak kod, PDF ve teknik belge semantik analizi",
-      "YouTube video transkript madenciliği ve saniye damgalı doğrudan referanslama",
+      "Gelişmiş RAG motoru: Kaynak kod, AST sözdizimi, PDF ve teknik belge analizi",
+      "Entegre Monaco kod editörü ve bağlamsal yapay zeka sohbet arayüzü",
       "Teknik dokümantasyonlar üzerinde otonom tarayıcı navigasyonu ve içerik çekme",
-      "Server-Sent Events (SSE) tabanlı anlık token akışı ve zengin arayüz"
+      "Server-Sent Events (SSE) tabanlı anlık token akışı ve yüksek performans"
     ]
   },
-  "githubUrl": "https://github.com/oguztasdemir/Cortex-AI"
+  "githubUrl": "https://github.com/oguztasdemir/Cortex-LLM-IDE-RAG"
 }
