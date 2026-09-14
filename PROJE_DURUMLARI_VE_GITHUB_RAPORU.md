@@ -38,7 +38,7 @@ Bu projeler GitHub profilinizde ve portfolyonuzda ziyaretçiler/işverenler tara
 | **13** | **Hugging-face Downloader** | AI Model İndirme & Hub Cache Yönetim Aracı | ✅ Evet | [oguztasdemir/Hugging-face-Downloader](https://github.com/oguztasdemir/Hugging-face-Downloader) | 🟢 **Güncel** |
 | **14** | **Kredi Notu Sınıflandırması** | Finansal Risk & Kredi Tahmin Modeli | ✅ Evet | [oguztasdemir/Kredi-Notu-Siniflandirmasi-...](https://github.com/oguztasdemir/Kredi-Notu-Siniflandirmasi-Tahmin-Modeli) | 🟢 **Güncel** |
 | **15** | **Oymapos Etiket Yazdırıcı** | Termal Barkod & Fiyat Etiketi Basıcı | ✅ Evet | [oguztasdemir/Oymapos-Etiket-Yazd-r-c-](https://github.com/oguztasdemir/Oymapos-Etiket-Yazd-r-c-) | 🟢 **Güncel** |
-| **16** | **Soru Uygulaması** | İnteraktif Soru Bankası & Test Çözücü | ✅ Evet | [oguztasdemir/Soru-Uygulamasi](https://github.com/oguztasdemir/Soru-Uygulamasi) | 🟢 **Güncel** |
+| **16** | **Akademik Sınav Hazırlık Platformu** | İSG, ML, GAI ve Veri Yapıları Final Soru Çözüm & PWA Motoru | ✅ Evet | [oguztasdemir/Akademik-Sinav-Soru-Hazirlik-PWA](https://github.com/oguztasdemir/Akademik-Sinav-Soru-Hazirlik-PWA) | 🟢 **Güncel** |
 | **17** | **Telegram Media Hub** | Telegram Botu & Asenkron Medya Arşivleyici | ✅ Evet | [oguztasdemir/Telegram-Media-Hub](https://github.com/oguztasdemir/Telegram-Media-Hub) | 🟢 **Güncel** |
 | **18** | **YouTube AI Assistant** | Video Transkript Madenciliği & Anlamsal Arama Motoru | ✅ Evet | [oguztasdemir/youtube-ai-assistant](https://github.com/oguztasdemir/youtube-ai-assistant) | 🟢 **Güncel** |
 | **19** | **GitHub Profil Vitrini** | Özel Profil README & Biyografi Deposu | 👤 Profil | [oguztasdemir/oguztasdemir](https://github.com/oguztasdemir/oguztasdemir) | 🟢 **Güncel** |

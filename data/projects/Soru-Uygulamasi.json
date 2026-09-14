@@ -1,29 +1,30 @@
 {
   "id": "Soru-Uygulamasi",
-  "title": "KPSS Soru Bankası & Performans Analiz Platformu",
+  "title": "Akademik Sınav Hazırlık & Soru Çözüm Platformu (PWA)",
   "category": "web",
-  "categoryLabel": "Web & Platform",
-  "badge": "Eğitim Motoru",
-  "summary": "KPSS sınavına hazırlananlar için yanlış yapılan soruları yapay öğrenmeyle tespit edip adayın zayıf olduğu konulara odaklanan soru bankası platformu.",
-  "highlightMetric": "📊 Zayıf Konu Tespiti & Akıllı Soru Tekrarı",
+  "categoryLabel": "Web & Mobil PWA",
+  "badge": "Eğitim & Sınav Platformu",
+  "summary": "İş Sağlığı ve Güvenliği (İSG), Makine Öğrenmesi (ML), Üretken AI (GAI) ve Veri Yapıları (DS) final sınavlarına çalışma, interaktif test çözme ve dinamik QR kodlu yerel PWA platformu.",
+  "highlightMetric": "📱 PWA & Dinamik QR ile Anında Mobil Test Deneyimi",
   "techStack": [
-    "Python",
-    "FastAPI",
-    "Vanilla JS",
-    "SQLite WAL",
-    "İstatistik Motoru"
+    "Python (http.server & socket)",
+    "PWA & Service Worker",
+    "Vanilla JS (ES6+)",
+    "QR Code Engine",
+    "LocalStorage & Cache API"
   ],
-  "githubUrl": "https://github.com/oguztasdemir/Soru-Uygulamasi",
+  "githubUrl": "https://github.com/oguztasdemir/Akademik-Sinav-Soru-Hazirlik-PWA",
   "demoUrl": null,
   "caseStudy": {
-    "problem": "KPSS, ALES ve YKS gibi geniş müfredatlı sınavlara hazırlanan adaylar günde yüzlerce soru çözer; ancak soru bankalarında en büyük hata adayın zaten bildiği soruları tekrar tekrar çözerek vakit kaybetmesi ve yanlış yaptığı soruların analizini yapamamasıdır. Yanlış yapılan sorular kağıt üzerinde unutulur ve sınavda aynı konudan soru geldiğinde yine yanlış yapılır. Adayın yalnızca eksik olduğu ders ve konulara odaklanmasını sağlayan, yanlış havuzunu akıllıca yöneten ve zaman yönetimini ölçen analitik bir soru platformu geliştirdim.",
-    "architecture": "Mimari, soruların ders, ünite, konu, zorluk derecesi ve geçmiş çözülme istatistikleriyle ilişkisel veritabanında modellendiği bir sistemdir. Kullanıcı soru çözerken soru başına geçen süre milisaniye hassasiyetinde kaydedilir. Test bittiğinde sistem adaya yalnızca net sayısını değil; 'En çok vakit kaybettiğin ünite: Fonksiyonlar', 'Hata oranı en yüksek konu: Permütasyon' gibi tanılayıcı geri bildirimler sunar. Yanlış yapılan tüm sorular otomatik olarak 'Hata Havuzu'na aktarılır ve aday belirli aralıklarla bu sorularla yeniden yüzleştirilir.",
-    "keyChallenge": "Kullanıcının soru başına harcadığı süre ve doğru/yanlış korelasyonunu hesaplayarak adayın hangi sorularda 'bilgi eksikliği', hangi sorularda ise 'zaman yetersizliği' yaşadığını ayırt eden bir performans analitiği formülü kurguladım.",
+    "problem": "Üniversite lisans ve yüksek lisans düzeyinde İş Sağlığı ve Güvenliği (İSG), Makine Öğrenmesi (ML), Üretken Yapay Zeka (GAI) ve Veri Yapıları (DS) gibi geniş teknik kapsama sahip derslerin final sınavlarına hazırlanırken yüzlerce soruyu pratik bir şekilde hem bilgisayardan hem de mobilden çözmek, yanlışları anında görüp pekiştirmek gerekiyordu. Mevcut bulut test siteleri internet gerektiriyordu ve özel soru setlerini özelleştirmeye izin vermiyordu. Bu ihtiyacı çözmek için sıfır bağımlılıkla yerelde çalışan ve PWA ile mobilden tam ekran kullanılabilen bir sınav motoru geliştirdim.",
+    "architecture": "Proje hafif ve bağımsız bir mimariye sahiptir: 1) Yerel Sunucu & QR Motoru: Python'ın gömülü HTTP modülü üzerinden yerel IP adresini tespit eder ve terminalde mobil bağlantı için anlık QR kod üretir. 2) PWA & Çevrimdışı Katmanı: Service Worker önbelleklemesiyle internet olmasa bile mobil cihazda uygulama gibi çalışır. 3) Modüler Ders Yapısı: İSG mevzuatı, Makine Öğrenmesi teorik/pratik soruları, Üretken Yapay Zeka ve Veri Yapıları müfredatı modüler JSON veri tabanında ayrıştırılmıştır.",
+    "keyChallenge": "Kullanıcının ekstra bir uygulama indirmesine gerek kalmadan, sadece terminaldeki QR kodu kamerayla okutarak yerel ağ üzerinden responsive ve tam ekran (PWA) çalışan interaktif bir soru çözüm arayüzüne saniyeler içinde bağlanabilmesini sağlamaktı.",
     "features": [
-      "Genişletilebilir soru ve kategori yönetim arayüzü",
-      "Yanlış yapılan sorulara odaklı akıllı tekrar modu",
-      "Konu bazlı başarı oranı ve süre analizi",
-      "Offline (çevrimdışı) çalışabilen veri mimarisi"
+      "İSG, Makine Öğrenmesi, Üretken AI ve Veri Yapıları çoklu final ders havuzu",
+      "Terminal üzerinden otomatik LAN IP tespiti ve dinamik QR kodlu mobil erişim",
+      "PWA (Progressive Web App) desteği ile mobil ana ekrana eklenebilme",
+      "Service Worker ile %100 çevrimdışı (offline) soru çözebilme",
+      "Anlık doğru/yanlış geribildirimi ve konu bazlı test modları"
     ]
   }
 }
