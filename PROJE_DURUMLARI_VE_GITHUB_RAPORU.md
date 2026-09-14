@@ -11,8 +11,8 @@ Bu rapor, tüm aktif yazılım projelerinizi **Açık Kaynak (Public)** ve **Öz
 
 | Kategori | Proje Sayısı | Durum |
 | :--- | :---: | :--- |
-| 🌐 **Açık Kaynak (Public) Depolar** | **17** | GitHub üzerinde herkese açık, profesyonel, incelenebilir ve %100 güncel. |
-| 🔒 **Özel Ar-Ge (Private) Depolar** | **9** | Gizli depolarda korunan, tam senkronize ve yedekli. |
+| 🌐 **Açık Kaynak (Public) Depolar** | **16** | GitHub üzerinde herkese açık, profesyonel, incelenebilir ve %100 güncel. |
+| 🔒 **Özel Ar-Ge (Private) Depolar** | **10** | Gizli depolarda korunan, tam senkronize ve yedekli. |
 | **Toplam Aktif Yazılım Projesi** | **26** | **Tümü GitHub'da yayında ve eksiksiz.** |
 
 ---
@@ -39,8 +39,7 @@ Bu projeler GitHub profilinizde ve portfolyonuzda ziyaretçiler/işverenler tara
 | **14** | **Oymapos Etiket Yazdırıcı** | Termal Barkod & Fiyat Etiketi Basıcı | ✅ Evet | [oguztasdemir/Oymapos-Etiket-Yazd-r-c-](https://github.com/oguztasdemir/Oymapos-Etiket-Yazd-r-c-) | 🟢 **Güncel** |
 | **15** | **Akademik Sınav Hazırlık Platformu** | İSG, ML, GAI ve Dijital Sürdürülebilirlik Final Soru Çözüm & PWA Motoru | ✅ Evet | [oguztasdemir/Akademik-Sinav-Hazirlik-Platformu](https://github.com/oguztasdemir/Akademik-Sinav-Hazirlik-Platformu) | 🟢 **Güncel** |
 | **16** | **Telegram Media Hub** | Telegram Botu & Asenkron Medya Arşivleyici | ✅ Evet | [oguztasdemir/Telegram-Media-Hub](https://github.com/oguztasdemir/Telegram-Media-Hub) | 🟢 **Güncel** |
-| **17** | **YouTube AI Assistant** | Video Transkript Madenciliği & Anlamsal Arama Motoru | ✅ Evet | [oguztasdemir/youtube-ai-assistant](https://github.com/oguztasdemir/youtube-ai-assistant) | 🟢 **Güncel** |
-| **18** | **GitHub Profil Vitrini** | Özel Profil README & Biyografi Deposu | 👤 Profil | [oguztasdemir/oguztasdemir](https://github.com/oguztasdemir/oguztasdemir) | 🟢 **Güncel** |
+| **17** | **GitHub Profil Vitrini** | Özel Profil README & Biyografi Deposu | 👤 Profil | [oguztasdemir/oguztasdemir](https://github.com/oguztasdemir/oguztasdemir) | 🟢 **Güncel** |
 
 ---
 
@@ -56,6 +55,7 @@ Bu projeler fikri mülkiyet, Ar-Ge ve özel mimari içeren; yalnızca sizin eri�
 | **4** | **AI Görsel Üretim Stüdyosu** | FastAPI, VRAM Optimizatörü, SDXL Turbo, Realistic Vision & Galeri | ❌ Hayır | `oguztasdemir/ai-image-studio` | 🟢 **Yedeklendi & Pushlandı** |
 | **5** | **CoBrowser — Ortak Ekran & Sanal Tarayıcı Odası** | Node.js WebSocket Eşzamanlı Sanal Tarayıcı, Birlikte Film & Web Oyun Odası | ❌ Hayır | `oguztasdemir/CoBrowser-Ortak-Ekran-Odasi` | 🟢 **Yedeklendi & Pushlandı** |
 | **6** | **Webtoon LoRA Suite** | AI Çizgi Roman / Görsel Üretim Hattı ve Karakter Tutarlılık Motoru | ✅ Evet | `oguztasdemir/webtoon-lora-suite` | 🟢 **Yedeklendi & Pushlandı** |
+| **7** | **YouTube AI Assistant** | Video Transkript Madenciliği & Saniye Damgalı LLM Semantik Arama | ✅ Evet | `oguztasdemir/youtube-ai-assistant` | 🟢 **Gizliye Alındı & Pushlandı** |
 
 ---
 
