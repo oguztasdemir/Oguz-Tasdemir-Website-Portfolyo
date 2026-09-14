@@ -1,0 +1,29 @@
+{
+  "id": "Gardrops-Otomasyon-Botu",
+  "title": "Gardrops Pazaryeri & Takip Otomasyonu (2022)",
+  "category": "web",
+  "categoryLabel": "Web & Otomasyon",
+  "badge": "2022 Arşiv Projesi",
+  "summary": "2022 yılında Gardrops ikinci el pazarında butik satış yaparken mağaza trafiğini artırmak için geliştirdiğim, hedef kitleyi otonom takip eden otomasyon botu.",
+  "highlightMetric": "🤖 3.000+ Hedef Kitle Taraması & Diferansiyel Filtre",
+  "techStack": [
+    "Python",
+    "Selenium WebDriver",
+    "BeautifulSoup4",
+    "Requests",
+    "DOM Scraper"
+  ],
+  "githubUrl": "https://github.com/oguztasdemir/Gardrops-Otomasyon-Botu",
+  "demoUrl": null,
+  "caseStudy": {
+    "problem": "İkinci el e-ticaret ve pazaryeri platformlarında (Gardrops vb.) satıcıların ürünlerini öne çıkarması, mağaza trafiği çekmesi ve düzenli satış yapabilmesi için platformdaki potansiyel alıcı kitleyi aktif olarak takip etmesi ve etkileşim kurması gerekir. Binlerce profili her gün manuel olarak aramak, son aktif kullanıcıları tek tek bulup takip butonuna basmak saatler süren ve insanı tüketen bir operasyondur. Ayrıca aynı kullanıcıları tekrar tekrar takip edip bırakmak veya platformun anti-spam hız kısıtlamalarına takılarak hesap banı yemek büyük bir risktir. Bu süreci tamamen güvenli ve otonom hale getiren bir bot geliştirdim.",
+    "architecture": "Sistemi Selenium WebDriver ve Python mimarisi üzerine, tespit edilemez tarayıcı (undetected-chromedriver) teknikleriyle inşa ettim. Bot, hedef kategorilerdeki vitrinleri ve en son satın alma yapan aktif profilleri DOM üzerinden filtreleyerek potansiyel müşteri havuzu oluşturur. Platformun bot koruma algoritmalarını tetiklememek için insan davranış modelleri simüle edilir: rastgele bekleme aralıkları (Gaussian noise timing), fare hareketleri ve pencereler arası yumuşak kaydırma (smooth scroll). Gerçekleştirilen tüm işlemler yerel SQLite veritabanına loglanarak mükerrer takip kesin olarak engellenir.",
+    "keyChallenge": "Platformun belirli sayıda ardışık takip işleminden sonra devreye soktuğu gizli hız sınırlarını (rate-limit) aşmak amacıyla dinamik dinlenme döngüleri ve istek frekansını otomatik ayarlayan adaptif geri çekilme (exponential backoff) algoritması entegre ettim.",
+    "features": [
+      "2022 döneminde geliştirilen arşivlik e-ticaret otomasyonu",
+      "Hedef mağaza takipçilerini BS4 ile hafif ve hızlı kazıma",
+      "Diferansiyel kontrolle mükerrer takip isteklerini %100 engelleme",
+      "Kullanıcı dostu konfigürasyon ve liste dışa aktarım desteği"
+    ]
+  }
+}

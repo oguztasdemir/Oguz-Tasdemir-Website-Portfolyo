@@ -1,0 +1,20 @@
+# Python & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Büyük/Geçici Veri & Önbellekler
+catboost_info/
+*.tmp
+*.log
+
+# Sanal Ortamlar
+venv/
+.venv/
+env/
+
+# IDE & Editörler
+.idea/
+.vscode/
+*.swp

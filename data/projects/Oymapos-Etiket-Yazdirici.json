@@ -1,0 +1,28 @@
+{
+  "id": "Oymapos-Etiket-Yazdirici",
+  "title": "OymaPOS Etiket — Dinamik Raf & Barkod Yazdırıcı",
+  "category": "desktop",
+  "categoryLabel": "Masaüstü & Sistem",
+  "badge": "Donanım Çözümü",
+  "summary": "Market raf etiketlerini ve ürün barkodlarını termal etiket yazıcılarından (ZPL/EPL) toplu ve net şekilde basmak için geliştirdiğim bağımsız masaüstü etiket motoru.",
+  "highlightMetric": "🏷️ Tek Tıkla Toplu Raf & Ürün Barkod Baskısı",
+  "techStack": [
+    "Python",
+    "Pillow (PIL)",
+    "PyInstaller (.EXE)",
+    "EPL/ZPL & Raw Print",
+    "Vanilla JS Canvas"
+  ],
+  "caseStudy": {
+    "problem": "Market operasyonlarında tedarikçilerden yeni ürünler geldikçe veya enflasyonist dönemlerde fiyatlar değiştikçe reyonlardaki yüzlerce ürünün raf etiketlerinin acilen yenilenmesi gerekir. Piyasadaki hazır etiket yazdırma programları ise karmaşık sürücüler gerektiriyor, şablon ayarlamak saatler alıyor ve Excel/CSV listesinden toplu etiket basarken barkod çizgilerini bulanık çıkartarak el terminallerinin okuyamamasına yol açıyordu. Reyon görevlilerinin Excel listesini yükleyip tek tuşla 500 etiketi net ve standart boyutta basabileceği bir araç ihtiyacını çözdüm.",
+    "architecture": "Uygulama doğrudan termal etiket yazıcıların diline (TSPL ve ESC/POS) uygun vektörel rasterlaştırma motoru üzerine kuruldu. Kullanıcı arayüzünde dinamik şablon düzenleyici yer alır (ürün adı, birim fiyatı, indirimli fiyat, menşei ve EAN-13 barkod görseli). Barkod üretimi python-barcode kütüphanesiyle pikseller arası bozulma olmadan net çözünürlükte oluşturulur. Toplu baskı modülü, binlerce satırlık Excel veya CSV dosyasını okuyarak yazıcının tampon belleğini şişirmeden kuyruk yönetimiyle etiketleri kağıt israfı yapmadan ardı ardına basar.",
+    "keyChallenge": "Farklı marka termal yazıcıların (Argox, Xprinter, Zebra) baskı kafası DPI çözünürlük farklarından kaynaklanan kayma ve taşma problemlerini aşmak için dinamik DPI kalibrasyon matrisi geliştirdim.",
+    "features": [
+      "Görsel etiket tasarım alanı (Logo, Fiyat, Barkod)",
+      "Excel/CSV veya Barkod POS veritabanından toplu etiket basımı",
+      "EAN-13, Code-128 ve QR Kod standartları için dahili doğrulayıcı",
+      "Bağımsız tek parça taşınabilir .exe yapısı"
+    ]
+  },
+  "githubUrl": "https://github.com/oguztasdemir/Oymapos-Etiket-Yazdirici"
+}

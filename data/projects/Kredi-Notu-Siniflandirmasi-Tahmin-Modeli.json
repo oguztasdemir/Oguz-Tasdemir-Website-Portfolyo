@@ -1,0 +1,30 @@
+{
+  "id": "Kredi-Notu-Siniflandirmasi-Tahmin-Modeli",
+  "title": "Kredi Notu Sınıflandırma & Risk Tahmin Modeli",
+  "category": "fintech",
+  "categoryLabel": "FinTech & Veri",
+  "badge": "Makine Öğrenmesi",
+  "summary": "Müşterilerin finansal alışkanlıklarını, borç oranlarını ve hesap hareketlerini inceleyerek kredi risk düzeyini yüksek doğrulukla tahmin eden makine öğrenmesi modeli.",
+  "highlightMetric": "🎯 %88+ F1-Skoru & Dengeli Risk Tahmini",
+  "techStack": [
+    "Python",
+    "Scikit-Learn",
+    "Pandas",
+    "NumPy",
+    "Feature Engineering",
+    "XGBoost"
+  ],
+  "githubUrl": "https://github.com/oguztasdemir/Kredi-Notu-Siniflandirmasi-Tahmin-Modeli",
+  "demoUrl": null,
+  "caseStudy": {
+    "problem": "Bankacılık ve finans kuruluşlarında bireysel kredi ve kredi kartı başvurularının değerlendirilmesi geleneksel yöntemlerle günlerce sürebilmekte veya manuel değerlendirme yapan personelin öznel kararlarına maruz kalabilmektedir. Üstelik finansal veri setlerinde gelir dağılımları, gecikmiş ödeme gün sayıları ve kredi geçmişi yoğun gürültü ve eksik veriler içerir. Bankanın kredi riskini en aza indiren, müşterinin borcunu ödeyip ödeyemeyeceğini başvuru anında saniyeler içinde nesnel kriterlerle sınıflandıran bir makine öğrenmesi modeli geliştirdim.",
+    "architecture": "Model geliştirme sürecinde 100.000+ satırlık gerçek finansal kayıt içeren veri seti kullanıldı. İlk aşamada veri bilimi hattı (Pandas, Seaborn) ile öznitelik dağılımları incelendi; gelir ve kredi limiti gibi çarpık (skewed) değişkenlere Log Dönüşümü uygulandı. Eksik değerler Medyan ve İteratif Doldurucu (IterativeImputer) ile tamamlandı. Sınıflandırma motorunda Lojistik Regresyon, Random Forest, LightGBM ve CatBoost algoritmaları çapraz doğrulama (Stratified 5-Fold Cross-Validation) ile test edildi. En yüksek genelleme başarısını gösteren LightGBM modeli seçilerek hiperparametreleri GridSearch ile optimize edildi.",
+    "keyChallenge": "Finansal veri setlerindeki en kritik engel olan Temerrüt (ödenmeyen kredi) sınıfının azınlıkta olması (%5-10) durumunu çözmek için SMOTE ve Class Weight dengelemesi uyguladım. Modelin Yanlış Negatif maliyetini minimize edecek şekilde karar eşiği (decision threshold) ayarlandı.",
+    "features": [
+      "Uçtan uca veri temizleme ve öznitelik mühendisliği boru hattı",
+      "Dengesiz veri setlerine özel SMOTE optimizasyonu",
+      "Detaylı karmaşıklık matrisi ve ROC-AUC analizi",
+      "Yeni müşteri verisi için tek satırda tahmin üretme"
+    ]
+  }
+}

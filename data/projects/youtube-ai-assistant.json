@@ -1,0 +1,29 @@
+{
+  "id": "youtube-ai-assistant",
+  "title": "YouTube Transkript Analiz & Arama Motoru",
+  "category": "ai",
+  "categoryLabel": "Doğal Dil & Arama Motoru",
+  "badge": "Açık Kaynak Sistem",
+  "summary": "YouTube videolarının transkriptlerini yerel yapay zeka modeliyle analiz eden, videoyu izlemeden kritik noktaları özetleyen ve aratan asistan.",
+  "highlightMetric": "⚡ Semantik Video Özeti & Anlık Arama",
+  "techStack": [
+    "Python",
+    "Ollama (Yerel LLM)",
+    "FastAPI",
+    "YouTube Data API",
+    "Vanilla JS Studio"
+  ],
+  "githubUrl": "https://github.com/oguztasdemir/youtube-ai-assistant",
+  "demoUrl": null,
+  "caseStudy": {
+    "problem": "2-3 saatlik yazılım eğitimleri, konferanslar veya akademik seminer videolarında belirli bir konunun tam olarak nerede anlatıldığını bulmak için videoyu baştan sona izlemek veya rastgele ileri geri sarmak büyük bir zaman israfıdır. Klasik video özetleme araçları ise sadece yüzeysel genel özetler sunar; kullanıcının sorduğu spesifik bir soruya yanıt verirken videonun tam hangi saniyesinde bu konunun geçtiğini kanıtıyla gösteremez. Bu sorunu çözmek için videonun tüm içeriğini anlamsal olarak tarayıp saniye damgalı yanıt üreten interaktif bir arama motoru geliştirdim.",
+    "architecture": "Mimari asenkron bir Python ve NLP boru hattından oluşur. Kullanıcı bir YouTube bağlantısı girdiğinde sistem önce YouTube Transcript API ve gerektiğinde yerel Faster-Whisper konuşma tanıma motorunu devreye sokarak konuşmaları zaman damgalı metin bloklarına döker. Metinler 60 saniyelik örtüşen (sliding window) pencerelere ayrılır ve FAISS / ChromaDB vektör motorunda semantik olarak indekslenir. Kullanıcı bir soru sorduğunda vektör benzerlik araması en alakalı konuşma anlarını bulur, LLM yanıtı oluşturur ve istemciye doğrudan YouTube Player API ile tıklanabilir zaman damgaları (örneğin [14:28 - Algoritma Karmaşıklığı Analizi]) döner.",
+    "keyChallenge": "YouTube otomatik altyazılarında noktalama işaretlerinin bulunmaması cümle sınırlarının kaymasına ve vektör aramasının alakasız sonuçlar üretmesine yol açıyordu. Deepmultilingualpunctuation derin öğrenme modelini araya koyarak transkripti önce dilbilgisi kurallarına göre noktalayıp ardından anlamsal parçalara böldüm.",
+    "features": [
+      "Geliştirme sürecinde olan akıllı video asistanı",
+      "Yerel Ollama modelleriyle gizlilik odaklı doğal dil anlama",
+      "Sağ panelde bölünmüş ekran (Split-View) canlı video önizlemesi",
+      "Oynatma listesi ve video transkript analiz yeteneği"
+    ]
+  }
+}

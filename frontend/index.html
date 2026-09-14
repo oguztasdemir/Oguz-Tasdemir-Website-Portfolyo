@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Oğuz Taşdemir — Yazılım Geliştirici & Matematikçi. Yerel veri işleme, FinTech POS & donanım entegrasyonu, semantik arama ve masaüstü sistemleri.">
+  <meta name="author" content="Oğuz Taşdemir">
+  <title>Oğuz Taşdemir — Sistem Mimarisi & Mühendislik Portföyü</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css?v=4.0">
+</head>
+<body>
+
+  <div class="workbench-app-shell">
+    
+    <!-- =========================================================================
+         PANEL 1: SOL SİSTEM AĞACI & KONSOL KONTROLLERİ (WIDTH: 270px)
+         ========================================================================= -->
+    <aside class="panel-rail panel-left" id="panelRail">
+      
+      <!-- 1.1 Profil Kartı & Kimlik -->
+      <div class="rail-profile-card">
+        <div class="profile-avatar-square">OT</div>
+        <div class="profile-info-block">
+          <h2 class="profile-name">Oğuz Taşdemir</h2>
+          <span class="profile-role">Yazılım Geliştirici & Matematik</span>
+        </div>
+      </div>
+
+      <!-- 1.3 Navigasyon Menüsü -->
+      <nav class="rail-menu-group" role="tablist">
+        <span class="menu-group-label">MENÜ</span>
+        
+        <button class="rail-menu-btn" data-panel="home" role="tab" id="tabBtnHome">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          <span class="menu-btn-text">Ana Sayfa</span>
+        </button>
+
+        <button class="rail-menu-btn active" data-panel="projects" role="tab" id="tabBtnProjects">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          <span class="menu-btn-text">Portfolyo & Projeler</span>
+          <span class="menu-btn-badge" id="railProjectsCountBadge">20</span>
+        </button>
+
+        <button class="rail-menu-btn" data-panel="about" role="tab" id="tabBtnAbout">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          <span class="menu-btn-text">Hakkımda</span>
+        </button>
+
+        <button class="rail-menu-btn" data-panel="certificates" role="tab" id="tabBtnCertificates">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+          <span class="menu-btn-text">Sertifikalar</span>
+          <span class="menu-btn-badge">9</span>
+        </button>
+      </nav>
+
+      <!-- 1.4 Hızlı Eylemler & Footer -->
+      <div class="rail-footer-actions">
+        <a href="#cv-indir" class="rail-action-btn primary" id="cvDownloadBtn" title="Özgeçmişi İndir">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span>CV İndir (PDF)</span>
+        </a>
+
+        <div class="rail-bottom-utility-row">
+          <a href="https://github.com/oguztasdemir" target="_blank" rel="noopener noreferrer" class="utility-icon-btn" title="GitHub Profili">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            <span>GitHub</span>
+          </a>
+
+          <button class="utility-icon-btn" id="themeToggleBtn" title="Tema Değiştir (Koyu / Açık)">
+            <svg class="theme-icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <span id="themeModeLabel">Obsidian</span>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Sol Panel Aç/Kapa Düğmesi (Dikey Ortada) -->
+    <button class="rail-collapse-toggle" id="railCollapseToggle" aria-label="Sol Paneli Gizle/Göster" title="Sol Paneli Gizle/Göster">
+      <svg class="toggle-icon-collapse" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      <svg class="toggle-icon-expand" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </button>
+
+    <!-- =========================================================================
+         PANEL 2 & 3: ÇALIŞMA ALANLARI (TABS)
+         ========================================================================= -->
+    <div class="workbench-viewport">
+
+      <!-- ANA SAYFA: FERAH, DİNAMİK VE İNTERAKTİF KARŞILAMA SAHNESİ -->
+      <section class="workspace-view" id="viewHome" role="tabpanel">
+        <div class="home-canvas-viewport">
+          
+          <!-- Üst Işık Halkası Efekti (Ambient Glow) -->
+          <div class="home-ambient-glow"></div>
+
+          <div class="home-modern-stage">
+            
+            <!-- 1. Hero Başlık & Rozetler -->
+            <div class="home-modern-hero">
+              <div class="home-live-pulse-badge">
+                <span class="pulse-dot-ring"></span>
+                <span class="pulse-dot-core"></span>
+                <span class="pulse-text">İstanbul &bull; Matematik Lisans Mezunu &bull; Aktif Geliştirici</span>
+              </div>
+
+              <h1 class="home-glamour-title">
+                Oğuz Taşdemir
+                <span class="home-glamour-title-sub">Sistem Mimarisi &middot; Veri Bilimi &middot; Yapay Zeka</span>
+              </h1>
+
+              <p class="home-glamour-desc">
+                Bu platform; geliştirdiğim <strong id="heroProjectsCountStrong">projeleri</strong>, çözülen gerçek saha problemlerini, düşük seviyeli donanım protokollerini ve otonom yapay zeka ajanlarını teknik şeffaflıkla sunan interaktif bir çalışma konsoludur. Geliştirilen yeni projeler ve sistem mimarileri düzenli olarak buraya dahil edilir.
+              </p>
+
+              <!-- Hızlı Aksiyon Butonları -->
+              <div class="home-glamour-cta-row">
+                <button class="home-primary-launch-btn" id="homeGoProjectsBtn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                  <span id="heroGoProjectsBtnText">Projeleri Keşfet</span>
+                  <svg class="btn-arrow-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+
+                <button class="home-secondary-launch-btn" id="homeGoAboutBtn">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                  <span>Gelişim Hikayesi & Biyografi</span>
+                </button>
+
+                <button class="home-secondary-launch-btn" id="homeGoCertsHeroBtn">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+                  <span>Sertifikalarım (9 Belge)</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- 2. Dinamik İstatistik & Telemetri Şeridi -->
+            <div class="home-telemetry-ribbon">
+              <div class="telemetry-cell">
+                <span class="telemetry-val" id="telemetryProjectCount">21</span>
+                <span class="telemetry-lbl">Geliştirilen Proje</span>
+              </div>
+              <div class="telemetry-separator"></div>
+              <div class="telemetry-cell">
+                <span class="telemetry-val">9+ Belge</span>
+                <span class="telemetry-lbl">Yapay Zeka & Fintek Sertifikası</span>
+              </div>
+              <div class="telemetry-separator"></div>
+              <div class="telemetry-cell">
+                <span class="telemetry-val">Aktif</span>
+                <span class="telemetry-lbl">Sistem & Algoritma Üretimi</span>
+              </div>
+            </div>
+
+            <!-- 3. Odak Yetkinlik Alanları -->
+            <div class="home-showcase-grid">
+              
+              <!-- 1: Yapay Zeka & LLM Ajanları -->
+              <div class="showcase-card" data-domain="ai">
+                <div class="showcase-card-glow"></div>
+                <div class="showcase-header">
+                  <div class="showcase-icon-box ai-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 3.31 2.01 6.16 4.9 7.37.28.12.48.37.48.67v1.96c0 .55.45 1 1 1h7.24c.55 0 1-.45 1-1v-1.96c0-.3.2-.55.48-.67 2.89-1.21 4.9-4.06 4.9-7.37a8 8 0 0 0-8-8z"></path><path d="M9 10h.01"></path><path d="M15 10h.01"></path><path d="M9.5 15a3.5 3.5 0 0 0 5 0"></path></svg>
+                  </div>
+                  <span class="showcase-pill">Ajan & RAG</span>
+                </div>
+                <h3 class="showcase-card-title">Üretken Yapay Zeka & Otonom Ajanlar</h3>
+                <p class="showcase-card-text">
+                  Yerel LLM motorları (Llama-3, DeepSeek), ChromaDB RAG hafızası, YouTube video transkript madenciliği ve çok katmanlı otonom kodlama asistanları.
+                </p>
+                <div class="showcase-meta-tags">
+                  <span>Cortex LLM</span>
+                  <span>Webtoon LoRA</span>
+                  <span>ChromaDB RAG</span>
+                  <span>Otonom Tarayıcı</span>
+                </div>
+              </div>
+
+              <!-- 2: POS, FinTech & Perakende Sistemleri -->
+              <div class="showcase-card" data-domain="pos">
+                <div class="showcase-card-glow"></div>
+                <div class="showcase-header">
+                  <div class="showcase-icon-box pos-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line><line x1="6" y1="16" x2="10" y2="16"></line></svg>
+                  </div>
+                  <span class="showcase-pill">Saha & FinTech</span>
+                </div>
+                <h3 class="showcase-card-title">Perakende & Satış Otomasyonu (POS)</h3>
+                <p class="showcase-card-text">
+                  Kendi işlettiğimiz markette 7/24 kesintisiz çalışan, sıfır veri kaybı garantili SQLite WAL mimarili ve donanım protokol entegreli masaüstü sistemler.
+                </p>
+                <div class="showcase-meta-tags">
+                  <span>OymaPOS</span>
+                  <span>ESC/POS Termal</span>
+                  <span>Ödeal Entegrasyonu</span>
+                  <span>Raf Etiketleyici</span>
+                </div>
+              </div>
+
+              <!-- 3: Düşük Seviye Sistem & Ağ Protokolleri -->
+              <div class="showcase-card" data-domain="system">
+                <div class="showcase-card-glow"></div>
+                <div class="showcase-header">
+                  <div class="showcase-icon-box sys-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                  </div>
+                  <span class="showcase-pill">Sistem & Ağ</span>
+                </div>
+                <h3 class="showcase-card-title">Düşük Seviye Donanım & Ağ Sistemleri</h3>
+                <p class="showcase-card-text">
+                  Ham disk sektör taraması (raw carving) ile adli veri kurtarma, Wi-Fi üzerinden P2P yüksek hızlı yerel transfer ve CNC G-Code ayrıştırıcıları.
+                </p>
+                <div class="showcase-meta-tags">
+                  <span>Adli Veri Kurtarma</span>
+                  <span>Local Drop (P2P)</span>
+                  <span>G-Code Parse</span>
+                  <span>RAM & Önbellek</span>
+                </div>
+              </div>
+
+              <!-- 4: Matematiksel Modelleme & Tahmin -->
+              <div class="showcase-card" data-domain="math">
+                <div class="showcase-card-glow"></div>
+                <div class="showcase-header">
+                  <div class="showcase-icon-box math-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                  </div>
+                  <span class="showcase-pill">Matematik & ML</span>
+                </div>
+                <h3 class="showcase-card-title">Matematiksel Modelleme & Makine Öğrenmesi</h3>
+                <p class="showcase-card-text">
+                  Lisans matematik analitik altyapısıyla geliştirilen kredi risk sınıflandırması, Optuna hiperparametre optimizasyonu ve parametrik 3D yüzey üretimi.
+                </p>
+                <div class="showcase-meta-tags">
+                  <span>Kredi Risk ML</span>
+                  <span>Parametrik 3D</span>
+                  <span>Optuna / SMOTE</span>
+                  <span>Öğrenci Analitiği</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- 4. Öne Çıkan Projeler (Kaydırmalı Vitrin) -->
+            <div class="home-slider-section" id="homeFeaturedProjectsSection">
+              <div class="home-slider-header-row">
+                <div>
+                  <div class="home-section-tag">Öne Çıkan Çalışmalar</div>
+                  <h2 class="home-certs-title">Projelerim & Mühendislik Sistemleri</h2>
+                  <p class="home-certs-subtitle">Saha tecrübesi, otonom yapay zeka ve sistem mimarisi alanlarında geliştirdiğim <span id="featuredSliderCountText">özgün projelerden</span> öne çıkanlar.</p>
+                </div>
+                <div class="home-slider-actions-group">
+                  <div class="home-slider-nav-arrows">
+                    <button class="slider-nav-btn" id="homeProjPrevBtn" aria-label="Önceki Proje" title="Önceki Projeler">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button class="slider-nav-btn" id="homeProjNextBtn" aria-label="Sonraki Proje" title="Sonraki Projeler">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                  </div>
+                  <button class="home-primary-action-btn" id="homeFeaturedGoProjectsBtn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    <span id="featuredGoProjectsBtnText">Projelerime Git</span>
+                    <svg class="btn-arrow-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Projeler Sağa-Sola Kaydırma Bandı (Track) -->
+              <div class="home-horizontal-scroll-track" id="homeProjectsTrack">
+                
+                <!-- Proje 1 (En Başta): Lisans Tezi - Borsa İstanbul -->
+                <div class="home-project-slider-card" data-project-id="bist-bilanco-karlilik-tahmini">
+                  <div class="slider-card-top">
+                    <span class="slider-card-badge badge-math">Lisans Bitirme Tezi</span>
+                    <span class="slider-card-cat">FinTech & ML</span>
+                  </div>
+                  <h4 class="slider-card-title">Borsa İstanbul (BIST) Çeyreklik Bilanço Kârlılık Tahmin Sistemi</h4>
+                  <p class="slider-card-desc">612 BIST şirketinin 10 yıllık çeyreklik bilançolarını otonom toplayan, TCMB kurlarıyla enflasyondan arındıran ve 7 sektörde kârlılık yönünü (%68.8) ve kâr-zararı (%79.5) öngören lisans tezi platformu.</p>
+                  <div class="slider-card-metric">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <span>🎯 %79.5 Doğruluk &middot; 612 Şirket &middot; 10 Yıl</span>
+                  </div>
+                  <div class="slider-card-footer">
+                    <div class="slider-card-tags">
+                      <span>Python</span>
+                      <span>CatBoost</span>
+                      <span>Flask Web</span>
+                    </div>
+                    <span class="slider-card-action">Detay İncele &rarr;</span>
+                  </div>
+                </div>
+
+                <!-- Proje 2: Cortex -->
+                <div class="home-project-slider-card" data-project-id="cortex">
+                  <div class="slider-card-top">
+                    <span class="slider-card-badge badge-ai">Özel Sistem / Ar-Ge</span>
+                    <span class="slider-card-cat">Yapay Zeka & RAG</span>
+                  </div>
+                  <h4 class="slider-card-title">Cortex — Yerel Zeka, RAG & Otonom Geliştirici Asistanı</h4>
+                  <p class="slider-card-desc">İnternet bağlantısına ihtiyaç duymadan çalışan; kaynak kodları, teknik PDF belgeleri indeksleyen, YouTube video araması ve web navigasyonu yapan otonom asistan.</p>
+                  <div class="slider-card-metric">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                    <span>Çok Modlu RAG & Otonom Ajan</span>
+                  </div>
+                  <div class="slider-card-footer">
+                    <div class="slider-card-tags">
+                      <span>Ollama</span>
+                      <span>ChromaDB</span>
+                      <span>FastAPI SSE</span>
+                    </div>
+                    <span class="slider-card-action">Detay İncele &rarr;</span>
+                  </div>
+                </div>
+
+                <!-- Proje 2: OymaPOS -->
+                <div class="home-project-slider-card" data-project-id="OYMAPOS-Barkod-Sistemi">
+                  <div class="slider-card-top">
+                    <span class="slider-card-badge badge-pos">Saha Kullanımında</span>
+                    <span class="slider-card-cat">FinTech & POS</span>
+                  </div>
+                  <h4 class="slider-card-title">OymaPOS — Perakende Barkodlu Satış & Stok Yönetimi</h4>
+                  <p class="slider-card-desc">Kendi işlettiğimiz markette 7/24 kullanılan, seri barkod okuyan, termal yazıcıya anında fiş basan ve kilitlenme yaratmayan SQLite WAL mimarili sistem.</p>
+                  <div class="slider-card-metric">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                    <span>⚡ 80ms Fiş Basımı & Sıfır Veri Kaybı</span>
+                  </div>
+                  <div class="slider-card-footer">
+                    <div class="slider-card-tags">
+                      <span>Python</span>
+                      <span>SQLite WAL</span>
+                      <span>ESC/POS</span>
+                    </div>
+                    <span class="slider-card-action">Detay İncele &rarr;</span>
+                  </div>
+                </div>
+
+                <!-- Proje 3: Webtoon LoRA Suite -->
+                <div class="home-project-slider-card" data-project-id="webtoon-lora-suite">
+                  <div class="slider-card-top">
+                    <span class="slider-card-badge badge-ai">Açık Kaynak Sistem</span>
+                    <span class="slider-card-cat">Görsel Analitik & ML</span>
+                  </div>
+                  <h4 class="slider-card-title">Webtoon Hikaye Analizi & Üretken Görsel/Panel Hattı</h4>
+                  <p class="slider-card-desc">Çizgi hikayelerin panel akışlarını ve anlatı yapısını analiz eden; konuşma balonlarını arındırıp LoRA ve üretken yapay zeka ile görsel sahneler türeten analitik hat.</p>
+                  <div class="slider-card-metric">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                    <span>🎨 Anlatı & Panel Analitiği, LoRA</span>
+                  </div>
+                  <div class="slider-card-footer">
+                    <div class="slider-card-tags">
+                      <span>PyTorch</span>
+                      <span>OpenCV</span>
+                      <span>LaMa Inpainting</span>
+                    </div>
+                    <span class="slider-card-action">Detay İncele &rarr;</span>
+                  </div>
+                </div>
+
+                <!-- Proje 4: Local Drop -->
+                <div class="home-project-slider-card" data-project-id="Airdrop-Local">
+                  <div class="slider-card-top">
+                    <span class="slider-card-badge badge-sys">Yüksek Hız</span>
+                    <span class="slider-card-cat">Masaüstü & Sistem</span>
+                  </div>
+                  <h4 class="slider-card-title">Yerel Ağ Hızlı Dosya Transferi (Local Drop)</h4>
+                  <p class="slider-card-desc">Aynı Wi-Fi ağındaki bilgisayar ve telefonlar arasında internet kotası tüketmeden, kablosuz tarayıcı üzerinden dosya transferi sağlayan yerel ağ paylaşım aracı.</p>
+                  <div class="slider-card-metric">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    <span>🚀 100+ MB/s Yerel Ağ Gigabit Hızı</span>
+                  </div>
+                  <div class="slider-card-footer">
+                    <div class="slider-card-tags">
+                      <span>WebSockets</span>
+                      <span>UDP Discovery</span>
+                      <span>Zero-Config</span>
+                    </div>
+                    <span class="slider-card-action">Detay İncele &rarr;</span>
+                  </div>
+                </div>
+
+                <!-- Proje 5: Disk Kurtarma Aracı -->
+                <div class="home-project-slider-card" data-project-id="Disk-Kurtarma-Araci">
+                  <div class="slider-card-top">
+                    <span class="slider-card-badge badge-sys">Düşük Seviye Sistem</span>
+                    <span class="slider-card-cat">Adli Bilişim & Disk</span>
+                  </div>
+                  <h4 class="slider-card-title">Harddisk & USB Veri Kurtarma Aracı</h4>
+                  <p class="slider-card-desc">Bozuk veya yanlışlıkla biçimlendirilmiş harici disk ve flaş belleklerden, doğrudan ham sektör taraması (raw carving) yaparak görsel ve belgeleri kurtaran araç.</p>
+                  <div class="slider-card-metric">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <span>🔍 Ham Sektör (Raw Block) İmza Taraması</span>
+                  </div>
+                  <div class="slider-card-footer">
+                    <div class="slider-card-tags">
+                      <span>Win32 Raw Disk</span>
+                      <span>File Carving</span>
+                      <span>PySide</span>
+                    </div>
+                    <span class="slider-card-action">Detay İncele &rarr;</span>
+                  </div>
+                </div>
+
+                <!-- Proje 6: Kredi Notu Sınıflandırma -->
+                <div class="home-project-slider-card" data-project-id="Kredi-Notu-Siniflandirmasi-Tahmin-Modeli">
+                  <div class="slider-card-top">
+                    <span class="slider-card-badge badge-math">Makine Öğrenmesi</span>
+                    <span class="slider-card-cat">FinTech & Veri</span>
+                  </div>
+                  <h4 class="slider-card-title">Kredi Notu Sınıflandırma & Risk Tahmin Modeli</h4>
+                  <p class="slider-card-desc">Müşterilerin finansal alışkanlıklarını, borç oranlarını ve hesap hareketlerini inceleyerek kredi risk düzeyini yüksek doğrulukla tahmin eden makine öğrenmesi modeli.</p>
+                  <div class="slider-card-metric">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    <span>🎯 %88+ F1-Skoru & Dengeli Risk Tahmini</span>
+                  </div>
+                  <div class="slider-card-footer">
+                    <div class="slider-card-tags">
+                      <span>Scikit-Learn</span>
+                      <span>XGBoost</span>
+                      <span>Pandas</span>
+                    </div>
+                    <span class="slider-card-action">Detay İncele &rarr;</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- 5. Ana Sayfa Sertifikalar & Eğitimler (Kaydırmalı Vitrin) -->
+            <div class="home-certs-section">
+              <div class="home-certs-header-row">
+                <div>
+                  <div class="home-section-tag">Doğrulanmış Yetkinlikler</div>
+                  <h2 class="home-certs-title">Sertifikalarım & Katılım Belgeleri</h2>
+                  <p class="home-certs-subtitle">Yapay zeka ajanları, LLM mimarileri, veri bilimi ve kurumsal bulut alanlarında tamamladığım resmi belgeler. Sağa-sola kaydırarak inceleyebilirsiniz.</p>
+                </div>
+                <div class="home-slider-actions-group">
+                  <div class="home-slider-nav-arrows">
+                    <button class="slider-nav-btn" id="homeCertPrevBtn" aria-label="Önceki Sertifika" title="Önceki Sertifikalar">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button class="slider-nav-btn" id="homeCertNextBtn" aria-label="Sonraki Sertifika" title="Sonraki Sertifikalar">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                  </div>
+                  <button class="home-view-all-certs-btn" id="homeGoCertsBtn">
+                    <span>Tümünü Gör (9 Belge)</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Sertifika Önizleme Kartları (Yatay Akıcı Kaydırma Bandı - 9 Belge) -->
+              <div class="home-horizontal-scroll-track" id="homeCertsTrack">
+                
+                <!-- 1. Öğrenci Kariyeri - FIN-E SUMMIT -->
+                <div class="home-cert-item cert-card" data-cert-img="assets/certificates/ogrenci-kariyeri-fine-summit.jpeg" data-cert-title="FIN-E SUMMIT Katılım Sertifikası — Öğrenci Kariyeri">
+                  <div class="home-cert-thumb">
+                    <img src="assets/certificates/ogrenci-kariyeri-fine-summit.jpeg" alt="FIN-E SUMMIT Sertifikası" loading="lazy">
+                    <span class="home-cert-zoom-overlay">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    </span>
+                  </div>
+                  <div class="home-cert-details">
+                    <span class="home-cert-badge">BORSA İSTANBUL &bull; PARAM &bull; ANADOLU GRUBU</span>
+                    <h4 class="home-cert-heading">FIN-E SUMMIT Fintek & Yapay Zeka</h4>
+                    <p class="home-cert-info">Finansal teknolojiler, borsa ekosistemi ve dijital dönüşüm zirvesi.</p>
+                  </div>
+                </div>
+
+                <!-- 2. TRAI - Yapay Zeka Ajanları -->
+                <div class="home-cert-item cert-card" data-cert-img="assets/certificates/trai-yapay-zeka-ajanlari.png" data-cert-title="Güvenli Ölçeklenebilir Yapay Zeka Ajanları — TRAI / AWS">
+                  <div class="home-cert-thumb">
+                    <img src="assets/certificates/trai-yapay-zeka-ajanlari.png" alt="Yapay Zeka Ajanları" loading="lazy">
+                    <span class="home-cert-zoom-overlay">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    </span>
+                  </div>
+                  <div class="home-cert-details">
+                    <span class="home-cert-badge">TRAI &bull; AWS</span>
+                    <h4 class="home-cert-heading">Güvenli Ölçeklenebilir AI Ajanları</h4>
+                    <p class="home-cert-info">Kurumsal yapay zeka ajan mimarileri, güvenlik ve ölçekleme prensipleri.</p>
+                  </div>
+                </div>
+
+                <!-- 2. Coderspace - Veri Bilimi -->
+                <div class="home-cert-item cert-card" data-cert-img="assets/certificates/certificate-additional.png" data-cert-title="Veri Bilimi ve Yapay Zekâ Yaz Okulu — Coderspace">
+                  <div class="home-cert-thumb">
+                    <img src="assets/certificates/certificate-additional.png" alt="Veri Bilimi ve Yapay Zekâ" loading="lazy">
+                    <span class="home-cert-zoom-overlay">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    </span>
+                  </div>
+                  <div class="home-cert-details">
+                    <span class="home-cert-badge">CODERSPACE &bull; META &bull; GOOGLE</span>
+                    <h4 class="home-cert-heading">Veri Bilimi & Yapay Zekâ Yaz Okulu</h4>
+                    <p class="home-cert-info">48 saatlik kapsamlı veri bilimi, makine öğrenmesi ve sektör uygulamaları.</p>
+                  </div>
+                </div>
+
+                <!-- 3. TRAI - GenAI ile Oyunu Yakala -->
+                <div class="home-cert-item cert-card" data-cert-img="assets/certificates/trai-genai-oyunu-yakala.png" data-cert-title="GenAI ile Oyunu Yakala — TRAI / Google">
+                  <div class="home-cert-thumb">
+                    <img src="assets/certificates/trai-genai-oyunu-yakala.png" alt="GenAI ile Oyunu Yakala" loading="lazy">
+                    <span class="home-cert-zoom-overlay">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    </span>
+                  </div>
+                  <div class="home-cert-details">
+                    <span class="home-cert-badge">TRAI &bull; GOOGLE</span>
+                    <h4 class="home-cert-heading">GenAI ile Oyunu Yakala</h4>
+                    <p class="home-cert-info">Google Gemini pazarlama ve üretken yapay zeka modelleri entegrasyonu.</p>
+                  </div>
+                </div>
+
+                <!-- 4. BTK - Anthropic Claude -->
+                <div class="home-cert-item cert-card" data-cert-img="assets/certificates/btk-anthropic-claude.png" data-cert-title="Anthropic Claude — BTK Akademi">
+                  <div class="home-cert-thumb">
+                    <img src="assets/certificates/btk-anthropic-claude.png" alt="Anthropic Claude" loading="lazy">
+                    <span class="home-cert-zoom-overlay">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    </span>
+                  </div>
+                  <div class="home-cert-details">
+                    <span class="home-cert-badge">BTK AKADEMİ</span>
+                    <h4 class="home-cert-heading">Anthropic Claude & LLM Mimarisi</h4>
+                    <p class="home-cert-info">Prompt mühendisliği, model parametreleri ve API entegrasyon prensipleri.</p>
+                  </div>
+                </div>
+
+                <!-- 5. BTK - Üretken Yapay Zeka -->
+                <div class="home-cert-item cert-card" data-cert-img="assets/certificates/btk-uretken-yapay-zeka.png" data-cert-title="Üretken Yapay Zekâya Giriş — BTK Akademi">
+                  <div class="home-cert-thumb">
+                    <img src="assets/certificates/btk-uretken-yapay-zeka.png" alt="Üretken Yapay Zekâ" loading="lazy">
+                    <span class="home-cert-zoom-overlay">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    </span>
+                  </div>
+                  <div class="home-cert-details">
+                    <span class="home-cert-badge">BTK AKADEMİ</span>
+                    <h4 class="home-cert-heading">Üretken Yapay Zekâya Giriş</h4>
+                    <p class="home-cert-info">Difüzyon modelleri, GAN mimarileri ve transformatör tabanlı üretkenlik.</p>
+                  </div>
+                </div>
+
+                <!-- 6. BTK - Veri Okuryazarlığı -->
+                <div class="home-cert-item cert-card" data-cert-img="assets/certificates/btk-veri-okuryazarligi.png" data-cert-title="Veri Okuryazarlığı — BTK Akademi">
+                  <div class="home-cert-thumb">
+                    <img src="assets/certificates/btk-veri-okuryazarligi.png" alt="Veri Okuryazarlığı" loading="lazy">
+                    <span class="home-cert-zoom-overlay">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    </span>
+                  </div>
+                  <div class="home-cert-details">
+                    <span class="home-cert-badge">BTK AKADEMİ</span>
+                    <h4 class="home-cert-heading">Veri Okuryazarlığı & Madenciliği</h4>
+                    <p class="home-cert-info">Veri analitiği temelleri, analitik düşünme ve manipülasyon teknikleri.</p>
+                  </div>
+                </div>
+
+                <!-- 7. İnovatim -->
+                <div class="home-cert-item cert-card" data-cert-img="assets/certificates/inovatim-sertifika.jpg" data-cert-title="Liselerde Yapay Zeka ve İnovasyon — İnovatim / TİM">
+                  <div class="home-cert-thumb">
+                    <img src="assets/certificates/inovatim-sertifika.jpg" alt="İnovatim Yapay Zeka" loading="lazy">
+                    <span class="home-cert-zoom-overlay">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    </span>
+                  </div>
+                  <div class="home-cert-details">
+                    <span class="home-cert-badge">TİM &bull; İNOVATİM</span>
+                    <h4 class="home-cert-heading">Robotik Kodlama & İnovasyon</h4>
+                    <p class="home-cert-info">Lise döneminde Arduino, robotik ve erken dönem inovasyon sertifikası.</p>
+                  </div>
+                </div>
+
+                <!-- 8. Medeniyet Python -->
+                <div class="home-cert-item cert-card" data-cert-img="assets/certificates/medeniyet-bil101.png" data-cert-title="Python 101 Başarı Belgesi — İstanbul Medeniyet Üniversitesi">
+                  <div class="home-cert-thumb">
+                    <img src="assets/certificates/medeniyet-bil101.png" alt="Python 101" loading="lazy">
+                    <span class="home-cert-zoom-overlay">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                    </span>
+                  </div>
+                  <div class="home-cert-details">
+                    <span class="home-cert-badge">İSTANBUL MEDENİYET ÜNİV.</span>
+                    <h4 class="home-cert-heading">Python 101 Programlama</h4>
+                    <p class="home-cert-info">Üniversite bünyesinde temel veri yapıları, algoritmalar ve nesne yönelimli programlama.</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJELER GÖRÜNÜMÜ: TEK GENİŞ AKIŞ (LİSTE & KAPSAMLI DETAY GÖRÜNÜMÜ) -->
+      <section class="workspace-view active" id="viewProjects" role="tabpanel">
+        
+        <!-- 1. GENİŞ PROJELER LİSTESİ GÖRÜNÜMÜ -->
+        <div class="portfolio-main-stream" id="portfolioMainStream">
+          
+          <!-- Üst Başlık & Arama Araç Çubuğu -->
+          <div class="portfolio-stream-header">
+            <div class="stream-title-row">
+              <div>
+                <h2 class="stream-main-title">Projeler & Sistemler</h2>
+                <p class="stream-subtitle">Geliştirdiğim açık kaynak araçlar, masaüstü yazılımları, donanım sürücüleri ve veri sistemleri.</p>
+              </div>
+              <span class="stream-counter-badge" id="searchResultCount">20 Sistem</span>
+            </div>
+
+            <!-- Arama & Filtre Çubukları -->
+            <div class="stream-filters-bar">
+              <div class="filter-search-box stream-search-box">
+                <svg class="search-svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" id="projectSearchInput" placeholder="Proje adı, sistem veya teknoloji ara... (Ctrl+K)" autocomplete="off">
+                <button class="clear-search-btn" id="searchClearBtn" aria-label="Aramayı Temizle" style="display: none;">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+                <kbd class="kbd-hint">⌘K</kbd>
+              </div>
+
+              <!-- Kategori Çipleri (Sayaçlar JS ile otomatik hesaplanır) -->
+              <div class="filter-chips-rail" role="tablist">
+                <button class="chip-filter active" data-category="all">Tümü (<span class="chip-count" data-count-cat="all">20</span>)</button>
+                <button class="chip-filter" data-category="nlp_data">Doğal Dil & Veri (<span class="chip-count" data-count-cat="nlp_data">6</span>)</button>
+                <button class="chip-filter" data-category="desktop">Masaüstü & Sistem (<span class="chip-count" data-count-cat="desktop">7</span>)</button>
+                <button class="chip-filter" data-category="fintech">FinTech & POS (<span class="chip-count" data-count-cat="fintech">3</span>)</button>
+                <button class="chip-filter" data-category="web">Web & Platform (<span class="chip-count" data-count-cat="web">4</span>)</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Boydan Boya Akıcı Proje Kartları Listesi -->
+          <div class="portfolio-cards-grid" id="splitProjectsList">
+            <!-- js/ui.js tarafından render edilir -->
+          </div>
+
+        </div>
+
+        <!-- 2. TAM EKRAN PROJE DETAY BİLGİ SAYFASI (DETAYDA TÜM EKRANI KAPLAR) -->
+        <div class="portfolio-detail-view" id="portfolioDetailView" style="display: none;">
+          <!-- Sol Üst Geri Butonu Çubuğu -->
+          <div class="detail-page-nav-bar">
+            <button class="detail-back-btn" id="btnBackToPortfolio">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+              <span>Projelere Geri Dön</span>
+            </button>
+            <span class="detail-nav-hint">ESC ile de çıkabilirsiniz</span>
+          </div>
+
+          <!-- Kapsamlı Proje Bilgi Alanı -->
+          <div class="detail-page-scroll-content" id="projectDetailContainer">
+          </div>
+        </div>
+
+      </section>
+
+      <!-- HAKKIMDA PANELİ: DETAYLI KİŞİSEL & MÜHENDİSLİK HİKAYESİ -->
+      <section class="workspace-view" id="viewAbout" role="tabpanel">
+        <div class="view-standalone-container">
+          <div class="view-panel-card">
+            
+            <!-- Profil Başlığı -->
+            <div class="about-hero-block">
+              <div class="about-tag-badge">Biyografi & Yazılım Yolculuğu</div>
+              <h1 class="about-person-title">Oğuz Taşdemir</h1>
+              <p class="about-person-subtitle">
+                İstanbul Medeniyet Üniversitesi Matematik Bölümü mezunuyum (2026). Küçük yaşlarda oyun minigameleri kodlayarak başladığım yazılım yolculuğuma; donanım devreleri, veri otomasyonu, optimize masaüstü sistemleri ve ağırlıklı olarak <strong>Yapay Zeka & Makine Öğrenmesi</strong> çözümleri geliştirerek devam ediyorum.
+              </p>
+            </div>
+
+            <!-- Detaylı Hikaye ve Arka Plan -->
+            <div class="about-story-section">
+              <h2 class="about-section-heading">Nasıl Başladım?</h2>
+              <p class="about-paragraph">
+                Yazılıma ilk olarak <strong>2013 yılında Lua</strong> diliyle oyun minigameleri kodlayarak başladım. Yazdığım kodun oyunda doğrudan çalıştığını görmek çok hoşuma gitmişti; algoritma mantığını ve kod yapısını bu sayede küçük yaşta öğrendim.
+              </p>
+              
+              <p class="about-paragraph">
+                <strong>2018'de lise 3. sınıftayken</strong> okulumuza Türk-Alman Üniversitesi Mekatronik Bölümü'nden iki abla gelip bize robotik kodlama eğitimi verdi. <strong>Arduino ve devrelerle</strong> ilk defa o zaman tanıştım. Sensörler, motorlar ve devre kartlarıyla çalışarak yazılımın fiziksel parçalarla nasıl haberleştiğini gördüm.
+              </p>
+
+              <p class="about-paragraph">
+                Daha sonra <strong>İstanbul Medeniyet Üniversitesi Matematik Bölümü</strong>'ne girdim. Burada aldığım matematik eğitimi, yazılım tarafında özellikle veri yapılarını ve algoritmaları daha mantıklı ve sağlam kurmamı sağladı.
+              </p>
+
+              <p class="about-paragraph">
+                <strong>2021 sonrasında</strong> ise doğrudan işe yarayan somut projelere odaklandım. Python ile web scraping ve veri otomasyonları geliştirmenin yanı sıra; veri tabanı mimarisi, donanım entegrasyonları, termal yazıcı protokolleri (ESC/POS, ZPL) ve yüksek performanslı masaüstü sistemleri geliştirmeye ağırlık verdim.
+              </p>
+
+              <p class="about-paragraph">
+                Zamanla sistem ve yazılım tecrübemi matematik altyapımla birleştirerek <strong>Yapay Zeka ve Makine Öğrenmesi</strong> alanına yöneldim. Özellikle internete kapalı (offline) yerel ortamlarda çalışan açık kaynak dil modelleri (LLM), semantik arama ve RAG mimarileri, veri sınıflandırma ve makine öğrenmesi modelleri üzerine çalışarak kendimi bu alanda geliştirdim. Şu anda da ağırlıklı olarak yapay zeka destekli akıllı araçlar ve optimize edilmiş masaüstü sistemleri üretiyorum.
+              </p>
+            </div>
+
+            <!-- Zaman Çizelgesi (Timeline) -->
+            <div class="about-timeline-section">
+              <h2 class="about-section-heading">Yazılım & Dil Gelişim Çizelgem</h2>
+              
+              <div class="about-timeline-flow">
+                
+                <div class="timeline-entry">
+                  <div class="timeline-dot-col">
+                    <span class="timeline-dot"></span>
+                    <span class="timeline-line"></span>
+                  </div>
+                  <div class="timeline-body">
+                    <span class="timeline-year">2013</span>
+                    <h3 class="timeline-title">İlk Adım: Lua & Oyun Minigameleri</h3>
+                    <p class="timeline-desc">
+                      Lua diliyle çeşitli oyun minigameleri kodlayarak mantıksal algoritma kurgusunu, değişken yönetimini ve kodlama yapısını benimsedim.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="timeline-entry">
+                  <div class="timeline-dot-col">
+                    <span class="timeline-dot"></span>
+                    <span class="timeline-line"></span>
+                  </div>
+                  <div class="timeline-body">
+                    <span class="timeline-year">2018</span>
+                    <h3 class="timeline-title">Fiziksel Sistemler: Arduino & Robotik Kodlama</h3>
+                    <p class="timeline-desc">
+                      Lise 3. sınıfta Türk-Alman Üniversitesi Mekatronik Bölümü öğrencilerinin okulumuzda verdiği robotik eğitimle Arduino dünyasına adım attım; sensör okuma ve mikrodenetleyici düzeyinde ilk fiziksel projelerimi ürettim.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="timeline-entry">
+                  <div class="timeline-dot-col">
+                    <span class="timeline-dot"></span>
+                    <span class="timeline-line"></span>
+                  </div>
+                  <div class="timeline-body">
+                    <span class="timeline-year">2021 — 2023</span>
+                    <h3 class="timeline-title">Python, Veri Otomasyonu & Matematik Temeli</h3>
+                    <p class="timeline-desc">
+                      İstanbul Medeniyet Üniversitesi Matematik lisans eğitimiyle paralel olarak; Python ile web scraping (Selenium, BeautifulSoup), veri manipülasyonu ve otomasyon botları geliştirdim.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="timeline-entry">
+                  <div class="timeline-dot-col">
+                    <span class="timeline-dot"></span>
+                    <span class="timeline-line"></span>
+                  </div>
+                  <div class="timeline-body">
+                    <span class="timeline-year">2022 — 2023</span>
+                    <h3 class="timeline-title">Masaüstü Sistem Mimarisi & Donanım Entegrasyonu</h3>
+                    <p class="timeline-desc">
+                      Yüksek hızlı barkodlu satış, SQLite WAL veri tabanı mimarisi, termal yazıcı protokolleri (ESC/POS) ve donanım haberleşmesine odaklanan masaüstü sistem çözümleri geliştirdim.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="timeline-entry">
+                  <div class="timeline-dot-col">
+                    <span class="timeline-dot"></span>
+                  </div>
+                  <div class="timeline-body">
+                    <span class="timeline-year">2024 — Günümüz</span>
+                    <h3 class="timeline-title">Yapay Zeka, Makine Öğrenmesi & Sistem Geliştirme</h3>
+                    <p class="timeline-desc">
+                      Yerel açık kaynak dil modelleri (LLM), RAG (Retrieval-Augmented Generation) tabanlı bilgi sistemleri, makine öğrenmesi modelleri ve bunları destekleyen optimize kurumsal masaüstü araçları üzerine çalışıyorum.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- İletişim & Profesyonel Bağlantılar Kartı -->
+            <div class="about-contact-card">
+              <div class="about-contact-header">
+                <h3 class="about-contact-title">İletişim & Profesyonel Bağlantılar</h3>
+                <p class="about-contact-subtitle">İş teklifleri, projeler veya doğrudan iletişim için aşağıdaki kanallardan ulaşabilirsiniz:</p>
+              </div>
+
+              <div class="about-links-grid">
+                <!-- E-Posta -->
+                <a href="mailto:oguztasdemir0@gmail.com" class="about-link-pill" id="aboutMailLink">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                  <div class="link-pill-info">
+                    <span class="link-pill-label">E-Posta</span>
+                    <span class="link-pill-val">oguztasdemir0@gmail.com</span>
+                  </div>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/oguztasdemir" target="_blank" rel="noopener noreferrer" class="about-link-pill">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  <div class="link-pill-info">
+                    <span class="link-pill-label">LinkedIn</span>
+                    <span class="link-pill-val">linkedin.com/in/oguztasdemir</span>
+                  </div>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com/oguztasdemir" target="_blank" rel="noopener noreferrer" class="about-link-pill">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                  <div class="link-pill-info">
+                    <span class="link-pill-label">GitHub</span>
+                    <span class="link-pill-val">github.com/oguztasdemir</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- SERTİFİKALAR PANELİ GÖRÜNÜMÜ -->
+      <section class="workspace-view" id="viewCertificates" role="tabpanel">
+        <div class="view-standalone-container">
+          <div class="view-panel-card">
+            
+            <div class="panel-header-bar" style="margin-bottom: 24px;">
+              <div class="panel-header-title-row">
+                <h3 class="panel-header-title">Eğitimler & Yetkinlik Sertifikaları</h3>
+              </div>
+              <span class="panel-status-counter">9 Doğrulanmış Kayıt</span>
+            </div>
+
+            <p class="about-paragraph" style="margin-bottom: 24px;">
+              Yapay zeka, üretken dil modelleri, bulut ajanları, veri bilimi ve fintek alanlarında tamamladığım sertifikalar ve katılım belgeleri. Belgeleri büyütmek ve ayrıntılarını görmek için kartların üzerine tıklayabilirsiniz.
+            </p>
+
+            <div class="certs-grid">
+              
+              <!-- 1. Öğrenci Kariyeri - FIN-E SUMMIT -->
+              <div class="cert-card" data-cert-img="assets/certificates/ogrenci-kariyeri-fine-summit.jpeg" data-cert-title="FIN-E SUMMIT Katılım Sertifikası — Öğrenci Kariyeri">
+                <div class="cert-preview-wrap">
+                  <img src="assets/certificates/ogrenci-kariyeri-fine-summit.jpeg" alt="FIN-E SUMMIT Katılım Sertifikası" loading="lazy">
+                  <span class="cert-zoom-hint">Büyütmek için tıkla</span>
+                </div>
+                <div class="cert-content">
+                  <span class="cert-issuer">ÖĞRENCİ KARİYERİ &bull; BORSA İSTANBUL &bull; PARAM &bull; ANADOLU GRUBU</span>
+                  <h4 class="cert-title">FIN-E SUMMIT Finans & Teknoloji Zirvesi</h4>
+                  <p class="cert-desc">3 Şubat 2026. Finansal teknolojiler, borsa ekosistemi, dijital varlıklar ve yeni nesil finansal dönüşüm oturumları katılım belgesi.</p>
+                </div>
+              </div>
+
+              <!-- 2. TRAI - Yapay Zeka Ajanları -->
+              <div class="cert-card" data-cert-img="assets/certificates/trai-yapay-zeka-ajanlari.png" data-cert-title="Güvenli Ölçeklenebilir Yapay Zeka Ajanları — TRAI / AWS">
+                <div class="cert-preview-wrap">
+                  <img src="assets/certificates/trai-yapay-zeka-ajanlari.png" alt="Güvenli Ölçeklenebilir Yapay Zeka Ajanları" loading="lazy">
+                  <span class="cert-zoom-hint">Büyütmek için tıkla</span>
+                </div>
+                <div class="cert-content">
+                  <span class="cert-issuer">TÜRKİYE YAPAY ZEKA İNİSİYATİFİ (TRAI) &bull; AWS</span>
+                  <h4 class="cert-title">Güvenli Ölçeklenebilir Yapay Zeka Ajanları</h4>
+                  <p class="cert-desc">Eğitmen: Görkem Yöntem (Solutions Architect, AWS). Kurumsal AI agent mimarileri, güvenlik ve ölçekleme prensipleri.</p>
+                </div>
+              </div>
+
+              <!-- 2. Coderspace - Veri Bilimi ve Yapay Zeka -->
+              <div class="cert-card" data-cert-img="assets/certificates/certificate-additional.png" data-cert-title="Veri Bilimi ve Yapay Zekâ Yaz Okulu — Coderspace">
+                <div class="cert-preview-wrap">
+                  <img src="assets/certificates/certificate-additional.png" alt="Veri Bilimi ve Yapay Zekâ Yaz Okulu" loading="lazy">
+                  <span class="cert-zoom-hint">Büyütmek için tıkla</span>
+                </div>
+                <div class="cert-content">
+                  <span class="cert-issuer">CODERSPACE &bull; TRAI &bull; META &bull; GOOGLE</span>
+                  <h4 class="cert-title">Veri Bilimi ve Yapay Zekâ Yaz Okulu</h4>
+                  <p class="cert-desc">4 hafta / 48 saatlik kapsamlı veri bilimi, makine öğrenmesi ve sektör uygulamaları eğitimi.</p>
+                </div>
+              </div>
+
+              <!-- 3. TRAI - GenAI ile Oyunu Yakala -->
+              <div class="cert-card" data-cert-img="assets/certificates/trai-genai-oyunu-yakala.png" data-cert-title="GenAI ile Oyunu Yakala — TRAI / Google">
+                <div class="cert-preview-wrap">
+                  <img src="assets/certificates/trai-genai-oyunu-yakala.png" alt="GenAI ile Oyunu Yakala" loading="lazy">
+                  <span class="cert-zoom-hint">Büyütmek için tıkla</span>
+                </div>
+                <div class="cert-content">
+                  <span class="cert-issuer">TÜRKİYE YAPAY ZEKA İNİSİYATİFİ (TRAI) &bull; GOOGLE</span>
+                  <h4 class="cert-title">GenAI ile Oyunu Yakala</h4>
+                  <p class="cert-desc">Eğitmen: Can Franko (Google Ads & Gemini Marketing Manager). Üretken yapay zeka modelleri ve kullanım alanları.</p>
+                </div>
+              </div>
+
+              <!-- 4. BTK - Anthropic Claude -->
+              <div class="cert-card" data-cert-img="assets/certificates/btk-anthropic-claude.png" data-cert-title="Anthropic Claude — BTK Akademi">
+                <div class="cert-preview-wrap">
+                  <img src="assets/certificates/btk-anthropic-claude.png" alt="Anthropic Claude Sertifikası" loading="lazy">
+                  <span class="cert-zoom-hint">Büyütmek için tıkla</span>
+                </div>
+                <div class="cert-content">
+                  <span class="cert-issuer">BTK AKADEMİ &bull; RESMİ SERTİFİKA</span>
+                  <h4 class="cert-title">Anthropic Claude</h4>
+                  <p class="cert-desc">Sertifika No: BozfxnegJv. Claude model mimarisi, prompt optimizasyonu ve büyük dil modeli entegrasyonu.</p>
+                </div>
+              </div>
+
+              <!-- 5. BTK - Üretken Yapay Zekaya Giriş -->
+              <div class="cert-card" data-cert-img="assets/certificates/btk-uretken-yapay-zeka.png" data-cert-title="Üretken Yapay Zekâya Giriş — BTK Akademi">
+                <div class="cert-preview-wrap">
+                  <img src="assets/certificates/btk-uretken-yapay-zeka.png" alt="Üretken Yapay Zekâya Giriş" loading="lazy">
+                  <span class="cert-zoom-hint">Büyütmek için tıkla</span>
+                </div>
+                <div class="cert-content">
+                  <span class="cert-issuer">BTK AKADEMİ &bull; RESMİ SERTİFİKA</span>
+                  <h4 class="cert-title">Üretken Yapay Zekâya Giriş</h4>
+                  <p class="cert-desc">Sertifika No: PVghM8kNKr. Üretken derin öğrenme, difüzyon ve transformatör modelleri.</p>
+                </div>
+              </div>
+
+              <!-- 6. BTK - Veri Okuryazarlığı -->
+              <div class="cert-card" data-cert-img="assets/certificates/btk-veri-okuryazarligi.png" data-cert-title="Veri Okuryazarlığı — BTK Akademi">
+                <div class="cert-preview-wrap">
+                  <img src="assets/certificates/btk-veri-okuryazarligi.png" alt="Veri Okuryazarlığı" loading="lazy">
+                  <span class="cert-zoom-hint">Büyütmek için tıkla</span>
+                </div>
+                <div class="cert-content">
+                  <span class="cert-issuer">BTK AKADEMİ &bull; RESMİ SERTİFİKA</span>
+                  <h4 class="cert-title">Veri Okuryazarlığı</h4>
+                  <p class="cert-desc">Sertifika No: VlzzCga88bv. Veri madenciliği temelleri, analitik düşünme ve veri manipülasyonu.</p>
+                </div>
+              </div>
+
+              <!-- 7. İnovatim -->
+              <div class="cert-card" data-cert-img="assets/certificates/inovatim-sertifika.jpg" data-cert-title="Liselerde Yapay Zeka ve İnovasyon — İnovatim / TİM">
+                <div class="cert-preview-wrap">
+                  <img src="assets/certificates/inovatim-sertifika.jpg" alt="İnovatim Yapay Zeka ve İnovasyon" loading="lazy">
+                  <span class="cert-zoom-hint">Büyütmek için tıkla</span>
+                </div>
+                <div class="cert-content">
+                  <span class="cert-issuer">TÜRKİYE İHRACATÇILAR MECLİSİ (TİM) &bull; İNOVATİM</span>
+                  <h4 class="cert-title">Robotik Kodlama, Yapay Zeka ve İnovasyon</h4>
+                  <p class="cert-desc">Lise 3. sınıfta Arduino, robotik kodlama ve erken dönem teknoloji inovasyonu üzerine aldığım katılım belgesi.</p>
+                </div>
+              </div>
+
+              <!-- 8. Medeniyet BIL101 -->
+              <div class="cert-card" data-cert-img="assets/certificates/medeniyet-bil101.png" data-cert-title="Python 101 Başarı Belgesi — İstanbul Medeniyet Üniversitesi">
+                <div class="cert-preview-wrap">
+                  <img src="assets/certificates/medeniyet-bil101.png" alt="Python 101 Başarı Belgesi" loading="lazy">
+                  <span class="cert-zoom-hint">Büyütmek için tıkla</span>
+                </div>
+                <div class="cert-content">
+                  <span class="cert-issuer">İST. MEDENİYET ÜNİVERSİTESİ &bull; GDSC</span>
+                  <h4 class="cert-title">Python 101 Başarı Belgesi</h4>
+                  <p class="cert-desc">Python Medeniyeti & GDSC bünyesinde algoritma geliştirme ve teknik proje uygulamaları başarı belgesi.</p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+
+    </div>
+  </div>
+
+  <!-- SERTİFİKA BÜYÜTME MODALI (LIGHTBOX) -->
+  <div class="cert-modal-backdrop" id="certModal" style="display: none;">
+    <div class="cert-modal-container">
+      <div class="cert-modal-header">
+        <span class="cert-modal-title" id="certModalTitle">Sertifika Önizleme</span>
+        <button class="cert-modal-close" id="certModalCloseBtn" aria-label="Kapat">&times;</button>
+      </div>
+      <div class="cert-modal-body">
+        <img src="" alt="Sertifika Önizleme" id="certModalImg">
+      </div>
+    </div>
+  </div>
+
+  <!-- BİLDİRİM TOASTI -->
+  <div class="tactile-toast" id="toastBar">
+    <span class="toast-dot"></span>
+    <span id="toastText">İşlem tamamlandı</span>
+  </div>
+
+  <!-- Scriptler -->
+  <script src="js/projects-data.js?v=4.0"></script>
+  <script src="js/api.js?v=4.0"></script>
+  <script src="js/ui.js?v=4.0"></script>
+  <script src="js/app.js?v=4.0"></script>
+</body>
+</html>

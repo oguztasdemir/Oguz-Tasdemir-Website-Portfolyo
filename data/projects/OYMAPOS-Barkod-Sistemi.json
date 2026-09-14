@@ -1,0 +1,28 @@
+{
+  "id": "OYMAPOS-Barkod-Sistemi",
+  "title": "OymaPOS — Perakende Barkodlu Satış & Stok Yönetimi",
+  "category": "fintech",
+  "categoryLabel": "FinTech & POS",
+  "badge": "Saha Kullanımında",
+  "summary": "Kendi işlettiğimiz marketteki hazır POS programlarının sürekli kilitlenmesi ve fiş keserken kasayı dondurması üzerine geliştirdiğim, seri barkod okuyan ve termal yazıcıya anında fiş basan masaüstü satış sistemi.",
+  "highlightMetric": "⚡ 80ms Fiş Basımı & Sıfır Veri Kaybı",
+  "techStack": [
+    "Python",
+    "SQLite WAL",
+    "Pywebview",
+    "Thermal ESC/POS",
+    "Barkod Sürücüleri"
+  ],
+  "caseStudy": {
+    "problem": "Market ve perakende işletmemizde yoğun akşam saatlerinde ve bayram dönemlerinde kullanılan hazır ticari POS yazılımları aşırı hantal kalıyor, bellek sızıntıları nedeniyle kasada kilitleniyor veya veritabanı kilitlenmesi yaşatarak müşteriyi dakikalarca bekletiyordu. Ayrıca piyasadaki yazılımlar gereksiz karmaşık menülerle doluydu ve kasiyerin hızını kesiyordu. Kasanın en yoğun anında bile milisaniyeler içinde barkod okuyan, tek tuşla para üstünü hesaplayan ve elektrik/ağ kesintisinde dahi veri kaybı yaşamayan endüstriyel hızda yerel bir barkodlu satış sistemi inşa ettim.",
+    "architecture": "Yazılım yerel donanım üzerinde sıfır gecikmeyle çalışacak şekilde Python ve SQLite WAL (Write-Ahead Logging) mimarisiyle inşa edildi. Kasiyerin klavyeden elini kaldırmaması için sistem tamamen klavye kısayolları (Numpad) ve USB/HID barkod tarayıcı olayları üzerine odaklandı. Barkod okutulduğu anda barkod verisi taranır, ürün kartı bellekteki önbellekten (in-memory hash map) mikro saniyede çekilip sepete düşürülür. Satış tamamlandığında eşzamanlı olarak ESC/POS protokolüyle termal fiş yazıcıya ham baytlar gönderilir ve kasa çekmecesi tetiklenir.",
+    "keyChallenge": "Elektrik kesintileri veya beklenmedik bilgisayar kapanmalarında kasanın son açık kalan sepetini ve gün sonu Z raporu tutarlılığını korumak için SQLite ACID transaction kuralları ve WAL günlüğü ile sıfır veri kaybı garantisi sağladım.",
+    "features": [
+      "Seri barkod okutma ve milisaniyelik ürün eşleme motoru",
+      "Çoklu sepet ve satışı beklemeye alma (Park sistemi)",
+      "ESC/POS komutlarıyla doğrudan termal bilgi fişi yazdırma",
+      "Gün sonu Z Raporu, kâr/zarar ve kritik stok bildirimleri"
+    ]
+  },
+  "githubUrl": "https://github.com/oguztasdemir/OYMAPOS-Barkod-Sistemi"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "Telegram-Media-Hub",
+  "title": "Telegram Medya & Dosya İndirme Yöneticisi",
+  "category": "desktop",
+  "categoryLabel": "Masaüstü & Sistem",
+  "badge": "Otomasyon Botu",
+  "summary": "Telegram kanallarındaki ve gruplarındaki büyük arşiv ve medya dosyalarını, hız limitlerine takılmadan filtrelere göre bilgisayara otonom indiren arka plan yöneticisi.",
+  "highlightMetric": "📁 Asenkron Dosya & Medya Arşivleme Kuyruğu",
+  "techStack": [
+    "Python",
+    "Telethon / Pyrogram",
+    "Asyncio",
+    "SQLite",
+    "Rate-Limiter"
+  ],
+  "githubUrl": "https://github.com/oguztasdemir/Telegram-Media-Hub",
+  "demoUrl": null,
+  "caseStudy": {
+    "problem": "Telegram üzerindeki büyük akademik arşiv, yazılım ve veri kanallarında yüzlerce gigabayt boyutunda kaynak kitaplar, PDF ders notları, video serileri ve veri setleri paylaşılır. Kullanıcıların bu kanallardaki dosyaları tek tek elle indirmeye çalışması günlerce sürer; ayrıca Telegram masaüstü istemcisi indirilen dosyaları tek bir karmaşık klasöre rastgele fırlatır. Daha da kötüsü Telegram API'sinin katı hız kısıtlamaları (FloodWait Exception) yüzünden indirme işlemleri dakikalarca kilitlenir. Kanallardaki medyaları otonom olarak türüne göre tasnif edip indiren bir medya hub'ı geliştirdim.",
+    "architecture": "Sistem Python Telethon ve Pyrogram asenkron kütüphaneleriyle Telegram MTProto protokolü üzerinden doğrudan haberleşir. Kullanıcı hedef kanal veya sohbeti seçtiğinde bot kanal geçmişini geriye doğru asenkron olarak tarar. Medyalar MIME türüne, dosya boyutuna ve isim desenine göre filtreleme kuyruğuna alınır. İndirme motoru, paralel chunk transferi yaparak Telegram'ın tek bağlantı hız limitini aşar. İndirilen dosyalar 'Belgeler/PDF', 'Videolar/1080p', 'Veri-Setleri/ZIP' gibi mantıksal bir klasör hiyerarşisine otomatik taşınır.",
+    "keyChallenge": "Telegram'ın aşırı dosya indirme durumunda fırlattığı 300-600 saniyelik FloodWait cezalarını engellemek için akıllı kuyruk hız düzenleyici (token-bucket rate limiting) geliştirdim; ceza yemeden maksimum kararlılıkta indirme sağlandı.",
+    "features": [
+      "Uzantı, dosya boyutu ve tarih aralığına göre medya filtreleme",
+      "Arka planda kesintisiz asenkron kuyruk işleme",
+      "Kaldığı mesaj ID'sinden otomatik devam edebilme",
+      "Detaylı yerel indirme günlüğü (loglama)"
+    ]
+  }
+}

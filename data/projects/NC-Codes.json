@@ -1,0 +1,30 @@
+{
+  "id": "NC-Codes",
+  "title": "Transformice Lua Mini Oyun & Script Paketi (2013)",
+  "category": "desktop",
+  "categoryLabel": "Oyun & Algoritmik Scriptler",
+  "badge": "Açık Kaynak Kod",
+  "summary": "2013'ten bu yana Transformice kabile evleri için geliştirilen; mini oyunlar, dinamik takım kadroları, harita kodları ve eğlence mekanikleri içeren açık kaynak Lua script koleksiyonu.",
+  "highlightMetric": "🎮 10+ Bağımsız Lua Oyun & Script Modülü",
+  "techStack": [
+    "Lua",
+    "Transformice API",
+    "Game Logic",
+    "Event-Driven Scripting",
+    "UTF-8 Encoding"
+  ],
+  "githubUrl": "https://github.com/oguztasdemir/NC-Codes",
+  "demoUrl": null,
+  "caseStudy": {
+    "problem": "2013 yılında Transformice oyun topluluğunda kabile evleri ve özel odalar oyuncuların sadece sohbet ettiği durağan alanlardı. Oyuncuların oda içerisinde etkileşime girebileceği, yarışabileceği, mini oyunlar oynayabileceği veya otomatik skor tablosu tutabilecekleri esnek ve hatasız script mekanizmaları bulunmuyordu. Oyuncuları saatlerce odada tutacak, gerçek zamanlı fizik motoruyla entegre çalışan ve sunucu tarafında çökmeyen eğlenceli mini oyun sistemlerine ihtiyaç vardı. İlk programlama temellerimi attığım bu projede zengin bir script kütüphanesi inşa ettim.",
+    "architecture": "Sistem Transformice Lua API motoru üzerinde olay güdümlü (event-driven) bir mimariyle kodlandı. Oyun içerisindeki oyuncu hareketleri, klavye tuş basımları (eventKeyboard), koordinat çarpışmaları ve sohbet komutları dinlenerek durum makineleri (state machines) üzerinden yönetildi. Mini oyun paketleri (Bootcamp parkurları, kabile yarışları, bomba imha, otomatik puan ve unvan dağıtıcı) birbirinden bağımsız modüller halinde yapılandırıldı. Kodlar hem Windows hem macOS işletim sistemlerinde sorunsuz çalışması için UTF-8 formatında standardize edildi.",
+    "keyChallenge": "Oyun sunucusunun Lua motoruna koyduğu katı CPU döngü limiti (Lua script execution timeout) nedeniyle kalabalık odalarda (50+ oyuncu) scriptin çökmesini engellemek için tüm döngüleri ve çarpışma kontrollerini milisaniyelik zamanlayıcılarla hafifleterek optimize ettim.",
+    "features": [
+      "Minigames: Kabile evi içi rekabetçi mini oyun mekanikleri",
+      "NC - Teams & Kadro: Otomatik oyuncu listeleme ve kabile içi rol yönetimi",
+      "Night Ball & Spor: Oyun içi fizik ve top kurallı spor simülasyonları",
+      "Map Codes & Fun Scripts: Özel harita tetikleyicileri ve interaktif komutlar"
+    ],
+    "readme": "### NC-Codes (Transformice Lua Scripts)\n\nBu depo, Oğuz Taşdemir (**Devilstrk**) tarafından 2013 yılından bu yana geliştirilen, **Transformice** oyun içi kabile evlerinde çalıştırılabilen eğlence scriptleri, mini oyunlar ve takım kadroları gibi çeşitli Lua kodlarını içerir.\n\n### 🚀 Modüller & İçerik\n- **Basit Kodlar.lua:** Kabile içi temel yönetim ve bildirim komutları.\n- **Minigames:** Özel kabile evi mini oyun senaryoları.\n- **Night Ball:** Fizik ve top tabanlı takım oyunu motoru.\n- **NC - Teams:** Dinamik takım oluşturma ve oyuncu eşleme.\n- **Map Codes & Fun Scripts:** Harita tetikleyicileri ve animasyonlu scriptler.\n\n### 🛠️ Nasıl Kullanılır?\n1. Kabile evine giderek sohbet satırına `/lua` yazın.\n2. Depodaki ilgili `.lua` dosyasının içeriğini kopyalayıp açılan kod alanına yapıştırın ve çalıştırın.\n\n*Not: Tüm scriptler UTF-8 karakter kodlamasıyla hazırlanmıştır.*"
+  }
+}

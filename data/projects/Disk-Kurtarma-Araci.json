@@ -1,0 +1,28 @@
+{
+  "id": "Disk-Kurtarma-Araci",
+  "title": "Harddisk & USB Veri Kurtarma Aracı",
+  "category": "desktop",
+  "categoryLabel": "Masaüstü & Sistem",
+  "badge": "Düşük Seviye Sistem",
+  "summary": "Bozuk veya yanlışlıkla biçimlendirilmiş harici disk ve flaş belleklerden, doğrudan ham sektör taraması yaparak görsel ve belgeleri kurtaran adli bilişim aracı.",
+  "highlightMetric": "🔍 Ham Sektör (Raw Block) İmza Taraması",
+  "techStack": [
+    "Python",
+    "Win32 Raw Disk API",
+    "File Carving Signatures",
+    "PySide",
+    "Thread Pool"
+  ],
+  "caseStudy": {
+    "problem": "Yanlışlıkla biçimlendirilen (quick format), dosya sistemi tablosu (FAT32/NTFS MFT) çöken veya elektrik kesintisi yüzünden RAW formata dönüşüp Windows Explorer tarafından 'Diski biçimlendirmeniz gerekiyor' uyarısı veren depolama aygıtlarındaki kritik verilere standart yöntemlerle ulaşılamaz. Piyasada satılan ticari adli bilişim yazılımları ise binlerce dolarlık lisanslar talep eder veya demo sürümlerinde dosyaları kurtarmayı kısıtlar. Dosya sistemi hiyerarşisi tamamen silinmiş olsa dahi doğrudan manyetik/flaş sektörleri bayt bayt tarayarak dosyaları yeniden inşa eden yerel bir kurtarma yazılımı geliştirdim.",
+    "architecture": "Yazılım, düşük seviyeli Windows API çağrıları (CreateFileW ile PhysicalDrive erişimi) üzerinden doğrudan ham disk sektörlerine salt-okunur (read-only) güvenlik modunda bağlanır. Dosya sistemi çökmüş olduğu için File Carving (dosya oyma) tekniğini kullanır: Sektörler blok blok okunurken JPEG, PNG, PDF, ZIP, MP4 gibi dosya türlerinin sihirli baytları (Magic Bytes / File Signatures - örn. JPEG için 0xFFD8FFE0) aranır. Başlangıç imzası yakalandığında dosya yapısı ayrıştırılır, bitiş baytına (EOF) kadar olan sektörler hafızada birleştirilir ve veri bozulmadan yeni bir diske yazılır.",
+    "keyChallenge": "Parçalanmış (fragmented) sektörlerde dosyaların sıralı dizilmemesi kurtarılan resim veya belgelerin yarım çıkmasına neden olabiliyordu. Dosya iç başlıklarındaki boyut meta-verilerini (Exif, PDF xref tablosu) dinamik okuyan doğrulama algoritmaları entegre ederek bozuk dosya oranını %85 azalttım.",
+    "features": [
+      "Doğrudan ham sektör seviyesinde derinlemesine tarama",
+      "İmza tabanlı dosya kurtarma (Görsel, Belge, Video ve Arşivler)",
+      "Diski 100 bloğa bölerek seçmeli sektör taraması",
+      "Kurtarılan dosyaların bütünlük testi"
+    ]
+  },
+  "githubUrl": "https://github.com/oguztasdemir/Disk-Kurtarma-Araci"
+}

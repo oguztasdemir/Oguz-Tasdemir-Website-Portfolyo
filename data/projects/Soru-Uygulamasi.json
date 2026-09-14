@@ -1,0 +1,29 @@
+{
+  "id": "Soru-Uygulamasi",
+  "title": "KPSS Soru Bankası & Performans Analiz Platformu",
+  "category": "web",
+  "categoryLabel": "Web & Platform",
+  "badge": "Eğitim Motoru",
+  "summary": "KPSS sınavına hazırlananlar için yanlış yapılan soruları yapay öğrenmeyle tespit edip adayın zayıf olduğu konulara odaklanan soru bankası platformu.",
+  "highlightMetric": "📊 Zayıf Konu Tespiti & Akıllı Soru Tekrarı",
+  "techStack": [
+    "Python",
+    "FastAPI",
+    "Vanilla JS",
+    "SQLite WAL",
+    "İstatistik Motoru"
+  ],
+  "githubUrl": "https://github.com/oguztasdemir/Soru-Uygulamasi",
+  "demoUrl": null,
+  "caseStudy": {
+    "problem": "KPSS, ALES ve YKS gibi geniş müfredatlı sınavlara hazırlanan adaylar günde yüzlerce soru çözer; ancak soru bankalarında en büyük hata adayın zaten bildiği soruları tekrar tekrar çözerek vakit kaybetmesi ve yanlış yaptığı soruların analizini yapamamasıdır. Yanlış yapılan sorular kağıt üzerinde unutulur ve sınavda aynı konudan soru geldiğinde yine yanlış yapılır. Adayın yalnızca eksik olduğu ders ve konulara odaklanmasını sağlayan, yanlış havuzunu akıllıca yöneten ve zaman yönetimini ölçen analitik bir soru platformu geliştirdim.",
+    "architecture": "Mimari, soruların ders, ünite, konu, zorluk derecesi ve geçmiş çözülme istatistikleriyle ilişkisel veritabanında modellendiği bir sistemdir. Kullanıcı soru çözerken soru başına geçen süre milisaniye hassasiyetinde kaydedilir. Test bittiğinde sistem adaya yalnızca net sayısını değil; 'En çok vakit kaybettiğin ünite: Fonksiyonlar', 'Hata oranı en yüksek konu: Permütasyon' gibi tanılayıcı geri bildirimler sunar. Yanlış yapılan tüm sorular otomatik olarak 'Hata Havuzu'na aktarılır ve aday belirli aralıklarla bu sorularla yeniden yüzleştirilir.",
+    "keyChallenge": "Kullanıcının soru başına harcadığı süre ve doğru/yanlış korelasyonunu hesaplayarak adayın hangi sorularda 'bilgi eksikliği', hangi sorularda ise 'zaman yetersizliği' yaşadığını ayırt eden bir performans analitiği formülü kurguladım.",
+    "features": [
+      "Genişletilebilir soru ve kategori yönetim arayüzü",
+      "Yanlış yapılan sorulara odaklı akıllı tekrar modu",
+      "Konu bazlı başarı oranı ve süre analizi",
+      "Offline (çevrimdışı) çalışabilen veri mimarisi"
+    ]
+  }
+}

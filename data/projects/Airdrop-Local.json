@@ -1,0 +1,28 @@
+{
+  "id": "Airdrop-Local",
+  "title": "Yerel Ağ Hızlı Dosya Transferi (Local Drop)",
+  "category": "desktop",
+  "categoryLabel": "Masaüstü & Sistem",
+  "badge": "Yüksek Hız",
+  "summary": "Aynı Wi-Fi ağındaki bilgisayar ve telefonlar arasında internet kotası tüketmeden, kablo aramadan tarayıcı üzerinden dosya transferi sağlayan yerel ağ paylaşım aracı.",
+  "highlightMetric": "🚀 100+ MB/s Yerel Ağ Gigabit Hızı",
+  "techStack": [
+    "Python",
+    "WebSockets",
+    "mDNS / UDP Discovery",
+    "Zero-Config",
+    "Vanilla JS"
+  ],
+  "caseStudy": {
+    "problem": "Farklı işletim sistemlerine sahip cihazlar (Android telefon, Windows masaüstü, macOS laptop) arasında gigabaytlarca boyuttaki 4K videoları, veri setlerini veya proje arşivlerini aktarmak büyük bir çiledir. Bluetooth transferi saniyede 1-2 MB ile aşırı yavaş kalırken; Google Drive, WeTransfer veya Telegram gibi bulut çözümleri internet kotasını tüketir, yerel ağda yan yana duran iki cihaz arasındaki veri için dakikalarca buluta yükleme ve buluttan indirme süresi bekletir. Bu sorunu kökten çözmek için, internet bağlantısına hiç ihtiyaç duymadan, yalnızca aynı yerel Wi-Fi/Ethernet ağı üzerinden cihazların birbirini anında bulduğu ve LAN bant genişliğinin son sınırına kadar (100-300 Mbps) P2P dosya akıttığı bu aracı geliştirdim.",
+    "architecture": "Uygulama Python asyncio ve Zero-Configuration Networking (mDNS / Zeroconf) protokolleri üzerine kurulmuştur. Ağdaki cihazlar açıldığı anda UDP çok noktaya yayın (multicast) sinyali göndererek birbirlerinin IP adreslerini ve portlarını el sıkışarak doğrular. Dosya transferi başlatıldığında, RAM bellek şişmesini engellemek için dosyalar 4 MB boyutunda ikili parçalara (binary chunk stream) bölünür ve asenkron TCP soketi üzerinden hedefe pompalanır. Alıcı tarafta SHA-256 hash doğrulaması yapılarak dosyanın eksiksiz ve bozulmadan indiği matematiksel olarak teyit edilir.",
+    "keyChallenge": "Büyük 20 GB+ dosyalar aktarılırken Wi-Fi sinyalindeki anlık dalgalanmalarda bağlantının kopması tüm aktarımın boşa gitmesine sebep oluyordu. Bu sorunu aşmak için soket seviyesinde parça onaylı (chunk ACK) ve otomatik yeniden bağlanabilir (resumable stream) bir ara katman protokolü geliştirdim.",
+    "features": [
+      "Ağdaki cihazları otomatik keşfetme (Sıfır IP yapılandırması)",
+      "Tarayıcıdan sürükle-bırak dosya paylaşımı",
+      "Donanım hızlandırmalı yerel aktarım",
+      "Hiçbir verinin internete çıkmadığı %100 yerel güvenlik"
+    ]
+  },
+  "githubUrl": "https://github.com/oguztasdemir/Airdrop-Local"
+}

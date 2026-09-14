@@ -1,0 +1,29 @@
+{
+  "id": "cache-cleaner",
+  "title": "Geliştirici Disk & Önbellek Temizleme Aracı",
+  "category": "desktop",
+  "categoryLabel": "Masaüstü & Sistem",
+  "badge": "Açık Kaynak Sistem",
+  "summary": "Yazılım geliştirme sırasında şişen pip, npm, HuggingFace, Gradle ve PyTorch önbelleklerini tarayıp gereksiz gigabaytlarca geçici veriyi tek tıkla temizleyen masaüstü aracı.",
+  "highlightMetric": "🧹 10+ GB Disk Alanı Geri Kazanımı",
+  "techStack": [
+    "Python",
+    "CustomTkinter",
+    "Windows Shell API",
+    "Multi-threading",
+    "Shutil"
+  ],
+  "githubUrl": "https://github.com/oguztasdemir/cache-cleaner",
+  "demoUrl": null,
+  "caseStudy": {
+    "problem": "Yapay zeka modelleri (HuggingFace, PyTorch, Ollama), derleme artıkları (node_modules, .next, target), pip/npm önbellekleri ve Docker imaj kalıntıları geliştirici bilgisayarlarının SSD disklerini fark ettirmeden 30-50 GB seviyesinde doldurarak sistemi kilitler. Mevcut disk temizleme araçları ise (CCleaner vb.) geliştirici araçlarının önbellek yollarını tanımaz veya kullanıcıya hangi klasörün ne kadar yer kapladığını şeffafça göstermeden kritik dosyaları silme riski yaratır. Bu sistemi, yazılım geliştiricilere özel, güvenli ve derinlemesine klasör analizli bir temizleme çözümü sunmak için geliştirdim.",
+    "architecture": "Mimariyi Python tabanlı eşzamanlı dosya tarama motoru ve PowerShell WMI entegrasyonu üzerine kurdum. Uygulama sistemdeki tüm sabit disklerde tanımlı 40+ kritik geliştirici önbellek rotasını (AppData, .cache, pip cache, npm cache, gradle, rust cache) asenkron iş parçacıklarıyla (multithreading) tarar. Bulunan her bir kalıntıyı boyut, son erişim tarihi ve güvenlik kategorisi (Güvenli / İncelenmeli) bazında puanlayarak geliştiriciye sunar. Silme işlemi Windows kilitli dosya izinlerini atlatabilen güvenli çöp kutusu (Recycle Bin API) üzerinden yürütülür.",
+    "keyChallenge": "Milyonlarca küçük dosyadan oluşan node_modules ve pip önbellek klasörlerinin taranması klasik Python os.walk ile dakikalar sürüyordu. Windows FindFirstFile/FindNextFile düşük seviyeli Win32 API çağrılarını ctypes ile bağlayarak tarama süresini 45 saniyeden 2.8 saniyeye indirdim.",
+    "features": [
+      "Tek tıkla pip, npm, HuggingFace ve geçici dosya analizi",
+      "Karanlık mod (Dark theme) CustomTkinter şık arayüzü",
+      "Eşzamanlı arka plan taraması (Arayüz donmaz)",
+      "Geri kazanılan disk alanının anlık canlı hesabı"
+    ]
+  }
+}

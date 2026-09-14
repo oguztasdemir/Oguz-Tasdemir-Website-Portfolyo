@@ -1,0 +1,44 @@
+# Gizli Bilgiler & Çevre Değişkenleri
+.env
+.env.*
+api_keys.json
+credentials.json
+*.pem
+*.key
+
+# Python Kalıntıları & Önbellek
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Sanal Ortamlar (Virtual Environments)
+.venv/
+venv/
+env/
+ENV/
+
+# Editör & IDE Kalıntıları
+.cursor/
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Veritabanı & Ağır Veri Kalıntıları
+*.db-journal
+*.sqlite-wal
+*.sqlite-shm
+*.log
+
+# Dağıtım & Derleme Çıktıları
+dist/
+build/
+*.egg-info/
+*.spec

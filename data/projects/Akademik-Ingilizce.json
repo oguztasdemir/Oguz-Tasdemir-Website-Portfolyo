@@ -1,0 +1,28 @@
+{
+  "id": "Akademik-Ingilizce",
+  "title": "Akademik İngilizce & Sınav Kelime Kampı",
+  "category": "ai",
+  "categoryLabel": "Doğal Dil İşleme & İndeksleme",
+  "badge": "Eğitim Teknolojisi",
+  "summary": "YÖKDİL ve YDS sınavlarındaki geçmiş soruları analiz ederek en kritik kelimeleri bağlamıyla öğreten ve eksikleri tespit eden interaktif sınav hazırlık platformu.",
+  "highlightMetric": "📚 10.000+ Soru & Kelime Frekans Analitiği",
+  "techStack": [
+    "Python",
+    "FastAPI",
+    "PDFPlumber OCR",
+    "NLP Tokenizer",
+    "Vanilla JS"
+  ],
+  "caseStudy": {
+    "problem": "YÖKDİL, YDS ve TOEFL gibi ileri düzey akademik yabancı dil sınavlarına hazırlanan adaylar, binlerce kelime içeren standart sözlükleri alfabetik sırayla ezberlemeye çalışarak aylarını heba ederler. Oysa akademik sınavlarda kelimeler izole halde değil, bağlam içinde, akademik edat öbekleriyle (collocations) ve belirli soru şablonları içinde sorulur. Klasik flashcard uygulamaları ise sınavın gerçek soru metinlerinden beslenmez ve adayın zayıf olduğu kök kelimeleri tespit edemez. Bu ihtiyaca binaen, gerçek sınav corpus verisini analiz eden ve kişiye özel adaptif kelime çalışma programı çıkaran bu platformu geliştirdim.",
+    "architecture": "Sistemin çekirdeğinde Python ve NLTK/spaCy tabanlı bir NLP metin madenciliği motoru yer alır. Geçmiş akademik sınav metinleri ve bilimsel makaleler taranarak morfolojik kök ayrıştırma (lemmatization) ve TF-IDF (Terim Frekansı - Ters Belge Frekansı) analizi yapılır; böylece sınavlarda en yüksek ayırt ediciliğe sahip kelimeler puanlanır. Kullanıcı arayüzünde ise Leitner 5 kutulu aralıklı tekrar algoritması (Spaced Repetition System - SRS) çalışır. Sistem adayın yanlış yaptığı kelimeleri daha sık periyotlarla önüne getirirken, kalıcı hafızaya aktarılanları daha uzun aralıklarla test eder.",
+    "keyChallenge": "İngilizce düzensiz fiillerin ve türemiş köklerin öğrenciye parçalanmadan bir bütün kelime ailesi olarak sunulması gerekiyordu. WordNet ontolojisini bağlayarak ilişkili kelime ağaçlarını otomatik türeten bir semantik haritalama algoritması kurguladım.",
+    "features": [
+      "Fen, Sağlık ve Sosyal alanlarına özel kelime kampları",
+      "PDF sınavlarından otonom soru ve cevap anahtarı ayrıştırma",
+      "Kişiselleştirilmiş eksik analizi raporu",
+      "PDF karne çıktısı ve zamana karşı sınav simülasyonu"
+    ]
+  },
+  "githubUrl": "https://github.com/oguztasdemir/Akademik-Ingilizce"
+}
