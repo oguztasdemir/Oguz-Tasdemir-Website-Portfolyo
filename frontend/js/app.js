@@ -97,7 +97,19 @@ document.addEventListener('DOMContentLoaded', () => {
       featuredSliderCountText.textContent = `${totalCount} özgün projeden`;
     }
 
-    // 7. Kategori Filtre Çiplerindeki Sayıları Otomatik Hesapla (Çoklu Kategori Destekli)
+  // Kategori Filtre Çiplerindeki Sayıları Aktif Kademe (Tümü / Public / Private) Seçimine Göre Dinamik Hesapla
+  function updateCategoryChipCounts(allProjects) {
+    if (!allProjects || !Array.isArray(allProjects)) return;
+
+    // Aktif kademeye (currentTier) göre filtrelenmiş temel havuz
+    let scopedProjects = allProjects;
+    if (currentTier && currentTier !== 'all') {
+      scopedProjects = allProjects.filter(p => {
+        const pVis = p.visibility || (p.githubUrl ? 'public' : 'private');
+        return pVis === currentTier;
+      });
+    }
+
     const hasCat = (p, cat) => {
       const cats = Array.isArray(p.categories) ? p.categories : [p.category];
       if (cat === 'ai' || cat === 'nlp_data') {
@@ -107,13 +119,13 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const countMap = {
-      all: totalCount,
-      academic: allProjects.filter(p => hasCat(p, 'academic')).length,
-      ai: allProjects.filter(p => hasCat(p, 'ai')).length,
-      nlp_data: allProjects.filter(p => hasCat(p, 'ai')).length,
-      fintech: allProjects.filter(p => hasCat(p, 'fintech')).length,
-      desktop: allProjects.filter(p => hasCat(p, 'desktop')).length,
-      web: allProjects.filter(p => hasCat(p, 'web')).length
+      all: scopedProjects.length,
+      academic: scopedProjects.filter(p => hasCat(p, 'academic')).length,
+      ai: scopedProjects.filter(p => hasCat(p, 'ai')).length,
+      nlp_data: scopedProjects.filter(p => hasCat(p, 'ai')).length,
+      fintech: scopedProjects.filter(p => hasCat(p, 'fintech')).length,
+      desktop: scopedProjects.filter(p => hasCat(p, 'desktop')).length,
+      web: scopedProjects.filter(p => hasCat(p, 'web')).length
     };
 
     document.querySelectorAll('.chip-count').forEach(span => {
@@ -126,13 +138,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 3. Projeleri Yükleme ve Split-View Render Etme
   async function loadAndRenderSplitView() {
-    // Tüm projelerin ham listesini alıp sayaçları güncellemek için category='all' araması yap
-    if (!window._globalProjectsLoadedOnce) {
-      const fullList = await ApiService.fetchProjects('all', '', 'all');
-      updateGlobalProjectCounters(fullList);
-      window._globalProjectsLoadedOnce = true;
+    // 1. Tüm projelerin tam ham listesini her zaman al (Tier sayaçları ve global sayaçlar için)
+    if (!window._cachedFullProjectsList) {
+      window._cachedFullProjectsList = await ApiService.fetchProjects('all', '', 'all');
+      updateGlobalProjectCounters(window._cachedFullProjectsList);
     }
 
+    // 2. Kategori sayaçlarını aktif tier'a göre dinamik güncelle
+    updateCategoryChipCounts(window._cachedFullProjectsList);
+
+    // 3. Aktif filtrelere göre listelenecek projeleri al
     allLoadedProjects = await ApiService.fetchProjects(currentCategory, searchQuery, currentTier);
 
     // Lisans tezini her zaman en başta göster
