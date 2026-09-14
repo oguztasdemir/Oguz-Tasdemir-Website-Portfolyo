@@ -11,9 +11,9 @@ Bu rapor, tüm aktif yazılım projelerinizi **Açık Kaynak (Public)** ve **Öz
 
 | Kategori | Proje Sayısı | Durum |
 | :--- | :---: | :--- |
-| 🌐 **Açık Kaynak (Public) Depolar** | **17** | GitHub üzerinde herkese açık, incelenebilir ve %100 güncel. |
+| 🌐 **Açık Kaynak (Public) Depolar** | **21** | GitHub üzerinde herkese açık, incelenebilir ve %100 güncel. |
 | 🔒 **Özel Ar-Ge (Private) Depolar** | **6** | Gizli depolarda korunan, tam senkronize ve yedekli. |
-| **Toplam Aktif Yazılım Projesi** | **23** | **Tümü GitHub'da yayında ve eksiksiz.** |
+| **Toplam Aktif Yazılım Projesi** | **27** | **Tümü GitHub'da yayında ve eksiksiz.** |
 
 ---
 
@@ -42,10 +42,9 @@ Bu projeler GitHub profilinizde ve portfolyonuzda ziyaretçiler/işverenler tara
 | **17** | **Telegram Media Hub** | Telegram Botu & Asenkron Medya Arşivleyici | ✅ Evet | [oguztasdemir/Telegram-Media-Hub](https://github.com/oguztasdemir/Telegram-Media-Hub) | 🟢 **Güncel** |
 | **18** | **YouTube AI Assistant** | Video Transkript Madenciliği & Anlamsal Arama Motoru | ✅ Evet | [oguztasdemir/youtube-ai-assistant](https://github.com/oguztasdemir/youtube-ai-assistant) | 🟢 **Güncel** |
 | **19** | **Arayüz Test Otomasyonu** | UI / E2E Otomatik Test Paketi | ❌ Hayır | [oguztasdemir/ui-test-automation](https://github.com/oguztasdemir/ui-test-automation) | 🟢 **Güncel** |
-| **20** | **Fare Oyunu** | Python / Pygame Etkileşimli Oyun | ❌ Hayır | [oguztasdemir/Fare-Oyunu](https://github.com/oguztasdemir/Fare-Oyunu) | 🟢 **Güncel** |
-| **21** | **Kaçak Dizi (media-stream-agent)** | Akıllı Medya Akış & İndirme Ajanı | ❌ Hayır | [oguztasdemir/media-stream-agent](https://github.com/oguztasdemir/media-stream-agent) | 🟢 **Güncel** |
-| **22** | **Kripto Projesi (crypto-analytics)** | Çok Modlu Kripto Analiz & AI Persona Motoru | ❌ Hayır | [oguztasdemir/crypto-analytics-engine](https://github.com/oguztasdemir/crypto-analytics-engine) | 🟢 **Güncel** |
-| **23** | **GitHub Profil Vitrini** | Özel Profil README & Biyografi Deposu | 👤 Profil | [oguztasdemir/oguztasdemir](https://github.com/oguztasdemir/oguztasdemir) | 🟢 **Güncel** |
+| **20** | **Kaçak Dizi (media-stream-agent)** | Akıllı Medya Akış & İndirme Ajanı | ❌ Hayır | [oguztasdemir/media-stream-agent](https://github.com/oguztasdemir/media-stream-agent) | 🟢 **Güncel** |
+| **21** | **Kripto Projesi (crypto-analytics)** | Çok Modlu Kripto Analiz & AI Persona Motoru | ❌ Hayır | [oguztasdemir/crypto-analytics-engine](https://github.com/oguztasdemir/crypto-analytics-engine) | 🟢 **Güncel** |
+| **22** | **GitHub Profil Vitrini** | Özel Profil README & Biyografi Deposu | 👤 Profil | [oguztasdemir/oguztasdemir](https://github.com/oguztasdemir/oguztasdemir) | 🟢 **Güncel** |
 
 ---
 
