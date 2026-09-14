@@ -28,7 +28,7 @@ Bu projeler GitHub profilinizde ve portfolyonuzda ziyaretçiler/işverenler tara
 | **3** | **Airdrop-Local** | Yerel Ağda UDP Broadcast & WebSocket/TCP ile P2P Dosya Transferi | ✅ Evet | [oguztasdemir/Airdrop-Local](https://github.com/oguztasdemir/Airdrop-Local) | 🟢 **Güncel** |
 | **4** | **NC-Codes** | CNC Talaşlı İmalat Zekası, G-Code Ayrıştırıcı & Takım Yolu Motoru | ✅ Evet | [oguztasdemir/NC-Codes](https://github.com/oguztasdemir/NC-Codes) | 🟢 **Güncel** |
 | **5** | **Fatura Kesme Ödeal** | Selenium / Playwright Tabanlı Fatura Kesme Otomasyon Botu | ✅ Evet | [oguztasdemir/-deal-Fatura-Kesme-...](https://github.com/oguztasdemir/-deal-Fatura-Kesme-Otomasyonu) | 🟢 **Güncel** |
-| **6** | **Altyapı Manager** | Python Altyapı & Sistem Yönetim Paneli | ✅ Evet | [oguztasdemir/Altyap--Manager](https://github.com/oguztasdemir/Altyap--Manager) | 🟢 **Güncel** |
+| **6** | **Altyapı Manager** | Python Altyapı & Sistem Yönetim Paneli | ✅ Evet | [oguztasdemir/Altyapi-Manager](https://github.com/oguztasdemir/Altyapi-Manager) | 🟢 **Güncel** |
 | **7** | **Akademik İngilizce** | YDS / Akademik Dil ve Sınav Pratik Uygulaması | ✅ Evet | [oguztasdemir/Akademik--ngilizce](https://github.com/oguztasdemir/Akademik--ngilizce) | 🟢 **Güncel** |
 | **8** | **Önbellek Temizleyici** | Windows Düşük Seviye Disk I/O & Sistem Hızlandırıcı (Cache Cleaner) | ✅ Evet | [oguztasdemir/cache-cleaner](https://github.com/oguztasdemir/cache-cleaner) | 🟢 **Güncel** |
 | **9** | **Disk Kurtarma Aracı** | Raw Recovery & Düşük Seviye Binary Dosya Kurtarıcı | ✅ Evet | [oguztasdemir/disk-drill-raw-recovery](https://github.com/oguztasdemir/disk-drill-raw-recovery) | 🟢 **Güncel** |
