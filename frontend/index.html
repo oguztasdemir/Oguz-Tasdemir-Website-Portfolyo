@@ -244,35 +244,35 @@
 
             </div>
 
-            <!-- 4. Öne Çıkan Projeler (Kaydırmalı Vitrin) -->
-            <div class="home-slider-section" id="homeFeaturedProjectsSection">
+            <!-- 4.1 Öne Çıkan Açık Kaynak Projeler (Public Vitrini) -->
+            <div class="home-slider-section" id="homePublicProjectsSection">
               <div class="home-slider-header-row">
                 <div>
-                  <div class="home-section-tag">Öne Çıkan Çalışmalar</div>
-                  <h2 class="home-certs-title">Projelerim & Mühendislik Sistemleri</h2>
-                  <p class="home-certs-subtitle">Saha tecrübesi, otonom yapay zeka ve sistem mimarisi alanlarında geliştirdiğim <span id="featuredSliderCountText">özgün projelerden</span> öne çıkanlar.</p>
+                  <div class="home-section-tag">🌐 Açık Kaynak & Saha Çalışmaları</div>
+                  <h2 class="home-certs-title">Açık Kaynak Projelerim (Public)</h2>
+                  <p class="home-certs-subtitle">GitHub üzerinde kodları ve mimarisi incelenebilir, sahada aktif kullanılan veya akademik olarak test edilmiş açık kaynak çözümler.</p>
                 </div>
                 <div class="home-slider-actions-group">
                   <div class="home-slider-nav-arrows">
-                    <button class="slider-nav-btn" id="homeProjPrevBtn" aria-label="Önceki Proje" title="Önceki Projeler">
+                    <button class="slider-nav-btn" id="homePublicProjPrevBtn" aria-label="Önceki Açık Kaynak Proje" title="Önceki Projeler">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
                     </button>
-                    <button class="slider-nav-btn" id="homeProjNextBtn" aria-label="Sonraki Proje" title="Sonraki Projeler">
+                    <button class="slider-nav-btn" id="homePublicProjNextBtn" aria-label="Sonraki Açık Kaynak Proje" title="Sonraki Projeler">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </button>
                   </div>
-                  <button class="home-primary-action-btn" id="homeFeaturedGoProjectsBtn">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-                    <span id="featuredGoProjectsBtnText">Projelerime Git</span>
+                  <button class="home-primary-action-btn" id="homePublicGoProjectsBtn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    <span>Açık Kaynak Projelere Git</span>
                     <svg class="btn-arrow-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                   </button>
                 </div>
               </div>
 
-              <!-- Projeler Sağa-Sola Kaydırma Bandı (Track) -->
-              <div class="home-horizontal-scroll-track" id="homeProjectsTrack">
+              <!-- Açık Kaynak Projeler Sağa-Sola Kaydırma Bandı (Track) -->
+              <div class="home-horizontal-scroll-track" id="homePublicProjectsTrack">
                 
-                <!-- Proje 1 (En Başta): Lisans Tezi - Borsa İstanbul -->
+                <!-- Public 1: Lisans Tezi - Borsa İstanbul -->
                 <div class="home-project-slider-card" data-project-id="bist-bilanco-karlilik-tahmini">
                   <div class="slider-card-top">
                     <span class="slider-card-badge badge-math">Lisans Bitirme Tezi</span>
@@ -294,29 +294,7 @@
                   </div>
                 </div>
 
-                <!-- Proje 2: Cortex -->
-                <div class="home-project-slider-card" data-project-id="cortex">
-                  <div class="slider-card-top">
-                    <span class="slider-card-badge badge-ai">Özel Sistem / Ar-Ge</span>
-                    <span class="slider-card-cat">Yapay Zeka & RAG</span>
-                  </div>
-                  <h4 class="slider-card-title">Cortex — Yerel Zeka, RAG & Otonom Geliştirici Asistanı</h4>
-                  <p class="slider-card-desc">İnternet bağlantısına ihtiyaç duymadan çalışan; kaynak kodları, teknik PDF belgeleri indeksleyen, YouTube video araması ve web navigasyonu yapan otonom asistan.</p>
-                  <div class="slider-card-metric">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
-                    <span>Çok Modlu RAG & Otonom Ajan</span>
-                  </div>
-                  <div class="slider-card-footer">
-                    <div class="slider-card-tags">
-                      <span>Ollama</span>
-                      <span>ChromaDB</span>
-                      <span>FastAPI SSE</span>
-                    </div>
-                    <span class="slider-card-action">Detay İncele &rarr;</span>
-                  </div>
-                </div>
-
-                <!-- Proje 2: OymaPOS -->
+                <!-- Public 2: OymaPOS -->
                 <div class="home-project-slider-card" data-project-id="OYMAPOS-Barkod-Sistemi">
                   <div class="slider-card-top">
                     <span class="slider-card-badge badge-pos">Saha Kullanımında</span>
@@ -338,29 +316,7 @@
                   </div>
                 </div>
 
-                <!-- Proje 3: Webtoon LoRA Suite -->
-                <div class="home-project-slider-card" data-project-id="webtoon-lora-suite">
-                  <div class="slider-card-top">
-                    <span class="slider-card-badge badge-ai">Açık Kaynak Sistem</span>
-                    <span class="slider-card-cat">Görsel Analitik & ML</span>
-                  </div>
-                  <h4 class="slider-card-title">Webtoon Hikaye Analizi & Üretken Görsel/Panel Hattı</h4>
-                  <p class="slider-card-desc">Çizgi hikayelerin panel akışlarını ve anlatı yapısını analiz eden; konuşma balonlarını arındırıp LoRA ve üretken yapay zeka ile görsel sahneler türeten analitik hat.</p>
-                  <div class="slider-card-metric">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
-                    <span>🎨 Anlatı & Panel Analitiği, LoRA</span>
-                  </div>
-                  <div class="slider-card-footer">
-                    <div class="slider-card-tags">
-                      <span>PyTorch</span>
-                      <span>OpenCV</span>
-                      <span>LaMa Inpainting</span>
-                    </div>
-                    <span class="slider-card-action">Detay İncele &rarr;</span>
-                  </div>
-                </div>
-
-                <!-- Proje 4: Local Drop -->
+                <!-- Public 3: Local Drop -->
                 <div class="home-project-slider-card" data-project-id="Airdrop-Local">
                   <div class="slider-card-top">
                     <span class="slider-card-badge badge-sys">Yüksek Hız</span>
@@ -382,7 +338,29 @@
                   </div>
                 </div>
 
-                <!-- Proje 5: Disk Kurtarma Aracı -->
+                <!-- Public 4: Kredi Notu Sınıflandırma -->
+                <div class="home-project-slider-card" data-project-id="Kredi-Notu-Siniflandirmasi-Tahmin-Modeli">
+                  <div class="slider-card-top">
+                    <span class="slider-card-badge badge-math">Makine Öğrenmesi</span>
+                    <span class="slider-card-cat">FinTech & Veri</span>
+                  </div>
+                  <h4 class="slider-card-title">Kredi Notu Sınıflandırma & Risk Tahmin Modeli</h4>
+                  <p class="slider-card-desc">Müşterilerin finansal alışkanlıklarını, borç oranlarını ve hesap hareketlerini inceleyerek kredi risk düzeyini yüksek doğrulukla tahmin eden makine öğrenmesi modeli.</p>
+                  <div class="slider-card-metric">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    <span>🎯 %88+ F1-Skoru & Dengeli Risk Tahmini</span>
+                  </div>
+                  <div class="slider-card-footer">
+                    <div class="slider-card-tags">
+                      <span>Scikit-Learn</span>
+                      <span>XGBoost</span>
+                      <span>Pandas</span>
+                    </div>
+                    <span class="slider-card-action">Detay İncele &rarr;</span>
+                  </div>
+                </div>
+
+                <!-- Public 5: Disk Kurtarma Aracı -->
                 <div class="home-project-slider-card" data-project-id="Disk-Kurtarma-Araci">
                   <div class="slider-card-top">
                     <span class="slider-card-badge badge-sys">Düşük Seviye Sistem</span>
@@ -404,23 +382,186 @@
                   </div>
                 </div>
 
-                <!-- Proje 6: Kredi Notu Sınıflandırma -->
-                <div class="home-project-slider-card" data-project-id="Kredi-Notu-Siniflandirmasi-Tahmin-Modeli">
+                <!-- Public 6: HuggingFace Downloader -->
+                <div class="home-project-slider-card" data-project-id="Hugging-face-Downloader">
                   <div class="slider-card-top">
-                    <span class="slider-card-badge badge-math">Makine Öğrenmesi</span>
-                    <span class="slider-card-cat">FinTech & Veri</span>
+                    <span class="slider-card-badge badge-ai">Model & İndirme</span>
+                    <span class="slider-card-cat">Yapay Zeka Araçları</span>
                   </div>
-                  <h4 class="slider-card-title">Kredi Notu Sınıflandırma & Risk Tahmin Modeli</h4>
-                  <p class="slider-card-desc">Müşterilerin finansal alışkanlıklarını, borç oranlarını ve hesap hareketlerini inceleyerek kredi risk düzeyini yüksek doğrulukla tahmin eden makine öğrenmesi modeli.</p>
+                  <h4 class="slider-card-title">HuggingFace Model İndirme Yöneticisi</h4>
+                  <p class="slider-card-desc">Büyük dil ve difüzyon modellerini internet kopmalarına karşı dirençli, çok kanallı ve devam ettirilebilir (resume) mimariyle yerel diske indiren GUI aracı.</p>
                   <div class="slider-card-metric">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    <span>🎯 %88+ F1-Skoru & Dengeli Risk Tahmini</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                    <span>⚡ Kopmaya Dayanıklı Çok Kanallı İndirme</span>
                   </div>
                   <div class="slider-card-footer">
                     <div class="slider-card-tags">
-                      <span>Scikit-Learn</span>
-                      <span>XGBoost</span>
-                      <span>Pandas</span>
+                      <span>Python</span>
+                      <span>HuggingFace Hub</span>
+                      <span>PyQt</span>
+                    </div>
+                    <span class="slider-card-action">Detay İncele &rarr;</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- 4.2 Öne Çıkan Özel Ar-Ge / Geliştirme Projeleri (Private Vitrini) -->
+            <div class="home-slider-section" id="homePrivateProjectsSection">
+              <div class="home-slider-header-row">
+                <div>
+                  <div class="home-section-tag">🔒 Özel Sistemler & Ar-Ge</div>
+                  <h2 class="home-certs-title">Özel Ar-Ge & Geliştirme Projelerim (Private)</h2>
+                  <p class="home-certs-subtitle">Yerel yapay zeka ajanları, çok modlu RAG mimarileri, sanal tarayıcı orkestrasyonu ve tescilli derin öğrenme boru hatları.</p>
+                </div>
+                <div class="home-slider-actions-group">
+                  <div class="home-slider-nav-arrows">
+                    <button class="slider-nav-btn" id="homePrivProjPrevBtn" aria-label="Önceki Özel Ar-Ge Projesi" title="Önceki Projeler">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button class="slider-nav-btn" id="homePrivProjNextBtn" aria-label="Sonraki Özel Ar-Ge Projesi" title="Sonraki Projeler">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                  </div>
+                  <button class="home-primary-action-btn" id="homePrivateGoProjectsBtn">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    <span>Özel Ar-Ge Projelerine Git</span>
+                    <svg class="btn-arrow-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Özel Projeler Sağa-Sola Kaydırma Bandı (Track) -->
+              <div class="home-horizontal-scroll-track" id="homePrivateProjectsTrack">
+                
+                <!-- Private 1: Cortex -->
+                <div class="home-project-slider-card" data-project-id="cortex">
+                  <div class="slider-card-top">
+                    <span class="slider-card-badge badge-priv">Özel Ar-Ge</span>
+                    <span class="slider-card-cat">Yapay Zeka & RAG</span>
+                  </div>
+                  <h4 class="slider-card-title">Cortex — Yerel Zeka, RAG & Otonom Geliştirici Asistanı</h4>
+                  <p class="slider-card-desc">İnternet bağlantısına ihtiyaç duymadan çalışan; kaynak kodları, teknik PDF belgeleri indeksleyen, YouTube video araması ve web navigasyonu yapan otonom asistan.</p>
+                  <div class="slider-card-metric">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                    <span>🧠 Çok Modlu RAG & Otonom Ajan</span>
+                  </div>
+                  <div class="slider-card-footer">
+                    <div class="slider-card-tags">
+                      <span>Ollama</span>
+                      <span>ChromaDB</span>
+                      <span>FastAPI SSE</span>
+                    </div>
+                    <span class="slider-card-action">Detay İncele &rarr;</span>
+                  </div>
+                </div>
+
+                <!-- Private 2: Webtoon LoRA Suite -->
+                <div class="home-project-slider-card" data-project-id="webtoon-lora-suite">
+                  <div class="slider-card-top">
+                    <span class="slider-card-badge badge-priv">Özel Ar-Ge</span>
+                    <span class="slider-card-cat">Görsel Analitik & ML</span>
+                  </div>
+                  <h4 class="slider-card-title">Webtoon Hikaye Analizi & Üretken Görsel/Panel Hattı</h4>
+                  <p class="slider-card-desc">Çizgi hikayelerin panel akışlarını ve anlatı yapısını analiz eden; konuşma balonlarını arındırıp LoRA ve üretken yapay zeka ile görsel sahneler türeten analitik hat.</p>
+                  <div class="slider-card-metric">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                    <span>🎨 Anlatı & Panel Analitiği, LoRA</span>
+                  </div>
+                  <div class="slider-card-footer">
+                    <div class="slider-card-tags">
+                      <span>PyTorch</span>
+                      <span>OpenCV</span>
+                      <span>LaMa Inpainting</span>
+                    </div>
+                    <span class="slider-card-action">Detay İncele &rarr;</span>
+                  </div>
+                </div>
+
+                <!-- Private 3: CorPlanner -->
+                <div class="home-project-slider-card" data-project-id="cortex-planner">
+                  <div class="slider-card-top">
+                    <span class="slider-card-badge badge-priv">Özel Ar-Ge</span>
+                    <span class="slider-card-cat">LLM Proje & Görev Motoru</span>
+                  </div>
+                  <h4 class="slider-card-title">CorPlanner — GitHub Destekli Proje & Görev Planlayıcı</h4>
+                  <p class="slider-card-desc">Yazılım hedeflerini yerel LLM ile analiz edip DAG bağımlılık ağaçlarına bölen ve GitHub Projects & Issues ile çift yönlü senkronize eden otonom planlama istasyonu.</p>
+                  <div class="slider-card-metric">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    <span>🚀 Yerel LLM Görev Ayrıştırma & Senkronizasyon</span>
+                  </div>
+                  <div class="slider-card-footer">
+                    <div class="slider-card-tags">
+                      <span>FastAPI</span>
+                      <span>Local LLM</span>
+                      <span>GitHub API</span>
+                    </div>
+                    <span class="slider-card-action">Detay İncele &rarr;</span>
+                  </div>
+                </div>
+
+                <!-- Private 4: CoBrowser -->
+                <div class="home-project-slider-card" data-project-id="hyperbeam-browser">
+                  <div class="slider-card-top">
+                    <span class="slider-card-badge badge-priv">Özel Ar-Ge</span>
+                    <span class="slider-card-cat">Sanal Tarayıcı Odası</span>
+                  </div>
+                  <h4 class="slider-card-title">CoBrowser — Çok Kullanıcılı Ortak Sanal Tarayıcı Odası</h4>
+                  <p class="slider-card-desc">İzole Chromium oturumlarını WebSocket üzerinden düşük gecikmeli canlı yayına dönüştüren, paylaşımlı gezinme ve anti-bot bypass yeteneklerine sahip sanal tarayıcı motoru.</p>
+                  <div class="slider-card-metric">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    <span>🌐 Ultra Düşük Gecikmeli Sanal Oturum</span>
+                  </div>
+                  <div class="slider-card-footer">
+                    <div class="slider-card-tags">
+                      <span>Node.js</span>
+                      <span>Puppeteer Stealth</span>
+                      <span>WebSocket</span>
+                    </div>
+                    <span class="slider-card-action">Detay İncele &rarr;</span>
+                  </div>
+                </div>
+
+                <!-- Private 5: Kripto Varlık Analiz & Simülatör -->
+                <div class="home-project-slider-card" data-project-id="crypto-analytics-engine">
+                  <div class="slider-card-top">
+                    <span class="slider-card-badge badge-priv">Özel Ar-Ge</span>
+                    <span class="slider-card-cat">FinTech & AI Persona</span>
+                  </div>
+                  <h4 class="slider-card-title">Kripto Varlık Analiz & AI Persona Simülasyon Motoru</h4>
+                  <p class="slider-card-desc">Farklı risk iştahlarına sahip otonom LLM yatırımcı personellerini piyasa duyarlılığı ile çalıştıran, Monte Carlo portföy risk modelleri üreten analitik motoru.</p>
+                  <div class="slider-card-metric">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                    <span>📈 Otonom AI Personaları & Risk Modelleme</span>
+                  </div>
+                  <div class="slider-card-footer">
+                    <div class="slider-card-tags">
+                      <span>Python</span>
+                      <span>Persona Prompting</span>
+                      <span>CCXT API</span>
+                    </div>
+                    <span class="slider-card-action">Detay İncele &rarr;</span>
+                  </div>
+                </div>
+
+                <!-- Private 6: AI Image Studio -->
+                <div class="home-project-slider-card" data-project-id="ai-image-studio">
+                  <div class="slider-card-top">
+                    <span class="slider-card-badge badge-priv">Özel Ar-Ge</span>
+                    <span class="slider-card-cat">Görsel Üretim Stüdyosu</span>
+                  </div>
+                  <h4 class="slider-card-title">Yerel AI Görsel Üretim & Stüdyo Yönetim Platformu</h4>
+                  <p class="slider-card-desc">Yerel GPU/VRAM kaynaklarını optimize ederek Stable Diffusion / SDXL modelleriyle Text-to-Image ve Inpainting süreçlerini yöneten modern görsel stüdyosu.</p>
+                  <div class="slider-card-metric">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <span>🎨 Yerel GPU Hızlandırması & Çok Katmanlı Prompt</span>
+                  </div>
+                  <div class="slider-card-footer">
+                    <div class="slider-card-tags">
+                      <span>PyTorch</span>
+                      <span>Diffusers</span>
+                      <span>CUDA FP16</span>
                     </div>
                     <span class="slider-card-action">Detay İncele &rarr;</span>
                   </div>

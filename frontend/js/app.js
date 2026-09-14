@@ -70,7 +70,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const homeGoAboutBtn = document.getElementById('homeGoAboutBtn');
   const homeGoCertsBtn = document.getElementById('homeGoCertsBtn');
   const homeGoCertsHeroBtn = document.getElementById('homeGoCertsHeroBtn');
-  const homeFeaturedGoProjectsBtn = document.getElementById('homeFeaturedGoProjectsBtn');
+  const homePublicGoProjectsBtn = document.getElementById('homePublicGoProjectsBtn');
+  const homePrivateGoProjectsBtn = document.getElementById('homePrivateGoProjectsBtn');
 
   if (homeGoProjectsBtn) {
     homeGoProjectsBtn.addEventListener('click', () => switchWorkspaceView('projects'));
@@ -84,24 +85,58 @@ document.addEventListener('DOMContentLoaded', () => {
   if (homeGoCertsHeroBtn) {
     homeGoCertsHeroBtn.addEventListener('click', () => switchWorkspaceView('certificates'));
   }
-  if (homeFeaturedGoProjectsBtn) {
-    homeFeaturedGoProjectsBtn.addEventListener('click', () => switchWorkspaceView('projects'));
+  if (homePublicGoProjectsBtn) {
+    homePublicGoProjectsBtn.addEventListener('click', () => {
+      currentTier = 'public';
+      document.querySelectorAll('.tier-tab-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-tier') === 'public');
+      });
+      switchWorkspaceView('projects');
+      loadAndRenderSplitView();
+    });
+  }
+  if (homePrivateGoProjectsBtn) {
+    homePrivateGoProjectsBtn.addEventListener('click', () => {
+      currentTier = 'private';
+      document.querySelectorAll('.tier-tab-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-tier') === 'private');
+      });
+      switchWorkspaceView('projects');
+      loadAndRenderSplitView();
+    });
   }
 
-  // Ana Sayfa Yatay Kaydırma (Slider) Kontrolleri: Projeler & Sertifikalar
-  const homeProjectsTrack = document.getElementById('homeProjectsTrack');
-  const homeProjPrevBtn = document.getElementById('homeProjPrevBtn');
-  const homeProjNextBtn = document.getElementById('homeProjNextBtn');
+  // Ana Sayfa Yatay Kaydırma (Slider) Kontrolleri: Public Projeler, Private Projeler & Sertifikalar
+  const homePublicProjectsTrack = document.getElementById('homePublicProjectsTrack');
+  const homePublicProjPrevBtn = document.getElementById('homePublicProjPrevBtn');
+  const homePublicProjNextBtn = document.getElementById('homePublicProjNextBtn');
 
-  if (homeProjectsTrack) {
-    if (homeProjPrevBtn) {
-      homeProjPrevBtn.addEventListener('click', () => {
-        homeProjectsTrack.scrollBy({ left: -340, behavior: 'smooth' });
+  if (homePublicProjectsTrack) {
+    if (homePublicProjPrevBtn) {
+      homePublicProjPrevBtn.addEventListener('click', () => {
+        homePublicProjectsTrack.scrollBy({ left: -340, behavior: 'smooth' });
       });
     }
-    if (homeProjNextBtn) {
-      homeProjNextBtn.addEventListener('click', () => {
-        homeProjectsTrack.scrollBy({ left: 340, behavior: 'smooth' });
+    if (homePublicProjNextBtn) {
+      homePublicProjNextBtn.addEventListener('click', () => {
+        homePublicProjectsTrack.scrollBy({ left: 340, behavior: 'smooth' });
+      });
+    }
+  }
+
+  const homePrivateProjectsTrack = document.getElementById('homePrivateProjectsTrack');
+  const homePrivProjPrevBtn = document.getElementById('homePrivProjPrevBtn');
+  const homePrivProjNextBtn = document.getElementById('homePrivProjNextBtn');
+
+  if (homePrivateProjectsTrack) {
+    if (homePrivProjPrevBtn) {
+      homePrivProjPrevBtn.addEventListener('click', () => {
+        homePrivateProjectsTrack.scrollBy({ left: -340, behavior: 'smooth' });
+      });
+    }
+    if (homePrivProjNextBtn) {
+      homePrivProjNextBtn.addEventListener('click', () => {
+        homePrivateProjectsTrack.scrollBy({ left: 340, behavior: 'smooth' });
       });
     }
   }
