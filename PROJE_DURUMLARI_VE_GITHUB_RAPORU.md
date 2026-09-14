@@ -11,9 +11,9 @@ Bu rapor, tüm aktif yazılım projelerinizi **Açık Kaynak (Public)** ve **Öz
 
 | Kategori | Proje Sayısı | Durum |
 | :--- | :---: | :--- |
-| 🌐 **Açık Kaynak (Public) Depolar** | **18** | GitHub üzerinde herkese açık, profesyonel, incelenebilir ve %100 güncel. |
+| 🌐 **Açık Kaynak (Public) Depolar** | **17** | GitHub üzerinde herkese açık, profesyonel, incelenebilir ve %100 güncel. |
 | 🔒 **Özel Ar-Ge (Private) Depolar** | **9** | Gizli depolarda korunan, tam senkronize ve yedekli. |
-| **Toplam Aktif Yazılım Projesi** | **27** | **Tümü GitHub'da yayında ve eksiksiz.** |
+| **Toplam Aktif Yazılım Projesi** | **26** | **Tümü GitHub'da yayında ve eksiksiz.** |
 
 ---
 
@@ -25,23 +25,22 @@ Bu projeler GitHub profilinizde ve portfolyonuzda ziyaretçiler/işverenler tara
 | :-: | :--- | :--- | :-: | :--- | :---: |
 | **1** | **BIST Bilanço Karlılık Tahmini** | 612 BIST şirketi, 10 yıllık bilanço, CatBoost & ML (Lisans Tezi) | ✅ Evet | [oguztasdemir/Borsa-Istanbul-Bilanco-...](https://github.com/oguztasdemir/Borsa-Istanbul-Bilanco-Karlilik-Tahmini-Bitirme-Tezi) | 🟢 **Güncel** |
 | **2** | **OYMAPOS Barkod Sistemi** | RS-232 Terazi, Termal Fiş Yazıcı, Fatura OCR, SQLite (WAL) | ✅ Evet | [oguztasdemir/OYMAPOS-Barkod-Sistemi](https://github.com/oguztasdemir/OYMAPOS-Barkod-Sistemi) | 🟢 **Güncel** |
-| **3** | **Barkod Sistemi (Masaüstü)** | Python POS, Perakende Satış ve Stok Yönetimi | ✅ Evet | [oguztasdemir/Barkod-Sistemi](https://github.com/oguztasdemir/Barkod-Sistemi) | 🟢 **Güncel** |
-| **4** | **Airdrop-Local** | Yerel Ağda UDP Broadcast & WebSocket/TCP ile P2P Dosya Transferi | ✅ Evet | [oguztasdemir/Airdrop-Local](https://github.com/oguztasdemir/Airdrop-Local) | 🟢 **Güncel** |
-| **5** | **NC-Codes** | CNC Talaşlı İmalat Zekası, G-Code Ayrıştırıcı & Takım Yolu Motoru | ✅ Evet | [oguztasdemir/NC-Codes](https://github.com/oguztasdemir/NC-Codes) | 🟢 **Güncel** |
-| **6** | **Fatura Kesme Ödeal** | Selenium / Playwright Tabanlı Fatura Kesme Otomasyon Botu | ✅ Evet | [oguztasdemir/-deal-Fatura-Kesme-...](https://github.com/oguztasdemir/-deal-Fatura-Kesme-Otomasyonu) | 🟢 **Güncel** |
-| **7** | **Altyapı Manager** | Python Altyapı & Sistem Yönetim Paneli | ✅ Evet | [oguztasdemir/Altyap--Manager](https://github.com/oguztasdemir/Altyap--Manager) | 🟢 **Güncel** |
-| **8** | **Akademik İngilizce** | YDS / Akademik Dil ve Sınav Pratik Uygulaması | ✅ Evet | [oguztasdemir/Akademik--ngilizce](https://github.com/oguztasdemir/Akademik--ngilizce) | 🟢 **Güncel** |
-| **9** | **Önbellek Temizleyici** | Windows Düşük Seviye Disk I/O & Sistem Hızlandırıcı (Cache Cleaner) | ✅ Evet | [oguztasdemir/cache-cleaner](https://github.com/oguztasdemir/cache-cleaner) | 🟢 **Güncel** |
-| **10** | **Disk Kurtarma Aracı** | Raw Recovery & Düşük Seviye Binary Dosya Kurtarıcı | ✅ Evet | [oguztasdemir/disk-drill-raw-recovery](https://github.com/oguztasdemir/disk-drill-raw-recovery) | 🟢 **Güncel** |
-| **11** | **EA-FIFA Fikstür** | Lig, Turnuva & Kura Eşleştirme Motoru | ✅ Evet | [oguztasdemir/EA-F-FA-Fikst-r](https://github.com/oguztasdemir/EA-F-FA-Fikst-r) | 🟢 **Güncel** |
-| **12** | **Gardrops Otomasyon Botu** | E-Ticaret Otomasyon, Envanter & Mesajlaşma Botu | ✅ Evet | [oguztasdemir/Gardrops-Otomasyon-Botu](https://github.com/oguztasdemir/Gardrops-Otomasyon-Botu) | 🟢 **Güncel** |
-| **13** | **Hugging-face Downloader** | AI Model İndirme & Hub Cache Yönetim Aracı | ✅ Evet | [oguztasdemir/Hugging-face-Downloader](https://github.com/oguztasdemir/Hugging-face-Downloader) | 🟢 **Güncel** |
-| **14** | **Kredi Notu Sınıflandırması** | Finansal Risk & Kredi Tahmin Modeli | ✅ Evet | [oguztasdemir/Kredi-Notu-Siniflandirmasi-...](https://github.com/oguztasdemir/Kredi-Notu-Siniflandirmasi-Tahmin-Modeli) | 🟢 **Güncel** |
-| **15** | **Oymapos Etiket Yazdırıcı** | Termal Barkod & Fiyat Etiketi Basıcı | ✅ Evet | [oguztasdemir/Oymapos-Etiket-Yazd-r-c-](https://github.com/oguztasdemir/Oymapos-Etiket-Yazd-r-c-) | 🟢 **Güncel** |
-| **16** | **Akademik Sınav Hazırlık Platformu** | İSG, ML, GAI ve Veri Yapıları Final Soru Çözüm & PWA Motoru | ✅ Evet | [oguztasdemir/Akademik-Sinav-Soru-Hazirlik-PWA](https://github.com/oguztasdemir/Akademik-Sinav-Soru-Hazirlik-PWA) | 🟢 **Güncel** |
-| **17** | **Telegram Media Hub** | Telegram Botu & Asenkron Medya Arşivleyici | ✅ Evet | [oguztasdemir/Telegram-Media-Hub](https://github.com/oguztasdemir/Telegram-Media-Hub) | 🟢 **Güncel** |
-| **18** | **YouTube AI Assistant** | Video Transkript Madenciliği & Anlamsal Arama Motoru | ✅ Evet | [oguztasdemir/youtube-ai-assistant](https://github.com/oguztasdemir/youtube-ai-assistant) | 🟢 **Güncel** |
-| **19** | **GitHub Profil Vitrini** | Özel Profil README & Biyografi Deposu | 👤 Profil | [oguztasdemir/oguztasdemir](https://github.com/oguztasdemir/oguztasdemir) | 🟢 **Güncel** |
+| **3** | **Airdrop-Local** | Yerel Ağda UDP Broadcast & WebSocket/TCP ile P2P Dosya Transferi | ✅ Evet | [oguztasdemir/Airdrop-Local](https://github.com/oguztasdemir/Airdrop-Local) | 🟢 **Güncel** |
+| **4** | **NC-Codes** | CNC Talaşlı İmalat Zekası, G-Code Ayrıştırıcı & Takım Yolu Motoru | ✅ Evet | [oguztasdemir/NC-Codes](https://github.com/oguztasdemir/NC-Codes) | 🟢 **Güncel** |
+| **5** | **Fatura Kesme Ödeal** | Selenium / Playwright Tabanlı Fatura Kesme Otomasyon Botu | ✅ Evet | [oguztasdemir/-deal-Fatura-Kesme-...](https://github.com/oguztasdemir/-deal-Fatura-Kesme-Otomasyonu) | 🟢 **Güncel** |
+| **6** | **Altyapı Manager** | Python Altyapı & Sistem Yönetim Paneli | ✅ Evet | [oguztasdemir/Altyap--Manager](https://github.com/oguztasdemir/Altyap--Manager) | 🟢 **Güncel** |
+| **7** | **Akademik İngilizce** | YDS / Akademik Dil ve Sınav Pratik Uygulaması | ✅ Evet | [oguztasdemir/Akademik--ngilizce](https://github.com/oguztasdemir/Akademik--ngilizce) | 🟢 **Güncel** |
+| **8** | **Önbellek Temizleyici** | Windows Düşük Seviye Disk I/O & Sistem Hızlandırıcı (Cache Cleaner) | ✅ Evet | [oguztasdemir/cache-cleaner](https://github.com/oguztasdemir/cache-cleaner) | 🟢 **Güncel** |
+| **9** | **Disk Kurtarma Aracı** | Raw Recovery & Düşük Seviye Binary Dosya Kurtarıcı | ✅ Evet | [oguztasdemir/disk-drill-raw-recovery](https://github.com/oguztasdemir/disk-drill-raw-recovery) | 🟢 **Güncel** |
+| **10** | **EA-FIFA Fikstür** | Lig, Turnuva & Kura Eşleştirme Motoru | ✅ Evet | [oguztasdemir/EA-F-FA-Fikst-r](https://github.com/oguztasdemir/EA-F-FA-Fikst-r) | 🟢 **Güncel** |
+| **11** | **Gardrops Otomasyon Botu** | E-Ticaret Otomasyon, Envanter & Mesajlaşma Botu | ✅ Evet | [oguztasdemir/Gardrops-Otomasyon-Botu](https://github.com/oguztasdemir/Gardrops-Otomasyon-Botu) | 🟢 **Güncel** |
+| **12** | **Hugging-face Downloader** | AI Model İndirme & Hub Cache Yönetim Aracı | ✅ Evet | [oguztasdemir/Hugging-face-Downloader](https://github.com/oguztasdemir/Hugging-face-Downloader) | 🟢 **Güncel** |
+| **13** | **Kredi Notu Sınıflandırması** | Finansal Risk & Kredi Tahmin Modeli | ✅ Evet | [oguztasdemir/Kredi-Notu-Siniflandirmasi-...](https://github.com/oguztasdemir/Kredi-Notu-Siniflandirmasi-Tahmin-Modeli) | 🟢 **Güncel** |
+| **14** | **Oymapos Etiket Yazdırıcı** | Termal Barkod & Fiyat Etiketi Basıcı | ✅ Evet | [oguztasdemir/Oymapos-Etiket-Yazd-r-c-](https://github.com/oguztasdemir/Oymapos-Etiket-Yazd-r-c-) | 🟢 **Güncel** |
+| **15** | **Akademik Sınav Hazırlık Platformu** | İSG, ML, GAI ve Veri Yapıları Final Soru Çözüm & PWA Motoru | ✅ Evet | [oguztasdemir/Akademik-Sinav-Soru-Hazirlik-PWA](https://github.com/oguztasdemir/Akademik-Sinav-Soru-Hazirlik-PWA) | 🟢 **Güncel** |
+| **16** | **Telegram Media Hub** | Telegram Botu & Asenkron Medya Arşivleyici | ✅ Evet | [oguztasdemir/Telegram-Media-Hub](https://github.com/oguztasdemir/Telegram-Media-Hub) | 🟢 **Güncel** |
+| **17** | **YouTube AI Assistant** | Video Transkript Madenciliği & Anlamsal Arama Motoru | ✅ Evet | [oguztasdemir/youtube-ai-assistant](https://github.com/oguztasdemir/youtube-ai-assistant) | 🟢 **Güncel** |
+| **18** | **GitHub Profil Vitrini** | Özel Profil README & Biyografi Deposu | 👤 Profil | [oguztasdemir/oguztasdemir](https://github.com/oguztasdemir/oguztasdemir) | 🟢 **Güncel** |
 
 ---
 
