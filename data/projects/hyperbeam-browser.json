@@ -1,0 +1,30 @@
+{
+  "id": "hyperbeam-browser",
+  "title": "CoBrowser — Çok Kullanıcılı Ortak Sanal Tarayıcı Odası",
+  "category": "desktop",
+  "categoryLabel": "Sistem & Sanal Tarayıcı",
+  "badge": "Özel Ar-Ge / Geliştirme",
+  "visibility": "private",
+  "summary": "İzole Chromium oturumlarını WebSocket üzerinden düşük gecikmeli canlı yayına dönüştüren, paylaşımlı gezinme ve anti-bot bypass yeteneklerine sahip işbirlikçi sanal tarayıcı orkestratörü.",
+  "highlightMetric": "🌐 Ultra Düşük Gecikmeli Sanal Oturum & Eşzamanlı Navigasyon",
+  "techStack": [
+    "Node.js",
+    "Express",
+    "Puppeteer-Extra (Stealth)",
+    "WebSocket & WebRTC",
+    "Python Cortex Ajanı",
+    "Chromium Engine"
+  ],
+  "githubUrl": null,
+  "caseStudy": {
+    "problem": "Farklı konumlardaki kullanıcıların aynı web tarayıcı oturumunu paylaşımlı olarak gecikmesiz kontrol etmesi, izole oturumlarda medya tüketmesi veya otomasyon botlarının tarayıcı parmak izi korumalarını aşarak içerik çekmesi gerekiyordu.",
+    "architecture": "CoBrowser; sunucu tarafında çalışan Puppeteer-Stealth ve Chromium konteynerlerini orkestre eder. Ekran çıktısını ve fare/klavye olaylarını WebSocket üzerinden şifreli ikili (binary) akışla istemcilere senkronize eder. Anti-fingerprinting katmanı sayesinde bot korumalı siteler güvenle ziyaret edilebilir.",
+    "keyChallenge": "Eşzamanlı fare/klavye girdilerinde yarış koşullarını (race conditions) önlemek ve video oynatımında ağ bant genişliğini zorlamadan 60 FPS akıcı görüntü aktarımını sağlamak için adaptif kare hızı sıkıştırması uygulandı.",
+    "features": [
+      "WebSocket üzerinden paylaşımlı, çok kullanıcılı gerçek zamanlı sanal tarayıcı",
+      "Puppeteer Stealth ve parmak izi maskeleme ile gelişmiş anti-bot koruma aşımı",
+      "Otonom web navigasyonu ve içerik madenciliği için Python ajan entegrasyonu",
+      "Çoklu izole sekme ve bağımsız oturum yönetimi"
+    ]
+  }
+}

@@ -608,10 +608,29 @@
           <div class="portfolio-stream-header">
             <div class="stream-title-row">
               <div>
-                <h2 class="stream-main-title">Projeler & Sistemler</h2>
-                <p class="stream-subtitle">Geliştirdiğim açık kaynak araçlar, masaüstü yazılımları, donanım sürücüleri ve veri sistemleri.</p>
+                <h2 class="stream-main-title">Projeler & Sistem Mimarileri</h2>
+                <p class="stream-subtitle">Açık kaynak yazılımlar ve geliştirme aşamasındaki özel yapay zeka & sistem mimarileri.</p>
               </div>
-              <span class="stream-counter-badge" id="searchResultCount">20 Sistem</span>
+              <span class="stream-counter-badge" id="searchResultCount">25 Sistem</span>
+            </div>
+
+            <!-- Proje Görünürlük Ana Kademeleri (Public Açık Kaynak vs Private Özel Ar-Ge) -->
+            <div class="portfolio-tier-tabs" role="tablist">
+              <button class="tier-tab-btn active" data-tier="all">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                <span>Tüm Sistemler</span>
+                <span class="tier-count-pill" id="tierCountAll">25</span>
+              </button>
+              <button class="tier-tab-btn" data-tier="public">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                <span>🌐 Açık Kaynak (Public)</span>
+                <span class="tier-count-pill" id="tierCountPublic">17</span>
+              </button>
+              <button class="tier-tab-btn" data-tier="private">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                <span>🔒 Özel Ar-Ge / Geliştirme (Private)</span>
+                <span class="tier-count-pill" id="tierCountPrivate">8</span>
+              </button>
             </div>
 
             <!-- Arama & Filtre Çubukları -->
@@ -627,11 +646,11 @@
 
               <!-- Kategori Çipleri (Sayaçlar JS ile otomatik hesaplanır) -->
               <div class="filter-chips-rail" role="tablist">
-                <button class="chip-filter active" data-category="all">Tümü (<span class="chip-count" data-count-cat="all">20</span>)</button>
-                <button class="chip-filter" data-category="nlp_data">Doğal Dil & Veri (<span class="chip-count" data-count-cat="nlp_data">6</span>)</button>
-                <button class="chip-filter" data-category="desktop">Masaüstü & Sistem (<span class="chip-count" data-count-cat="desktop">7</span>)</button>
-                <button class="chip-filter" data-category="fintech">FinTech & POS (<span class="chip-count" data-count-cat="fintech">3</span>)</button>
-                <button class="chip-filter" data-category="web">Web & Platform (<span class="chip-count" data-count-cat="web">4</span>)</button>
+                <button class="chip-filter active" data-category="all">Tüm Kategoriler (<span class="chip-count" data-count-cat="all">25</span>)</button>
+                <button class="chip-filter" data-category="ai">Yapay Zeka & RAG (<span class="chip-count" data-count-cat="ai">8</span>)</button>
+                <button class="chip-filter" data-category="desktop">Masaüstü & Sistem (<span class="chip-count" data-count-cat="desktop">8</span>)</button>
+                <button class="chip-filter" data-category="fintech">FinTech & Veri (<span class="chip-count" data-count-cat="fintech">4</span>)</button>
+                <button class="chip-filter" data-category="web">Web & Platform (<span class="chip-count" data-count-cat="web">5</span>)</button>
               </div>
             </div>
           </div>

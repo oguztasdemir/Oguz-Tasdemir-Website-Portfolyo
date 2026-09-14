@@ -25,5 +25,6 @@
       "Kaldığı mesaj ID'sinden otomatik devam edebilme",
       "Detaylı yerel indirme günlüğü (loglama)"
     ]
-  }
+  },
+  "visibility": "public"
 }

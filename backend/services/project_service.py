@@ -35,9 +35,13 @@ class ProjectService:
         return projects
 
     @staticmethod
-    def get_all_projects(category: Optional[str] = None, search: Optional[str] = None) -> List[dict]:
+    def get_all_projects(category: Optional[str] = None, search: Optional[str] = None, visibility: Optional[str] = None) -> List[dict]:
         # Doğrudan data/projects/*.json klasöründen oku
         projects = ProjectService._read_all_from_folder()
+
+        # Görünürlük filtresi (public / private)
+        if visibility and visibility != "all":
+            projects = [p for p in projects if p.get("visibility", "public") == visibility]
 
         # Kategori filtresi
         if category and category != "all":

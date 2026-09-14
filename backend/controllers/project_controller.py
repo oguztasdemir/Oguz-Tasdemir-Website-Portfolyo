@@ -11,10 +11,11 @@ router = APIRouter(prefix="/api", tags=["API Endpoints"])
 @router.get("/projects")
 async def list_projects(
     category: Optional[str] = Query(None, description="Kategori filtresi (ai, fintech, desktop, web)"),
+    visibility: Optional[str] = Query(None, description="Görünürlük filtresi (public, private, all)"),
     q: Optional[str] = Query(None, description="Arama sorgusu")
 ):
     """Filtrelenmiş veya tüm projeleri döndürür."""
-    return ProjectService.get_all_projects(category=category, search=q)
+    return ProjectService.get_all_projects(category=category, search=q, visibility=visibility)
 
 @router.get("/projects/{project_id}")
 async def get_project(project_id: str):

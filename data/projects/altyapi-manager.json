@@ -24,5 +24,6 @@
       "Tek tıkla PDF rapor çıktısı alma"
     ]
   },
-  "githubUrl": "https://github.com/oguztasdemir/Altyapi"
+  "githubUrl": "https://github.com/oguztasdemir/Altyapi",
+  "visibility": "public"
 }

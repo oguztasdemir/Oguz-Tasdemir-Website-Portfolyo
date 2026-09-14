@@ -1,0 +1,30 @@
+{
+  "id": "cortex-planner",
+  "title": "CorPlanner — GitHub Destekli Proje & Görev Planlayıcı",
+  "category": "ai",
+  "categoryLabel": "Yapay Zeka & Geliştirici Araçları",
+  "badge": "Özel Ar-Ge / Geliştirme",
+  "visibility": "private",
+  "summary": "Fikir aşamasından mimari kararlara (ADR) ve Git geçmişine kadar tüm yazılım süreçlerini yerel LLM ile ayrıştıran, bağımlılık grafı çıkaran ve GitHub Projects ile senkronize eden otonom planlama istasyonu.",
+  "highlightMetric": "🚀 Yerel LLM Görev Ayrıştırma & Otomatik Senkronizasyon",
+  "techStack": [
+    "Python",
+    "FastAPI",
+    "Local LLM (Ollama)",
+    "GitHub API & GraphQL",
+    "SQLite WAL",
+    "Mermaid Mimarisi"
+  ],
+  "githubUrl": null,
+  "caseStudy": {
+    "problem": "Büyük yazılım projelerinde hedefleri küçük parçalara (task/sub-task) bölmek, mimari kararları dokümante etmek ve GitHub issue/milestone'ları ile yerel çalışma temposunu tutarlı kılmak ciddi zaman kaybına yol açar. Geliştiricinin düşünce akışını kodlama bağlamından koparmadan yerel yapay zekayla yöneten bir planlayıcıya ihtiyaç vardı.",
+    "architecture": "CorPlanner; yerel LLM motoru üzerinden geliştiricinin serbest metin veya sesli proje hedeflerini analiz eder. Doğal dildeki gereksinimleri bağımlılık ağaçlarına (Dependency Trees) ve öncelik sıralamalarına böler. Yerel SQLite WAL veritabanında depolanan bu görevler, tek tıkla GitHub Projects, Milestone ve Issue yapılarıyla çift yönlü senkronize edilir.",
+    "keyChallenge": "Karmaşık yazılım bağımlılıklarında döngüsel kilitlenmeleri (cyclic dependencies) engellemek ve LLM'in ürettiği görev ayrıştırmalarını deterministik JSON şemalarına zorlamak için Pydantic doğrulama katmanları ve yönlü çevrimsiz çizge (DAG) algoritmaları kurgulandı.",
+    "features": [
+      "Doğal dille yazılan hedefleri otonom alt görevlere (WBS) bölen LLM motoru",
+      "Yönlü Çevrimsiz Çizge (DAG) tabanlı görev önceliklendirme ve Gantt çizelgesi",
+      "GitHub Projects & Issues ile çift yönlü anlık API senkronizasyonu",
+      "Tamamen yerelde (Local-First) çalışan mimari karar kayıtları (ADR) arşivi"
+    ]
+  }
+}

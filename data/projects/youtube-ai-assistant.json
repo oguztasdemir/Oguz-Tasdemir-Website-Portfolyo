@@ -3,7 +3,7 @@
   "title": "YouTube Transkript Analiz & Arama Motoru",
   "category": "ai",
   "categoryLabel": "Doğal Dil & Arama Motoru",
-  "badge": "Açık Kaynak Sistem",
+  "badge": "Özel Ar-Ge / Geliştirme",
   "summary": "YouTube videolarının transkriptlerini yerel yapay zeka modeliyle analiz eden, videoyu izlemeden kritik noktaları özetleyen ve aratan asistan.",
   "highlightMetric": "⚡ Semantik Video Özeti & Anlık Arama",
   "techStack": [
@@ -25,5 +25,6 @@
       "Sağ panelde bölünmüş ekran (Split-View) canlı video önizlemesi",
       "Oynatma listesi ve video transkript analiz yeteneği"
     ]
-  }
+  },
+  "visibility": "private"
 }

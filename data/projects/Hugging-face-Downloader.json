@@ -25,5 +25,6 @@
       "Canlı hız, kalan süre ve transfer ilerleme çubuğu",
       "Düşük bellek (RAM) tüketimi"
     ]
-  }
+  },
+  "visibility": "public"
 }

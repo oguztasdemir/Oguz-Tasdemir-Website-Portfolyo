@@ -24,5 +24,6 @@
       "Hiçbir verinin internete çıkmadığı %100 yerel güvenlik"
     ]
   },
-  "githubUrl": "https://github.com/oguztasdemir/Airdrop-Local"
+  "githubUrl": "https://github.com/oguztasdemir/Airdrop-Local",
+  "visibility": "public"
 }

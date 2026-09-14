@@ -25,5 +25,6 @@
       "İndirilen faturaları müşteri unvanı bazında otomatik klasörleme",
       "Excel ve muhasebe uyumlu CSV dökümü üretme"
     ]
-  }
+  },
+  "visibility": "public"
 }

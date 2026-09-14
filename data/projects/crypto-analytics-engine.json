@@ -1,0 +1,30 @@
+{
+  "id": "crypto-analytics-engine",
+  "title": "Kripto Varlık Analiz & AI Persona Simülasyon Motoru",
+  "category": "fintech",
+  "categoryLabel": "FinTech & Yapay Zeka",
+  "badge": "Özel Ar-Ge / Geliştirme",
+  "visibility": "private",
+  "summary": "Çok modelli kripto varlık analizi, farklı risk iştahlarına sahip LLM yatırımcı persona simülasyonları ve gerçek zamanlı portföy strateji test motoru sunan gelişmiş finansal analitik platformu.",
+  "highlightMetric": "📈 Otonom AI Personaları & Piyasa Strateji Simülatörü",
+  "techStack": [
+    "Python",
+    "FastAPI",
+    "Pandas & NumPy",
+    "Local LLM (Persona Prompting)",
+    "WebSocket Akışı",
+    "CCXT API"
+  ],
+  "githubUrl": null,
+  "caseStudy": {
+    "problem": "Kripto para piyasalarında sadece matematiksel indikatörler piyasa duyarlılığını (sentiment) ve farklı yatırımcı profillerinin panik/açgözlülük kararlarını modellemeye yetersiz kalır. Gerçekçi piyasa simülasyonu için teknik analizle bilişsel davranış modellerini birleştiren bir sisteme ihtiyaç vardı.",
+    "architecture": "Sistem; CCXT üzerinden gerçek zamanlı borsa emir defterlerini ve fiyat hareketlerini çeker. Farklı risk profillerine sahip (Agresif Scalper, Muhafazakar HODLer, Arbitrajcı vb.) LLM ajanları bağımsız kararlar üretir. Monte Carlo simülasyonları ile portföy getirileri ve batma riskleri (Drawdown) hesaplanır.",
+    "keyChallenge": "Gerçek zamanlı piyasa dalgalanmalarında birden fazla LLM personasının anlık karar üretme gecikmesini optimize etmek amacıyla asenkron olay kuyrukları ve vektörel duyarlılık önbelleği geliştirildi.",
+    "features": [
+      "Farklı psikolojik profillere sahip otonom AI yatırımcı persona simülasyonları",
+      "Gerçek zamanlı emir defteri (Order Book) ve hacim profili analitiği",
+      "Geriye dönük test (Backtesting) ve Monte Carlo risk modelleme motoru",
+      "WebSocket üzerinden canlı veri akışı ve interaktif finansal dashboard"
+    ]
+  }
+}

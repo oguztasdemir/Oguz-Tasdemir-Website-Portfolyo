@@ -3,7 +3,7 @@
   "title": "Cortex — LLM Destekli IDE & RAG",
   "category": "ai",
   "categoryLabel": "Üretken Yapay Zeka & RAG Ajanı",
-  "badge": "Özel Sistem / Ar-Ge",
+  "badge": "Özel Ar-Ge / Geliştirme",
   "summary": "İnternet bağlantısına ihtiyaç duymadan yerel LLM motoruyla çalışan; kaynak kodları, teknik PDF/belgeleri semantik olarak indeksleyen, Monaco editörü ve derin RAG desteğine sahip otonom geliştirici ortamı.",
   "highlightMetric": "🧠 Çok Modlu RAG, Kod İndeksleme & Yerel IDE",
   "techStack": [
@@ -28,5 +28,6 @@
       "Server-Sent Events (SSE) tabanlı anlık token akışı ve yüksek performans"
     ]
   },
-  "githubUrl": "https://github.com/oguztasdemir/Cortex-LLM-IDE-RAG"
+  "githubUrl": "https://github.com/oguztasdemir/Cortex-LLM-IDE-RAG",
+  "visibility": "private"
 }

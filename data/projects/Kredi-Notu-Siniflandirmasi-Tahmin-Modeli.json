@@ -26,5 +26,6 @@
       "Detaylı karmaşıklık matrisi ve ROC-AUC analizi",
       "Yeni müşteri verisi için tek satırda tahmin üretme"
     ]
-  }
+  },
+  "visibility": "public"
 }

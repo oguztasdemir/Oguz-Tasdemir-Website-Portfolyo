@@ -1,0 +1,30 @@
+{
+  "id": "ai-image-studio",
+  "title": "Yerel AI Görsel Üretim & Stüdyo Yönetim Platformu",
+  "category": "ai",
+  "categoryLabel": "Üretken Yapay Zeka & Computer Vision",
+  "badge": "Özel Ar-Ge / Geliştirme",
+  "visibility": "private",
+  "summary": "Yerel donanım kaynaklarını (GPU/VRAM) yüksek verimle kullanan, Stable Diffusion ve SDXL modelleriyle Text-to-Image ve Inpainting süreçlerini yöneten modern görsel üretim stüdyosu.",
+  "highlightMetric": "🎨 Yerel GPU Hızlandırması & Çok Katmanlı Prompt Motoru",
+  "techStack": [
+    "Python",
+    "Diffusers & PyTorch",
+    "FastAPI",
+    "Stable Diffusion & SDXL",
+    "Vanilla JS & Modern UI",
+    "CUDA Hızlandırma"
+  ],
+  "githubUrl": null,
+  "caseStudy": {
+    "problem": "Yerel donanımlarda görsel üretim yaparken ComfyUI veya Automatic1111 gibi araçların karmaşık arayüzleri, yüksek bellek sızıntıları ve üretim geçmişinin kataloglanmasındaki zorluklar üretim verimini düşürür. Sade, hızlı ve yerel kaynakları akıllı yöneten bir stüdyoya ihtiyaç vardı.",
+    "architecture": "FastAPI arka ucu üzerinde Diffusers boru hatlarını CUDA bellek yönetimiyle (xFormers, FP16/BF16 precision, CPU Offloading) optimize eder. Web arayüzü; prompt ağırlıklandırma, negatif filtreleme, tohum (seed) sabitleme ve anlık görsel önizleme sunar.",
+    "keyChallenge": "Sınırlı VRAM'e sahip ekran kartlarında yüksek çözünürlüklü (1024x1024+) üretim yaparken bellek taşmalarını (OOM - Out of Memory) önlemek için sıralı model boşaltma (sequential model offload) ve dilimlenmiş dikkat (sliced attention) mekanizmaları uygulandı.",
+    "features": [
+      "Stable Diffusion / SDXL modelleriyle yerel donanımda yüksek kaliteli görsel üretimi",
+      "VRAM dostu FP16/BF16 optimizasyonu ve düşük bellek tüketim modu",
+      "Görsel geçmişi, parametre metadata saklama ve tek tıkla tekrar üretme",
+      "Modern, karanlık tema odaklı ve duyarlı (responsive) stüdyo arayüzü"
+    ]
+  }
+}

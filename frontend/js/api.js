@@ -4,11 +4,12 @@
  */
 
 const ApiService = {
-  async fetchProjects(category = 'all', searchQuery = '') {
+  async fetchProjects(category = 'all', searchQuery = '', visibility = 'all') {
     // 1. HTTP/Backend üzerinden REST çağrısı dene (Klasördeki en güncel projeleri dinamik alır)
     try {
       const params = new URLSearchParams();
       if (category && category !== 'all') params.append('category', category);
+      if (visibility && visibility !== 'all') params.append('visibility', visibility);
       if (searchQuery) params.append('q', searchQuery);
 
       const res = await fetch(`/api/projects?${params.toString()}`);
@@ -21,7 +22,7 @@ const ApiService = {
 
     // 2. Fallback: Doğrudan yerel JavaScript veri kaynağını filtrele (file:// protokolünde %100 çalışır)
     if (typeof PROJECTS_DATA !== 'undefined' && Array.isArray(PROJECTS_DATA) && PROJECTS_DATA.length > 0) {
-      return this.filterLocal(PROJECTS_DATA, category, searchQuery);
+      return this.filterLocal(PROJECTS_DATA, category, searchQuery, visibility);
     }
 
     // 3. Veri bulunamadıysa boş liste dön
@@ -41,14 +42,20 @@ const ApiService = {
     return null;
   },
 
-  filterLocal(data, category, q) {
+  filterLocal(data, category, q, visibility = 'all') {
     const query = (q || '').toLowerCase().trim();
     return data.filter(p => {
+      // Görünürlük filtresi
+      if (visibility && visibility !== 'all') {
+        const pVis = p.visibility || (p.githubUrl ? 'public' : 'private');
+        if (pVis !== visibility) return false;
+      }
+
       let matchesCat = false;
       if (category === 'all') {
         matchesCat = true;
-      } else if (category === 'nlp_data') {
-        matchesCat = (p.category === 'nlp_data' || p.category === 'ai');
+      } else if (category === 'ai' || category === 'nlp_data') {
+        matchesCat = (p.category === 'ai' || p.category === 'nlp_data');
       } else {
         matchesCat = (p.category === category);
       }

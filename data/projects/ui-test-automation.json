@@ -1,0 +1,30 @@
+{
+  "id": "ui-test-automation",
+  "title": "Otonom Arayüz & Regresyon Test Motoru",
+  "category": "ai",
+  "categoryLabel": "Yapay Zeka & Test Otomasyonu",
+  "badge": "Özel Ar-Ge / Geliştirme",
+  "visibility": "private",
+  "summary": "Hem Web hem de Masaüstü uygulamaları için doğal dille yazılmış senaryoları yapay zeka ile yorumlayıp çalıştıran, hata anı ekran görüntülerini analiz eden ve detaylı PDF raporları üreten test platformu.",
+  "highlightMetric": "🤖 LLM Destekli Senaryo İcrası & Görsel Hata Raporlama",
+  "techStack": [
+    "Python",
+    "Playwright",
+    "CustomTkinter",
+    "OpenCV & Görsel Tanıma",
+    "ReportLab (PDF Motoru)",
+    "Local LLM"
+  ],
+  "githubUrl": null,
+  "caseStudy": {
+    "problem": "Geleneksel arayüz testleri (UI Tests) DOM elemanlarındaki en ufak ID/class değişikliklerinde çöker ve masaüstü yazılımlarında otomasyon kurmak aşırı maliyetlidir. Dayanıklı ve görsel tanıma kabiliyetine sahip akıllı bir test motoru gerekiyordu.",
+    "architecture": "Platform; kullanıcının doğal Türkçe/İngilizce olarak girdiği test komutlarını LLM aracılığıyla Playwright ve masaüstü kontrol aksiyonlarına dönüştürür. Beklenmeyen bir modal veya hata çıktığında ekran görüntüsünü OpenCV ve multimodal modeller ile analiz ederek arıza kök nedenini belirler ve otomatik PDF raporu basar.",
+    "keyChallenge": "Dinamik sayfa yüklemelerinde ve masaüstü GUI gecikmelerinde zaman aşımı (timeout) kaynaklı hataları önlemek için adaptif bekleme ve görsel durum doğrulama katmanları kurgulandı.",
+    "features": [
+      "Doğal dil açıklamalarından otonom çalışan test senaryoları türetme",
+      "Web (Playwright) ve Masaüstü GUI testlerini tek merkezden yönetme",
+      "Görsel regresyon tespiti ve hata anı otomatik ekran görüntüsü kaydı",
+      "Kurumsal standartlarda detaylı analitik PDF test raporu üretimi"
+    ]
+  }
+}

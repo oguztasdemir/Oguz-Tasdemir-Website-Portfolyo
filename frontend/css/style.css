@@ -685,6 +685,95 @@ html, body {
   background: var(--bg-panel-elevated);
 }
 
+/* Proje Görünürlük Kademeleri (Public / Private Ana Sekmeler) */
+.portfolio-tier-tabs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-panel-elevated);
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-panel);
+  width: fit-content;
+  flex-wrap: wrap;
+}
+
+.tier-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  padding: 8px 16px;
+  border-radius: var(--radius-xs);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.tier-tab-btn:hover {
+  color: var(--text-bright);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.tier-tab-btn.active {
+  background: var(--bg-card);
+  color: var(--text-bright);
+  border-color: var(--border-dim);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.tier-tab-btn.active[data-tier="public"] {
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+}
+
+.tier-tab-btn.active[data-tier="private"] {
+  border-color: rgba(217, 119, 6, 0.4);
+  color: #fbbf24;
+}
+
+.tier-count-pill {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: var(--bg-app-deep);
+  color: var(--text-muted);
+  padding: 2px 7px;
+  border-radius: 999px;
+  border: 1px solid var(--border-dim);
+}
+
+.tier-tab-btn.active .tier-count-pill {
+  color: var(--text-bright);
+  border-color: var(--border-panel);
+}
+
+.wide-card-public-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 3px 9px;
+  border-radius: var(--radius-xs);
+}
+
+.portfolio-wide-card.card-tier-private {
+  border-left: 3px solid rgba(217, 119, 6, 0.6);
+}
+
+.portfolio-wide-card.card-tier-public {
+  border-left: 3px solid rgba(56, 189, 248, 0.6);
+}
+
 /* Boydan Boya Proje Kartları Izgarası (Geniş 2 Kolon veya Akıcı Liste) */
 .portfolio-cards-grid {
   max-width: 1100px;

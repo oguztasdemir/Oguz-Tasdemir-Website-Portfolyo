@@ -25,5 +25,6 @@
       "Diferansiyel kontrolle mükerrer takip isteklerini %100 engelleme",
       "Kullanıcı dostu konfigürasyon ve liste dışa aktarım desteği"
     ]
-  }
+  },
+  "visibility": "public"
 }

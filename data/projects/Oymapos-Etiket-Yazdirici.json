@@ -24,5 +24,6 @@
       "Bağımsız tek parça taşınabilir .exe yapısı"
     ]
   },
-  "githubUrl": "https://github.com/oguztasdemir/Oymapos-Etiket-Yazdirici"
+  "githubUrl": "https://github.com/oguztasdemir/Oymapos-Etiket-Yazdirici",
+  "visibility": "public"
 }

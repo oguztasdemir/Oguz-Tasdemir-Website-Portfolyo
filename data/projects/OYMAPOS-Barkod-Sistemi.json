@@ -24,5 +24,6 @@
       "Gün sonu Z Raporu, kâr/zarar ve kritik stok bildirimleri"
     ]
   },
-  "githubUrl": "https://github.com/oguztasdemir/OYMAPOS-Barkod-Sistemi"
+  "githubUrl": "https://github.com/oguztasdemir/OYMAPOS-Barkod-Sistemi",
+  "visibility": "public"
 }

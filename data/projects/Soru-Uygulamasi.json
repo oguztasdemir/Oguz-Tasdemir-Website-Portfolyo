@@ -26,5 +26,6 @@
       "Service Worker ile %100 çevrimdışı (offline) soru çözebilme",
       "Anlık doğru/yanlış geribildirimi ve konu bazlı test modları"
     ]
-  }
+  },
+  "visibility": "public"
 }

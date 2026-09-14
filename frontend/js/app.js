@@ -31,129 +31,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Durum Yönetimi
   let currentCategory = 'all';
+  let currentTier = 'all'; // all, public, private
   let searchQuery = '';
   let activeProjectId = 'bist-bilanco-karlilik-tahmini';
   let allLoadedProjects = [];
 
-  // 2. Sekme / Panel Geçişleri
-  function switchWorkspaceView(viewId, updateState = true) {
-    railMenuBtns.forEach(btn => {
-      btn.classList.toggle('active', btn.getAttribute('data-panel') === viewId);
-    });
-
-    workspaceViews.forEach(view => {
-      const targetId = `view${viewId.charAt(0).toUpperCase() + viewId.slice(1)}`;
-      const isTarget = view.id.toLowerCase() === targetId.toLowerCase();
-      view.classList.toggle('active', isTarget);
-    });
-
-    if (updateState) {
-      if (viewId === 'projects' && portfolioDetailView && portfolioDetailView.style.display !== 'none' && activeProjectId) {
-        window.location.hash = `project=${activeProjectId}`;
-      } else {
-        window.location.hash = `view=${viewId}`;
-      }
-      localStorage.setItem('active_view', viewId);
-    }
-  }
-
-  railMenuBtns.forEach(btn => {
+  // Tier (Public / Private) Butonları Dinleyicisi
+  const tierTabBtns = document.querySelectorAll('.tier-tab-btn');
+  tierTabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      const targetPanel = btn.getAttribute('data-panel');
-      if (targetPanel) switchWorkspaceView(targetPanel);
-    });
-  });
-
-  // Ana Sayfa İçi Hızlı Geçiş Butonları
-  const homeGoProjectsBtn = document.getElementById('homeGoProjectsBtn');
-  const homeGoAboutBtn = document.getElementById('homeGoAboutBtn');
-  const homeGoCertsBtn = document.getElementById('homeGoCertsBtn');
-  const homeGoCertsHeroBtn = document.getElementById('homeGoCertsHeroBtn');
-  const homeFeaturedGoProjectsBtn = document.getElementById('homeFeaturedGoProjectsBtn');
-
-  if (homeGoProjectsBtn) {
-    homeGoProjectsBtn.addEventListener('click', () => switchWorkspaceView('projects'));
-  }
-  if (homeGoAboutBtn) {
-    homeGoAboutBtn.addEventListener('click', () => switchWorkspaceView('about'));
-  }
-  if (homeGoCertsBtn) {
-    homeGoCertsBtn.addEventListener('click', () => switchWorkspaceView('certificates'));
-  }
-  if (homeGoCertsHeroBtn) {
-    homeGoCertsHeroBtn.addEventListener('click', () => switchWorkspaceView('certificates'));
-  }
-  if (homeFeaturedGoProjectsBtn) {
-    homeFeaturedGoProjectsBtn.addEventListener('click', () => switchWorkspaceView('projects'));
-  }
-
-  // Ana Sayfa Yatay Kaydırma (Slider) Kontrolleri: Projeler & Sertifikalar
-  const homeProjectsTrack = document.getElementById('homeProjectsTrack');
-  const homeProjPrevBtn = document.getElementById('homeProjPrevBtn');
-  const homeProjNextBtn = document.getElementById('homeProjNextBtn');
-
-  if (homeProjectsTrack) {
-    if (homeProjPrevBtn) {
-      homeProjPrevBtn.addEventListener('click', () => {
-        homeProjectsTrack.scrollBy({ left: -340, behavior: 'smooth' });
-      });
-    }
-    if (homeProjNextBtn) {
-      homeProjNextBtn.addEventListener('click', () => {
-        homeProjectsTrack.scrollBy({ left: 340, behavior: 'smooth' });
-      });
-    }
-  }
-
-  const homeCertsTrack = document.getElementById('homeCertsTrack');
-  const homeCertPrevBtn = document.getElementById('homeCertPrevBtn');
-  const homeCertNextBtn = document.getElementById('homeCertNextBtn');
-
-  if (homeCertsTrack) {
-    if (homeCertPrevBtn) {
-      homeCertPrevBtn.addEventListener('click', () => {
-        homeCertsTrack.scrollBy({ left: -290, behavior: 'smooth' });
-      });
-    }
-    if (homeCertNextBtn) {
-      homeCertNextBtn.addEventListener('click', () => {
-        homeCertsTrack.scrollBy({ left: 290, behavior: 'smooth' });
-      });
-    }
-  }
-
-  // Öne Çıkan Proje Kartlarına Tıklandığında Doğrudan Projeler Sayfasında Detayını Açma
-  const homeProjectSliderCards = document.querySelectorAll('.home-project-slider-card');
-  homeProjectSliderCards.forEach(card => {
-    card.addEventListener('click', () => {
-      const projId = card.getAttribute('data-project-id');
-      if (projId) {
-        switchWorkspaceView('projects');
-        openProjectDetailModal(projId);
-      }
-    });
-  });
-
-  // Ana Sayfa Odak Kartlarına Tıklandığında İlgili Kategoriyle Projelere Geçiş
-  const showcaseCards = document.querySelectorAll('.showcase-card');
-  const domainCategoryMap = {
-    'ai': 'nlp_data',
-    'pos': 'fintech',
-    'system': 'desktop',
-    'math': 'all'
-  };
-
-  showcaseCards.forEach(card => {
-    card.addEventListener('click', () => {
-      const domain = card.getAttribute('data-domain');
-      const targetCat = domainCategoryMap[domain] || 'all';
-      
-      currentCategory = targetCat;
-      categoryChips.forEach(chip => {
-        chip.classList.toggle('active', chip.getAttribute('data-category') === targetCat);
-      });
-
-      switchWorkspaceView('projects');
+      tierTabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentTier = btn.getAttribute('data-tier') || 'all';
       loadAndRenderSplitView();
     });
   });
@@ -162,6 +51,16 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateGlobalProjectCounters(allProjects) {
     if (!allProjects || !Array.isArray(allProjects)) return;
     const totalCount = allProjects.length;
+    const publicCount = allProjects.filter(p => p.visibility === 'public' || p.githubUrl).length;
+    const privateCount = allProjects.filter(p => p.visibility === 'private' || !p.githubUrl).length;
+
+    // 0. Tier Sayaç Hapları
+    const tierCountAll = document.getElementById('tierCountAll');
+    const tierCountPublic = document.getElementById('tierCountPublic');
+    const tierCountPrivate = document.getElementById('tierCountPrivate');
+    if (tierCountAll) tierCountAll.textContent = totalCount;
+    if (tierCountPublic) tierCountPublic.textContent = publicCount;
+    if (tierCountPrivate) tierCountPrivate.textContent = privateCount;
 
     // 1. Sol Panel Menü Rozeti
     if (railProjectsCountBadge) {
@@ -201,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 7. Kategori Filtre Çiplerindeki Sayıları Otomatik Hesapla
     const countMap = {
       all: totalCount,
+      ai: allProjects.filter(p => p.category === 'nlp_data' || p.category === 'ai').length,
       nlp_data: allProjects.filter(p => p.category === 'nlp_data' || p.category === 'ai').length,
       desktop: allProjects.filter(p => p.category === 'desktop').length,
       fintech: allProjects.filter(p => p.category === 'fintech').length,
@@ -219,12 +119,12 @@ document.addEventListener('DOMContentLoaded', () => {
   async function loadAndRenderSplitView() {
     // Tüm projelerin ham listesini alıp sayaçları güncellemek için category='all' araması yap
     if (!window._globalProjectsLoadedOnce) {
-      const fullList = await ApiService.fetchProjects('all', '');
+      const fullList = await ApiService.fetchProjects('all', '', 'all');
       updateGlobalProjectCounters(fullList);
       window._globalProjectsLoadedOnce = true;
     }
 
-    allLoadedProjects = await ApiService.fetchProjects(currentCategory, searchQuery);
+    allLoadedProjects = await ApiService.fetchProjects(currentCategory, searchQuery, currentTier);
 
     // Lisans tezini her zaman en başta göster
     if (Array.isArray(allLoadedProjects) && allLoadedProjects.length > 0) {
