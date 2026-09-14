@@ -619,6 +619,48 @@ html, body {
   font-weight: 700;
 }
 
+/* Hızlı Teknoloji Filtresi Satırı */
+.tech-filter-chips-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding-top: 6px;
+  border-top: 1px dashed var(--border-dim);
+}
+
+.tech-filter-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  margin-right: 4px;
+}
+
+.tech-filter-pill {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  background: var(--bg-app-deep);
+  border: 1px solid var(--border-dim);
+  padding: 2px 8px;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  transition: all 0.14s ease;
+}
+
+.tech-filter-pill:hover {
+  color: var(--text-bright);
+  border-color: var(--border-panel);
+  background: var(--bg-panel-elevated);
+}
+
+.tech-filter-pill.active {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.12);
+  border-color: rgba(56, 189, 248, 0.35);
+  font-weight: 700;
+}
+
 /* ==========================================================================
    GENİŞ PORTFOLYO AKIŞI (BOYDAN BOYA MODERN LİSTE & KARTLAR)
    ========================================================================== */
@@ -1362,6 +1404,111 @@ html, body {
 
 .case-readme-pre code {
   font-family: inherit;
+}
+
+/* Mühendislik Veri & İşlem Hattı (Architecture Pipeline Flow) */
+.system-pipeline-container {
+  margin-top: 14px;
+  background: var(--bg-app-deep);
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius-xs);
+  padding: 14px 16px;
+}
+
+.system-pipeline-header {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.system-pipeline-steps {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.pipeline-step-node {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-card);
+  padding: 8px 12px;
+  border-radius: var(--radius-xs);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 140px;
+  flex: 1;
+}
+
+.pipeline-step-num {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-muted);
+}
+
+.pipeline-step-title {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  line-height: 1.25;
+}
+
+.pipeline-arrow {
+  color: var(--text-muted);
+  font-weight: 700;
+  flex-shrink: 0;
+  font-size: 0.9rem;
+}
+
+/* İlgili Kardeş Projeler (Related Systems) */
+.related-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 12px;
+}
+
+@media (max-width: 700px) {
+  .related-projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.related-project-card {
+  background: var(--bg-app-deep);
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius-xs);
+  padding: 12px 14px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: all 0.15s ease;
+}
+
+.related-project-card:hover {
+  background: var(--bg-panel-elevated);
+  border-color: var(--accent-blue);
+  transform: translateY(-1px);
+}
+
+.related-project-card-title {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-bright);
+}
+
+.related-project-card-metric {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--accent-amber);
 }
 
 /* ==========================================================================

@@ -13,26 +13,60 @@ PROJECTS_DIR = DATA_DIR / "projects"
 class ProjectService:
     @staticmethod
     def _read_all_from_folder() -> List[dict]:
-        """data/projects/ klasöründeki her ayrı .json dosyasını sırayla okur."""
+        """data/projects/ klasöründeki her ayrı .json dosyasını okur ve mühendislik ağırlığına göre sıralar."""
         if not PROJECTS_DIR.exists():
             return []
         
-        projects = []
-        for file_path in sorted(PROJECTS_DIR.glob("*.json")):
+        # Mülakat & Mühendislik Ağırlıklı Sıralama
+        PRIORITY_ORDER = [
+            # 1. Flagship / Akademik Tez & Gerçek Saha Sistemleri
+            "bist-bilanco-karlilik-tahmini",   # 1. Lisans Bitirme Tezi (FinTech & ML)
+            "OYMAPOS-Barkod-Sistemi",          # 2. OymaPOS (Saha Kullanımı & FinTech)
+            "cortex",                          # 3. Cortex (Yerel AI, RAG & IDE)
+            "Kredi-Notu-Siniflandirmasi-Tahmin-Modeli", # 4. Kredi Notu Risk Tahmini (ML)
+            "webtoon-lora-suite",              # 5. Webtoon Hikaye & LoRA Hattı (CV & ML)
+            "Airdrop-Local",                   # 6. Local Drop (Ağ & Sistem)
+            "cortex-planner",                  # 7. CorPlanner (DAG & Görev Motoru)
+            "Disk-Kurtarma-Araci",             # 8. Win32 Raw Carving & Adli Bilişim
+            "crypto-analytics-engine",         # 9. Kripto Analiz & AI Persona Motoru
+            "hyperbeam-browser",               # 10. CoBrowser (Sanal Tarayıcı Odası)
+            "Oymapos-Etiket-Yazdirici",        # 11. OymaPOS Dinamik Raf Yazdırıcı
+            "fatura-odeal",                    # 12. Ödeal e-Fatura Otomasyonu
+            "ai-image-studio",                 # 13. Yerel AI Görsel Üretim Stüdyosu
+            "ui-test-automation",              # 14. Otonom Arayüz & Test Motoru
+            "youtube-ai-assistant",            # 15. YouTube Transkript Analiz Motoru
+            "Hugging-face-Downloader",          # 16. HuggingFace Model İndirici
+            "Akademik-Ingilizce",              # 17. NLP Sınav Kelime Kampı
+            "Soru-Uygulamasi",                 # 18. PWA Sınav Çözüm Platformu
+            "altyapi-manager",                 # 19. Spor Kulübü Taktik & Oyuncu Yönetimi
+            "Telegram-Media-Hub",              # 20. Telegram Medya Arşiv Yöneticisi
+            "cache-cleaner",                   # 21. Geliştirici Disk Temizleme
+            "Gardrops-Otomasyon-Botu",         # 22. Pazaryeri Otomasyonu (2022)
+            "EA-FIFA-Fikstur",                 # 23. Turnuva & Fikstür Motoru
+            "NC-Codes"                         # 24. Transformice Lua Script Paketi (2013)
+        ]
+
+        projects_dict = {}
+        for file_path in PROJECTS_DIR.glob("*.json"):
             try:
                 with open(file_path, "r", encoding="utf-8") as f:
                     data = json.load(f)
                     if isinstance(data, dict) and "id" in data:
-                        projects.append(data)
+                        projects_dict[data["id"]] = data
             except Exception:
                 continue
 
-        # Lisans Tezi projesini (bist-bilanco-karlilik-tahmini) listenin en başına taşı
-        tez_project = next((p for p in projects if p.get("id") == "bist-bilanco-karlilik-tahmini"), None)
-        if tez_project:
-            projects = [tez_project] + [p for p in projects if p.get("id") != "bist-bilanco-karlilik-tahmini"]
+        ordered_projects = []
+        # Önce belirlenen ağırlıklı sıra
+        for p_id in PRIORITY_ORDER:
+            if p_id in projects_dict:
+                ordered_projects.append(projects_dict.pop(p_id))
 
-        return projects
+        # Listede belirtilmeyen yeni bir dosya varsa sona ekle
+        for remaining_p in projects_dict.values():
+            ordered_projects.append(remaining_p)
+
+        return ordered_projects
 
     @staticmethod
     def get_all_projects(category: Optional[str] = None, search: Optional[str] = None, visibility: Optional[str] = None) -> List[dict]:

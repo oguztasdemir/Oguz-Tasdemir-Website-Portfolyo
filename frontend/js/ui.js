@@ -113,8 +113,19 @@ const UI = {
       return;
     }
 
+    const isPrivate = project.visibility === 'private' || !project.githubUrl;
     const caseStudy = project.caseStudy || {};
     const features = caseStudy.features || [];
+
+    // Dinamik Mimari Akış Boru Hattı Adımları (Mühendislik Akışı)
+    const pipelineSteps = project.techStack && project.techStack.length >= 3 
+      ? [
+          { num: "01", title: "Veri Girişi & Arayüz", desc: project.techStack[0] || "Client" },
+          { num: "02", title: "İşlem & Servis Motoru", desc: project.techStack[1] || "Core Engine" },
+          { num: "03", title: "Çekirdek Algoritma / ML", desc: project.techStack[2] || "Backend / Logic" },
+          { num: "04", title: "Depolama / Çıktı", desc: project.techStack[3] || project.techStack[project.techStack.length - 1] }
+        ]
+      : null;
 
     container.innerHTML = `
       <div class="stage-content-wrapper">
@@ -144,7 +155,7 @@ const UI = {
             ` : `
               <span class="stage-private-badge" title="Bu proje aktif geliştirme ve Ar-Ge aşamasında olup tamamlandığında açık kaynak olarak yayınlanacaktır">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                <span>🔒 Özel Ar-Ge (Tamamlandığında Açık Kaynak Olacak)</span>
+                <span>🔒 Özel Ar-Ge (Geliştirme Tamamlandığında Açık Kaynak Olacak)</span>
               </span>
             `}
 
@@ -199,6 +210,23 @@ const UI = {
               <h3 class="case-box-header">Nasıl İnşa Ettim? (Mimari ve Tercihler)</h3>
             </div>
             <p class="case-box-text">${caseStudy.architecture || ''}</p>
+            
+            ${pipelineSteps ? `
+              <div class="system-pipeline-container">
+                <div class="system-pipeline-header">⚡ Sistem & Veri İşlem Hattı (Pipeline):</div>
+                <div class="system-pipeline-steps">
+                  ${pipelineSteps.map((step, idx) => `
+                    <div class="pipeline-step-node">
+                      <span class="pipeline-step-num">Aşama ${step.num}</span>
+                      <strong class="pipeline-step-title">${step.title}</strong>
+                      <span style="font-family: var(--font-mono); font-size: 0.68rem; color: #38bdf8;">${step.desc}</span>
+                    </div>
+                    ${idx < pipelineSteps.length - 1 ? `<span class="pipeline-arrow">&rarr;</span>` : ''}
+                  `).join('')}
+                </div>
+              </div>
+            ` : ''}
+
             ${caseStudy.keyChallenge ? `
               <div class="case-box-subdetail">
                 <div class="case-subdetail-tag">Mühendislik Detayı & Karşılaşılan Zorluk</div>

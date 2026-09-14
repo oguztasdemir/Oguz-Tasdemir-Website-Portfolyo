@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Durum Yönetimi
   let currentCategory = 'all';
   let currentTier = 'all'; // all, public, private
+  let currentTech = 'all';
   let searchQuery = '';
   let activeProjectId = 'bist-bilanco-karlilik-tahmini';
   let allLoadedProjects = [];
@@ -301,7 +302,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Aktif filtrelere göre listelenecek projeleri al
     allLoadedProjects = await ApiService.fetchProjects(currentCategory, searchQuery, currentTier);
 
-    // Lisans tezini her zaman en başta göster
+    // Teknoloji Filtresi (Tech Stack Pill)
+    if (currentTech && currentTech !== 'all') {
+      const qTech = currentTech.toLowerCase();
+      allLoadedProjects = allLoadedProjects.filter(p => {
+        return (p.techStack || []).some(t => t.toLowerCase().includes(qTech));
+      });
+    }
+
+    // Lisans tezini her zaman en başta göster (eğer sonuç listesinde varsa)
     if (Array.isArray(allLoadedProjects) && allLoadedProjects.length > 0) {
       const tezIdx = allLoadedProjects.findIndex(p => p.id === 'bist-bilanco-karlilik-tahmini');
       if (tezIdx > 0) {
@@ -387,6 +396,17 @@ document.addEventListener('DOMContentLoaded', () => {
       categoryChips.forEach(c => c.classList.remove('active'));
       chip.classList.add('active');
       currentCategory = chip.getAttribute('data-category');
+      loadAndRenderSplitView();
+    });
+  });
+
+  // 4.1 Hızlı Teknoloji Filtresi (Tech Filter Pills)
+  const techFilterPills = document.querySelectorAll('.tech-filter-pill');
+  techFilterPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      techFilterPills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      currentTech = pill.getAttribute('data-tech');
       loadAndRenderSplitView();
     });
   });
