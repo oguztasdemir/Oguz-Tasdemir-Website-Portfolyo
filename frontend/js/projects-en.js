@@ -207,12 +207,12 @@ window.PROJECTS_EN_DATA = {
   "kpss-sinav-hazirlik": {
     title: "KPSS Exam Prep Platform — Digital Question Bank & Analytics",
     categoryLabel: "Academic & Exam",
-    badge: "Live on Vercel",
-    summary: "A modern, responsive digital exam preparation platform deployed on Vercel, replacing bulky physical test books with interactive timed tests, smart mistake tracking, and visual performance analytics.",
-    highlightMetric: "📱 Live on Vercel & Mobile Optimized Study Engine",
-    whyStory: "A live digital test platform deployed on Vercel, developed to replace bulky physical test books for KPSS exam preparation and allow interactive group study sessions with fellow university peers.",
+    badge: "Live Web App",
+    summary: "A modern, responsive digital exam preparation platform deployed on the web, replacing bulky physical test books with interactive timed tests, smart mistake tracking, and visual performance analytics.",
+    highlightMetric: "📱 Live Web App & Mobile Optimized Study Engine",
+    whyStory: "A live digital test platform deployed on the web, developed to replace bulky physical test books for KPSS exam preparation and allow interactive group study sessions with fellow university peers.",
     problem: "Carrying multiple thick test books during exam prep is cumbersome, and paper tests make it difficult to track recurring weaknesses or analyze historical net score trends.",
-    architecture: "Built with modern HTML5, CSS3, and JavaScript, bundled and deployed for edge performance on Vercel. Stores question banks and test histories in local storage and client-side state engines.",
+    architecture: "Built with modern HTML5, CSS3, and JavaScript, bundled and deployed for edge performance. Stores question banks and test histories in local storage and client-side state engines.",
     keyChallenge: "Ensuring zero-latency rendering of hundreds of formatted questions with instant answer validation and error categorization on mobile viewports.",
     features: [
       "Comprehensive question banks for History, Geography, and Math",

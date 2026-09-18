@@ -2,14 +2,14 @@
   "id": "KPSS-Sinav-Hazirlik",
   "title": "KPSS Lisans GY-GK Hazırlık & Çıkmış Sorular Platformu",
   "category": "academic",
-  "categoryLabel": "KPSS Sınav Hazırlık (Vercel)",
+  "categoryLabel": "KPSS Sınav Hazırlık Platformu",
   "badge": "Canlı Web Uygulaması",
   "summary": "KPSS Genel Yetenek - Genel Kültür çıkmış sınav soruları, akıllı hata havuzu, detaylı performans analitiği ve süre simülatörlü interaktif hazırlık platformu.",
-  "highlightMetric": "🚀 Vercel Üzerinde Canlı Yayında & 5000+ Soru Havuzu",
+  "highlightMetric": "🚀 Canlı Web Yayında & 5000+ Soru Havuzu",
   "techStack": [
     "JavaScript (Vanilla ES6+)",
     "HTML5 & CSS3 (Glassmorphism)",
-    "Vercel Serverless & Edge",
+    "Edge Serverless & CDN",
     "LocalStorage & Analytics API",
     "JSON Soru Veritabanı"
   ],
@@ -17,11 +17,11 @@
   "demoUrl": "https://kpss-lisans-hazirlik-app.vercel.app",
   "caseStudy": {
     "problem": "Kamu Personel Seçme Sınavı'na (KPSS) hazırlanırken kalın soru bankalarını taşımak yerine dijital ortamda pratik yapmak, hem kendimin hem de sınava hazırlanan arkadaşlarımın isteği üzerine birlikte verimli çalışabilmemiz için bu platformu geliştirdim. Sadece yanlış yapılan soruları biriktirip eksik analizi çıkaran, reklam ve üyelik karmaşası olmadan sınav süresiyle soru çözdüren sade bir hazırlık ortamı kurdum.",
-    "architecture": "Platform, Vercel Serverless ve Edge Cache mimarisi üzerinde sıfır sunucu maliyetiyle global CDN üzerinden dağıtılmaktadır. Ön yüzde hiçbir ağır framework kullanılmadan saf Vanilla JavaScript ve modern CSS Glassmorphism mimarisi tercih edilmiştir. Kullanıcının çözdüğü her soru yerel LocalStorage üzerinde indekslenir; yanlış yapılan sorular 'Akıllı Hata Havuzu'na aktarılarak adayın sınav öncesi sadece eksiklerine odaklanması sağlanır.",
+    "architecture": "Platform, Edge Serverless ve CDN mimarisi üzerinde sıfır sunucu maliyetiyle global ağ üzerinden dağıtılmaktadır. Ön yüzde hiçbir ağır framework kullanılmadan saf Vanilla JavaScript ve modern CSS Glassmorphism mimarisi tercih edilmiştir. Kullanıcının çözdüğü her soru yerel LocalStorage üzerinde indekslenir; yanlış yapılan sorular 'Akıllı Hata Havuzu'na aktarılarak adayın sınav öncesi sadece eksiklerine odaklanması sağlanır.",
     "keyChallenge": "Binlerce resimli ve açıklamalı sorunun mobil cihazlarda kotayı tüketmeden, milisaniyeler içinde anında ekrana gelmesi için dinamik JSON chunking ve tarayıcı önbellekleme katmanı geliştirildi.",
     "features": [
       "KPSS'ye hazırlanan arkadaşlarla birlikte verimli çalışma ve soru pratiği ortamı",
-      "Vercel üzerinde canlı yayında hızlı erişim (kpss-lisans-hazirlik-app.vercel.app)",
+      "Canlı web yayını ve hızlı mobil/masaüstü erişim",
       "Akıllı hata havuzu: Sadece yanlış yapılan soruları tekrar çözebilme",
       "Gerçek sınav süre simülatörü ve anlık net / başarı analitiği"
     ]

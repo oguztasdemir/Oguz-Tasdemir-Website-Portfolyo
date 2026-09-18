@@ -13,8 +13,8 @@
     "i18n Engine",
     "Uvicorn"
   ],
-  "githubUrl": "https://github.com/oguztasdemir/portfolio",
-  "demoUrl": "http://127.0.0.1:8000",
+  "githubUrl": "https://github.com/oguztasdemir/Oguz-Tasdemir-Website-Portfolyo",
+  "demoUrl": "https://oguztasdemir.github.io/Oguz-Tasdemir-Website-Portfolyo/",
   "highlight_metric": "%100 Vanilla CSS & Sıfır UI Kütüphane Bağımlılığı",
   "whyBuilt": "Genel portfolyo şablonları ve hantal React/Next framework'leri, geliştirdiğim sistemlerin mimari derinliğini, düşük seviyeli detaylarını ve gerçek hayat vaka analizlerini aktarmakta yetersiz kalıyordu. Bu yüzden harici hiçbir ağır kütüphaneye bağımlı olmadan çalışan, sıfır gecikmeli, anında TR/EN geçişi yapabilen ve 4 adımlı sistem akış şemalarını interaktif sunan bağımsız bir mühendislik konsolu geliştirdim.",
   "caseStudy": {

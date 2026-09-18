@@ -125,8 +125,8 @@ const PROJECTS_DATA = [
       "Uvicorn",
       "Modüler JSON Şeması"
     ],
-    "githubUrl": "https://github.com/oguztasdemir/portfolio",
-    "demoUrl": "http://127.0.0.1:8000",
+    "githubUrl": "https://github.com/oguztasdemir/Oguz-Tasdemir-Website-Portfolyo",
+    "demoUrl": "https://oguztasdemir.github.io/Oguz-Tasdemir-Website-Portfolyo/",
     "caseStudy": {
       "problem": "Geleneksel portfolyo siteleri çoğunlukla yüzeysel ekran görüntüleri ve statik metinlerden ibarettir. Ağır JavaScript framework'leri (React, Next.js vb.) ve büyük CSS paketleri (Tailwind, Bootstrap) sayfa yüklenme süresini artırır ve arka plandaki mühendislik mantığını şeffaf bir şekilde sergilemekte yetersiz kalır.",
       "architecture": "Uygulama, hafif ve asenkron bir Python FastAPI arka ucu ile sıfır bağımlılıklı saf Vanilla HTML5/CSS3/JavaScript ön ucundan oluşur. Veri katmanında her proje bağımsız bir JSON şeması olarak saklanır. Arayüzde özel CSS değişkenleri (Design Tokens), modüler olay güdümlü (event-driven) i18n çeviri motoru ve 4 adımlı dinamik SVG/DOM akış şeması derleyicisi bulunur.",
@@ -580,14 +580,14 @@ const PROJECTS_DATA = [
     "id": "KPSS-Sinav-Hazirlik",
     "title": "KPSS Lisans GY-GK Hazırlık & Çıkmış Sorular Platformu",
     "category": "academic",
-    "categoryLabel": "KPSS Sınav Hazırlık (Vercel)",
+    "categoryLabel": "KPSS Sınav Hazırlık Platformu",
     "badge": "Canlı Web Uygulaması",
     "summary": "KPSS Genel Yetenek - Genel Kültür çıkmış sınav soruları, akıllı hata havuzu, detaylı performans analitiği ve süre simülatörlü interaktif hazırlık platformu.",
-    "highlightMetric": "🚀 Vercel Üzerinde Canlı Yayında & 5000+ Soru Havuzu",
+    "highlightMetric": "🚀 Canlı Web Yayında & 5000+ Soru Havuzu",
     "techStack": [
       "JavaScript (Vanilla ES6+)",
       "HTML5 & CSS3 (Glassmorphism)",
-      "Vercel Serverless & Edge",
+      "Edge Serverless & CDN",
       "LocalStorage & Analytics API",
       "JSON Soru Veritabanı"
     ],
@@ -595,10 +595,10 @@ const PROJECTS_DATA = [
     "demoUrl": "https://kpss-lisans-hazirlik-app.vercel.app",
     "caseStudy": {
       "problem": "Kamu Personel Seçme Sınavı'na (KPSS) hazırlanan binlerce aday, kalın soru bankaları arasında kaybolmakta, hangi derslerde ve hangi konu başlıklarında (Tarih, Coğrafya, Vatandaşlık, Matematik, Türkçe) net kaybettiğini analitik olarak görememektedir. Soru çözüm platformları ise genellikle ağır üyelikler, reklamlar ve yavaş sayfa geçişleriyle adayın odaklanmasını engeller. Bu sorunu çözmek için sıfır gecikmeli, akıllı yanlış havuzu oluşturan ve gerçek sınav süresini simüle eden modern bir web platformu geliştirdim.",
-      "architecture": "Platform, Vercel Serverless ve Edge Cache mimarisi üzerinde sıfır sunucu maliyetiyle global CDN üzerinden dağıtılmaktadır. Ön yüzde hiçbir ağır framework kullanılmadan saf Vanilla JavaScript ve modern CSS Glassmorphism mimarisi tercih edilmiştir. Kullanıcının çözdüğü her soru yerel LocalStorage üzerinde indekslenir; yanlış yapılan sorular 'Akıllı Hata Havuzu'na aktarılarak adayın sınav öncesi sadece eksiklerine odaklanması sağlanır.",
+      "architecture": "Platform, Edge Serverless ve CDN mimarisi üzerinde sıfır sunucu maliyetiyle global ağ üzerinden dağıtılmaktadır. Ön yüzde hiçbir ağır framework kullanılmadan saf Vanilla JavaScript ve modern CSS Glassmorphism mimarisi tercih edilmiştir. Kullanıcının çözdüğü her soru yerel LocalStorage üzerinde indekslenir; yanlış yapılan sorular 'Akıllı Hata Havuzu'na aktarılarak adayın sınav öncesi sadece eksiklerine odaklanması sağlanır.",
       "keyChallenge": "Binlerce resimli ve açıklamalı sorunun mobil cihazlarda kotayı tüketmeden, milisaniyeler içinde anında ekrana gelmesi için dinamik JSON chunking ve tarayıcı önbellekleme katmanı geliştirildi.",
       "features": [
-        "Vercel üzerinde canlı yayında hızlı erişim (kpss-lisans-hazirlik-app.vercel.app)",
+        "Canlı web yayını ve hızlı mobil/masaüstü erişim",
         "Geçmiş yılların KPSS GY-GK çıkmış soru havuzu ve detaylı çözümler",
         "Akıllı hata havuzu: Sadece yanlış yapılan soruları tekrar çözebilme",
         "Gerçek sınav süre simülatörü ve anlık net / başarı analitiği",
