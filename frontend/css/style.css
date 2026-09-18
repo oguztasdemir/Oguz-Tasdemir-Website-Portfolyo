@@ -3,12 +3,12 @@
    Modüler CSS Mimarisi (Her modül < 1000 satır)
    ========================================================================== */
 
-@import url('base.css?v=4.1');
-@import url('projects.css?v=4.1');
-@import url('project-detail.css?v=4.1');
-@import url('project-pipeline.css?v=4.1');
-@import url('home.css?v=4.1');
-@import url('about-certs.css?v=4.1');
-@import url('contact-feedback.css?v=4.1');
-@import url('tabs-terminal.css?v=4.1');
-@import url('mobile.css?v=4.1');
+@import url('base.css?v=5.0');
+@import url('projects.css?v=5.0');
+@import url('project-detail.css?v=5.0');
+@import url('project-pipeline.css?v=5.0');
+@import url('home.css?v=5.0');
+@import url('about-certs.css?v=5.0');
+@import url('contact-feedback.css?v=5.0');
+@import url('tabs-terminal.css?v=5.0');
+@import url('mobile.css?v=5.0');
