@@ -14,14 +14,14 @@
     "Thread Pool"
   ],
   "caseStudy": {
-    "problem": "Yanlışlıkla biçimlendirilen (quick format), dosya sistemi tablosu (FAT32/NTFS MFT) çöken veya elektrik kesintisi yüzünden RAW formata dönüşüp Windows Explorer tarafından 'Diski biçimlendirmeniz gerekiyor' uyarısı veren depolama aygıtlarındaki kritik verilere standart yöntemlerle ulaşılamaz. Piyasada satılan ticari adli bilişim yazılımları ise binlerce dolarlık lisanslar talep eder veya demo sürümlerinde dosyaları kurtarmayı kısıtlar. Dosya sistemi hiyerarşisi tamamen silinmiş olsa dahi doğrudan manyetik/flaş sektörleri bayt bayt tarayarak dosyaları yeniden inşa eden yerel bir kurtarma yazılımı geliştirdim.",
-    "architecture": "Yazılım, düşük seviyeli Windows API çağrıları (CreateFileW ile PhysicalDrive erişimi) üzerinden doğrudan ham disk sektörlerine salt-okunur (read-only) güvenlik modunda bağlanır. Dosya sistemi çökmüş olduğu için File Carving (dosya oyma) tekniğini kullanır: Sektörler blok blok okunurken JPEG, PNG, PDF, ZIP, MP4 gibi dosya türlerinin sihirli baytları (Magic Bytes / File Signatures - örn. JPEG için 0xFFD8FFE0) aranır. Başlangıç imzası yakalandığında dosya yapısı ayrıştırılır, bitiş baytına (EOF) kadar olan sektörler hafızada birleştirilir ve veri bozulmadan yeni bir diske yazılır.",
-    "keyChallenge": "Parçalanmış (fragmented) sektörlerde dosyaların sıralı dizilmemesi kurtarılan resim veya belgelerin yarım çıkmasına neden olabiliyordu. Dosya iç başlıklarındaki boyut meta-verilerini (Exif, PDF xref tablosu) dinamik okuyan doğrulama algoritmaları entegre ederek bozuk dosya oranını %85 azalttım.",
+    "problem": "Kişisel taşınabilir harici diskimi Xbox konsoluna bağladığımda, konsol diski harici depolama alanı olarak kullanmak amacıyla otomatik olarak biçimlendirip yapılandırdı ve disk içindeki tüm arşivim ve dosyalarım bir anda silindi. Piyasada satılan ticari veri kurtarma yazılımları ise ya fahiş lisans ücretleri istiyor ya da diske kurtarma yaparken yeni veriler yazarak mevcut sektörleri geri dönülemez şekilde bozma riski taşıyordu. Diske kesinlikle hiçbir yazma işlemi yapmadan (%100 salt-okunur modda), doğrudan ham sektörleri (raw sectors) tarayarak dosya imzalarından silinen dosyaları yeni bir diske çıkaran kendi kurtarma aracımı geliştirdim.",
+    "architecture": "Yazılım, düşük seviyeli Windows Win32 API çağrıları (CreateFileW ile PhysicalDrive erişimi) üzerinden doğrudan ham disk sektörlerine kesinlikle salt-okunur (read-only) güvenlik modunda bağlanır. Xbox yapılandırması dosya tablosunu (FAT32/NTFS) ezdiği için dosya oyma (File Carving) tekniği kullanılır: Sektörler blok blok okunurken JPEG, PNG, PDF, ZIP, MP4 gibi dosya formatlarının sihirli baytları (Magic Bytes / File Signatures - örn. JPEG için 0xFFD8FFE0) aranır. Başlangıç imzası yakalandığı anda dosya yapısı ayrıştırılır, bitiş baytına (EOF) kadar olan sektörler bellekte birleştirilir ve hasarlı diske tek bir bayt dahi yazılmadan yeni hedef sürücüye güvenle kaydedilir.",
+    "keyChallenge": "Kurtarma esnasında orijinal diske yazma yapılmasını kesin olarak engelleyen salt-okunur koruma mekanizmasını sağlamak ve dosya sistemi tablosu olmadan parçalanmış sektörlerden sağlam dosyaları eksiksiz birleştirmekti.",
     "features": [
-      "Doğrudan ham sektör seviyesinde derinlemesine tarama",
-      "İmza tabanlı dosya kurtarma (Görsel, Belge, Video ve Arşivler)",
-      "Diski 100 bloğa bölerek seçmeli sektör taraması",
-      "Kurtarılan dosyaların bütünlük testi"
+      "Orijinal diske sıfır yazma riski (%100 Salt-Okunur / Read-Only güvenlik)",
+      "Xbox formatı veya çöken dosya sistemlerinden imza tabanlı (File Carving) kurtarma",
+      "Doğrudan Win32 API ile ham fiziksel sektör (Raw Sector) taraması",
+      "Kurtarılan dosyaları doğrudan başka bir sürücüye güvenle aktarma"
     ]
   },
   "githubUrl": "https://github.com/oguztasdemir/Disk-Kurtarma-Araci",

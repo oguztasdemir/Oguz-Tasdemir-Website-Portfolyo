@@ -37,7 +37,7 @@ async def add_anti_cache_headers(request: Request, call_next):
     path = request.url.path
     # Terminale sade ve şık durum bildirimi
     if path == "/" or path == "/index.html":
-        print(f" 🔄 [Tarayıcı] Sayfa yenilendi / açıldı (F5) -> {path}")
+        print(f" [INFO] [Tarayici] Sayfa yenilendi / acildi (F5) -> {path}")
     elif path.startswith("/api/projects"):
         # sessiz veya tek satır
         pass

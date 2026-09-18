@@ -1,30 +1,29 @@
 {
   "id": "hyperbeam-browser",
-  "title": "CoBrowser — Çok Kullanıcılı Ortak Sanal Tarayıcı Odası",
+  "title": "Ortak Tarayıcı Odası & Eşzamanlı Web Gezinme",
   "category": "desktop",
-  "categoryLabel": "Sistem & Sanal Tarayıcı Odası",
+  "categoryLabel": "Sistem & Ortak Tarayıcı Odası",
   "badge": "Özel Ar-Ge / Geliştirme",
   "visibility": "private",
-  "summary": "İzole Chromium oturumlarını WebSocket üzerinden düşük gecikmeli canlı yayına dönüştüren, paylaşımlı gezinme ve anti-bot bypass yeteneklerine sahip işbirlikçi sanal tarayıcı orkestratörü.",
-  "highlightMetric": "🌐 Ultra Düşük Gecikmeli Sanal Oturum & Eşzamanlı Navigasyon",
+  "summary": "Sunucu üzerinde çalışan izole bir web tarayıcısını WebSocket üzerinden arkadaş ortamında aynı anda kontrol etmeyi, birlikte video izlemeyi ve web sitelerinde ortak gezinmeyi sağlayan sanal tarayıcı odası.",
+  "highlightMetric": "🌐 Eşzamanlı Ortak Kontrol & Canlı Tarayıcı Yayını",
   "techStack": [
-    "Node.js",
-    "Express",
-    "Puppeteer-Extra (Stealth)",
-    "WebSocket & WebRTC",
-    "Python Cortex Ajanı",
-    "Chromium Engine"
+    "Node.js & Express",
+    "Puppeteer Stealth",
+    "WebSocket Akışı",
+    "Chromium Tarayıcı Motoru",
+    "HTML5 Canvas Ekranı"
   ],
   "githubUrl": null,
   "caseStudy": {
-    "problem": "Farklı konumlardaki kullanıcıların aynı web tarayıcı oturumunu paylaşımlı olarak gecikmesiz kontrol etmesi, izole oturumlarda medya tüketmesi veya otomasyon botlarının tarayıcı parmak izi korumalarını aşarak içerik çekmesi gerekiyordu.",
-    "architecture": "CoBrowser; sunucu tarafında çalışan Puppeteer-Stealth ve Chromium konteynerlerini orkestre eder. Ekran çıktısını ve fare/klavye olaylarını WebSocket üzerinden şifreli ikili (binary) akışla istemcilere senkronize eder. Anti-fingerprinting katmanı sayesinde bot korumalı siteler güvenle ziyaret edilebilir.",
-    "keyChallenge": "Eşzamanlı fare/klavye girdilerinde yarış koşullarını (race conditions) önlemek ve video oynatımında ağ bant genişliğini zorlamadan 60 FPS akıcı görüntü aktarımını sağlamak için adaptif kare hızı sıkıştırması uygulandı.",
+    "problem": "Uzaktan erişimle arkadaşlarla tek bir bağlantı üzerinden aynı sanal bilgisayara erişip birlikte yönetebileceğimiz bir platform kurmak istedim. Amacım; arkadaşlarla aynı anda senkronize film ve video izleyebilmek, internet üzerinde ortak araştırma yapabilmek veya Ateş ve Su gibi iki kişilik web tabanlı multiplayer oyunları tek bir sanal ekran üzerinden uzaktan birlikte oynayabilmekti.",
+    "architecture": "Sunucu tarafında headless/headed Chromium ve sanal ekran ortamı çalışır. Sanal makinenin ekran ve ses akışı optimize edilmiş kareler halinde WebSocket üzerinden istemcilere aktarılır. Kullanıcıların klavye ve fare komutları anlık olarak sanal masaüstüne iletilir; böylece iki kişi aynı anda aynı klavye/fareyi paylaşıyormuş gibi birlikte oyun oynayabilir ve tarayıcıyı kontrol edebilir.",
+    "keyChallenge": "Ateş ve Su gibi anlık refleks gerektiren iki kişilik oyunlarda ve video oynatımında giriş gecikmesini (input lag) 80 milisaniyenin altına indirmek için optimize ikili (binary) soket akışı geliştirdim.",
     "features": [
-      "WebSocket üzerinden paylaşımlı, çok kullanıcılı gerçek zamanlı sanal tarayıcı",
-      "Puppeteer Stealth ve parmak izi maskeleme ile gelişmiş anti-bot koruma aşımı",
-      "Otonom web navigasyonu ve içerik madenciliği için Python ajan entegrasyonu",
-      "Çoklu izole sekme ve bağımsız oturum yönetimi"
+      "Tek bir link üzerinden ortak sanal bilgisayara bağlanma ve birlikte kontrol",
+      "Eşzamanlı ortak film, video izleme ve web araştırması odası",
+      "Ateş ve Su gibi web multiplayer oyunları uzaktan birlikte oynayabilme",
+      "Düşük gecikmeli WebSocket ekran ve girdi senkronizasyonu"
     ]
   }
 }

@@ -14,16 +14,26 @@
     "Vanilla JS"
   ],
   "caseStudy": {
-    "problem": "YÖKDİL, YDS ve TOEFL gibi ileri düzey akademik yabancı dil sınavlarına hazırlanan adaylar, binlerce kelime içeren standart sözlükleri alfabetik sırayla ezberlemeye çalışarak aylarını heba ederler. Oysa akademik sınavlarda kelimeler izole halde değil, bağlam içinde, akademik edat öbekleriyle (collocations) ve belirli soru şablonları içinde sorulur. Klasik flashcard uygulamaları ise sınavın gerçek soru metinlerinden beslenmez ve adayın zayıf olduğu kök kelimeleri tespit edemez. Bu ihtiyaca binaen, gerçek sınav corpus verisini analiz eden ve kişiye özel adaptif kelime çalışma programı çıkaran bu platformu geliştirdim.",
+    "problem": "YDS ve YÖKDİL gibi akademik dil sınavlarına hazırlanırken kelimeleri rastgele ezberlemek yerine geçmiş sınavlarda en çok çıkan kök kelimeleri öğrenmek istiyordum. Hem kendi sınav hazırlığımda odaklı çalışabilmek hem de sınava hazırlanan arkadaşlarımın isteği üzerine birlikte soru ve kelime pratiği yapabileceğimiz interaktif bir sınav kampı platformu geliştirdim.",
     "architecture": "Sistemin çekirdeğinde Python ve NLTK/spaCy tabanlı bir NLP metin madenciliği motoru yer alır. Geçmiş akademik sınav metinleri ve bilimsel makaleler taranarak morfolojik kök ayrıştırma (lemmatization) ve TF-IDF (Terim Frekansı - Ters Belge Frekansı) analizi yapılır; böylece sınavlarda en yüksek ayırt ediciliğe sahip kelimeler puanlanır. Kullanıcı arayüzünde ise Leitner 5 kutulu aralıklı tekrar algoritması (Spaced Repetition System - SRS) çalışır. Sistem adayın yanlış yaptığı kelimeleri daha sık periyotlarla önüne getirirken, kalıcı hafızaya aktarılanları daha uzun aralıklarla test eder.",
     "keyChallenge": "İngilizce düzensiz fiillerin ve türemiş köklerin öğrenciye parçalanmadan bir bütün kelime ailesi olarak sunulması gerekiyordu. WordNet ontolojisini bağlayarak ilişkili kelime ağaçlarını otomatik türeten bir semantik haritalama algoritması kurguladım.",
     "features": [
-      "Fen, Sağlık ve Sosyal alanlarına özel kelime kampları",
-      "PDF sınavlarından otonom soru ve cevap anahtarı ayrıştırma",
-      "Kişiselleştirilmiş eksik analizi raporu",
-      "PDF karne çıktısı ve zamana karşı sınav simülasyonu"
+      "YDS ve YÖKDİL'e hazırlanan arkadaşlarla birlikte çalışma ve kelime pekiştirme platformu",
+      "Fen, Sağlık ve Sosyal alanlarına özel sınav kelime kampları",
+      "Geçmiş sınav metinlerinden çıkarılan kök kelime frekans analizi",
+      "Aralıklı tekrar algoritmasıyla (SRS) kalıcı hafıza pekiştirme"
     ]
   },
   "githubUrl": "https://github.com/oguztasdemir/Akademik-Ingilizce",
-  "visibility": "public"
+  "visibility": "public",
+  "tags": [
+    "education",
+    "exam-prep",
+    "nlp",
+    "python",
+    "vocabulary",
+    "yds",
+    "yokdil"
+  ],
+  "demoUrl": null
 }

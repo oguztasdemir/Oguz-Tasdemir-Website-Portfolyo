@@ -47,8 +47,12 @@ const ApiService = {
     return data.filter(p => {
       // Görünürlük filtresi
       if (visibility && visibility !== 'all') {
-        const pVis = p.visibility || (p.githubUrl ? 'public' : 'private');
-        if (pVis !== visibility) return false;
+        if (visibility === 'live') {
+          if (!p.demoUrl) return false;
+        } else {
+          const pVis = p.visibility || 'public';
+          if (pVis !== visibility) return false;
+        }
       }
 
       let matchesCat = false;

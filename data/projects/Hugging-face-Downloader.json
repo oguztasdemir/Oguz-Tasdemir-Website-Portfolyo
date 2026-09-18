@@ -14,16 +14,15 @@
     "CLI"
   ],
   "githubUrl": "https://github.com/oguztasdemir/Hugging-face-Downloader",
-  "demoUrl": null,
   "caseStudy": {
-    "problem": "Modern açık kaynak büyük dil modelleri (Llama, Mistral, DeepSeek) ve görsel üretim modelleri (Stable Diffusion checkpoints) 10 GB ile 60 GB arasında devasa dosya boyutlarına sahiptir. Bu modelleri HuggingFace web arayüzünden tarayıcı üzerinden indirmeye çalışırken internet bağlantısındaki anlık bir kopmada dosya bozulmakta ve tarayıcı indirmeyi en baştan başlatmaktadır. Resmi Git LFS yöntemleri ise Windows makinelerde bellek sızıntısına ve tıkanmalara sebep olmaktadır. Geliştiricilerin model indirme süreçlerini kesintisiz, hızlı ve güvenli kılan terminal tabanlı bir indirme yöneticisi kodladım.",
-    "architecture": "Araç, HuggingFace Hub REST API ile doğrudan haberleşir. Kullanıcı model adını girdiğinde model deposunun tüm dosya ağacı ve dosya hashleri anında çekilir. İndirme motoru, HTTP Range isteklerini kullanarak dosyayı paralel iş parçacıklarına böler ve çok kanallı (multi-threaded chunk streaming) indirme yapar. Her bir parça diske yazılırken anlık hız, kalan süre ve transfer edilen bayt miktarı zengin bir CLI progress-bar arayüzüyle terminale yansıtılır. Bağlantı kesilse bile indirilen baytlar korunur ve bağlantı geldiğinde 1 bayt bile kaybetmeden kaldığı yerden devam eder.",
-    "keyChallenge": "Devasa 50 GB safetensors dosyalarının indirilmesi tamamlandığında, indirilen dosyanın bozuk olup olmadığını anlamak için HuggingFace SHA-256 sağlama toplamı doğrulaması yapıldı; böylece bozuk ağırlıklarla model başlatıp hata alma riski tamamen ortadan kaldırıldı.",
+    "problem": "HuggingFace üzerindeki devasa yapay zeka modellerini indirirken anlık indirme ve yükleme hızlarını net şekilde görmek, modelin bilgisayarımdaki mevcut donanıma (VRAM, RAM, CPU/GPU) uygun olup olmadığını erkenden anlamak ve olası internet kopmalarında indirmeyi baştan başlatmadan kaldığı yerden devam ettirmek için bu aracı geliştirdim.",
+    "architecture": "Araç, HuggingFace Hub REST API ile doğrudan haberleşir. Kullanıcı model adını girdiğinde model deposunun tüm dosya ağacı ve dosya hashleri anında çekilir. İndirme motoru, HTTP Range isteklerini kullanarak dosyayı paralel iş parçacıklarına böler ve çok kanallı (multi-threaded chunk streaming) indirme yapar. Her bir parça diske yazılırken anlık indirme hızı, aktarım süresi ve kalan boyut zengin bir terminal arayüzüyle gösterilir. Bağlantı kesilse bile indirilen baytlar korunur ve bağlantı geldiğinde 1 bayt bile kaybetmeden kaldığı yerden devam eder.",
+    "keyChallenge": "Devasa safetensors dosyalarının indirilmesi tamamlandığında bozuk ağırlık indirilmesini önlemek için SHA-256 sağlama doğrulaması ve sistem donanım sınırlarını kontrol eden hafif doğrulayıcılar ekledim.",
     "features": [
-      "Kesintiye uğrayan indirmeleri sıfırdan başlamadan devam ettirme",
-      "Doğrudan repo adı girerek tüm ağırlıkları tek komutla çekme",
-      "Canlı hız, kalan süre ve transfer ilerleme çubuğu",
-      "Düşük bellek (RAM) tüketimi"
+      "Anlık indirme ve yükleme hızlarını terminalde canlı izleme",
+      "Modelin mevcut donanıma (VRAM/RAM) uygunluk analizi",
+      "Kesintiye uğrayan büyük model indirmelerini kaldığı yerden devam ettirme",
+      "Doğrudan repo adı girerek tüm ağırlıkları tek komutla çekme"
     ]
   },
   "visibility": "public"

@@ -1,0 +1,64 @@
+{
+  "id": "portfolio-console",
+  "title": "Kişisel Portfolyo Web Sitesi",
+  "category": "fullstack",
+  "tier": 1,
+  "visibility": "public",
+  "summary": "25+ mühendislik projesini, matematik tezini ve düşük seviyeli sistem çözümlerini harici UI kütüphanesi kullanmadan %100 Vanilla CSS ve canlı çift dil motoruyla sunan interaktif çalışma konsolu.",
+  "techStack": [
+    "Python",
+    "FastAPI",
+    "Vanilla JS (ES6+)",
+    "Vanilla CSS3",
+    "i18n Engine",
+    "Uvicorn"
+  ],
+  "githubUrl": "https://github.com/oguztasdemir/portfolio",
+  "demoUrl": "http://127.0.0.1:8000",
+  "highlight_metric": "%100 Vanilla CSS & Sıfır UI Kütüphane Bağımlılığı",
+  "whyBuilt": "Genel portfolyo şablonları ve hantal React/Next framework'leri, geliştirdiğim sistemlerin mimari derinliğini, düşük seviyeli detaylarını ve gerçek hayat vaka analizlerini aktarmakta yetersiz kalıyordu. Bu yüzden harici hiçbir ağır kütüphaneye bağımlı olmadan çalışan, sıfır gecikmeli, anında TR/EN geçişi yapabilen ve 4 adımlı sistem akış şemalarını interaktif sunan bağımsız bir mühendislik konsolu geliştirdim.",
+  "caseStudy": {
+    "problem": "Geleneksel portfolyo siteleri çoğunlukla yüzeysel ekran görüntüleri ve statik metinlerden ibarettir. Ağır JavaScript framework'leri (React, Next.js vb.) ve büyük CSS paketleri (Tailwind, Bootstrap) sayfa yüklenme süresini artırır ve arka plandaki mühendislik mantığını şeffaf bir şekilde sergilemekte yetersiz kalır.",
+    "architecture": "Uygulama, hafif ve asenkron bir Python FastAPI arka ucu ile sıfır bağımlılıklı saf Vanilla HTML5/CSS3/JavaScript ön ucundan oluşur. Veri katmanında her proje bağımsız bir JSON şeması olarak saklanır. Arayüzde özel CSS değişkenleri (Design Tokens), modüler olay güdümlü (event-driven) i18n çeviri motoru ve 4 adımlı dinamik SVG/DOM akış şeması derleyicisi bulunur.",
+    "keyChallenge": "Sayfa yenilemeye ihtiyaç duymadan tüm projenin açık modallarını, filtreleme çiplerini ve arama sonuçlarını canlı olarak Türkçe/İngilizce arasında senkronize tutmak ve hiçbir harici CSS kütüphanesi olmadan modern, mikro etkileşimli bir IDE hissi sunmak.",
+    "features": [
+      "Sıfır UI bağımlılığı ile modern koyu/açık tema Vanilla CSS tasarım sistemi",
+      "Olay güdümlü (Event-Driven) canlı çift dil (TR / EN) çeviri motoru",
+      "26 proje için interaktif 4 adımlı sistem akış şeması derleyicisi",
+      "Proje detaylarını kod ağaçları ve test komutlarıyla gösteren 5 sekmeli inceleme paneli",
+      "Modüler JSON şema mimarisi ve FastAPI REST API veri servisleri"
+    ]
+  },
+  "problem": "Geleneksel portfolyo siteleri çoğunlukla yüzeysel ekran görüntüleri ve statik metinlerden ibarettir. Ağır JavaScript framework'leri (React, Next.js vb.) ve büyük CSS paketleri (Tailwind, Bootstrap) sayfa yüklenme süresini artırır ve arka plandaki mühendislik mantığını şeffaf bir şekilde sergilemekte yetersiz kalır.",
+  "architecture": "Uygulama, hafif ve asenkron bir Python FastAPI arka ucu ile sıfır bağımlılıklı saf Vanilla HTML5/CSS3/JavaScript ön ucundan oluşur. Veri katmanında her proje bağımsız bir JSON şeması olarak saklanır. Arayüzde özel CSS değişkenleri (Design Tokens), modüler olay güdümlü (event-driven) i18n çeviri motoru ve 4 adımlı dinamik SVG/DOM akış şeması derleyicisi bulunur.",
+  "key_challenge": "Sayfa yenilemeye ihtiyaç duymadan tüm projenin açık modallarını, filtreleme çiplerini ve arama sonuçlarını canlı olarak Türkçe/İngilizce arasında senkronize tutmak ve hiçbir harici CSS kütüphanesi olmadan modern, mikro etkileşimli bir IDE hissi sunmak.",
+  "features": [
+    "Sıfır UI bağımlılığı ile modern koyu/açık tema Vanilla CSS tasarım sistemi",
+    "Olay güdümlü (Event-Driven) canlı çift dil (TR / EN) çeviri motoru",
+    "26 proje için interaktif 4 adımlı sistem akış şeması derleyicisi",
+    "Proje detaylarını kod ağaçları ve test komutlarıyla gösteren 5 sekmeli inceleme paneli",
+    "Modüler JSON şema mimarisi ve FastAPI REST API veri servisleri"
+  ],
+  "flowSteps": [
+    {
+      "step": "01",
+      "title": "JSON Şema & API Ayrıştırma",
+      "desc": "FastAPI arka ucu data/projects/ dizinindeki bağımsız JSON şemalarını asenkron okur ve istemciye sıralı veri akışı sağlar."
+    },
+    {
+      "step": "02",
+      "title": "İstemci Durum & i18n Çözümleme",
+      "desc": "Ön uç JavaScript motoru seçili dili (TR/EN) ve tema modunu algılayarak verileri bellek içi dizinle eşleştirir."
+    },
+    {
+      "step": "03",
+      "title": "Dinamik DOM & Akış Şeması Derleme",
+      "desc": "Kartlar, filtre sayaçları ve 4 adımlı interaktif sistem akışları harici kütüphane olmadan Vanilla DOM API ile çizilir."
+    },
+    {
+      "step": "04",
+      "title": "Çift Dilli Canlı Etkileşim",
+      "desc": "Kullanıcı dil veya sekme değiştirdiğinde sayfa yenilenmeden tüm görünüm mikro animasyonlarla anında güncellenir."
+    }
+  ]
+}

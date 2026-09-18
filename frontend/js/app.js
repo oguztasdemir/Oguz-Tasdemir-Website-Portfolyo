@@ -49,13 +49,16 @@ document.addEventListener('DOMContentLoaded', () => {
       view.classList.toggle('active', isTarget);
     });
 
+    // Projeler sekmesine basıldığında detay modalı yerine doğrudan liste açılsın
+    if (viewId === 'projects') {
+      if (portfolioDetailView) portfolioDetailView.style.display = 'none';
+      if (portfolioMainStream) portfolioMainStream.style.display = 'block';
+    }
+
     if (updateState) {
-      if (viewId === 'projects' && portfolioDetailView && portfolioDetailView.style.display !== 'none' && activeProjectId) {
-        window.location.hash = `project=${activeProjectId}`;
-      } else {
-        window.location.hash = `view=${viewId}`;
-      }
+      window.location.hash = `view=${viewId}`;
       localStorage.setItem('active_view', viewId);
+      localStorage.removeItem('active_project_id');
     }
   }
 
@@ -202,6 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tierTabBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       currentTier = btn.getAttribute('data-tier') || 'all';
+      checkFilterState();
       loadAndRenderSplitView();
     });
   });
@@ -209,33 +213,37 @@ document.addEventListener('DOMContentLoaded', () => {
   // Global Sayaçları Otomatik Güncelleme (Yeni proje eklendikçe otomatik artar)
   function updateGlobalProjectCounters(allProjects) {
     if (!allProjects || !Array.isArray(allProjects)) return;
+    const isEn = (window.i18n && window.i18n.getLang() === 'en');
     const totalCount = allProjects.length;
-    const publicCount = allProjects.filter(p => p.visibility === 'public' || p.githubUrl).length;
-    const privateCount = allProjects.filter(p => p.visibility === 'private' || !p.githubUrl).length;
+    const publicCount = allProjects.filter(p => p.visibility === 'public').length;
+    const privateCount = allProjects.filter(p => p.visibility === 'private').length;
+    const liveCount = allProjects.filter(p => !!p.demoUrl).length;
 
     // 0. Tier Sayaç Hapları
     const tierCountAll = document.getElementById('tierCountAll');
     const tierCountPublic = document.getElementById('tierCountPublic');
     const tierCountPrivate = document.getElementById('tierCountPrivate');
+    const tierCountLive = document.getElementById('tierCountLive');
     if (tierCountAll) tierCountAll.textContent = totalCount;
     if (tierCountPublic) tierCountPublic.textContent = publicCount;
     if (tierCountPrivate) tierCountPrivate.textContent = privateCount;
+    if (tierCountLive) tierCountLive.textContent = liveCount;
 
     // 1. Sol Panel Menü Rozeti
     if (railProjectsCountBadge) {
       railProjectsCountBadge.textContent = totalCount;
     }
 
-    // 2. Ana Sayfa Hero Butonu: "Projeleri Keşfet (X)"
+    // 2. Ana Sayfa Hero Butonu
     const heroGoProjectsBtnText = document.getElementById('heroGoProjectsBtnText');
     if (heroGoProjectsBtnText) {
-      heroGoProjectsBtnText.textContent = `Projeleri Keşfet (${totalCount})`;
+      heroGoProjectsBtnText.textContent = isEn ? `Explore Projects (${totalCount})` : `Projeleri Keşfet (${totalCount})`;
     }
 
     // 3. Ana Sayfa Hero Metni Kalın Vurgu
     const heroProjectsCountStrong = document.getElementById('heroProjectsCountStrong');
     if (heroProjectsCountStrong) {
-      heroProjectsCountStrong.textContent = `${totalCount} özgün projeyi`;
+      heroProjectsCountStrong.textContent = isEn ? `${totalCount} engineered systems` : `${totalCount} özgün projeyi`;
     }
 
     // 4. Ana Sayfa Telemetri Şeridi
@@ -243,18 +251,32 @@ document.addEventListener('DOMContentLoaded', () => {
     if (telemetryProjectCount) {
       telemetryProjectCount.textContent = totalCount;
     }
+  }
 
-    // 5. Ana Sayfa Öne Çıkanlar Butonu: "Projelerime Git (X)"
-    const featuredGoProjectsBtnText = document.getElementById('featuredGoProjectsBtnText');
-    if (featuredGoProjectsBtnText) {
-      featuredGoProjectsBtnText.textContent = `Projelerime Git (${totalCount})`;
-    }
+  // Ana Sayfa Proje Kaydırıcılarını (Sliders) Mevcut Dile Göre Yenile
+  function refreshHomeSliders() {
+    const isEn = (window.i18n && window.i18n.getLang() === 'en');
+    document.querySelectorAll('.home-project-slider-card').forEach(card => {
+      const projId = card.getAttribute('data-project-id');
+      if (!projId) return;
+      const raw = (window._cachedFullProjectsList || (typeof PROJECTS_DATA !== 'undefined' ? PROJECTS_DATA : [])).find(p => p.id === projId || p.id.toLowerCase() === projId.toLowerCase());
+      if (!raw) return;
+      const p = UI.resolveProjectData ? UI.resolveProjectData(raw) : raw;
 
-    // 6. Ana Sayfa Öne Çıkanlar Alt Başlık Açıklaması
-    const featuredSliderCountText = document.getElementById('featuredSliderCountText');
-    if (featuredSliderCountText) {
-      featuredSliderCountText.textContent = `${totalCount} özgün projeden`;
-    }
+      const titleEl = card.querySelector('.slider-card-title');
+      const descEl = card.querySelector('.slider-card-desc');
+      const catEl = card.querySelector('.slider-card-cat');
+      const badgeEl = card.querySelector('.slider-card-badge');
+      const actionEl = card.querySelector('.slider-card-action');
+      const metricSpan = card.querySelector('.slider-card-metric span');
+
+      if (titleEl) titleEl.textContent = p.title;
+      if (descEl) descEl.textContent = p.summary;
+      if (catEl) catEl.textContent = p.categoryLabel;
+      if (badgeEl) badgeEl.textContent = p.badge;
+      if (actionEl) actionEl.innerHTML = isEn ? 'View Details &rarr;' : 'Detay İncele &rarr;';
+      if (metricSpan && p.highlightMetric) metricSpan.textContent = p.highlightMetric;
+    });
   }
 
   // Kategori Filtre Çiplerindeki Sayıları Aktif Kademe (Tümü / Public / Private) Seçimine Göre Dinamik Hesapla
@@ -264,10 +286,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Aktif kademeye (currentTier) göre filtrelenmiş temel havuz
     let scopedProjects = allProjects;
     if (currentTier && currentTier !== 'all') {
-      scopedProjects = allProjects.filter(p => {
-        const pVis = p.visibility || (p.githubUrl ? 'public' : 'private');
-        return pVis === currentTier;
-      });
+      if (currentTier === 'live') {
+        scopedProjects = allProjects.filter(p => !!p.demoUrl);
+      } else {
+        scopedProjects = allProjects.filter(p => (p.visibility || 'public') === currentTier);
+      }
     }
 
     const countMap = {
@@ -321,7 +344,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Aktif filtrelenmiş arama sayaç rozeti
     if (searchResultCount) {
-      searchResultCount.textContent = `${allLoadedProjects.length} Kayıt`;
+      const isEn = (window.i18n && window.i18n.getLang() === 'en');
+      searchResultCount.textContent = isEn ? `${allLoadedProjects.length} Systems` : `${allLoadedProjects.length} Kayıt`;
     }
 
     // Seçili proje listede var mı kontrol et, yoksa ilk projeyi al
@@ -338,19 +362,36 @@ document.addEventListener('DOMContentLoaded', () => {
     UI.renderProjectsList(allLoadedProjects, splitProjectsList, (selectedId) => {
       activeProjectId = selectedId;
       openProjectDetailModal(selectedId);
-    }, activeProjectId);
+    }, activeProjectId, (selectedTech) => {
+      // Tıklanan teknoloji hapını aktif filtre yap
+      currentTech = selectedTech;
+      document.querySelectorAll('.tech-filter-pill').forEach(p => {
+        const pTech = p.getAttribute('data-tech');
+        p.classList.toggle('active', pTech && pTech.toLowerCase() === selectedTech.toLowerCase());
+      });
+      checkFilterState();
+      loadAndRenderSplitView();
+      UI.showToast(`Teknoloji filtresi uygulandı: ${selectedTech}`, toastBar, toastText);
+    });
   }
 
-  const portfolioMainStream = document.getElementById('portfolioMainStream');
-  const portfolioDetailView = document.getElementById('portfolioDetailView');
-  const btnBackToPortfolio = document.getElementById('btnBackToPortfolio');
+  let lastListScrollTop = 0;
 
-  function openProjectDetailModal(projectId, updateHash = true) {
+  function openProjectDetailModal(projectId, updateHash = true, targetTab = null) {
     const selectedProject = allLoadedProjects.find(p => p.id === projectId || p.id.toLowerCase() === String(projectId).toLowerCase());
     if (!selectedProject || !projectDetailContainer) return;
 
+    // Mevcut liste kaydırma pozisyonunu kaydet
+    if (portfolioMainStream) {
+      lastListScrollTop = portfolioMainStream.scrollTop;
+    }
+
     activeProjectId = selectedProject.id;
-    UI.renderProjectDetail(selectedProject, projectDetailContainer);
+    const initialTabToUse = targetTab || 'overview';
+
+    UI.renderProjectDetail(selectedProject, projectDetailContainer, (targetProjectId) => {
+      openProjectDetailModal(targetProjectId, true, 'overview');
+    }, allLoadedProjects, initialTabToUse);
     
     // Listeyi gizle, tam ekran bilgi sayfasını göster
     if (portfolioMainStream) portfolioMainStream.style.display = 'none';
@@ -360,8 +401,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (updateHash) {
-      window.location.hash = `project=${projectId}`;
+      window.location.hash = `project=${projectId}&tab=${initialTabToUse}`;
       localStorage.setItem('active_project_id', projectId);
+      localStorage.setItem('active_project_tab', initialTabToUse);
     }
 
     // Dışa Aktarma Popover Bağlantısı
@@ -371,7 +413,23 @@ document.addEventListener('DOMContentLoaded', () => {
   function closeProjectDetailModal(updateHash = true) {
     // Bilgi sayfasını gizle, listeyi geri getir
     if (portfolioDetailView) portfolioDetailView.style.display = 'none';
-    if (portfolioMainStream) portfolioMainStream.style.display = 'block';
+    if (portfolioMainStream) {
+      portfolioMainStream.style.display = 'block';
+      portfolioMainStream.scrollTop = lastListScrollTop;
+
+      // Son incelenen kartı odakla ve hafifçe vurgula
+      if (activeProjectId) {
+        const lastCard = splitProjectsList ? splitProjectsList.querySelector(`[data-id="${activeProjectId}"]`) : null;
+        if (lastCard) {
+          document.querySelectorAll('.portfolio-wide-card').forEach(c => c.classList.remove('last-focused-card'));
+          lastCard.classList.add('last-focused-card');
+          lastCard.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+          setTimeout(() => {
+            lastCard.classList.remove('last-focused-card');
+          }, 2400);
+        }
+      }
+    }
 
     if (updateHash) {
       window.location.hash = `view=projects`;
@@ -390,12 +448,41 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Filtreleri Sıfırlama Butonu
+  const resetAllFiltersBtn = document.getElementById('resetAllFiltersBtn');
+  function checkFilterState() {
+    const isFiltered = currentCategory !== 'all' || currentTier !== 'all' || currentTech !== 'all' || searchQuery.trim().length > 0;
+    if (resetAllFiltersBtn) {
+      resetAllFiltersBtn.style.display = isFiltered ? 'inline-flex' : 'none';
+    }
+  }
+
+  if (resetAllFiltersBtn) {
+    resetAllFiltersBtn.addEventListener('click', () => {
+      currentCategory = 'all';
+      currentTier = 'all';
+      currentTech = 'all';
+      searchQuery = '';
+      if (searchInput) searchInput.value = '';
+      if (searchClearBtn) searchClearBtn.style.display = 'none';
+
+      // UI Çiplerini ve Sekmelerini 'all' olarak güncelle
+      document.querySelectorAll('.chip-filter').forEach(c => c.classList.toggle('active', c.getAttribute('data-category') === 'all'));
+      document.querySelectorAll('.tier-tab-btn').forEach(b => b.classList.toggle('active', b.getAttribute('data-tier') === 'all'));
+      document.querySelectorAll('.tech-filter-pill').forEach(p => p.classList.toggle('active', p.getAttribute('data-tech') === 'all'));
+
+      checkFilterState();
+      loadAndRenderSplitView();
+    });
+  }
+
   // 4. Kategori Çip Filtreleme
   categoryChips.forEach(chip => {
     chip.addEventListener('click', () => {
       categoryChips.forEach(c => c.classList.remove('active'));
       chip.classList.add('active');
       currentCategory = chip.getAttribute('data-category');
+      checkFilterState();
       loadAndRenderSplitView();
     });
   });
@@ -407,6 +494,7 @@ document.addEventListener('DOMContentLoaded', () => {
       techFilterPills.forEach(p => p.classList.remove('active'));
       pill.classList.add('active');
       currentTech = pill.getAttribute('data-tech');
+      checkFilterState();
       loadAndRenderSplitView();
     });
   });
@@ -418,6 +506,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (searchClearBtn) {
         searchClearBtn.style.display = searchQuery.trim().length > 0 ? 'flex' : 'none';
       }
+      checkFilterState();
       loadAndRenderSplitView();
     });
   }
@@ -428,6 +517,7 @@ document.addEventListener('DOMContentLoaded', () => {
       searchQuery = '';
       searchClearBtn.style.display = 'none';
       searchInput.focus();
+      checkFilterState();
       loadAndRenderSplitView();
     });
   }
@@ -477,40 +567,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 6. Dışa Aktarma (Export) ve Popover Yönetimi
   function bindExportActions(project) {
-    const toggleBtn = document.getElementById('exportDropdownToggle');
-    const menu = document.getElementById('exportDropdownMenu');
-    const btnTsv = document.getElementById('btnCopyProjectTsv');
-
-    if (!toggleBtn || !menu) return;
-
-    toggleBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      menu.classList.toggle('active');
-    });
-
-    if (btnTsv && project) {
-      btnTsv.addEventListener('click', () => {
-        const tsvText = [
-          ["Proje Adı", project.title],
-          ["Kategori", project.categoryLabel],
-          ["Durum", project.badge],
-          ["Özet", project.summary],
-          ["Öne Çıkan Metrik", project.highlightMetric],
-          ["Teknoloji Kümesi", (project.techStack || []).join(', ')],
-          ["Problem", (project.caseStudy && project.caseStudy.problem) || ''],
-          ["Mimari", (project.caseStudy && project.caseStudy.architecture) || ''],
-          ["Kritik Zorluk", (project.caseStudy && project.caseStudy.keyChallenge) || ''],
-          ["Öne Çıkan Çözümler", ((project.caseStudy && project.caseStudy.features) || []).join('; ')]
-        ].map(row => row.join('\t')).join('\n');
-
-        navigator.clipboard.writeText(tsvText).then(() => {
-          UI.showToast('Proje verisi panoya TSV (Excel) formatında kopyalandı.', toastBar, toastText);
-        }).catch(() => {
-          UI.showToast('Panoya kopyalama başarısız oldu.', toastBar, toastText);
-        });
-        menu.classList.remove('active');
-      });
-    }
+    // UI.renderProjectDetail tüm dışa aktarma ve ZIP indirme olaylarını doğrudan bağlar
   }
 
   document.addEventListener('click', () => {
@@ -523,7 +580,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!btn) return;
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const email = btn.getAttribute('data-email') || 'oguztasdemir@example.com';
+      const email = btn.getAttribute('data-email') || 'oztsdmr@gmail.com';
       navigator.clipboard.writeText(email).then(() => {
         UI.showToast(`E-posta panoya kopyalandı: ${email}`, toastBar, toastText);
       }).catch(() => {
@@ -537,14 +594,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 8. İletişim / E-Posta Kopyalama
   const aboutMailLink = document.getElementById('aboutMailLink');
-  if (aboutMailLink) {
-    aboutMailLink.addEventListener('click', (e) => {
-      // Varsayılan mailto çalışırken panoya da kopyalar
-      navigator.clipboard.writeText('oguztasdemir0@gmail.com').then(() => {
-        UI.showToast('E-Posta adresi panoya kopyalandı.', toastBar, toastText);
+  const contactViewMailLink = document.getElementById('contactViewMailLink');
+
+  function bindMailCopy(linkEl) {
+    if (!linkEl) return;
+    linkEl.addEventListener('click', (e) => {
+      navigator.clipboard.writeText('oztsdmr@gmail.com').then(() => {
+        UI.showToast('E-Posta adresi panoya kopyalandı: oztsdmr@gmail.com', toastBar, toastText);
       }).catch(() => {});
     });
   }
+
+  bindMailCopy(aboutMailLink);
+  bindMailCopy(contactViewMailLink);
 
   // 9. Canlı SSE Akışı & Nabız Takibi (Live Stream)
   const systemPulseDot = document.getElementById('systemPulseDot');
@@ -588,33 +650,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 11. Çift Tema Değiştirici (Obsidian Koyu / Yumuşak Açık)
-  const themeToggleBtn = document.getElementById('themeToggleBtn');
-  const themeModeLabel = document.getElementById('themeModeLabel');
 
-  function applyTheme(theme) {
-    if (theme === 'light') {
-      document.documentElement.setAttribute('data-theme', 'light');
-      localStorage.setItem('portfolio_theme', 'light');
-      if (themeModeLabel) themeModeLabel.textContent = 'Açık Mod';
-    } else {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      localStorage.setItem('portfolio_theme', 'dark');
-      if (themeModeLabel) themeModeLabel.textContent = 'Obsidian';
-    }
-  }
-
-  const savedTheme = localStorage.getItem('portfolio_theme') || 'dark';
-  applyTheme(savedTheme);
-
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme') || 'dark';
-      const nextTheme = current === 'dark' ? 'light' : 'dark';
-      applyTheme(nextTheme);
-      UI.showToast(`Görünüm değiştirildi: ${nextTheme === 'dark' ? 'Obsidian Slate' : 'Sıcak Parşömen'}`, toastBar, toastText);
-    });
-  }
 
   // 12. Sertifika Büyütme Modalı (Lightbox)
   const certModal = document.getElementById('certModal');
@@ -663,6 +699,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
   // 12. Sol Panel (Rail) Aç / Kapa (Collapse / Expand)
   const panelRail = document.getElementById('panelRail');
   const railCollapseToggle = document.getElementById('railCollapseToggle');
@@ -681,35 +718,120 @@ document.addEventListener('DOMContentLoaded', () => {
     railCollapseToggle.addEventListener('click', () => toggleRail());
   }
 
-  // 13. Başlat ve Durumu Geri Yükle (F5 Koruması)
+  // 12.1 Dil Değiştirici (i18n Switcher: TR / EN)
+  const langBtnTr = document.getElementById('langBtnTr');
+  const langBtnEn = document.getElementById('langBtnEn');
+
+  if (langBtnTr) {
+    langBtnTr.addEventListener('click', () => {
+      if (window.i18n) window.i18n.setLang('tr');
+    });
+  }
+
+  if (langBtnEn) {
+    langBtnEn.addEventListener('click', () => {
+      if (window.i18n) window.i18n.setLang('en');
+    });
+  }
+
+  // 12.2 Tema Değiştirici (Dark / Light Theme Toggle)
+  const themeToggleBtn = document.getElementById('themeToggleBtn');
+  const themeModeLabel = document.getElementById('themeModeLabel');
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('site_theme', theme);
+    if (themeModeLabel && window.i18n) {
+      themeModeLabel.textContent = theme === 'light' ? window.i18n.t('theme_light') : window.i18n.t('theme_dark');
+    }
+  }
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const nextTheme = current === 'dark' ? 'light' : 'dark';
+      applyTheme(nextTheme);
+    });
+  }
+
+  // Dil değiştiğinde çalışacak olay dinleyicisi
+  window.addEventListener('languageChanged', (e) => {
+    const savedTheme = localStorage.getItem('site_theme') || 'dark';
+    if (themeModeLabel && window.i18n) {
+      themeModeLabel.textContent = savedTheme === 'light' ? window.i18n.t('theme_light') : window.i18n.t('theme_dark');
+    }
+    if (window._cachedFullProjectsList) {
+      updateGlobalProjectCounters(window._cachedFullProjectsList);
+      updateCategoryChipCounts(window._cachedFullProjectsList);
+    }
+    refreshHomeSliders();
+    loadAndRenderSplitView();
+
+    // Detay sayfası açıksa, yeni dildeki verilerle tekrar çiz
+    if (portfolioDetailView && portfolioDetailView.style.display !== 'none' && activeProjectId) {
+      openProjectDetailModal(activeProjectId, false);
+    }
+  });
+
+  // Hash çözümleme yardımcı fonksiyonu
+  function parseStateFromHash() {
+    const rawHash = window.location.hash.replace(/^#/, '').trim();
+    if (!rawHash) return null;
+
+    // Format: project=xyz&tab=quickstart VEYA view=certs
+    const params = new URLSearchParams(rawHash);
+    const projectId = params.get('project');
+    const tabId = params.get('tab');
+    const viewId = params.get('view');
+
+    return { projectId, tabId, viewId };
+  }
+
+  // 13. Başlat ve Durumu Geri Yükle (F5 Koruması & İlk Açılış Standardı)
   async function initApp() {
-    // Sol panel durumunu geri yükle
+    // 1. Dil Sistemini Uygula
+    if (window.i18n) {
+      window.i18n.applyTranslations();
+    }
+
+    // 2. Tema Durumunu Uygula
+    const savedTheme = localStorage.getItem('site_theme') || 'dark';
+    applyTheme(savedTheme);
+
+    // 3. Sol panel varsayılan olarak açık gelsin (açık panel standardı)
     const savedRailCollapsed = localStorage.getItem('panel_rail_collapsed') === '1';
     if (savedRailCollapsed) {
       toggleRail(true);
+    } else {
+      toggleRail(false);
     }
 
     await loadAndRenderSplitView();
 
-    // URL Hash veya LocalStorage'dan son durumu oku
-    const hash = window.location.hash.replace('#', '');
-    const savedView = localStorage.getItem('active_view') || 'projects';
-    const savedProject = localStorage.getItem('active_project_id');
-
-    if (hash.startsWith('project=')) {
-      const pId = hash.replace('project=', '');
-      switchWorkspaceView('projects', false);
-      openProjectDetailModal(pId, false);
-    } else if (hash.startsWith('view=')) {
-      const vId = hash.replace('view=', '');
-      switchWorkspaceView(vId, false);
-    } else if (savedProject) {
-      switchWorkspaceView('projects', false);
-      openProjectDetailModal(savedProject, false);
-    } else {
-      switchWorkspaceView(savedView, false);
+    // 4. Sistemi ilk açtığımızda veya F5 atıldığında her zaman tertemiz Ana Sayfa (Home) açılsın
+    localStorage.removeItem('active_project_id');
+    localStorage.removeItem('active_project_tab');
+    localStorage.removeItem('active_view');
+    
+    // URL'de hash varsa temizle ve ana sayfaya geç
+    if (window.location.hash) {
+      try {
+        history.replaceState(null, document.title, window.location.pathname + window.location.search);
+      } catch (e) {}
     }
+    switchWorkspaceView('home', false);
   }
+
+  // Tarayıcı İleri/Geri ve Hash Değişimi Dinleyicisi
+  window.addEventListener('hashchange', () => {
+    const state = parseStateFromHash();
+    if (state && state.projectId) {
+      switchWorkspaceView('projects', false);
+      openProjectDetailModal(state.projectId, false, state.tabId);
+    } else if (state && state.viewId) {
+      switchWorkspaceView(state.viewId, false);
+    }
+  });
 
   initApp();
 });

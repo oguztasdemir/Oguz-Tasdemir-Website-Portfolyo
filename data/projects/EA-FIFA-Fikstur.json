@@ -14,16 +14,17 @@
     "SQLite"
   ],
   "caseStudy": {
-    "problem": "Arkadaş grupları veya e-spor toplulukları arasında düzenlenen EA FC / FIFA turnuvalarında kağıt kalemle kura çekmek, maç skorlarını girmek, puan tablosunu güncellemek, genel averajın yanı sıra ikili averaj kurallarını hatasız hesaplamak ve eleme turları eşleşmelerini kurgulamak büyük bir organizasyonel karmaşa yaratır. Bir maçın sonucunun yanlış yazılması veya averaj eşitliğinde hatalı takımı üst tura çıkarma tartışmaları turnuva keyfini bozar. Tüm bu süreci profesyonel bir federasyon motoru hassasiyetinde dijitalleştiren otonom bir turnuva yöneticisi inşa ettim.",
+    "problem": "Arkadaşlarımla akşamları EA FC / FIFA oynarken turnuvalardaki eşleşmeleri, grup kuralarını ve puan tablosunu kağıt üzerinde veya elle manuel kurmaya çalışıyorduk. Bu durum hem zaman kaybettiriyor hem de averaj hesaplarında ve eşleşmelerde tartışmalara yol açıyordu. Bu karmaşanın önüne geçmek, takımları adil bir şekilde kuraya sokup ikili averajları ve fikstürü saniyeler içinde otomatik oluşturan hafif bir turnuva motoru yazdım.",
     "architecture": "Uygulama modern web arayüzü ve arkasında deterministik fikstür üretim algoritmalarıyla (Berger Tables / Round Robin ve Single Elimination algoritmaları) çalışır. Katılımcı takımlar sisteme girildiğinde kura çekimi matematiksel rastgelelikle (Fisher-Yates Shuffle) yapılır ve ev sahibi / deplasman dengesi gözetilerek maç takvimi oluşturulur. Skorlar girildikçe reaktif state mimarisi sayesinde puan durumu, atılan-yenen gol, galibiyet-beraberlik-mağlubiyet serileri ve ikili averaj önceliği anlık olarak yeniden sıralanır.",
     "keyChallenge": "Üçlü veya dörtlü averaj eşitliği durumlarında (üç takımın da aynı puana sahip olup birbirlerini yendiği senaryolar) sonsuz döngüye girmeden UEFA turnuva kuralları şablonuna göre mini-lig puan tablosu üreten özel bir özyinelemeli (recursive) averaj çözücü geliştirdim.",
     "features": [
-      "Otomatik kura çekimi ve görsel turnuva ağacı",
+      "Arkadaş ortamında akşamları hızlı kura çekimi ve görsel turnuva ağacı",
       "Grup aşaması ve tek/çift maçlı eleme turları",
       "Gerçek zamanlı puan durumu ve averaj takibi",
-      "Yazdırılabilir fikstür çıktıları"
+      "Manuel eşleşme karmaşasını ve averaj tartışmalarını sonlandıran adil motor"
     ]
   },
   "githubUrl": "https://github.com/oguztasdemir/EA-FIFA-Fikstur",
-  "visibility": "public"
+  "visibility": "public",
+  "demoUrl": null
 }

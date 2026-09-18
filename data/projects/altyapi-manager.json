@@ -14,16 +14,23 @@
     "RAG Asistanı"
   ],
   "caseStudy": {
-    "problem": "Amatör spor kulüpleri ve futbol akademilerinde onlarca farklı yaş grubundaki yüzlerce oyuncunun fiziksel gelişim metrikleri, antrenman devam durumları, sakatlık rehabilitasyon süreçleri ve maç taktikleri dağınık Excel tablolarında, defterlerde veya WhatsApp gruplarında kayboluyordu. Antrenörlerin bir oyuncunun 6 aylık kondisyon eğrisini görmesi veya velilere somut gelişim raporu sunması imkansızdı. Bu projeyi, kulüplerin hiçbir bulut bağımlılığı olmadan, yerel veri gizliliğiyle tüm altyapı operasyonunu tek ekrandan bilimsel metriklerle yönetebilmesi amacıyla geliştirdim.",
-    "architecture": "Mimariyi Python FastAPI arka yüzü, yerel SQLite WAL veritabanı motoru ve modern responsive arayüz katmanı üzerine oturttum. Oyuncuların maç başına koşu mesafeleri, pas başarı yüzdeleri ve kondisyon testleri JSON tabanlı esnek metrik şemasıyla depolanır. Taktik tahtası modülünde antrenörlerin sahaya oyuncu sürükleyip diziliş ve set hücumu kurgulayabilmesi için HTML5 Canvas tabanlı interaktif bir taktik motoru geliştirdim. Raporlama servisi ise periyodik gelişim eğrilerini otomatik hesaplayıp PDF çıktısı üretir.",
-    "keyChallenge": "Farklı yaş grupları (U12, U15, U19) için değişkenlik gösteren 50+ farklı performans metriğini ilişkisel tabloları şişirmeden, esnek JSON alanlarıyla indeksleyip anlık sorgularda sıfır gecikmeyle grafiklere dökebilmek için özel sorgu filtreleme mekanizması kurguladım.",
+    "problem": "Marketimin üst katındaki komşum yeni bir spor altyapı akademisi açıyordu ve federasyon lisansını beklerken 'Bana Football Manager seviyesinde, tüm kulüp yönetimini yapabileceğim bir uygulama yapar mısın?' diyerek bana ilk ticari iş teklifini getirdi. Kağıt-defter karmaşasını bitiren; oyuncu gelişim kartlarını, aidat/devam takibini, sakatlık geçmişini ve antrenör taktik tahtasını tek ekranda toplayan bu sistemi geliştirip başarıyla teslim ettim.",
+    "architecture": "Uygulama modern web teknolojileri ve hafif yerel veritabanı mimarisiyle inşa edildi. Oyuncu profilleri, yaş grupları (U12-U19), fiziksel gelişim metrikleri (hız, dayanıklılık, teknik puanlar) ve devam durumları modüler sekmelerde yönetilir. Taktik tahtası üzerinde sürükle-bırak formasyon dizilimi ve maç planlama simülasyonu çalışır.",
+    "keyChallenge": "Futbol akademisinin antrenman sahasında internet olmadan da oyuncu yoklamalarını ve taktik planlarını hızlıca girebilmesi için çevrimdışı önbellek ve anlık dışa aktarma (PDF/Excel) modülü geliştirdim.",
     "features": [
-      "İnteraktif taktik tahtası & dinamik pas/koşu yolu simülasyonu",
-      "Ayrıntılı oyuncu karnesi ve sakatlık takibi",
-      "Kulüp içi doğal dil sorgulama (RAG tabanlı veri asistanı)",
-      "Tek tıkla PDF rapor çıktısı alma"
+      "İlk ticari yazılım projem olarak spor akademisine özel geliştirilip teslim edilen sistem",
+      "Football Manager tarzı oyuncu gelişim kartları ve yetenek puanlaması",
+      "Antrenörler için interaktif sürükle-bırak taktik ve formasyon tahtası",
+      "Aidat, devam-devamsızlık ve sakatlık geçmişi takip paneli"
     ]
   },
   "githubUrl": "https://github.com/oguztasdemir/Altyapi",
-  "visibility": "public"
+  "visibility": "public",
+  "tags": [
+    "desktop-app",
+    "management-system",
+    "club-management",
+    "player-tracking",
+    "sqlite"
+  ]
 }

@@ -23,8 +23,9 @@ class ProjectService:
             "bist-bilanco-karlilik-tahmini",   # 1. Lisans Bitirme Tezi (FinTech & ML)
             "OYMAPOS-Barkod-Sistemi",          # 2. OymaPOS (Saha Kullanımı & FinTech)
             "cortex",                          # 3. Cortex (Yerel AI, RAG & IDE)
-            "Kredi-Notu-Siniflandirmasi-Tahmin-Modeli", # 4. Kredi Notu Risk Tahmini (ML)
-            "webtoon-lora-suite",              # 5. Webtoon Hikaye & LoRA Hattı (CV & ML)
+            "portfolio-console",               # 4. İnteraktif Sistem Mimarisi & Mühendislik Konsolu (Bu Portfolyo)
+            "Kredi-Notu-Siniflandirmasi-Tahmin-Modeli", # 5. Kredi Notu Risk Tahmini (ML)
+            "webtoon-lora-suite",              # 6. Webtoon Hikaye & LoRA Hattı (CV & ML)
             "Airdrop-Local",                   # 6. Local Drop (Ağ & Sistem)
             "cortex-planner",                  # 7. CorPlanner (DAG & Görev Motoru)
             "Disk-Kurtarma-Araci",             # 8. Win32 Raw Carving & Adli Bilişim
@@ -37,13 +38,14 @@ class ProjectService:
             "youtube-ai-assistant",            # 15. YouTube Transkript Analiz Motoru
             "Hugging-face-Downloader",          # 16. HuggingFace Model İndirici
             "Akademik-Ingilizce",              # 17. NLP Sınav Kelime Kampı
-            "Soru-Uygulamasi",                 # 18. PWA Sınav Çözüm Platformu
-            "altyapi-manager",                 # 19. Spor Kulübü Taktik & Oyuncu Yönetimi
-            "Telegram-Media-Hub",              # 20. Telegram Medya Arşiv Yöneticisi
-            "cache-cleaner",                   # 21. Geliştirici Disk Temizleme
-            "Gardrops-Otomasyon-Botu",         # 22. Pazaryeri Otomasyonu (2022)
-            "EA-FIFA-Fikstur",                 # 23. Turnuva & Fikstür Motoru
-            "NC-Codes"                         # 24. Transformice Lua Script Paketi (2013)
+            "KPSS-Sinav-Hazirlik",             # 18. KPSS Lisans Hazırlık Platformu
+            "Soru-Uygulamasi",                 # 19. PWA Sınav Çözüm Platformu
+            "altyapi-manager",                 # 20. Spor Kulübü Taktik & Oyuncu Yönetimi
+            "Telegram-Media-Hub",              # 21. Telegram Medya Arşiv Yöneticisi
+            "cache-cleaner",                   # 22. Geliştirici Disk Temizleme
+            "Gardrops-Otomasyon-Botu",         # 23. Pazaryeri Otomasyonu (2022)
+            "EA-FIFA-Fikstur",                 # 24. Turnuva & Fikstür Motoru
+            "NC-Codes"                         # 25. Transformice Lua Script Paketi (2013)
         ]
 
         projects_dict = {}
@@ -73,9 +75,12 @@ class ProjectService:
         # Doğrudan data/projects/*.json klasöründen oku
         projects = ProjectService._read_all_from_folder()
 
-        # Görünürlük filtresi (public / private)
+        # Görünürlük / Canlı Dağıtım filtresi (public / private / live)
         if visibility and visibility != "all":
-            projects = [p for p in projects if p.get("visibility", "public") == visibility]
+            if visibility == "live":
+                projects = [p for p in projects if p.get("demoUrl")]
+            else:
+                projects = [p for p in projects if p.get("visibility", "public") == visibility]
 
         # Kategori filtresi (Net ve kesin 1-e-1 eşleşme)
         if category and category != "all":

@@ -16,14 +16,14 @@
   "githubUrl": "https://github.com/oguztasdemir/Gardrops-Otomasyon-Botu",
   "demoUrl": null,
   "caseStudy": {
-    "problem": "İkinci el e-ticaret ve pazaryeri platformlarında (Gardrops vb.) satıcıların ürünlerini öne çıkarması, mağaza trafiği çekmesi ve düzenli satış yapabilmesi için platformdaki potansiyel alıcı kitleyi aktif olarak takip etmesi ve etkileşim kurması gerekir. Binlerce profili her gün manuel olarak aramak, son aktif kullanıcıları tek tek bulup takip butonuna basmak saatler süren ve insanı tüketen bir operasyondur. Ayrıca aynı kullanıcıları tekrar tekrar takip edip bırakmak veya platformun anti-spam hız kısıtlamalarına takılarak hesap banı yemek büyük bir risktir. Bu süreci tamamen güvenli ve otonom hale getiren bir bot geliştirdim.",
-    "architecture": "Sistemi Selenium WebDriver ve Python mimarisi üzerine, tespit edilemez tarayıcı (undetected-chromedriver) teknikleriyle inşa ettim. Bot, hedef kategorilerdeki vitrinleri ve en son satın alma yapan aktif profilleri DOM üzerinden filtreleyerek potansiyel müşteri havuzu oluşturur. Platformun bot koruma algoritmalarını tetiklememek için insan davranış modelleri simüle edilir: rastgele bekleme aralıkları (Gaussian noise timing), fare hareketleri ve pencereler arası yumuşak kaydırma (smooth scroll). Gerçekleştirilen tüm işlemler yerel SQLite veritabanına loglanarak mükerrer takip kesin olarak engellenir.",
-    "keyChallenge": "Platformun belirli sayıda ardışık takip işleminden sonra devreye soktuğu gizli hız sınırlarını (rate-limit) aşmak amacıyla dinamik dinlenme döngüleri ve istek frekansını otomatik ayarlayan adaptif geri çekilme (exponential backoff) algoritması entegre ettim.",
+    "problem": "2022 yılında Gardrops platformunda butik satış yaparken mağaza trafiğini artırmak için takipçileri takip etmek istiyordum. Ancak Gardrops'un arayüzünde ciddi bir frontend bug'ı (hatası) vardı: Bir mağazanın takipçiler listesine girip bir kullanıcıyı 'Takip Et'e bastığınızda arayüz takip edilmiş gibi gösteriyordu; ancak sayfayı yenileyip (F5) aynı listeye tekrar baktığınızda o kullanıcı yine takip edilmiyor gibi görünüyordu. Arayüzün bu yanıltıcı durumuna aldanıp butona tekrar basıldığında ise sistem aslında takip edilmiş olan kullanıcıyı 'Takipten Çıkarıyordu'. Bu kısır döngüyü ve buton karmaşasını çözmek için kullanıcı adlarını yerelde kaydedip takip durumunu kendi algoritmasıyla hatasız yöneten bir otomasyon kurdum.",
+    "architecture": "Sistem Selenium WebDriver ile çalışır ancak Gardrops'un arayüzdeki hatalı takip buton durumlarına asla güvenmez. Bot, hedef mağaza profillerini ve takipçilerini tararken her bir kullanıcı adını (username) ayrıştırır ve yerel SQLite/JSON durum takipçisine kaydeder. Bir kullanıcıya takip isteği gönderildiği an o kullanıcı kalıcı hafızaya 'takip edildi' olarak işaretlenir. Sayfa yenilense veya Gardrops arayüzü hatalı olarak 'Takip Et' butonu gösterse bile algoritma yerel listedeki ismi kontrol eder ve butona tekrar basılmasını engelleyerek kullanıcının yanlışlıkla takipten çıkarılmasının önüne geçer.",
+    "keyChallenge": "Gardrops'un arayüzündeki takip durum tutarsızlığını aşmak için isim bazlı yerel durum yönetimi kurmak ve platformun anti-bot sınırlarına takılmamak için rastgele gecikmeler (Gaussian timing) eklemekti.",
     "features": [
-      "2022 döneminde geliştirilen arşivlik e-ticaret otomasyonu",
-      "Hedef mağaza takipçilerini BS4 ile hafif ve hızlı kazıma",
-      "Diferansiyel kontrolle mükerrer takip isteklerini %100 engelleme",
-      "Kullanıcı dostu konfigürasyon ve liste dışa aktarım desteği"
+      "Gardrops arayüzündeki F5 takip tutarsızlığını aşan yerel isim eşleme algoritması",
+      "Kullanıcıları yanlışlıkla takipten çıkarmayı %100 önleyen kalıcı durum kaydı",
+      "Hedef mağaza takipçilerini hafif ve otonom tarama",
+      "Ban riskini sıfıra indiren insansı rastgele bekleme aralıkları"
     ]
   },
   "visibility": "public"

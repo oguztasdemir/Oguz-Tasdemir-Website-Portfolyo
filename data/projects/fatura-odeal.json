@@ -16,15 +16,22 @@
   "githubUrl": "https://github.com/oguztasdemir/Odeal-Fatura-Kesme-Otomasyonu",
   "demoUrl": null,
   "caseStudy": {
-    "problem": "Perakende operasyonlarında ve çok şubeli işletmelerde Ödeal yazar kasa/pos portalına her gün yüzlerce e-fatura ve e-arşiv belgesi düşmektedir. Muhasebe personelinin bu portala her gün elle giriş yapması, yüzlerce faturayı tek tek tıklayıp PDF ve XML olarak indirmesi, şubelere göre isimlendirip klasörlemesi saatler süren ve insan hatasına son derece açık bir iş yüküydü. Ayrıca portalın 5 dakikada bir oturumu sonlandırması indirme işlemlerinin yarıda kalmasına sebep oluyordu. Bu süreci tamamen insansızlaştırmak ve tek tıkla yüzlerce faturayı hatasız arşivlemek için bu otonom botu yazdım.",
+    "problem": "Perakende operasyonlarımızda Ödeal portalı üzerinden hem gelen e-faturaları düzenli olarak bilgisayara çekip arşivlemek hem de yeni faturaları hızlıca sisteme yazıp kesmek ciddi bir manuel operasyondu. Portala sürekli giriş yapmak, faturaları tek tek elle indirmek ve fatura bilgilerini girmek zaman alıyordu. Bu süreci otomatize ederek hem portaldan faturaları toplu çekip sınıflandıran hem de fatura yazma işlemlerini pratikleştiren otonom bir bot geliştirdim.",
     "architecture": "Sistemi Playwright ve Python arka plan servis mimarisi üzerine kurdum. Bot, şifreli kimlik bilgileriyle Ödeal kurumsal portalına headless olarak bağlanır, dinamik oturum tokenlarını (JWT/Session Cookie) yakalar ve portaldaki e-fatura/e-arşiv tablolarını DOM üzerinden ayrıştırır. İndirme aşamasında portalın indirme kısıtlarına takılmamak için paralel indirme havuzu (asyncio worker pool) devreye girer. İndirilen her fatura, üzerindeki VKN, Müşteri Ünvanı, Tarih ve Fatura Numarasına göre otomatik ayrıştırılarak Yıl/Ay/Şube formatındaki yerel klasör hiyerarşisine arşivlenir.",
     "keyChallenge": "Portalın rastgele aralıklarla fırlattığı oturum düşmelerini ve reCAPTCHA/güvenlik kontrollerini aşmak için akıllı oturum yenileyici (session-keeper) ve indirme kaldığı yerden devam ettirme (resumable queue) mekanizması geliştirdim. Ağ kopsa dahi faturalar eksiksiz indirildi.",
     "features": [
-      "Tarih aralığına göre toplu e-fatura sorgulama ve tek tıkla indirme",
-      "Kesintiye uğrayan indirmeleri kaldığı yerden devam ettirme",
-      "İndirilen faturaları müşteri unvanı bazında otomatik klasörleme",
-      "Excel ve muhasebe uyumlu CSV dökümü üretme"
+      "Ödeal portalından faturaları toplu çekme ve otomatik arşivleme",
+      "Fatura yazma ve kesme süreçlerini hızlandıran otomasyon",
+      "Kesintiye uğrayan işlemleri kaldığı yerden devam ettirme",
+      "İndirilen faturaları müşteri unvanı ve tarih bazında otomatik klasörleme"
     ]
   },
-  "visibility": "public"
+  "visibility": "public",
+  "tags": [
+    "automation",
+    "e-invoice",
+    "web-scraping",
+    "billing",
+    "python"
+  ]
 }

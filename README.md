@@ -1,66 +1,101 @@
-# 💻 Oğuz Taşdemir — Kişisel Portfolyo & Mühendislik Stüdyosu
+# ⚡ Oğuz Taşdemir — Kişisel Portfolyo Web Sitesi
 
-> ⚡ **FastAPI + Vanilla Modern Split-View Mimari**  
-> Sistem mimarisi, yapay zeka/RAG projeleri, donanım entegrasyonları ve web otomasyonlarını sergileyen tek portlu interaktif portfolyo web platformu.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)](https://python.org)
+[![FastAPI](https://img.shields.io/badge/Backend-FastAPI%200.110%2B-teal?logo=fastapi)](https://fastapi.tiangolo.com)
+[![Modern CSS](https://img.shields.io/badge/Frontend-Vanilla%20CSS%20Design%20System-orange)](frontend/css/style.css)
+[![Bilingual](https://img.shields.io/badge/i18n-TR%20%7C%20EN%20Live-green)](frontend/js/i18n.js)
 
----
-
-## 🏗️ Mimari ve Tasarım İlkeleri
-- **Tek Port Standardı:** Backend (FastAPI) ve Frontend (Vanilla JS/CSS) tek bir port üzerinden (varsayılan: `8000`) sunulur.
-- **2-Panel Split-View Deneyimi:** Linear / Raycast esintili minimalist arayüz; sol tarafta proje listesi, sağ tarafta detaylı teknik vaka analizi (Case Study).
-- **Modüler JSON Veri Katmanı:** Tüm 19 proje `data/projects/*.json` altında bağımsız modüller halinde tutulur; dinamik olarak okunur.
-- **F5 Anti-Caching Güvencesi:** Tarayıcı önbellek darboğazlarını önleyen özel HTTP başlıkları (`Cache-Control: no-cache`).
-- **Vibe Coding Mühendislik Zırhı:** Windows UTF-8 zırhı, SIGINT / Ctrl+C kopyalama koruması, canlı sistem nabzı ve yerel form Auto-Save koruması.
+Bu repo; matematik lisans tezi araştırmalarından perakende kasa sistemlerine, yerel yapay zeka ajanlarından tersine mühendislik ve sistem otomasyonlarına kadar geliştirdiğim **26 özgün mühendislik projesini** interaktif bir çalışma konsolu şeklinde sunan portföy platformunun kaynak kodlarını içerir.
 
 ---
 
-## 📁 Dizin Yapısı
+## 🌟 Temel Özellikler & Mimari Yaklaşım
 
-```text
+- **🎯 26 Özgün Proje & Geliştirici Hikayeleri:** Her proje için yapay dolgu ifadelerden arındırılmış gerçek hayat motivasyonları (`01 - Neden Bu Projeyi Geliştirdim?`).
+- **🔀 4 Adımlı Sistem Akış Şeması:** Her sistemin veri hattını, algoritmalarını ve çalışma mantığını teknik terim karmaşasına boğulmadan aktaran interaktif akış diyagramları.
+- **🌐 %100 Canlı Çift Dil Desteği (TR / EN):** Sol menüden tek tıkla arayüzü, proje hikayelerini, vaka analizlerini ve mimari blokları Türkçe veya İngilizceye anlık çeviren i18n motoru.
+- **📊 5 Temel Mühendislik Alanı:**
+  - 🎓 **Akademik & Tez (Mathematical Modeling & Thesis):** BIST kârlılık tahminleri, zaman serileri, enflasyon düzeltmeli finansal modeller.
+  - 🤖 **Yapay Zeka & RAG (AI, NLP & Agent Workflows):** Yerel LLM asistanları, AST analizli kod ajanları, YouTube transkript sentezi.
+  - 💳 **FinTech & SaaS (Enterprise POS & Retail Automation):** SQLite WAL destekli perakende kasa yazılımları, otonom e-fatura botları.
+  - 🖥️ **Masaüstü & Sistem (Low-Level Win32 & File I/O):** Ham sektör disk tarayıcıları, P2P yerel ağ aktarımları, çoklu thread önbellek temizleyiciler.
+  - 🌐 **Web & Otomasyon (Fullstack & Headless Automation):** Test suitleri, klan script motorları, HuggingFace model indiriciler.
+- **⚡ Sıfır Bağımlılık & Yüksek Performanslı Frontend:** Tailwind veya ağır framework'ler yerine doğrudan optimize edilmiş Vanilla CSS Design System ve modüler JavaScript yapısı.
+- **🔌 FastAPI Backend & Statik JSON Veri Modeli:** `data/projects/*.json` üzerinden bağımsız proje kayıtları ve yerel API entegrasyonu.
+
+---
+
+## 📂 Proje Dizin Yapısı
+
+```
 Oğuz Taşdemir Website Portfolyo/
-├── main.py                     # Tek tıkla port yönetimi, Ctrl+C zırhı, backend ve tarayıcı başlatıcı
-├── baslat.bat                  # Tek tıkla masaüstü çalıştırma betiği
-├── requirements.txt            # Python bağımlılıkları (fastapi, uvicorn, pydantic)
-├── .gitignore                  # Sıfır sızıntı Git koruma kalkanı
-├── README.md                   # Vitrin kalitesinde teknik dokümantasyon
-│
-├── backend/                    # FastAPI sunucu ve servis katmanı
-│   ├── app.py                  # API router'ları, CORS ve statik frontend sunumu
-│   ├── config.py               # Port, dizin yolları ve sabitler
-│   ├── controllers/            # REST API uç noktaları (/api/projects, /api/export, /api/system)
-│   ├── services/               # 19 projenin dinamik okunması ve filtreleme mantığı
-│   └── models/                 # Pydantic veri modelleri
-│
-├── frontend/                   # Modern Web UI katmanı
-│   ├── index.html              # Canlı arama, sayaç, çift tema ve yerleşik split-view
-│   ├── css/style.css           # Koyu/Açık tema, tipografi ve split view ızgara stilleri
-│   └── js/                     # Modüler istemci mimarisi (app.js, api.js, ui.js, projects-data.js)
-│
-├── data/                       # Veri havuzu
-│   └── projects/               # 19 bağımsız proje JSON dosyası
-│
-└── VIBE_CODING_ASISTAN/        # Mimari protokol ve mühendislik zihniyeti standartları
+├── backend/
+│   └── app.py                      # FastAPI API sunucusu ve statik dosya sağlayıcı
+├── data/
+│   └── projects/                   # 26 projenin detaylı JSON veri kaynakları
+│       ├── bist-bilanco-karlilik.json
+│       ├── oymapos.json
+│       ├── cortex.json
+│       ├── portfolio-console.json
+│       ├── Airdrop-Local.json
+│       └── ...
+├── frontend/
+│   ├── css/
+│   │   └── style.css               # Modern koyu/açık tema Vanilla CSS tasarım sistemi
+│   ├── js/
+│   │   ├── app.js                  # Ana uygulama yöneticisi, filtreleme ve olay dinleyiciler
+│   │   ├── ui.js                   # Dinamik bileşen oluşturucu (5 sekme, akış şeması, modallar)
+│   │   ├── zip-builder.js          # İstemci tarafı PKZip arşivleme ve dışa aktarım motoru
+│   │   ├── api.js                  # REST API ve yerel veri iletişim katmanı
+│   │   ├── i18n.js                 # Çift dilli (TR / EN) sözlük ve dil anahtarlama
+│   │   ├── projects-data.js        # Türkçe proje veri seti
+│   │   └── projects-en.js          # Tam İngilizce proje veri seti & geliştirici hikayeleri
+│   └── index.html                  # Ana interaktif portföy konsolu
+├── main.py                         # Yerel geliştirme başlatıcı (otomatik tarayıcı açılışı)
+├── requirements.txt                # Python bağımlılıkları
+├── .gitignore                      # Git temizlik kuralları
+└── LICENSE                         # MIT Lisansı
 ```
 
 ---
 
-## 🚀 Kurulum ve Çalıştırma
+## 🚀 Hızlı Başlangıç & Kurulum
 
-### 1. Bağımlılıkları Yükleyin:
+Projeyi yerel makinenizde çalıştırmak için Python 3.10+ kurulu olması yeterlidir:
+
+### 1. Depoyu Klonlayın veya İndirin
+```bash
+git clone https://github.com/oguztasdemir/portfolio.git
+cd portfolio
+```
+
+### 2. Gerekli Paketleri Yükleyin
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. Tek Tıkla Başlatın:
-Çift tıklayarak [baslat.bat](file:///c:/Users/User/Desktop/O%C4%9Fuz%20Ta%C5%9Fdemir%20Website%20Portfolyo/baslat.bat) dosyasını çalıştırabilir veya terminalden şu komutu verebilirsiniz:
+### 3. Uygulamayı Başlatın
 ```bash
 python main.py
 ```
-*Sistem otomatik olarak boş portu tespit eder (8000 -> 8001), UTF-8 zırhını devreye alır ve varsayılan tarayıcınızda arayüzü açar.*
+
+Uygulama başladığında tarayıcınızda otomatik olarak **`http://127.0.0.1:8000`** adresi açılacaktır.
 
 ---
 
-## 👨‍💻 Geliştirici
-**Oğuz Taşdemir**  
-*Systems Architect & Full-Stack Developer*  
-- GitHub: [@oguztasdemir](https://github.com/oguztasdemir)
+## 🛠️ Teknoloji Yığını
+
+| Katman | Teknolojiler |
+| :--- | :--- |
+| **Backend** | Python 3.10+, FastAPI, Uvicorn, Pydantic |
+| **Frontend** | HTML5, Modern Vanilla CSS3 (Custom Properties, Grid & Flexbox), Vanilla JavaScript (ES6+) |
+| **Veri Katmanı** | Modüler JSON Proje Kayıtları (`data/projects/*.json`) |
+| **Çoklu Dil (i18n)** | Canlı DOM Etiketleme & Olay Güdümlü Çeviri Motoru (`TR` / `EN`) |
+| **Tasarım & UI** | Dark / Light Temalar, Glassmorphism, Responsive Split View, Mikro Etkileşimler |
+
+---
+
+## 📄 Lisans
+
+Bu proje [MIT Lisansı](LICENSE) altında açık kaynak olarak lisanslanmıştır.

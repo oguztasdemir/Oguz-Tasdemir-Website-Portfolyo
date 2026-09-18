@@ -18,14 +18,14 @@
   "githubUrl": "https://github.com/oguztasdemir/webtoon-lora-suite",
   "demoUrl": null,
   "caseStudy": {
-    "problem": "Webtoon ve dijital çizgi roman yaratıcıları, dikey kaydırmalı devasa bölümlerin hikaye ritmini, sahne geçişlerini ve karakter devamlılığını analiz ederken büyük zorluk yaşar. Ayrıca mevcut çizim tarzını veya karakteri yapay zeka (LoRA / Diffusion) ile yeniden üretmek istediklerinde; binlerce piksellik dikey şeritlerden konuşma balonlarını temizlemek, sahneleri hikaye sırasına göre ayrıştırmak ve eğitim verisi hazırlamak haftalarca manuel Photoshop emeği gerektirir. Bu süreci hikaye analizi ve üretken yapay zeka aşamalarıyla otomatize eden bir sistem geliştirdim.",
-    "architecture": "Sistem iki ana eksende çalışır: 1) Hikaye & Panel Segmentasyonu: Dikey webtoon şeritlerindeki sahne geçişlerini, renk paleti değişimlerini ve anlatı yoğunluğunu kontur/histogram analiziyle tespit ederek hikaye akış sırasına göre panelleri dilimler. 2) Balon Tespiti & AI Inpainting: Konuşma balonları morfolojik filtrelerle tespit edilip maskelenir; ardından LaMa (Large Mask Inpainting) derin öğrenme modeliyle metnin altındaki orijinal çizim ve arka plan pürüzsüzce yeniden çizilir. 3) Üretken Model Eğitimi (LoRA): Elde edilen temiz sahneler otomatik olarak etiketlenerek (captioning) karakterin veya sahne tarzının yeni hikaye bölümlerinde üretilebilmesi için LoRA eğitim boru hattına sokulur.",
-    "keyChallenge": "Farklı webtoon türlerinde arka planın karmaşık illüstrasyonlar veya degradeli renk geçişleriyle dolu olduğu panellerde sınırların ve konuşma balonlarının çizimle karışmasını önlemek için adaptif eşikleme ve kenar yoğunluğu filtreleri kurguladım.",
+    "problem": "Hem Doğal Dil İşleme (NLP) hem de Diffusers ile LoRA ve YOLO nesne tanıma/segmentasyon eğitimlerinde kendimi derinlemesine geliştirmek için bu projeyi başlattım. Amacım, YOLO ve LoRA ile webtoon panellerini ve karakterlerini tutarlı şekilde üretebilecek bir boru hattı kurarak, özgün webtoon hikayeleri oluşturup dijital platformlarda yayınlayarak gelir elde edebileceğim profesyonel bir içerik üretim altyapısı kurmaktı.",
+    "architecture": "Boru hattı üç aşamalı çalışır: 1) YOLO tabanlı segmentasyon modeli dikey webtoon şeritlerindeki konuşma balonlarını, ses efektlerini ve panel sınırlarını tespit eder. 2) Balonların içi temizlenerek metinsiz temiz çizimler elde edilir. 3) Temizlenen bu görseller ve karakter pozları LoRA model eğitimi için etiketlenir (tagging) ve Diffusers kütüphanesiyle özel stil modelleri eğitilir.",
+    "keyChallenge": "Farklı webtoon panellerinde karakterin yüz, saç ve kıyafet tutarlılığını bozmadan konuşma balonlarını altındaki çizime zarar vermeden temizleyip LoRA ağırlıklarına doğru aktarmaktı.",
     "features": [
-      "Dikey webtoon akışını sahne ve hikaye bloklarına ayıran akıllı segmentasyon",
-      "Morfolojik konuşma balonu tespiti ve LaMa ile otomatik çizim tamamlama (inpainting)",
-      "Karakter ve stil tutarlılığı sağlayan LoRA eğitim veri seti hazırlığı",
-      "Görsel hikaye anlatımı ve yeni sahne türetimi için üretken yapay zeka boru hattı"
+      "NLP, Diffusers, LoRA ve YOLO modelleriyle uçtan uca kendini geliştirme projesi",
+      "Özgün webtoon hikaye üretimi ve dijital yayıncılık hedefli modelleme",
+      "YOLO ile konuşma balonu ve panel segmentasyonu",
+      "Karakter tutarlılığını koruyan LoRA eğitim veri seti hazırlığı"
     ]
   },
   "visibility": "private"

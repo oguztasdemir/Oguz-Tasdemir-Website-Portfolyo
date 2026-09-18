@@ -14,18 +14,24 @@
     "LocalStorage & Cache API"
   ],
   "githubUrl": "https://github.com/oguztasdemir/Akademik-Sinav-Hazirlik-Platformu",
-  "demoUrl": null,
+  "demoUrl": "https://oguztasdemir.github.io/Akademik-Sinav-Hazirlik-Platformu/",
   "caseStudy": {
-    "problem": "Üniversite lisans ve yüksek lisans düzeyinde İş Sağlığı ve Güvenliği (İSG), Makine Öğrenmesi (ML), Üretken Yapay Zeka (GAI) ve Dijital Sürdürülebilirlik (DS) gibi geniş teknik kapsama sahip derslerin final sınavlarına hazırlanırken yüzlerce soruyu pratik bir şekilde hem bilgisayardan hem de mobilden çözmek, yanlışları anında görüp pekiştirmek gerekiyordu. Mevcut bulut test siteleri internet gerektiriyordu ve özel soru setlerini özelleştirmeye izin vermiyordu. Bu ihtiyacı çözmek için sıfır bağımlılıkla yerelde çalışan ve PWA ile mobilden tam ekran kullanılabilen bir sınav motoru geliştirdim.",
-    "architecture": "Proje hafif ve bağımsız bir mimariye sahiptir: 1) Yerel Sunucu & QR Motoru: Python'ın gömülü HTTP modülü üzerinden yerel IP adresini tespit eder ve terminalde mobil bağlantı için anlık QR kod üretir. 2) PWA & Çevrimdışı Katmanı: Service Worker önbelleklemesiyle internet olmasa bile mobil cihazda uygulama gibi çalışır. 3) Modüler Ders Yapısı: İSG mevzuatı, Makine Öğrenmesi teorik/pratik soruları, Üretken Yapay Zeka ve Dijital Sürdürülebilirlik (yeşil bilişim, sürdürülebilir teknoloji) müfredatı modüler JSON veri tabanında ayrıştırılmıştır.",
-    "keyChallenge": "Kullanıcının ekstra bir uygulama indirmesine gerek kalmadan, sadece terminaldeki QR kodu kamerayla okutarak yerel ağ üzerinden responsive ve tam ekran (PWA) çalışan interaktif bir soru çözüm arayüzüne saniyeler içinde bağlanabilmesini sağlamaktı.",
+    "problem": "Üniversitede final dönemlerimde test usulü yapılacak sınavlara hem kendimin hem de sınıf arkadaşlarımın rahatça çalışabilmesi için bir sistem ihtiyacı vardı. Kalın notlar ve kağıtlar arasında kaybolmak yerine, internetsiz ortamda dahi QR kod okutarak telefondan veya bilgisayardan sınav sorularını interaktif şekilde çözebileceğimiz, doğru-yanlış analizini anında gösteren hafif bir platform geliştirdim.",
+    "architecture": "Uygulama yerel bir Python HTTP mikro-sunucusu ve tamamen sıfır bağımlılıklı saf HTML5/JavaScript arayüzü üzerine kuruldu. Bilgisayarda sınav başlatıldığında terminalde veya pencerede yerel ağ IP'sini içeren bir QR kod basılır. Akıllı telefonla bu QR kod okutulduğunda mobil tarayıcıda doğrudan sınav ekranı açılır. Sorular çözüldükçe cevaplar yerel JSON veritabanında puanlanır ve test sonunda öğrencinin ders bazlı başarı grafiği ekrana yansıtılır.",
+    "keyChallenge": "İnternet bağlantısının olmadığı veya zayıf olduğu kampüs ortamlarında yerel ağ üzerinden mobil cihazlarla sıfır gecikmeli veri akışını sağlamaktı.",
     "features": [
-      "İSG, Makine Öğrenmesi, Üretken AI ve Dijital Sürdürülebilirlik çoklu final ders havuzu",
-      "Terminal üzerinden otomatik LAN IP tespiti ve dinamik QR kodlu mobil erişim",
-      "PWA (Progressive Web App) desteği ile mobil ana ekrana eklenebilme",
-      "Service Worker ile %100 çevrimdışı (offline) soru çözebilme",
-      "Anlık doğru/yanlış geribildirimi ve konu bazlı test modları"
+      "Final sınavları için arkadaşlarla birlikte soru pratiği yapma ortamı",
+      "QR kod okutarak telefondan internetsiz hızlı sınav çözme",
+      "Anlık doğru/yanlış analizi ve detaylı sınav karnesi",
+      "Hafif, taşınabilir ve pratik mimari"
     ]
   },
-  "visibility": "public"
+  "visibility": "public",
+  "tags": [
+    "quiz-platform",
+    "exam-system",
+    "pwa",
+    "javascript",
+    "learning-analytics"
+  ]
 }

@@ -1,30 +1,30 @@
 {
   "id": "ai-image-studio",
-  "title": "Yerel AI Görsel Üretim & Stüdyo Yönetim Platformu",
+  "title": "Yerel Görsel Üretim & Hızlı Stüdyo Arayüzü",
   "category": "ai",
-  "categoryLabel": "Üretken Görsel & Stüdyo Yönetimi",
+  "categoryLabel": "Yapay Zeka & Görsel Tasarım Stüdyosu",
   "badge": "Özel Ar-Ge / Geliştirme",
   "visibility": "private",
-  "summary": "Yerel donanım kaynaklarını (GPU/VRAM) yüksek verimle kullanan, Stable Diffusion ve SDXL modelleriyle Text-to-Image ve Inpainting süreçlerini yöneten modern görsel üretim stüdyosu.",
-  "highlightMetric": "🎨 Yerel GPU Hızlandırması & Çok Katmanlı Prompt Motoru",
+  "summary": "Kendi bilgisayarımın ekran kartını (GPU) kullanarak, karmaşık ComfyUI node ağlarıyla vakit kaybetmeden doğrudan şablonlarla hızlı görsel üretip organize etmeyi sağlayan yerel stüdyo.",
+  "highlightMetric": "🎨 Yerel GPU Optimizasyonu & Hızlı Görsel Üretimi",
   "techStack": [
     "Python",
     "Diffusers & PyTorch",
     "FastAPI",
     "Stable Diffusion & SDXL",
-    "Vanilla JS & Modern UI",
+    "Modern Web UI",
     "CUDA Hızlandırma"
   ],
   "githubUrl": null,
   "caseStudy": {
-    "problem": "Yerel donanımlarda görsel üretim yaparken ComfyUI veya Automatic1111 gibi araçların karmaşık arayüzleri, yüksek bellek sızıntıları ve üretim geçmişinin kataloglanmasındaki zorluklar üretim verimini düşürür. Sade, hızlı ve yerel kaynakları akıllı yöneten bir stüdyoya ihtiyaç vardı.",
-    "architecture": "FastAPI arka ucu üzerinde Diffusers boru hatlarını CUDA bellek yönetimiyle (xFormers, FP16/BF16 precision, CPU Offloading) optimize eder. Web arayüzü; prompt ağırlıklandırma, negatif filtreleme, tohum (seed) sabitleme ve anlık görsel önizleme sunar.",
-    "keyChallenge": "Sınırlı VRAM'e sahip ekran kartlarında yüksek çözünürlüklü (1024x1024+) üretim yaparken bellek taşmalarını (OOM - Out of Memory) önlemek için sıralı model boşaltma (sequential model offload) ve dilimlenmiş dikkat (sliced attention) mekanizmaları uygulandı.",
+    "problem": "Yerel ekran kartımda görsel üretirken Automatic1111 veya ComfyUI gibi popüler araçların arayüzleri aşırı kalabalık ve hantaldı; her seferinde onlarca kutuyu bağlamak ve üretilen binlerce görseli bilgisayar klasörlerinde tek tek aramak ciddi bir vakit kaybıydı. Kendi projelerimde ve tasarımlarımda hızlıca prompt yazıp temiz şablonlarla doğrudan çıktı alabileceğim, üretim geçmişini düzenli tutan hafif bir stüdyo arayüzüne ihtiyaç duydum.",
+    "architecture": "Arka planda Python Diffusers ve PyTorch kütüphanelerini FastAPI ile bağladım. Ekran kartı belleğini (VRAM) tasarruflu kullanmak için FP16 hassasiyeti ve xFormers hızlandırması entegre edildi. Web ön yüzünde prompt ağırlıkları, en-boy oranları ve tohum (seed) değerleri tek tıkla ayarlanabilir; üretilen her görsel meta-verisiyle birlikte yerel arşive kaydedilir.",
+    "keyChallenge": "Yüksek çözünürlüklü (1024x1024) üretimlerde ekran kartı belleğinin dolmasını (CUDA Out of Memory) önlemek için bellek boşaltma ve dilimlenmiş dikkat algoritmaları kurguladım.",
     "features": [
-      "Stable Diffusion / SDXL modelleriyle yerel donanımda yüksek kaliteli görsel üretimi",
-      "VRAM dostu FP16/BF16 optimizasyonu ve düşük bellek tüketim modu",
-      "Görsel geçmişi, parametre metadata saklama ve tek tıkla tekrar üretme",
-      "Modern, karanlık tema odaklı ve duyarlı (responsive) stüdyo arayüzü"
+      "Stable Diffusion / SDXL modelleriyle yerel donanımda hızlı görsel üretimi",
+      "Düşük ekran kartı belleği tüketimi (VRAM koruma modu)",
+      "Üretilen görselleri parametreleriyle birlikte arşivleme ve tek tıkla çoğaltma",
+      "Gözü yormayan sade ve modern stüdyo kontrol paneli"
     ]
   }
 }

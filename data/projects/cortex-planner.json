@@ -1,30 +1,30 @@
 {
   "id": "cortex-planner",
-  "title": "CorPlanner — GitHub Destekli Proje & Görev Planlayıcı",
+  "title": "Geliştirici Görev & Proje Planlama İstasyonu",
   "category": "ai",
-  "categoryLabel": "AI Destekli Proje & Görev Motoru",
+  "categoryLabel": "Yazılım Planlama & GitHub Senkronizasyonu",
   "badge": "Özel Ar-Ge / Geliştirme",
   "visibility": "private",
-  "summary": "Fikir aşamasından mimari kararlara (ADR) ve Git geçmişine kadar tüm yazılım süreçlerini yerel LLM ile ayrıştıran, bağımlılık grafı çıkaran ve GitHub Projects ile senkronize eden otonom planlama istasyonu.",
-  "highlightMetric": "🚀 Yerel LLM Görev Ayrıştırma & Otomatik Senkronizasyon",
+  "summary": "Yeni bir projeye başlarken dağınık fikirleri mantıksal geliştirme adımlarına (görev sırası, öncelikler) bölen ve GitHub Projects ile tek tıkla eşitleyen yerel planlama aracı.",
+  "highlightMetric": "📋 Proje Fikirlerini Görev Sırasına Dönüştürme & GitHub Senkronizasyonu",
   "techStack": [
     "Python",
     "FastAPI",
-    "Local LLM (Ollama)",
+    "Yerel Dil Modeli",
     "GitHub API & GraphQL",
     "SQLite WAL",
-    "Mermaid Mimarisi"
+    "İş Akış Şemaları"
   ],
   "githubUrl": null,
   "caseStudy": {
-    "problem": "Büyük yazılım projelerinde hedefleri küçük parçalara (task/sub-task) bölmek, mimari kararları dokümante etmek ve GitHub issue/milestone'ları ile yerel çalışma temposunu tutarlı kılmak ciddi zaman kaybına yol açar. Geliştiricinin düşünce akışını kodlama bağlamından koparmadan yerel yapay zekayla yöneten bir planlayıcıya ihtiyaç vardı.",
-    "architecture": "CorPlanner; yerel LLM motoru üzerinden geliştiricinin serbest metin veya sesli proje hedeflerini analiz eder. Doğal dildeki gereksinimleri bağımlılık ağaçlarına (Dependency Trees) ve öncelik sıralamalarına böler. Yerel SQLite WAL veritabanında depolanan bu görevler, tek tıkla GitHub Projects, Milestone ve Issue yapılarıyla çift yönlü senkronize edilir.",
-    "keyChallenge": "Karmaşık yazılım bağımlılıklarında döngüsel kilitlenmeleri (cyclic dependencies) engellemek ve LLM'in ürettiği görev ayrıştırmalarını deterministik JSON şemalarına zorlamak için Pydantic doğrulama katmanları ve yönlü çevrimsiz çizge (DAG) algoritmaları kurgulandı.",
+    "problem": "Geliştirdiğim tüm projeleri tek bir merkezde derli toplu görebilmek, GitHub API anahtarımla bağlanarak depolara doğrudan erişebilmek, projelerin yol haritasını tutmak ve yerel LLM'ler aracılığıyla 'Bu projeye başka hangi özellikleri ekleyebiliriz?' diye beyin fırtınası yapıp fikir alabileceğim akıllı bir ajanda ve planlayıcı ihtiyacımdan doğdu.",
+    "architecture": "Uygulama, GitHub REST ve GraphQL API'lerine bağlanarak kullanıcının tüm depolarını, açık issue'larını ve commit geçmişini çeker. Yerel dil modeli entegrasyonu sayesinde her bir projenin README ve kod yapısı analiz edilir; geliştiriciye mimari öneriler, eklenebilecek yeni modüller ve yapılacaklar listesi (TODO) sunulur. Sistem aynı zamanda kişisel bir yazılım ajandası olarak çalışır.",
+    "keyChallenge": "GitHub API hız sınırlarına takılmadan birden fazla deponun durumunu yerel SQLite veritabanında asenkron önbelleğe almak ve LLM'e verimli proje bağlamı aktarmaktı.",
     "features": [
-      "Doğal dille yazılan hedefleri otonom alt görevlere (WBS) bölen LLM motoru",
-      "Yönlü Çevrimsiz Çizge (DAG) tabanlı görev önceliklendirme ve Gantt çizelgesi",
-      "GitHub Projects & Issues ile çift yönlü anlık API senkronizasyonu",
-      "Tamamen yerelde (Local-First) çalışan mimari karar kayıtları (ADR) arşivi"
+      "Tüm yazılım projelerini tek bir ekranda derli toplu listeleme ve izleme",
+      "GitHub API anahtarı ile depolara doğrudan erişim ve senkronizasyon",
+      "LLM aracılığıyla 'Projeye ne eklenebilir?' beyin fırtınası ve fikir üretimi",
+      "Geliştirici ajandası, görev önceliklendirme ve not tutma paneli"
     ]
   }
 }

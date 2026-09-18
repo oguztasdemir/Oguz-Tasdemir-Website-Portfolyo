@@ -14,14 +14,14 @@
     "Vanilla JS Canvas"
   ],
   "caseStudy": {
-    "problem": "Market operasyonlarında tedarikçilerden yeni ürünler geldikçe veya enflasyonist dönemlerde fiyatlar değiştikçe reyonlardaki yüzlerce ürünün raf etiketlerinin acilen yenilenmesi gerekir. Piyasadaki hazır etiket yazdırma programları ise karmaşık sürücüler gerektiriyor, şablon ayarlamak saatler alıyor ve Excel/CSV listesinden toplu etiket basarken barkod çizgilerini bulanık çıkartarak el terminallerinin okuyamamasına yol açıyordu. Reyon görevlilerinin Excel listesini yükleyip tek tuşla 500 etiketi net ve standart boyutta basabileceği bir araç ihtiyacını çözdüm.",
-    "architecture": "Uygulama doğrudan termal etiket yazıcıların diline (TSPL ve ESC/POS) uygun vektörel rasterlaştırma motoru üzerine kuruldu. Kullanıcı arayüzünde dinamik şablon düzenleyici yer alır (ürün adı, birim fiyatı, indirimli fiyat, menşei ve EAN-13 barkod görseli). Barkod üretimi python-barcode kütüphanesiyle pikseller arası bozulma olmadan net çözünürlükte oluşturulur. Toplu baskı modülü, binlerce satırlık Excel veya CSV dosyasını okuyarak yazıcının tampon belleğini şişirmeden kuyruk yönetimiyle etiketleri kağıt israfı yapmadan ardı ardına basar.",
-    "keyChallenge": "Farklı marka termal yazıcıların (Argox, Xprinter, Zebra) baskı kafası DPI çözünürlük farklarından kaynaklanan kayma ve taşma problemlerini aşmak için dinamik DPI kalibrasyon matrisi geliştirdim.",
+    "problem": "Marketimizdeki ana kasa bilgisayarı eski ve donanım olarak zayıf bir sistemdi. Kasa programının yanı sıra ağır etiket tasarım ve toplu yazdırma işlemlerini de aynı bilgisayara yüklemek kasayı kilitliyor ve satış anında gecikmelere sebep oluyordu. Bu donanım yetersizliğini aşmak için etiket basma sürecini kasadan tamamen ayırdım; dükkandaki daha güçlü bilgisayarıma Wi-Fi üzerinden bağlanan bir yerel sunucu mimarisi kurdum. Böylece rafta veya depodayken cep telefonundan (mobil entegrasyon) ya da güçlü bilgisayardan yeni fiyat güncellemelerini anında sunucuya aktarıp termal yazıcıdan etiketleri tek tıkla bastırabildiğimiz bağımsız bir sistem inşa ettim.",
+    "architecture": "Sistem iki ana parçadan oluşur: Dükkandaki güçlü bilgisayarda çalışan yerel Wi-Fi sunucusu ve termal etiket yazıcıya doğrudan TSPL/EPL baytları gönderen baskı motoru. Reyonda gezerken cep telefonundan barkod okutularak veya Excel listesinden toplu fiyat güncellendiğinde, veri Wi-Fi üzerinden bu sunucuya iletilir. Sunucu anında net çözünürlüklü EAN-13 barkodlu etiket şablonlarını oluşturur ve termal yazıcının tampon belleğini yormadan sırayla basar.",
+    "keyChallenge": "Zayıf kasa bilgisayarını hiçbir şekilde yormadan, dükkan içi yerel Wi-Fi ağında cep telefonu ve masaüstü bilgisayar arasında sıfır gecikmeli veri senkronizasyonu ve termal yazıcı kafa DPI kalibrasyonunu sağlamaktı.",
     "features": [
-      "Görsel etiket tasarım alanı (Logo, Fiyat, Barkod)",
-      "Excel/CSV veya Barkod POS veritabanından toplu etiket basımı",
-      "EAN-13, Code-128 ve QR Kod standartları için dahili doğrulayıcı",
-      "Bağımsız tek parça taşınabilir .exe yapısı"
+      "Zayıf kasa bilgisayarını yormayan bağımsız yerel Wi-Fi sunucu mimarisi",
+      "Cep telefonundan mobil entegrasyonla rafta fiyat güncelleme ve etiket tetikleme",
+      "Excel/CSV listelerinden tek tıkla toplu ve net EAN-13 barkodlu raf etiketi basımı",
+      "Termal yazıcılar için (Argox, Xprinter vb.) doğrudan bayt seviyesinde sürücüsüz çıktı"
     ]
   },
   "githubUrl": "https://github.com/oguztasdemir/Oymapos-Etiket-Yazdirici",
