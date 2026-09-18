@@ -1,0 +1,419 @@
+/* ==========================================================================
+   HAKKIMDA (BİYOGRAFİ, HİKAYE VE ZAMAN ÇİZELGESİ)
+   ========================================================================== */
+.about-hero-block {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-panel);
+}
+
+.about-tag-badge {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: #79c0ff;
+  background: var(--bg-tag);
+  border: 1px solid var(--border-dim);
+  padding: 3px 10px;
+  border-radius: var(--radius-xs);
+  margin-bottom: 12px;
+}
+
+.about-person-title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-bright);
+  letter-spacing: -0.025em;
+  margin-bottom: 12px;
+}
+
+.about-person-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-main);
+  line-height: 1.7;
+}
+
+.about-story-section {
+  margin-bottom: 36px;
+}
+
+.about-section-heading {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  letter-spacing: -0.015em;
+  margin-bottom: 16px;
+}
+
+.about-paragraph {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+.about-paragraph strong {
+  color: var(--text-bright);
+  font-weight: 600;
+}
+
+/* Zaman Çizelgesi (Timeline Flow) */
+.about-timeline-section {
+  margin-bottom: 36px;
+  padding-top: 10px;
+}
+
+.about-timeline-flow {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.timeline-entry {
+  display: flex;
+  gap: 20px;
+}
+
+.timeline-dot-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20px;
+  flex-shrink: 0;
+}
+
+.timeline-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #58a6ff;
+  border: 2px solid var(--bg-panel);
+  box-shadow: 0 0 0 2px var(--border-panel);
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.timeline-line {
+  width: 2px;
+  background: var(--border-panel);
+  flex-grow: 1;
+  margin: 6px 0;
+}
+
+.timeline-body {
+  padding-bottom: 28px;
+}
+
+.timeline-year {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #79c0ff;
+  background: var(--bg-tag);
+  border: 1px solid var(--border-dim);
+  padding: 2px 8px;
+  border-radius: var(--radius-xs);
+  margin-bottom: 6px;
+}
+
+.timeline-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  margin-bottom: 6px;
+}
+
+.timeline-desc {
+  font-size: 0.9rem;
+  color: var(--text-main);
+  line-height: 1.65;
+}
+
+/* ==========================================================================
+   SERTİFİKALAR & EĞİTİMLER IZGARASI
+   ========================================================================== */
+.about-certs-section {
+  margin-top: 36px;
+  margin-bottom: 36px;
+}
+
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.cert-card {
+  background: var(--bg-panel-elevated);
+  border: 1px solid var(--border-panel);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.cert-card:hover {
+  transform: translateY(-3px);
+  border-color: #58a6ff;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+}
+
+.cert-preview-wrap {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  background: #0d1117;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-panel);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cert-preview-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.3s ease;
+}
+
+.cert-card:hover .cert-preview-wrap img {
+  transform: scale(1.03);
+}
+
+.cert-zoom-hint {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 600;
+  background: rgba(13, 17, 23, 0.88);
+  color: #79c0ff;
+  border: 1px solid var(--border-dim);
+  padding: 3px 8px;
+  border-radius: var(--radius-xs);
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+}
+
+.cert-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.cert-issuer {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 700;
+  color: #58a6ff;
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+}
+
+.cert-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  line-height: 1.35;
+  margin-bottom: 6px;
+}
+
+.cert-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Lightbox Modal */
+.cert-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: modalFadeIn 0.2s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.cert-modal-container {
+  background: #161b22;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  max-width: 900px;
+  max-height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+}
+
+.cert-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border-panel);
+  background: #0d1117;
+}
+
+.cert-modal-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-bright);
+}
+
+.cert-modal-close {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 2px 8px;
+  border-radius: var(--radius-xs);
+  transition: all 0.15s ease;
+}
+
+.cert-modal-close:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.cert-modal-body {
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #090d13;
+}
+
+.cert-modal-body img {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: var(--radius-xs);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .certs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   HAKKIMDA İÇİ İLETİŞİM & BAĞLANTILAR KARTI
+   ========================================================================== */
+.about-contact-card {
+  margin-top: 28px;
+  padding: 24px 28px;
+  background: var(--bg-panel-elevated);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+}
+
+.about-contact-header {
+  margin-bottom: 20px;
+}
+
+.about-contact-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  margin-bottom: 6px;
+}
+
+.about-contact-subtitle {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.about-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 860px) {
+  .about-links-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-link-pill {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-panel);
+  border-radius: var(--radius-xs);
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.about-link-pill:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-card-active);
+  transform: translateY(-2px);
+}
+
+.about-link-pill svg {
+  color: #79c0ff;
+  flex-shrink: 0;
+}
+
+.link-pill-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.link-pill-label {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 2px;
+}
+
+.link-pill-val {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-bright);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+

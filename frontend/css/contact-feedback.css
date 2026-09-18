@@ -1,0 +1,686 @@
+/* ==========================================================================
+   İLETİŞİM PANELİ & İŞ BİRLİĞİ KARTLARI
+   ========================================================================== */
+.contact-collaboration-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: var(--bg-panel-elevated);
+  border: 1px solid var(--border-card);
+  border-left: 3px solid #38bdf8;
+  border-radius: var(--radius-sm);
+  padding: 18px 22px;
+  margin-bottom: 24px;
+}
+
+.collaboration-note-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-xs);
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #38bdf8;
+  flex-shrink: 0;
+}
+
+.collaboration-note-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  margin-bottom: 4px;
+}
+
+.collaboration-note-text {
+  font-size: 0.9rem;
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+.contact-channels-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-channel-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 20px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-panel);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.contact-channel-card:hover {
+  background: var(--bg-panel-elevated);
+  border-color: #38bdf8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.channel-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.channel-card-icon.mail {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #f87171;
+}
+
+.channel-card-icon.linkedin {
+  background: rgba(14, 165, 233, 0.1);
+  border: 1px solid rgba(14, 165, 233, 0.25);
+  color: #38bdf8;
+}
+
+.channel-card-icon.github {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f1f5f9;
+}
+
+.channel-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.channel-card-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.channel-card-value {
+  font-family: var(--font-heading);
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--text-bright);
+}
+
+.channel-card-hint {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.channel-card-arrow {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  font-weight: 700;
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.contact-channel-card:hover .channel-card-arrow {
+  color: #38bdf8;
+  transform: translateX(4px);
+}
+
+/* İletişim Formu */
+.clean-panel-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: left;
+}
+
+.form-double-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.panel-input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.panel-input-field label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+}
+
+.auto-save-tag {
+  color: var(--accent-emerald);
+}
+
+.panel-input-field input, .panel-input-field textarea {
+  width: 100%;
+  padding: 9px 12px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xs);
+  color: var(--text-bright);
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  outline: none;
+  transition: border-color 0.14s ease;
+}
+
+.panel-input-field input:focus, .panel-input-field textarea:focus {
+  border-color: var(--border-focus);
+}
+
+.form-actions-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+/* ==========================================================================
+   TOAST BİLDİRİMİ
+   ========================================================================== */
+.tactile-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--bg-panel);
+  color: var(--text-bright);
+  border: 1px solid var(--border-panel);
+  padding: 10px 18px;
+  border-radius: var(--radius-xs);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 999;
+  transform: translateY(60px);
+  opacity: 0;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+}
+
+.tactile-toast.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.toast-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--accent-emerald);
+}
+
+/* ==========================================================================
+   ANA SAYFA VİTRİNİ (HOME HERO & FLAGSHIP PROJECTS)
+   ========================================================================== */
+.home-hero-container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 20px 0 60px 0;
+}
+
+.home-hero-header {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-panel);
+  border-radius: var(--radius-sm);
+  padding: 40px 44px;
+  margin-bottom: 36px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.home-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent-emerald);
+  margin-bottom: 20px;
+}
+
+.home-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--accent-emerald);
+}
+
+.home-hero-title {
+  font-family: var(--font-heading);
+  font-size: 2.3rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-bright);
+  line-height: 1.22;
+  margin-bottom: 16px;
+}
+
+.home-hero-title span {
+  color: var(--accent-blue);
+}
+
+.home-hero-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-main);
+  line-height: 1.65;
+  max-width: 820px;
+  margin-bottom: 28px;
+}
+
+.home-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Amiral Gemisi Bölümü */
+.home-flagship-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.flagship-section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.flagship-tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent-blue);
+  letter-spacing: 0.06em;
+}
+
+.flagship-title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-bright);
+}
+
+.home-flagship-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.flagship-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-panel);
+  border-radius: var(--radius-sm);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.flagship-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-blue);
+  background: var(--bg-card-hover);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.flagship-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.flagship-badge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--accent-blue);
+  background: var(--bg-tag);
+  padding: 2px 7px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-dim);
+}
+
+.flagship-metric {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--accent-emerald);
+}
+
+.flagship-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+
+.flagship-card-desc {
+  font-size: 0.82rem;
+  color: var(--text-main);
+  line-height: 1.55;
+  flex: 1;
+  margin-bottom: 16px;
+}
+
+.flagship-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-dim);
+}
+
+.flagship-view-link {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent-blue);
+  transition: transform 0.14s ease;
+}
+
+.flagship-card:hover .flagship-view-link {
+  transform: translateX(4px);
+}
+
+.rail-social-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+/* ==========================================================================
+   DUYARLILIK (RESPONSIVE)
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .detail-page-scroll-content {
+    padding: 30px 28px 70px 28px;
+  }
+}
+
+@media (max-width: 800px) {
+  .workbench-app-shell {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .panel-rail {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border-panel);
+  }
+  .workspace-view {
+    flex-direction: column;
+    height: auto;
+  }
+  .portfolio-main-stream {
+    height: auto;
+    padding: 20px 14px;
+  }
+  .portfolio-detail-view {
+    height: auto;
+    min-height: 100vh;
+  }
+  .detail-page-nav-bar {
+    padding: 12px 16px;
+  }
+  .detail-page-scroll-content {
+    padding: 20px 14px 60px 14px;
+  }
+  .form-double-fields {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   ÖZEL MODERN KAYDIRMA ÇUBUĞU (MODERN SLEEK SCROLLBARS)
+   ========================================================================== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-app-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-panel);
+  border-radius: 4px;
+  border: 2px solid var(--bg-app-deep);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* ==========================================================================
+   İLETİŞİM & GERİ BİLDİRİM PANELİ BİLEŞENLERİ (CONTACT VIEW STYLES)
+   ========================================================================== */
+.contact-collaboration-note {
+  display: flex;
+  gap: 16px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(16, 185, 129, 0.06) 100%);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 20px 24px;
+  margin-bottom: 28px;
+  align-items: flex-start;
+}
+
+[data-theme="light"] .contact-collaboration-note {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.06) 0%, rgba(16, 185, 129, 0.04) 100%);
+  border-color: rgba(37, 99, 235, 0.2);
+}
+
+.collaboration-note-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-xs);
+  background: rgba(37, 99, 235, 0.15);
+  color: var(--accent-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.collaboration-note-content {
+  flex: 1;
+}
+
+.collaboration-note-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  margin-bottom: 6px;
+}
+
+.collaboration-note-text {
+  font-size: 0.88rem;
+  color: var(--text-main);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.contact-channels-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-channel-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-panel);
+  border-radius: var(--radius-sm);
+  padding: 18px 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-channel-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="light"] .contact-channel-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.channel-card-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.contact-channel-card:hover .channel-card-icon {
+  transform: scale(1.08);
+}
+
+.channel-card-icon.mail {
+  background: rgba(239, 68, 68, 0.12);
+  color: #ef4444;
+}
+
+.channel-card-icon.linkedin {
+  background: rgba(10, 102, 194, 0.15);
+  color: #0a66c2;
+}
+
+.channel-card-icon.github {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-bright);
+}
+
+[data-theme="light"] .channel-card-icon.github {
+  background: rgba(0, 0, 0, 0.06);
+  color: #1e293b;
+}
+
+.channel-card-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.channel-card-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--accent-blue);
+  letter-spacing: 0.06em;
+}
+
+.channel-card-value {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-bright);
+}
+
+.channel-card-hint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.channel-card-arrow {
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  transition: all 0.2s ease;
+}
+
+.contact-channel-card:hover .channel-card-arrow {
+  color: var(--accent-blue);
+  transform: translateX(4px);
+}
+
+/* =========================================================================
+   CANLI DEMO (VERCEL) BUTONU & FİLTRE ROZETLERİ
+   ========================================================================= */
+.card-direct-demo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: var(--radius-xs);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(6, 95, 70, 0.25));
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #10b981;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.card-direct-demo-btn:hover {
+  background: #10b981;
+  color: #ffffff;
+  border-color: #10b981;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  transform: translateY(-1px);
+}
+
+.highlight-vercel-pill {
+  border-color: rgba(16, 185, 129, 0.4) !important;
+  color: #10b981 !important;
+  font-weight: 700 !important;
+  background: rgba(16, 185, 129, 0.08) !important;
+}
+
+.highlight-vercel-pill.active,
+.highlight-vercel-pill:hover {
+  background: #10b981 !important;
+  color: #ffffff !important;
+  border-color: #10b981 !important;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
+}
+

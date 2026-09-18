@@ -1,0 +1,862 @@
+/* ==========================================================================
+   STANDALONE GÖRÜNÜMLER (HAKKIMDA, YETENEK, İLETİŞİM)
+   ========================================================================== */
+.view-standalone-container {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding: 36px 48px;
+}
+
+.view-panel-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-panel);
+  border-radius: var(--radius-sm);
+  padding: 36px 40px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   ANA SAYFA: DİNAMİK, FERAH VE CAM DOKULU ÇALIŞMA SAHNESİ
+   ========================================================================== */
+.home-canvas-viewport {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  position: relative;
+  background: radial-gradient(circle at 50% 0%, rgba(30, 58, 138, 0.15) 0%, transparent 65%),
+              var(--bg-app-deep);
+  padding: 48px 48px 80px 48px;
+}
+
+.home-ambient-glow {
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, rgba(99, 102, 241, 0.06) 40%, transparent 70%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.home-modern-stage {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+/* 1. Hero Başlık & Dinamik Rozet */
+.home-modern-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.home-live-pulse-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: #34d399;
+  position: relative;
+}
+
+.pulse-dot-ring {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  position: relative;
+}
+
+.pulse-dot-ring::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #10b981;
+  animation: pulseBeacon 2s infinite ease-out;
+}
+
+@keyframes pulseBeacon {
+  0% { transform: scale(0.6); opacity: 1; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+.home-glamour-title {
+  font-family: var(--font-heading);
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: var(--text-bright);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.home-glamour-title-sub {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  background: linear-gradient(90deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home-glamour-desc {
+  font-size: 1.06rem;
+  color: var(--text-main);
+  line-height: 1.7;
+  max-width: 840px;
+}
+
+.home-glamour-desc strong {
+  color: var(--text-bright);
+  font-weight: 600;
+}
+
+/* Aksiyon Butonları */
+.home-glamour-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.home-primary-launch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 12px 26px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.35);
+}
+
+.home-primary-launch-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(37, 99, 235, 0.55);
+  background: linear-gradient(135deg, #0369a1 0%, #1d4ed8 100%);
+}
+
+.home-primary-launch-btn:hover .btn-arrow-icon {
+  transform: translateX(4px);
+}
+
+.btn-arrow-icon {
+  transition: transform 0.2s ease;
+}
+
+.home-secondary-launch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--bg-panel-elevated);
+  color: var(--text-bright);
+  border: 1px solid var(--border-panel);
+  padding: 12px 22px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.home-secondary-launch-btn:hover {
+  background: var(--bg-panel);
+  border-color: var(--border-card);
+  transform: translateY(-1px);
+}
+
+/* 2. Telemetri Şeridi */
+.home-telemetry-ribbon {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-panel);
+  border-radius: var(--radius-sm);
+  padding: 16px 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.telemetry-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  text-align: center;
+}
+
+.telemetry-val {
+  font-family: var(--font-heading);
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: var(--text-bright);
+  letter-spacing: -0.02em;
+  background: linear-gradient(180deg, #ffffff 30%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.telemetry-lbl {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.telemetry-separator {
+  width: 1px;
+  height: 32px;
+  background: var(--border-panel);
+}
+
+/* 3. İnteraktif Odak Kartları (Büyük Cam Dokusu) */
+.home-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.showcase-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-panel);
+  border-radius: var(--radius-md);
+  padding: 26px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.showcase-card-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.6), transparent);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.showcase-card:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  background: var(--bg-panel-elevated);
+}
+
+.showcase-card:hover .showcase-card-glow {
+  opacity: 1;
+}
+
+.showcase-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.showcase-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+}
+
+.showcase-icon-box.ai-icon {
+  background: rgba(168, 85, 247, 0.12);
+  color: #c084fc;
+  border-color: rgba(168, 85, 247, 0.25);
+}
+
+.showcase-icon-box.pos-icon {
+  background: rgba(16, 185, 129, 0.12);
+  color: #34d399;
+  border-color: rgba(16, 185, 129, 0.25);
+}
+
+.showcase-icon-box.sys-icon {
+  background: rgba(56, 189, 248, 0.12);
+  color: #38bdf8;
+  border-color: rgba(56, 189, 248, 0.25);
+}
+
+.showcase-icon-box.math-icon {
+  background: rgba(245, 158, 11, 0.12);
+  color: #fbbf24;
+  border-color: rgba(245, 158, 11, 0.25);
+}
+
+.showcase-pill {
+  font-family: var(--font-heading);
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: var(--bg-card);
+  padding: 4px 10px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-dim);
+}
+
+.showcase-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+}
+
+.showcase-card-text {
+  font-size: 0.88rem;
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+.showcase-meta-tags {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.showcase-meta-tags span {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--bg-card);
+  border: 1px solid var(--border-panel);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+/* 4. Ana Sayfa Sertifikalar Bölümü */
+.home-certs-section {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding-top: 10px;
+}
+
+.home-certs-header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.home-section-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.home-certs-title {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-bright);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.home-certs-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  max-width: 680px;
+  margin-top: 4px;
+}
+
+.home-view-all-certs-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-panel-elevated);
+  border: 1px solid var(--border-panel);
+  color: var(--text-bright);
+  padding: 8px 16px;
+  border-radius: var(--radius-xs);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.home-view-all-certs-btn:hover {
+  background: var(--bg-panel);
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+  transform: translateX(2px);
+}
+
+/* ==========================================================================
+   GENEL YATAY KAYDIRMALI VİTRİN BİLEŞENLERİ (HORIZONTAL SLIDERS)
+   ========================================================================== */
+.home-slider-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 14px;
+}
+
+.home-slider-header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.home-slider-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.home-slider-nav-arrows {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-panel);
+  padding: 4px;
+  border-radius: var(--radius-xs);
+}
+
+.slider-nav-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-dim);
+  color: var(--text-bright);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.slider-nav-btn:hover {
+  background: var(--accent-blue);
+  border-color: var(--accent-blue);
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.slider-nav-btn:active {
+  transform: scale(0.95);
+}
+
+.home-primary-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 8px 18px;
+  border-radius: var(--radius-xs);
+  font-family: var(--font-heading);
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+  white-space: nowrap;
+}
+
+.home-primary-action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.55);
+  background: linear-gradient(135deg, #0369a1 0%, #1d4ed8 100%);
+}
+
+.home-primary-action-btn:hover .btn-arrow-icon {
+  transform: translateX(4px);
+}
+
+/* Yatay Kaydırma Bandı (Track) */
+.home-horizontal-scroll-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 8px 4px 16px 4px;
+  margin: 0 -4px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.home-horizontal-scroll-track::-webkit-scrollbar {
+  height: 6px;
+}
+
+.home-horizontal-scroll-track::-webkit-scrollbar-track {
+  background: var(--bg-card);
+  border-radius: 3px;
+}
+
+.home-horizontal-scroll-track::-webkit-scrollbar-thumb {
+  background: var(--border-panel);
+  border-radius: 3px;
+}
+
+.home-horizontal-scroll-track::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-blue);
+}
+
+/* Öne Çıkan Proje Kartları (Slider) */
+.home-project-slider-card {
+  min-width: 320px;
+  max-width: 330px;
+  flex: 0 0 320px;
+  scroll-snap-align: start;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-panel);
+  border-radius: var(--radius-sm);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+.home-project-slider-card:hover {
+  border-color: rgba(56, 189, 248, 0.45);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+  background: var(--bg-panel-elevated);
+}
+
+.slider-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.slider-card-badge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+}
+
+.slider-card-badge.badge-ai {
+  background: rgba(168, 85, 247, 0.15);
+  color: #c084fc;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.slider-card-badge.badge-pos {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.slider-card-badge.badge-sys {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.slider-card-badge.badge-math {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.slider-card-badge.badge-priv {
+  background: rgba(244, 63, 94, 0.14);
+  color: #fb7185;
+  border: 1px solid rgba(244, 63, 94, 0.3);
+}
+
+.slider-card-badge.badge-pub {
+  background: rgba(56, 189, 248, 0.14);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.slider-card-cat {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.slider-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  line-height: 1.35;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.slider-card-desc {
+  font-size: 0.82rem;
+  color: var(--text-main);
+  line-height: 1.55;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+}
+
+.slider-card-metric {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-dim);
+  padding: 6px 10px;
+  border-radius: var(--radius-xs);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-emerald);
+}
+
+.slider-card-metric svg {
+  flex-shrink: 0;
+}
+
+.slider-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 2px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-panel);
+}
+
+.slider-card-tags {
+  display: flex;
+  gap: 5px;
+  overflow: hidden;
+}
+
+.slider-card-tags span {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  background: var(--bg-card);
+  color: var(--text-muted);
+  padding: 2px 6px;
+  border-radius: 3px;
+  border: 1px solid var(--border-dim);
+  white-space: nowrap;
+}
+
+.slider-card-action {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-blue);
+  white-space: nowrap;
+  transition: transform 0.15s ease;
+}
+
+.home-project-slider-card:hover .slider-card-action {
+  transform: translateX(3px);
+}
+
+/* Sertifika Yatay Slider Kartı */
+.home-cert-item {
+  min-width: 270px;
+  max-width: 280px;
+  flex: 0 0 270px;
+  scroll-snap-align: start;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-panel);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.home-cert-item:hover {
+  border-color: rgba(56, 189, 248, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+  background: var(--bg-panel-elevated);
+}
+
+.home-cert-thumb {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  min-height: 160px;
+  background: #111827;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-panel);
+  display: block;
+}
+
+.home-cert-thumb img {
+  width: 100%;
+  height: 100%;
+  min-height: 160px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.home-cert-item:hover .home-cert-thumb img {
+  transform: scale(1.05);
+}
+
+.home-cert-zoom-overlay {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(4px);
+  color: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.85);
+  transition: all 0.2s ease;
+}
+
+.home-cert-item:hover .home-cert-zoom-overlay {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.home-cert-details {
+  padding: 14px 14px 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.home-cert-badge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--accent-blue);
+  letter-spacing: 0.04em;
+}
+
+.home-cert-heading {
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  line-height: 1.3;
+}
+
+.home-cert-info {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 1000px) {
+  .home-certs-mini-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .home-canvas-viewport {
+    padding: 24px 16px 60px 16px;
+  }
+  .home-glamour-title {
+    font-size: 2rem;
+  }
+  .home-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+  .home-telemetry-ribbon {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .telemetry-separator {
+    width: 80%;
+    height: 1px;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-certs-mini-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

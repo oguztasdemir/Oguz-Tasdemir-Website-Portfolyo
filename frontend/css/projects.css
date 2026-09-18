@@ -1,0 +1,641 @@
+   ANA ÇALIŞMA ALANI & ÇOKLU GÖRÜNÜM (WORKBENCH MAIN AREA)
+   ========================================================================== */
+.workbench-main-area,
+.workbench-viewport {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--bg-app-deep);
+}
+
+.workspace-view {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.workspace-view.active {
+  display: flex;
+}
+
+/* ==========================================================================
+   PROJELER ALANI (GENİŞ AKIŞ)
+   ========================================================================== */
+.panel-column {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Panel Başlık Çubuğu (Ortak Standart) */
+.panel-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--border-dim);
+  user-select: none;
+}
+
+.panel-header-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.panel-id-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--accent-blue);
+  background: var(--bg-tag);
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-dim);
+}
+
+.panel-header-title {
+  font-family: var(--font-heading);
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: var(--text-bright);
+}
+
+.panel-status-counter {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* Arama & Filtre Çubuğu */
+.browser-toolbar {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-dim);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.search-svg {
+  position: absolute;
+  left: 12px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.filter-search-box input {
+  width: 100%;
+  height: 36px;
+  padding: 0 42px 0 34px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xs);
+  color: var(--text-bright);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  outline: none;
+  transition: border-color 0.14s ease;
+}
+
+.filter-search-box input:focus {
+  border-color: var(--border-focus);
+}
+
+.clear-search-btn {
+  position: absolute;
+  right: 36px;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+}
+
+.clear-search-btn:hover {
+  color: var(--text-bright);
+}
+
+.kbd-hint {
+  position: absolute;
+  right: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  padding: 2px 4px;
+  border-radius: var(--radius-xs);
+  background: var(--bg-tag);
+  border: 1px solid var(--border-dim);
+  color: var(--text-muted);
+}
+
+/* Kategori Çipleri */
+.filter-chips-rail {
+  display: flex;
+  gap: 5px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  scrollbar-width: none;
+}
+
+.filter-chips-rail::-webkit-scrollbar {
+  display: none;
+}
+
+.chip-filter {
+  padding: 4px 9px;
+  border-radius: var(--radius-xs);
+  background: var(--bg-panel-elevated);
+  border: 1px solid var(--border-dim);
+  color: var(--text-muted);
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.14s ease;
+}
+
+.chip-filter:hover {
+  color: var(--text-bright);
+  border-color: var(--border-card);
+}
+
+.chip-filter.active {
+  background: var(--text-bright);
+  color: var(--bg-app-deep);
+  border-color: var(--text-bright);
+  font-weight: 700;
+}
+
+/* Hızlı Teknoloji Filtresi Satırı */
+.tech-filter-chips-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding-top: 6px;
+  border-top: 1px dashed var(--border-dim);
+}
+
+.tech-filter-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  margin-right: 4px;
+}
+
+.tech-filter-pill {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  background: var(--bg-app-deep);
+  border: 1px solid var(--border-dim);
+  padding: 2px 8px;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  transition: all 0.14s ease;
+}
+
+.tech-filter-pill:hover {
+  color: var(--text-bright);
+  border-color: var(--border-panel);
+  background: var(--bg-panel-elevated);
+}
+
+.tech-filter-pill.active {
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.12);
+  border-color: rgba(56, 189, 248, 0.35);
+  font-weight: 700;
+}
+
+.reset-filters-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #f87171;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  padding: 2px 9px;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  margin-left: auto;
+  transition: all 0.15s ease;
+}
+
+.reset-filters-btn:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: #f87171;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   GENİŞ PORTFOLYO AKIŞI (BOYDAN BOYA MODERN LİSTE & KARTLAR)
+   ========================================================================== */
+.portfolio-main-stream {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding: 32px 48px;
+  background: var(--bg-app-deep);
+}
+
+.portfolio-stream-header {
+  max-width: 1100px;
+  margin: 0 auto 28px auto;
+}
+
+.stream-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.stream-main-title {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-bright);
+  margin-bottom: 6px;
+}
+
+.stream-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.stream-counter-badge {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--accent-blue);
+  background: var(--bg-panel);
+  border: 1px solid var(--border-panel);
+  padding: 6px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.stream-filters-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-panel);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+}
+
+.stream-search-box input {
+  height: 42px;
+  font-size: 0.9rem;
+  background: var(--bg-panel-elevated);
+}
+
+/* Proje Görünürlük Kademeleri (Public / Private Ana Sekmeler) */
+.portfolio-tier-tabs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-panel-elevated);
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-panel);
+  width: fit-content;
+  flex-wrap: wrap;
+}
+
+.tier-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  padding: 8px 16px;
+  border-radius: var(--radius-xs);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.tier-tab-btn:hover {
+  color: var(--text-bright);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.tier-tab-btn.active {
+  background: var(--bg-card);
+  color: var(--text-bright);
+  border-color: var(--border-dim);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.tier-tab-btn.active[data-tier="public"] {
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+}
+
+.tier-tab-btn.active[data-tier="private"] {
+  border-color: rgba(217, 119, 6, 0.4);
+  color: #fbbf24;
+}
+
+.tier-count-pill {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: var(--bg-app-deep);
+  color: var(--text-muted);
+  padding: 2px 7px;
+  border-radius: 999px;
+  border: 1px solid var(--border-dim);
+}
+
+.tier-tab-btn.active .tier-count-pill {
+  color: var(--text-bright);
+  border-color: var(--border-panel);
+}
+
+.wide-card-public-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 3px 9px;
+  border-radius: var(--radius-xs);
+}
+
+.portfolio-wide-card.card-tier-private {
+  border-left: 3px solid rgba(217, 119, 6, 0.6);
+}
+
+.portfolio-wide-card.card-tier-public {
+  border-left: 3px solid rgba(56, 189, 248, 0.6);
+}
+
+/* Boydan Boya Proje Kartları Izgarası (Geniş 2 Kolon veya Akıcı Liste) */
+.portfolio-cards-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding-bottom: 60px;
+}
+
+/* Geniş Proje Kartı Tasarımı (Optimize Edilmiş Kompakt Hiyerarşi) */
+.portfolio-wide-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-panel);
+  border-radius: var(--radius-sm);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.portfolio-wide-card:hover {
+  transform: translateY(-2px);
+  border-color: #4a5568;
+  background: var(--bg-card-hover);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.portfolio-wide-card.last-focused-card {
+  border-color: #38bdf8 !important;
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.25), 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.wide-card-top-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.wide-card-categories-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.wide-card-category {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #79c0ff;
+  background: var(--bg-tag);
+  padding: 2px 7px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-dim);
+}
+
+.wide-card-academic-pill {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #a78bfa;
+  background: rgba(167, 139, 250, 0.1);
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+}
+
+.wide-card-badge {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--accent-emerald);
+}
+
+.wide-card-meta-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-direct-github-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #1e293b;
+  color: #f1f5f9;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 4px 10px;
+  border-radius: var(--radius-xs);
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.card-direct-github-btn:hover {
+  background: #334155;
+  color: #38bdf8;
+  border-color: #38bdf8;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+}
+
+.card-direct-github-btn svg {
+  flex-shrink: 0;
+}
+
+.card-private-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #94a3b8;
+  background: rgba(148, 163, 184, 0.1);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  padding: 2px 7px;
+  border-radius: var(--radius-xs);
+}
+
+.card-footer-private-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: #94a3b8;
+  background: var(--bg-app-deep);
+  border: 1px solid var(--border-dim);
+  padding: 3px 8px;
+  border-radius: var(--radius-xs);
+}
+
+.wide-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.wide-card-summary {
+  font-size: 0.83rem;
+  color: var(--text-main);
+  line-height: 1.55;
+  margin-bottom: 14px;
+  flex: 1;
+}
+
+/* Kart İçi Teknoloji Hapları */
+.wide-card-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 14px;
+}
+
+.wide-card-tech-tag {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  color: var(--text-muted);
+  background: var(--bg-app-deep);
+  border: 1px solid var(--border-dim);
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+  transition: all 0.14s ease;
+}
+
+.clickable-tech-pill {
+  cursor: pointer;
+}
+
+.clickable-tech-pill:hover {
+  background: rgba(56, 189, 248, 0.12);
+  border-color: rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+  transform: translateY(-1px);
+}
+
+.wide-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-dim);
+}
+
+.wide-card-metric {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--accent-amber);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.wide-card-actions-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wide-card-detail-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #93c5fd;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.portfolio-wide-card:hover .wide-card-detail-btn {
+  color: #60a5fa;
+  transform: translateX(2px);
+}
+
+.stage-action-link.github-btn {
+  background: #1e293b;
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.stage-action-link.github-btn:hover {
+  background: #334155;
+  border-color: #38bdf8;
+  color: #ffffff;
+}
+

@@ -1,0 +1,612 @@
+/* ==========================================================================
+   TAM EKRAN PROJE DETAY BİLGİ SAYFASI
+   ========================================================================== */
+.portfolio-detail-view {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background: var(--bg-app-deep);
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-page-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 48px;
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--border-panel);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.detail-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-panel-elevated);
+  border: 1px solid var(--border-card);
+  color: var(--text-bright);
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 18px;
+  border-radius: var(--radius-xs);
+  transition: all 0.15s ease;
+}
+
+.detail-back-btn:hover {
+  background: var(--text-bright);
+  color: var(--bg-app-deep);
+  border-color: var(--text-bright);
+}
+
+.detail-nav-hint {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.detail-page-scroll-content {
+  padding: 36px 48px 80px 48px;
+  max-width: 1020px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .portfolio-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .portfolio-main-stream {
+    padding: 20px 16px;
+  }
+  .detail-page-nav-bar {
+    padding: 14px 16px;
+  }
+  .detail-page-scroll-content {
+    padding: 24px 16px;
+  }
+}
+
+.stage-meta-tags {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.stage-tag-category {
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #79c0ff;
+  background: var(--bg-tag);
+  border: 1px solid var(--border-dim);
+  padding: 4px 10px;
+  border-radius: var(--radius-xs);
+}
+
+.stage-tag-status {
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--accent-emerald);
+}
+
+.stage-main-title {
+  font-family: var(--font-heading);
+  font-size: 1.85rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--text-bright);
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+
+.stage-lead-summary {
+  font-size: 0.98rem;
+  color: var(--text-main);
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.stage-metric-ribbon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: var(--radius-xs);
+  background: var(--bg-panel-elevated);
+  border: 1px solid var(--border-card);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-bright);
+}
+
+.stage-actions-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+/* Proje Görsel / Mimari Önizleme Vitrini */
+.stage-visual-banner {
+  margin-top: 24px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-panel);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.stage-visual-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.stage-visual-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-xs);
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #38bdf8;
+  flex-shrink: 0;
+}
+
+.stage-visual-title {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  margin-bottom: 2px;
+}
+
+.stage-visual-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.stage-visual-chips {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.stage-visual-badge {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--accent-emerald);
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 3px 8px;
+  border-radius: var(--radius-xs);
+}
+
+.stage-action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-xs);
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.14s ease;
+}
+
+.stage-action-link.primary {
+  background: var(--text-bright);
+  color: var(--bg-app-deep);
+  border: 1px solid var(--text-bright);
+}
+
+.stage-action-link.primary:hover {
+  opacity: 0.92;
+}
+
+.stage-action-link.outline {
+  background: var(--bg-panel-elevated);
+  color: var(--text-bright);
+  border: 1px solid var(--border-card);
+}
+
+.stage-action-link.outline:hover {
+  border-color: var(--border-panel);
+}
+
+.stage-private-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--radius-xs);
+  background: var(--bg-tag);
+  border: 1px solid var(--border-dim);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* Dışa Aktarma Dropdown */
+.export-menu-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.export-dropdown-popover {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: var(--bg-panel-elevated, #161b22);
+  border: 1px solid var(--border-panel, #30363d);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  display: none;
+  flex-direction: column;
+  min-width: 240px;
+  z-index: 999;
+  overflow: hidden;
+  padding: 4px;
+}
+
+.export-dropdown-popover.active {
+  display: flex;
+}
+
+.export-popover-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  font-size: 0.78rem;
+  font-family: var(--font-sans, inherit);
+  color: var(--text-bright, #e6edf3);
+  background: transparent;
+  border: none;
+  border-radius: 5px;
+  text-align: left;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  width: 100%;
+}
+
+.export-popover-item svg {
+  flex-shrink: 0;
+  color: var(--text-muted, #8b949e);
+  transition: color 0.15s ease;
+}
+
+.export-popover-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.export-popover-item:hover svg {
+  color: var(--accent-cyan, #38bdf8);
+}
+
+.export-popover-item.export-zip-highlight {
+  background: rgba(56, 189, 248, 0.1);
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+.export-popover-item.export-zip-highlight svg {
+  color: #38bdf8;
+}
+
+.export-popover-item.export-zip-highlight:hover {
+  background: rgba(56, 189, 248, 0.2);
+  color: #7dd3fc;
+}
+
+.export-popover-item.disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.export-popover-item.disabled:hover {
+  background: transparent;
+}
+
+/* 4 Ayrık Vaka Analizi Kutusu */
+.case-blocks-quad-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.case-study-box {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-panel);
+  border-radius: var(--radius-sm);
+  padding: 24px 28px;
+  position: relative;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.developer-story-card {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.05) 0%, rgba(16, 185, 129, 0.03) 100%), var(--bg-panel);
+  border-left: 3px solid #38bdf8;
+  position: relative;
+}
+
+.developer-story-card .case-box-header {
+  color: #38bdf8;
+}
+
+.developer-story-card .case-box-text {
+  color: #f1f5f9;
+  font-size: 0.96rem;
+  line-height: 1.8;
+}
+
+.case-study-box:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.case-box-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.case-box-num {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 2px 7px;
+  border-radius: var(--radius-xs);
+  letter-spacing: 0.05em;
+}
+
+.case-box-header {
+  font-family: var(--font-heading);
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.case-box-text {
+  font-size: 0.94rem;
+  color: #cbd5e1;
+  line-height: 1.75;
+}
+
+.case-box-subdetail {
+  margin-top: 14px;
+  padding: 14px 16px;
+  background: var(--bg-app-deep);
+  border: 1px solid var(--border-dim);
+  border-left: 3px solid #38bdf8;
+  border-radius: var(--radius-xs);
+}
+
+.case-subdetail-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #38bdf8;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+}
+
+.features-check-stack {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.features-check-stack li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
+
+.features-check-stack svg {
+  color: var(--accent-emerald);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.tech-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.tech-bubble {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  padding: 4px 10px;
+  border-radius: var(--radius-xs);
+  background: var(--bg-panel-elevated);
+  border: 1px solid var(--border-card);
+  color: var(--text-bright);
+}
+
+.case-readme-block {
+  margin-top: 14px;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: var(--radius-xs);
+  padding: 16px 20px;
+  overflow-x: auto;
+}
+
+.case-readme-pre {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: #c9d1d9;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0;
+}
+
+.case-readme-pre code {
+  font-family: inherit;
+}
+
+/* Mühendislik Veri & İşlem Hattı (Architecture Pipeline Flow) */
+.system-pipeline-container {
+  margin-top: 14px;
+  background: var(--bg-app-deep);
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius-xs);
+  padding: 14px 16px;
+}
+
+.system-pipeline-header {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.system-pipeline-steps {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.pipeline-step-node {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-card);
+  padding: 8px 12px;
+  border-radius: var(--radius-xs);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 140px;
+  flex: 1;
+}
+
+.pipeline-step-num {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--text-muted);
+}
+
+.pipeline-step-title {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  line-height: 1.25;
+}
+
+.pipeline-arrow {
+  color: var(--text-muted);
+  font-weight: 700;
+  flex-shrink: 0;
+  font-size: 0.9rem;
+}
+
+/* Hızlı Başlatma / Terminal Kurulum Bloğu */
+.stage-quickstart-box {
+  margin-top: 18px;
+  background: #090d13;
+  border: 1px solid #1e293b;
+  border-radius: var(--radius-xs);
+  padding: 12px 16px;
+  position: relative;
+}
+
+.stage-quickstart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.stage-quickstart-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #38bdf8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stage-quickstart-copy {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #94a3b8;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  padding: 3px 8px;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.15s ease;
+}
+
+.stage-quickstart-copy:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #f8fafc;
+  border-color: #38bdf8;
+}
+
+.stage-quickstart-code {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: #38bdf8;
+  margin: 0;
+  line-height: 1.6;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.stage-quickstart-code .cmd-comment {
+  color: #64748b;
+}
+
+.stage-quickstart-code .cmd-action {
+  color: #f1f5f9;
+}
+

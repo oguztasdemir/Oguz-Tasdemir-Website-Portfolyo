@@ -705,12 +705,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  // 12. Sol Panel (Rail) Aç / Kapa (Collapse / Expand & Mobile Drawer)
+  // 12. Sol Panel (Rail) & Mobil Konsol Alt Çekmecesi (Bottom Sheet)
   const panelRail = document.getElementById('panelRail');
   const railCollapseToggle = document.getElementById('railCollapseToggle');
-  const mobileMenuToggleBtn = document.getElementById('mobileMenuToggleBtn');
   const railBackdrop = document.getElementById('railBackdrop');
   const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+  const mobileBottomSheet = document.getElementById('mobileBottomSheet');
+  const mobileMoreSheetBtn = document.getElementById('mobileMoreSheetBtn');
+  const mobileSheetCloseBtn = document.getElementById('mobileSheetCloseBtn');
 
   function toggleRail(forceState) {
     if (!panelRail || !railCollapseToggle) return;
@@ -722,33 +724,37 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('panel_rail_collapsed', willCollapse ? '1' : '0');
   }
 
-  function toggleMobileDrawer(forceOpen) {
-    if (!panelRail || !railBackdrop) return;
-    const isOpen = panelRail.classList.contains('mobile-open');
+  function toggleBottomSheet(forceOpen) {
+    if (!mobileBottomSheet || !railBackdrop) return;
+    const isOpen = mobileBottomSheet.classList.contains('open');
     const willOpen = typeof forceOpen === 'boolean' ? forceOpen : !isOpen;
 
-    panelRail.classList.toggle('mobile-open', willOpen);
+    mobileBottomSheet.classList.toggle('open', willOpen);
     railBackdrop.classList.toggle('active', willOpen);
-    document.body.style.overflow = willOpen ? 'hidden' : '';
+    if (mobileMoreSheetBtn) mobileMoreSheetBtn.classList.toggle('active', willOpen);
   }
 
-  function closeMobileDrawer() {
-    toggleMobileDrawer(false);
+  function closeAllMobileSheets() {
+    toggleBottomSheet(false);
   }
 
   if (railCollapseToggle) {
     railCollapseToggle.addEventListener('click', () => toggleRail());
   }
 
-  if (mobileMenuToggleBtn) {
-    mobileMenuToggleBtn.addEventListener('click', (e) => {
+  if (mobileMoreSheetBtn) {
+    mobileMoreSheetBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      toggleMobileDrawer();
+      toggleBottomSheet();
     });
   }
 
+  if (mobileSheetCloseBtn) {
+    mobileSheetCloseBtn.addEventListener('click', () => closeAllMobileSheets());
+  }
+
   if (railBackdrop) {
-    railBackdrop.addEventListener('click', () => closeMobileDrawer());
+    railBackdrop.addEventListener('click', () => closeAllMobileSheets());
   }
 
   // Mobil Alt Navigasyon Dinleyicileri
@@ -757,16 +763,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const targetPanel = item.getAttribute('data-panel');
       if (targetPanel) {
         switchWorkspaceView(targetPanel);
-        closeMobileDrawer();
+        closeAllMobileSheets();
       }
     });
   });
 
-  // 12.1 Dil Değiştirici (i18n Switcher: TR / EN - Desktop & Mobile)
+  // 12.1 Dil Değiştirici (i18n Switcher: TR / EN - Desktop & Mobile Sheet)
   const langBtnTr = document.getElementById('langBtnTr');
   const langBtnEn = document.getElementById('langBtnEn');
-  const mobileLangBtnTr = document.getElementById('mobileLangBtnTr');
-  const mobileLangBtnEn = document.getElementById('mobileLangBtnEn');
+  const mobileSheetLangTr = document.getElementById('mobileSheetLangTr');
+  const mobileSheetLangEn = document.getElementById('mobileSheetLangEn');
 
   if (langBtnTr) {
     langBtnTr.addEventListener('click', () => {
@@ -780,29 +786,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  if (mobileLangBtnTr) {
-    mobileLangBtnTr.addEventListener('click', () => {
+  if (mobileSheetLangTr) {
+    mobileSheetLangTr.addEventListener('click', () => {
       if (window.i18n) window.i18n.setLang('tr');
+      closeAllMobileSheets();
     });
   }
 
-  if (mobileLangBtnEn) {
-    mobileLangBtnEn.addEventListener('click', () => {
+  if (mobileSheetLangEn) {
+    mobileSheetLangEn.addEventListener('click', () => {
       if (window.i18n) window.i18n.setLang('en');
+      closeAllMobileSheets();
     });
   }
 
-  // 12.2 Tema Değiştirici (Dark / Light Theme Toggle - Desktop & Mobile)
+  // 12.2 Tema Değiştirici (Dark / Light Theme Toggle - Desktop & Mobile Sheet)
   const themeToggleBtn = document.getElementById('themeToggleBtn');
-  const mobileThemeToggleBtn = document.getElementById('mobileThemeToggleBtn');
+  const mobileSheetThemeBtn = document.getElementById('mobileSheetThemeBtn');
   const themeModeLabel = document.getElementById('themeModeLabel');
+  const mobileThemeModeLabel = document.getElementById('mobileThemeModeLabel');
 
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('site_theme', theme);
-    if (themeModeLabel && window.i18n) {
-      themeModeLabel.textContent = theme === 'light' ? window.i18n.t('theme_light') : window.i18n.t('theme_dark');
-    }
+    const labelText = theme === 'light' ? (window.i18n ? window.i18n.t('theme_light') : 'Tema: Açık Mod') : (window.i18n ? window.i18n.t('theme_dark') : 'Tema: Koyu Mod');
+    if (themeModeLabel) themeModeLabel.textContent = labelText;
+    if (mobileThemeModeLabel) mobileThemeModeLabel.textContent = labelText;
   }
 
   function toggleNextTheme() {
@@ -815,8 +824,8 @@ document.addEventListener('DOMContentLoaded', () => {
     themeToggleBtn.addEventListener('click', toggleNextTheme);
   }
 
-  if (mobileThemeToggleBtn) {
-    mobileThemeToggleBtn.addEventListener('click', toggleNextTheme);
+  if (mobileSheetThemeBtn) {
+    mobileSheetThemeBtn.addEventListener('click', toggleNextTheme);
   }
 
   // Dil değiştiğinde çalışacak olay dinleyicisi
