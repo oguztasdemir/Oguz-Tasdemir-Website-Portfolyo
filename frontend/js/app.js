@@ -52,6 +52,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const targetId = `view${viewId.charAt(0).toUpperCase() + viewId.slice(1)}`;
       const isTarget = view.id.toLowerCase() === targetId.toLowerCase();
       view.classList.toggle('active', isTarget);
+      if (isTarget) {
+        const scrollable = view.querySelector('.home-canvas-viewport, .portfolio-main-stream, .view-standalone-container, .portfolio-detail-view');
+        if (scrollable) scrollable.scrollTop = 0;
+      }
     });
 
     // Projeler sekmesine basıldığında detay modalı yerine doğrudan liste açılsın
