@@ -43,6 +43,11 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.classList.toggle('active', btn.getAttribute('data-panel') === viewId);
     });
 
+    const mobileNavItemsList = document.querySelectorAll('.mobile-nav-item');
+    mobileNavItemsList.forEach(item => {
+      item.classList.toggle('active', item.getAttribute('data-panel') === viewId);
+    });
+
     workspaceViews.forEach(view => {
       const targetId = `view${viewId.charAt(0).toUpperCase() + viewId.slice(1)}`;
       const isTarget = view.id.toLowerCase() === targetId.toLowerCase();
@@ -700,9 +705,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  // 12. Sol Panel (Rail) Aç / Kapa (Collapse / Expand)
+  // 12. Sol Panel (Rail) Aç / Kapa (Collapse / Expand & Mobile Drawer)
   const panelRail = document.getElementById('panelRail');
   const railCollapseToggle = document.getElementById('railCollapseToggle');
+  const mobileMenuToggleBtn = document.getElementById('mobileMenuToggleBtn');
+  const railBackdrop = document.getElementById('railBackdrop');
+  const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
 
   function toggleRail(forceState) {
     if (!panelRail || !railCollapseToggle) return;
@@ -714,13 +722,51 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('panel_rail_collapsed', willCollapse ? '1' : '0');
   }
 
+  function toggleMobileDrawer(forceOpen) {
+    if (!panelRail || !railBackdrop) return;
+    const isOpen = panelRail.classList.contains('mobile-open');
+    const willOpen = typeof forceOpen === 'boolean' ? forceOpen : !isOpen;
+
+    panelRail.classList.toggle('mobile-open', willOpen);
+    railBackdrop.classList.toggle('active', willOpen);
+    document.body.style.overflow = willOpen ? 'hidden' : '';
+  }
+
+  function closeMobileDrawer() {
+    toggleMobileDrawer(false);
+  }
+
   if (railCollapseToggle) {
     railCollapseToggle.addEventListener('click', () => toggleRail());
   }
 
-  // 12.1 Dil Değiştirici (i18n Switcher: TR / EN)
+  if (mobileMenuToggleBtn) {
+    mobileMenuToggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMobileDrawer();
+    });
+  }
+
+  if (railBackdrop) {
+    railBackdrop.addEventListener('click', () => closeMobileDrawer());
+  }
+
+  // Mobil Alt Navigasyon Dinleyicileri
+  mobileNavItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const targetPanel = item.getAttribute('data-panel');
+      if (targetPanel) {
+        switchWorkspaceView(targetPanel);
+        closeMobileDrawer();
+      }
+    });
+  });
+
+  // 12.1 Dil Değiştirici (i18n Switcher: TR / EN - Desktop & Mobile)
   const langBtnTr = document.getElementById('langBtnTr');
   const langBtnEn = document.getElementById('langBtnEn');
+  const mobileLangBtnTr = document.getElementById('mobileLangBtnTr');
+  const mobileLangBtnEn = document.getElementById('mobileLangBtnEn');
 
   if (langBtnTr) {
     langBtnTr.addEventListener('click', () => {
@@ -734,8 +780,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 12.2 Tema Değiştirici (Dark / Light Theme Toggle)
+  if (mobileLangBtnTr) {
+    mobileLangBtnTr.addEventListener('click', () => {
+      if (window.i18n) window.i18n.setLang('tr');
+    });
+  }
+
+  if (mobileLangBtnEn) {
+    mobileLangBtnEn.addEventListener('click', () => {
+      if (window.i18n) window.i18n.setLang('en');
+    });
+  }
+
+  // 12.2 Tema Değiştirici (Dark / Light Theme Toggle - Desktop & Mobile)
   const themeToggleBtn = document.getElementById('themeToggleBtn');
+  const mobileThemeToggleBtn = document.getElementById('mobileThemeToggleBtn');
   const themeModeLabel = document.getElementById('themeModeLabel');
 
   function applyTheme(theme) {
@@ -746,12 +805,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function toggleNextTheme() {
+    const current = document.documentElement.getAttribute('data-theme') || 'dark';
+    const nextTheme = current === 'dark' ? 'light' : 'dark';
+    applyTheme(nextTheme);
+  }
+
   if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme') || 'dark';
-      const nextTheme = current === 'dark' ? 'light' : 'dark';
-      applyTheme(nextTheme);
-    });
+    themeToggleBtn.addEventListener('click', toggleNextTheme);
+  }
+
+  if (mobileThemeToggleBtn) {
+    mobileThemeToggleBtn.addEventListener('click', toggleNextTheme);
   }
 
   // Dil değiştiğinde çalışacak olay dinleyicisi

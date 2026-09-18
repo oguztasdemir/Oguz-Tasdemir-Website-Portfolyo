@@ -4875,3 +4875,638 @@ html, body {
   flex: 1;
   min-height: 320px;
 }
+
+/* =========================================================================
+   MOBİL TOP BAR, BOTTOM NAV & RESPONSİV SİSTEM (MOBILE FIRST & MODERN UX)
+   ========================================================================= */
+
+/* Mobil Top Bar */
+.mobile-top-bar {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: rgba(14, 17, 23, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-panel);
+  z-index: 950;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+}
+
+[data-theme="light"] .mobile-top-bar {
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom-color: var(--border-dim);
+}
+
+.mobile-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mobile-menu-btn {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-panel);
+  color: var(--text-bright);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.mobile-menu-btn:active {
+  transform: scale(0.94);
+  background: var(--bg-panel-elevated);
+}
+
+.mobile-profile-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-profile-name {
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  line-height: 1.2;
+}
+
+.mobile-profile-role {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+.mobile-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mobile-lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--bg-panel);
+  padding: 2px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-dim);
+}
+
+.mobile-lang-switch .lang-option-btn {
+  padding: 4px 8px;
+  font-size: 0.7rem;
+}
+
+.mobile-theme-btn {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-dim);
+  color: var(--text-bright);
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Mobil Bottom Navigation */
+.mobile-bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: rgba(22, 27, 34, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--border-panel);
+  z-index: 950;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 4px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="light"] .mobile-bottom-nav {
+  background: rgba(255, 255, 255, 0.96);
+  border-top-color: var(--border-dim);
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.mobile-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-heading);
+  font-size: 0.66rem;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  flex: 1;
+  max-width: 72px;
+}
+
+.mobile-nav-item svg {
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.mobile-nav-item:active {
+  transform: scale(0.92);
+}
+
+.mobile-nav-item.active {
+  color: var(--accent-blue, #38bdf8);
+}
+
+.mobile-nav-item.active svg {
+  transform: translateY(-2px);
+  color: var(--accent-blue, #38bdf8);
+}
+
+/* Mobil Backdrop */
+.rail-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.rail-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* =========================================================================
+   GENEL RESPONSİV MEDYA SORGULARI (TABLET & MOBİL)
+   ========================================================================= */
+
+@media (max-width: 900px) {
+  .home-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  html, body {
+    width: 100%;
+    height: auto;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-top-bar {
+    display: flex;
+  }
+
+  .mobile-bottom-nav {
+    display: flex;
+  }
+
+  .rail-backdrop {
+    display: block;
+  }
+
+  /* Desktop dikey toggle gizlensin */
+  .rail-collapse-toggle {
+    display: none !important;
+  }
+
+  /* Workbench Shell */
+  .workbench-app-shell {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+    padding-top: 56px;
+    padding-bottom: 64px;
+  }
+
+  /* Sol Panel (Drawer Modal Olarak Çalışır) */
+  .panel-rail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px !important;
+    min-width: 280px !important;
+    max-width: 84vw !important;
+    height: 100dvh;
+    z-index: 999;
+    transform: translateX(-100%);
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.7);
+    overflow-y: auto;
+  }
+
+  .panel-rail.mobile-open {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  .workbench-viewport {
+    width: 100%;
+    height: auto;
+    min-height: calc(100dvh - 120px);
+    overflow: visible;
+  }
+
+  .workspace-view {
+    width: 100%;
+    height: auto;
+    min-height: calc(100dvh - 120px);
+    overflow: visible;
+  }
+
+  /* Ana Sayfa Karşılama */
+  .home-canvas-viewport {
+    padding: 18px 14px 40px;
+    height: auto;
+    overflow: visible;
+  }
+
+  .home-modern-stage {
+    max-width: 100%;
+    gap: 22px;
+  }
+
+  .home-glamour-title {
+    font-size: 1.75rem;
+    line-height: 1.25;
+  }
+
+  .home-glamour-title-sub {
+    font-size: 1.02rem;
+  }
+
+  .home-glamour-desc {
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .home-glamour-cta-row {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .home-primary-launch-btn,
+  .home-secondary-launch-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 14px;
+    font-size: 0.86rem;
+  }
+
+  .home-telemetry-ribbon {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 12px 8px;
+    flex-direction: unset;
+  }
+
+  .telemetry-val {
+    font-size: 1.2rem;
+  }
+
+  .telemetry-lbl {
+    font-size: 0.66rem;
+  }
+
+  .telemetry-separator {
+    display: none;
+  }
+
+  .home-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .home-certs-mini-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Projeler Akış Listesi */
+  .portfolio-stream-layout {
+    height: auto;
+    overflow: visible;
+  }
+
+  .stream-header-strip {
+    padding: 14px 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .stream-tier-tabs {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 6px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .stream-tier-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tier-tab-btn {
+    flex-shrink: 0;
+    padding: 7px 12px;
+    font-size: 0.74rem;
+    white-space: nowrap;
+  }
+
+  .stream-chips-bar {
+    width: 100%;
+    overflow-x: auto;
+    padding: 6px 0;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 6px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .stream-chips-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .chip-filter {
+    flex-shrink: 0;
+    padding: 6px 12px;
+    font-size: 0.72rem;
+    white-space: nowrap;
+  }
+
+  .split-projects-list {
+    height: auto;
+    overflow: visible;
+    padding: 10px 10px 40px;
+    gap: 12px;
+  }
+
+  .portfolio-wide-card {
+    padding: 14px 12px;
+  }
+
+  .wide-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .wide-card-title {
+    font-size: 1.02rem;
+    line-height: 1.35;
+  }
+
+  .wide-card-meta-row {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .wide-card-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  .wide-card-tech-bubbles {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .btn-card-inspect {
+    width: 100%;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  /* Proje Detay Sahnesi (Stage Detail View) */
+  .portfolio-detail-view {
+    height: auto;
+    min-height: 100%;
+    overflow: visible;
+  }
+
+  .stage-top-back-bar {
+    position: sticky;
+    top: 56px;
+    z-index: 100;
+    background: rgba(14, 17, 23, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border-panel);
+  }
+
+  .stage-content-wrapper {
+    padding: 14px 10px 80px;
+    max-width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+
+  .stage-hero-banner {
+    padding: 16px 12px;
+  }
+
+  .stage-main-title {
+    font-size: 1.3rem;
+    line-height: 1.3;
+  }
+
+  .stage-lead-summary {
+    font-size: 0.86rem;
+  }
+
+  .stage-stats-triad {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin: 14px 0;
+  }
+
+  .stage-actions-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .stage-action-link {
+    width: 100%;
+    justify-content: center;
+    padding: 9px 8px;
+    font-size: 0.74rem;
+    text-align: center;
+  }
+
+  .export-menu-wrapper {
+    grid-column: span 1;
+    width: 100%;
+  }
+
+  .export-menu-wrapper .stage-action-link {
+    width: 100%;
+  }
+
+  .export-dropdown-popover {
+    position: fixed;
+    top: auto;
+    bottom: 68px;
+    left: 12px;
+    right: 12px;
+    width: auto;
+    min-width: unset;
+    z-index: 1000;
+  }
+
+  .stage-tabs-nav-bar {
+    display: flex;
+    overflow-x: auto;
+    gap: 6px;
+    padding: 6px 4px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+    border-radius: 8px;
+  }
+
+  .stage-tabs-nav-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .stage-tab-btn {
+    flex-shrink: 0;
+    padding: 8px 12px;
+    font-size: 0.74rem;
+    white-space: nowrap;
+  }
+
+  .system-pipeline-steps {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .pipeline-arrow {
+    transform: rotate(90deg);
+    align-self: center;
+    margin: 2px 0;
+  }
+
+  .pipeline-step-node {
+    width: 100%;
+  }
+
+  .code-explorer-layout {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .qs-shortcuts-row {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .qs-copy-btn,
+  .qs-zip-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .stage-bottom-nav-bar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .stage-nav-project-btn {
+    width: 100%;
+  }
+
+  /* Hakkımda, Sertifikalar & İletişim */
+  .about-content-grid,
+  .contact-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 14px 10px 60px;
+  }
+
+  .about-view-wrapper,
+  .contact-view-wrapper,
+  .cert-view-wrapper {
+    height: auto;
+    overflow: visible;
+    padding-bottom: 40px;
+  }
+
+  .about-hero-card,
+  .contact-hero-card,
+  .cert-hero-card {
+    padding: 16px 12px;
+  }
+
+  .about-hero-title,
+  .contact-hero-title,
+  .cert-hero-title {
+    font-size: 1.35rem;
+  }
+
+  .cert-gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-telemetry-ribbon {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .stage-actions-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .export-menu-wrapper {
+    grid-column: span 1;
+  }
+}
+
