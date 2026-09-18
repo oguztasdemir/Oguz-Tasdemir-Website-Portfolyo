@@ -360,52 +360,85 @@
 
   .stream-filters-bar {
     padding: 12px 14px;
+    gap: 12px;
   }
 
   .stream-tier-tabs,
   .portfolio-tier-tabs {
     width: 100%;
     overflow-x: auto;
-    padding-bottom: 4px;
+    overflow-y: hidden;
+    padding: 6px 4px 8px 4px;
     display: flex;
     flex-wrap: nowrap;
-    gap: 6px;
-    scrollbar-width: none;
+    gap: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(56, 189, 248, 0.45) rgba(255, 255, 255, 0.05);
     -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
   }
 
   .portfolio-tier-tabs::-webkit-scrollbar,
   .stream-tier-tabs::-webkit-scrollbar {
-    display: none;
+    display: block;
+    height: 4px;
+  }
+
+  .portfolio-tier-tabs::-webkit-scrollbar-track,
+  .stream-tier-tabs::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 999px;
+  }
+
+  .portfolio-tier-tabs::-webkit-scrollbar-thumb,
+  .stream-tier-tabs::-webkit-scrollbar-thumb {
+    background: rgba(56, 189, 248, 0.4);
+    border-radius: 999px;
   }
 
   .tier-tab-btn {
     flex-shrink: 0;
-    padding: 7px 12px;
-    font-size: 0.74rem;
+    padding: 8px 14px;
+    font-size: 0.76rem;
     white-space: nowrap;
+    scroll-snap-align: start;
   }
 
   .filter-chips-rail {
     width: 100%;
     overflow-x: auto;
-    padding: 4px 0;
+    overflow-y: hidden;
+    padding: 4px 4px 8px 4px;
     display: flex;
     flex-wrap: nowrap;
-    gap: 6px;
-    scrollbar-width: none;
+    gap: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(56, 189, 248, 0.45) rgba(255, 255, 255, 0.05);
     -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
   }
 
   .filter-chips-rail::-webkit-scrollbar {
-    display: none;
+    display: block;
+    height: 4px;
+  }
+
+  .filter-chips-rail::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 999px;
+  }
+
+  .filter-chips-rail::-webkit-scrollbar-thumb {
+    background: rgba(56, 189, 248, 0.4);
+    border-radius: 999px;
   }
 
   .chip-filter {
     flex-shrink: 0;
-    padding: 6px 12px;
-    font-size: 0.74rem;
+    padding: 6px 13px;
+    font-size: 0.76rem;
     white-space: nowrap;
+    scroll-snap-align: start;
   }
 
   .portfolio-cards-grid {
