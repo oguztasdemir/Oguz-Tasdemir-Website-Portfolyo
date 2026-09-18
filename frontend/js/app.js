@@ -852,7 +852,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return { projectId, tabId, viewId };
   }
 
-  // 13. Başlat ve Durumu Geri Yükle (F5 Koruması & İlk Açılış Standardı)
+  // 13. Başlat ve Durumu Geri Yükle (F5 Yenileme Koruması & Durum Geri Yükleme)
   async function initApp() {
     // 1. Dil Sistemini Uygula
     if (window.i18n) {
@@ -863,7 +863,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('site_theme') || 'dark';
     applyTheme(savedTheme);
 
-    // 3. Sol panel varsayılan olarak açık gelsin (açık panel standardı)
+    // 3. Sol panel durumunu uygula
     const savedRailCollapsed = localStorage.getItem('panel_rail_collapsed') === '1';
     if (savedRailCollapsed) {
       toggleRail(true);
@@ -873,18 +873,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     await loadAndRenderSplitView();
 
-    // 4. Sistemi ilk açtığımızda veya F5 atıldığında her zaman tertemiz Ana Sayfa (Home) açılsın
-    localStorage.removeItem('active_project_id');
-    localStorage.removeItem('active_project_tab');
-    localStorage.removeItem('active_view');
-    
-    // URL'de hash varsa temizle ve ana sayfaya geç
-    if (window.location.hash) {
-      try {
-        history.replaceState(null, document.title, window.location.pathname + window.location.search);
-      } catch (e) {}
+    // 4. F5 atıldığında veya sayfa yüklendiğinde mevcut ekranda kalma mantığı (URL hash & localStorage)
+    const hashState = parseStateFromHash();
+    const savedView = localStorage.getItem('active_view');
+    const savedProjectId = localStorage.getItem('active_project_id');
+    const savedTab = localStorage.getItem('active_project_tab');
+
+    if (hashState && hashState.projectId) {
+      switchWorkspaceView('projects', false);
+      openProjectDetailModal(hashState.projectId, false, hashState.tabId || 'overview');
+    } else if (hashState && hashState.viewId) {
+      switchWorkspaceView(hashState.viewId, false);
+    } else if (savedProjectId) {
+      switchWorkspaceView('projects', false);
+      openProjectDetailModal(savedProjectId, true, savedTab || 'overview');
+    } else if (savedView) {
+      switchWorkspaceView(savedView, true);
+    } else {
+      switchWorkspaceView('home', true);
     }
-    switchWorkspaceView('home', false);
   }
 
   // Tarayıcı İleri/Geri ve Hash Değişimi Dinleyicisi
