@@ -187,6 +187,88 @@ const I18N_DICTIONARY = {
     certs_page_counter: "9 Doğrulanmış Kayıt",
     certs_page_desc: "Yapay zeka, üretken dil modelleri, bulut ajanları, veri bilimi ve fintek alanlarında tamamladığım sertifikalar ve katılım belgeleri. Belgeleri büyütmek ve ayrıntılarını görmek için kartların üzerine tıklayabilirsiniz.",
     certs_zoom_hint: "Büyütmek için tıkla",
+    cert_modal_default_title: "Sertifika Önizleme",
+
+    // Sertifika 1: FIN-E SUMMIT
+    cert_1_issuer_short: "BORSA İSTANBUL • PARAM • ANADOLU GRUBU",
+    cert_1_issuer: "ÖĞRENCİ KARİYERİ • BORSA İSTANBUL • PARAM • ANADOLU GRUBU",
+    cert_1_title: "FIN-E SUMMIT Fintek & Yapay Zeka",
+    cert_1_full_title: "FIN-E SUMMIT Finans & Teknoloji Zirvesi",
+    cert_1_short_desc: "Finansal teknolojiler, borsa ekosistemi ve dijital dönüşüm zirvesi.",
+    cert_1_desc: "3 Şubat 2026. Finansal teknolojiler, borsa ekosistemi, dijital varlıklar ve yeni nesil finansal dönüşüm oturumları katılım belgesi.",
+    cert_1_modal_title: "FIN-E SUMMIT Katılım Sertifikası — Öğrenci Kariyeri",
+
+    // Sertifika 2: TRAI Yapay Zeka Ajanları
+    cert_2_issuer_short: "TRAI • AWS",
+    cert_2_issuer: "TÜRKİYE YAPAY ZEKA İNİSİYATİFİ (TRAI) • AWS",
+    cert_2_title: "Güvenli Ölçeklenebilir AI Ajanları",
+    cert_2_full_title: "Güvenli Ölçeklenebilir Yapay Zeka Ajanları",
+    cert_2_short_desc: "Kurumsal yapay zeka ajan mimarileri, güvenlik ve ölçekleme prensipleri.",
+    cert_2_desc: "Eğitmen: Görkem Yöntem (Solutions Architect, AWS). Kurumsal AI agent mimarileri, güvenlik ve ölçekleme prensipleri.",
+    cert_2_modal_title: "Güvenli Ölçeklenebilir Yapay Zeka Ajanları — TRAI / AWS",
+
+    // Sertifika 3: Coderspace Veri Bilimi
+    cert_3_issuer_short: "CODERSPACE • META • GOOGLE",
+    cert_3_issuer: "CODERSPACE • TRAI • META • GOOGLE",
+    cert_3_title: "Veri Bilimi & Yapay Zekâ Yaz Okulu",
+    cert_3_full_title: "Veri Bilimi ve Yapay Zekâ Yaz Okulu",
+    cert_3_short_desc: "48 saatlik kapsamlı veri bilimi, makine öğrenmesi ve sektör uygulamaları.",
+    cert_3_desc: "4 hafta / 48 saatlik kapsamlı veri bilimi, makine öğrenmesi ve sektör uygulamaları eğitimi.",
+    cert_3_modal_title: "Veri Bilimi ve Yapay Zekâ Yaz Okulu — Coderspace",
+
+    // Sertifika 4: TRAI GenAI ile Oyunu Yakala
+    cert_4_issuer_short: "TRAI • GOOGLE",
+    cert_4_issuer: "TÜRKİYE YAPAY ZEKA İNİSİYATİFİ (TRAI) • GOOGLE",
+    cert_4_title: "GenAI ile Oyunu Yakala",
+    cert_4_full_title: "GenAI ile Oyunu Yakala",
+    cert_4_short_desc: "Google Gemini pazarlama ve üretken yapay zeka modelleri entegrasyonu.",
+    cert_4_desc: "Eğitmen: Can Franko (Google Ads & Gemini Marketing Manager). Üretken yapay zeka modelleri ve kullanım alanları.",
+    cert_4_modal_title: "GenAI ile Oyunu Yakala — TRAI / Google",
+
+    // Sertifika 5: BTK Anthropic Claude
+    cert_5_issuer_short: "BTK AKADEMİ",
+    cert_5_issuer: "BTK AKADEMİ • RESMİ SERTİFİKA",
+    cert_5_title: "Anthropic Claude & LLM Mimarisi",
+    cert_5_full_title: "Anthropic Claude",
+    cert_5_short_desc: "Prompt mühendisliği, model parametreleri ve API entegrasyon prensipleri.",
+    cert_5_desc: "Sertifika No: BozfxnegJv. Claude model mimarisi, prompt optimizasyonu ve büyük dil modeli entegrasyonu.",
+    cert_5_modal_title: "Anthropic Claude — BTK Akademi",
+
+    // Sertifika 6: BTK Üretken Yapay Zeka
+    cert_6_issuer_short: "BTK AKADEMİ",
+    cert_6_issuer: "BTK AKADEMİ • RESMİ SERTİFİKA",
+    cert_6_title: "Üretken Yapay Zekâya Giriş",
+    cert_6_full_title: "Üretken Yapay Zekâya Giriş",
+    cert_6_short_desc: "Difüzyon modelleri, GAN mimarileri ve transformatör tabanlı üretkenlik.",
+    cert_6_desc: "Sertifika No: PVghM8kNKr. Üretken derin öğrenme, difüzyon ve transformatör modelleri.",
+    cert_6_modal_title: "Üretken Yapay Zekâya Giriş — BTK Akademi",
+
+    // Sertifika 7: BTK Veri Okuryazarlığı
+    cert_7_issuer_short: "BTK AKADEMİ",
+    cert_7_issuer: "BTK AKADEMİ • RESMİ SERTİFİKA",
+    cert_7_title: "Veri Okuryazarlığı & Madenciliği",
+    cert_7_full_title: "Veri Okuryazarlığı",
+    cert_7_short_desc: "Veri analitiği temelleri, analitik düşünme ve manipülasyon teknikleri.",
+    cert_7_desc: "Sertifika No: VlzzCga88bv. Veri madenciliği temelleri, analitik düşünme ve veri manipülasyonu.",
+    cert_7_modal_title: "Veri Okuryazarlığı — BTK Akademi",
+
+    // Sertifika 8: İnovatim
+    cert_8_issuer_short: "TİM • İNOVATİM",
+    cert_8_issuer: "TÜRKİYE İHRACATÇILAR MECLİSİ (TİM) • İNOVATİM",
+    cert_8_title: "Robotik Kodlama & İnovasyon",
+    cert_8_full_title: "Robotik Kodlama, Yapay Zeka ve İnovasyon",
+    cert_8_short_desc: "Lise döneminde Arduino, robotik ve erken dönem inovasyon sertifikası.",
+    cert_8_desc: "Lise 3. sınıfta Arduino, robotik kodlama ve erken dönem teknoloji inovasyonu üzerine aldığım katılım belgesi.",
+    cert_8_modal_title: "Liselerde Yapay Zeka ve İnovasyon — İnovatim / TİM",
+
+    // Sertifika 9: Medeniyet Python
+    cert_9_issuer_short: "İSTANBUL MEDENİYET ÜNİV.",
+    cert_9_issuer: "İST. MEDENİYET ÜNİVERSİTESİ • GDSC",
+    cert_9_title: "Python 101 Programlama",
+    cert_9_full_title: "Python 101 Başarı Belgesi",
+    cert_9_short_desc: "Üniversite bünyesinde temel veri yapıları, algoritmalar ve nesne yönelimli programlama.",
+    cert_9_desc: "Python Medeniyeti & GDSC bünyesinde algoritma geliştirme ve teknik proje uygulamaları başarı belgesi.",
+    cert_9_modal_title: "Python 101 Başarı Belgesi — İstanbul Medeniyet Üniversitesi",
 
     // İletişim Görünümü
     contact_tag_badge: "Doğrudan İletişim & İş Birliği",
@@ -385,6 +467,88 @@ const I18N_DICTIONARY = {
     certs_page_counter: "9 Verified Credentials",
     certs_page_desc: "Accredited credentials completed across Artificial Intelligence, Generative LLMs, Cloud Agents, Data Science, and FinTech. Click on cards to zoom in and inspect details.",
     certs_zoom_hint: "Click to zoom",
+    cert_modal_default_title: "Certificate Preview",
+
+    // Certificate 1: FIN-E SUMMIT
+    cert_1_issuer_short: "BORSA ISTANBUL • PARAM • ANADOLU GROUP",
+    cert_1_issuer: "OGRENCI KARIYERI • BORSA ISTANBUL • PARAM • ANADOLU GROUP",
+    cert_1_title: "FIN-E SUMMIT FinTech & AI",
+    cert_1_full_title: "FIN-E SUMMIT Finance & Technology Summit",
+    cert_1_short_desc: "Financial technologies, stock exchange ecosystem, and digital transformation summit.",
+    cert_1_desc: "February 3, 2026. Certificate of participation in financial technologies, digital assets, and next-generation financial transformation sessions.",
+    cert_1_modal_title: "FIN-E SUMMIT Certificate of Participation — Ogrenci Kariyeri",
+
+    // Certificate 2: TRAI AI Agents
+    cert_2_issuer_short: "TRAI • AWS",
+    cert_2_issuer: "TURKEY ARTIFICIAL INTELLIGENCE INITIATIVE (TRAI) • AWS",
+    cert_2_title: "Secure Scalable AI Agents",
+    cert_2_full_title: "Secure Scalable Artificial Intelligence Agents",
+    cert_2_short_desc: "Enterprise AI agent architectures, security, and scaling principles.",
+    cert_2_desc: "Instructor: Görkem Yöntem (Solutions Architect, AWS). Enterprise AI agent architectures, security, and scaling principles.",
+    cert_2_modal_title: "Secure Scalable Artificial Intelligence Agents — TRAI / AWS",
+
+    // Certificate 3: Coderspace Data Science
+    cert_3_issuer_short: "CODERSPACE • META • GOOGLE",
+    cert_3_issuer: "CODERSPACE • TRAI • META • GOOGLE",
+    cert_3_title: "Data Science & AI Summer School",
+    cert_3_full_title: "Data Science and AI Summer School",
+    cert_3_short_desc: "48 hours of comprehensive data science, machine learning, and industry applications.",
+    cert_3_desc: "4 weeks / 48 hours of intensive data science, machine learning algorithms, and real-world industrial case studies.",
+    cert_3_modal_title: "Data Science and AI Summer School — Coderspace",
+
+    // Certificate 4: TRAI Catch the Game with GenAI
+    cert_4_issuer_short: "TRAI • GOOGLE",
+    cert_4_issuer: "TURKEY ARTIFICIAL INTELLIGENCE INITIATIVE (TRAI) • GOOGLE",
+    cert_4_title: "Catch the Game with GenAI",
+    cert_4_full_title: "Catch the Game with GenAI",
+    cert_4_short_desc: "Google Gemini marketing and generative AI model integrations.",
+    cert_4_desc: "Instructor: Can Franko (Google Ads & Gemini Marketing Manager). Generative AI model capabilities and business application areas.",
+    cert_4_modal_title: "Catch the Game with GenAI — TRAI / Google",
+
+    // Certificate 5: BTK Anthropic Claude
+    cert_5_issuer_short: "BTK ACADEMY",
+    cert_5_issuer: "BTK ACADEMY • OFFICIAL CERTIFICATE",
+    cert_5_title: "Anthropic Claude & LLM Architecture",
+    cert_5_full_title: "Anthropic Claude",
+    cert_5_short_desc: "Prompt engineering, model parameters, and API integration principles.",
+    cert_5_desc: "Certificate ID: BozfxnegJv. Claude model architecture, prompt optimization, and large language model integration.",
+    cert_5_modal_title: "Anthropic Claude — BTK Academy",
+
+    // Certificate 6: BTK Introduction to Generative AI
+    cert_6_issuer_short: "BTK ACADEMY",
+    cert_6_issuer: "BTK ACADEMY • OFFICIAL CERTIFICATE",
+    cert_6_title: "Introduction to Generative AI",
+    cert_6_full_title: "Introduction to Generative AI",
+    cert_6_short_desc: "Diffusion models, GAN architectures, and transformer-based generation.",
+    cert_6_desc: "Certificate ID: PVghM8kNKr. Generative deep learning, diffusion networks, and transformer-based productivity.",
+    cert_6_modal_title: "Introduction to Generative AI — BTK Academy",
+
+    // Certificate 7: BTK Data Literacy
+    cert_7_issuer_short: "BTK ACADEMY",
+    cert_7_issuer: "BTK ACADEMY • OFFICIAL CERTIFICATE",
+    cert_7_title: "Data Literacy & Mining",
+    cert_7_full_title: "Data Literacy",
+    cert_7_short_desc: "Data analytics fundamentals, analytical thinking, and manipulation techniques.",
+    cert_7_desc: "Certificate ID: VlzzCga88bv. Data mining fundamentals, analytical thinking, and data manipulation techniques.",
+    cert_7_modal_title: "Data Literacy — BTK Academy",
+
+    // Certificate 8: Inovatim
+    cert_8_issuer_short: "TIM • INOVATIM",
+    cert_8_issuer: "TURKISH EXPORTERS ASSEMBLY (TIM) • INOVATIM",
+    cert_8_title: "Robotic Coding & Innovation",
+    cert_8_full_title: "Robotic Coding, Artificial Intelligence and Innovation",
+    cert_8_short_desc: "High school Arduino robotics and early-stage technology innovation certificate.",
+    cert_8_desc: "Certificate of participation in Arduino, robotic coding, and early technology innovation earned during 11th grade.",
+    cert_8_modal_title: "AI and Innovation in High Schools — Inovatim / TIM",
+
+    // Certificate 9: Medeniyet Python
+    cert_9_issuer_short: "IST. MEDENIYET UNIV.",
+    cert_9_issuer: "IST. MEDENIYET UNIVERSITY • GDSC",
+    cert_9_title: "Python 101 Programming",
+    cert_9_full_title: "Python 101 Certificate of Achievement",
+    cert_9_short_desc: "Core data structures, algorithms, and object-oriented programming at university level.",
+    cert_9_desc: "Certificate of achievement in algorithm development and technical project applications with Python Medeniyeti & GDSC.",
+    cert_9_modal_title: "Python 101 Certificate of Achievement — Istanbul Medeniyet University",
 
     // Contact View
     contact_tag_badge: "Direct Contact & Collaboration",
@@ -461,6 +625,14 @@ class I18nManager {
       const key = el.getAttribute('data-i18n-title');
       if (dict[key] !== undefined) {
         el.title = dict[key];
+      }
+    });
+
+    // Data-i18n-cert-title (for lightbox modals)
+    document.querySelectorAll('[data-i18n-cert-title]').forEach(el => {
+      const key = el.getAttribute('data-i18n-cert-title');
+      if (dict[key] !== undefined) {
+        el.setAttribute('data-cert-title', dict[key]);
       }
     });
 

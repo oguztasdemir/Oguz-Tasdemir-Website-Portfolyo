@@ -667,10 +667,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const certModalTitle = document.getElementById('certModalTitle');
   const certModalCloseBtn = document.getElementById('certModalCloseBtn');
 
-  function openCertModal(imgSrc, title) {
+  function openCertModal(imgSrc, title, titleKey) {
     if (!certModal || !certModalImg) return;
     certModalImg.src = imgSrc;
-    if (certModalTitle) certModalTitle.textContent = title || 'Sertifika Önizleme';
+    const translatedTitle = titleKey && window.i18n ? window.i18n.t(titleKey) : title;
+    if (certModalTitle) certModalTitle.textContent = translatedTitle || (window.i18n ? window.i18n.t('cert_modal_default_title') : 'Sertifika Önizleme');
     certModal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
   }
@@ -686,7 +687,8 @@ document.addEventListener('DOMContentLoaded', () => {
     card.addEventListener('click', () => {
       const imgSrc = card.getAttribute('data-cert-img');
       const title = card.getAttribute('data-cert-title');
-      if (imgSrc) openCertModal(imgSrc, title);
+      const titleKey = card.getAttribute('data-i18n-cert-title');
+      if (imgSrc) openCertModal(imgSrc, title, titleKey);
     });
   });
 
