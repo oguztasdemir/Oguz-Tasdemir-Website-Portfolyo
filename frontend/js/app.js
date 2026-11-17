@@ -462,7 +462,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // ESC tuşuyla projeler listesine geri dönme
   document.addEventListener('keydown', (e) => {
     const lb = document.getElementById('imageLightboxModal');
-    if (lb && lb.classList.contains('active')) return;
+    const cm = document.getElementById('certModal');
+    if ((lb && lb.classList.contains('active')) || (cm && cm.style.display === 'flex')) return;
     if (e.key === 'Escape' && portfolioDetailView && portfolioDetailView.style.display !== 'none') {
       closeProjectDetailModal();
     }
@@ -672,17 +673,125 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  // 12. Sertifika Büyütme Modalı (Lightbox)
+  // 12. Sertifika Büyütme ve Detay Modalı (Split Lightbox + Navigasyon + Kısayollar)
   const certModal = document.getElementById('certModal');
   const certModalImg = document.getElementById('certModalImg');
   const certModalTitle = document.getElementById('certModalTitle');
+  const certModalCounter = document.getElementById('certModalCounter');
   const certModalCloseBtn = document.getElementById('certModalCloseBtn');
+  const certModalPrevBtn = document.getElementById('certModalPrevBtn');
+  const certModalNextBtn = document.getElementById('certModalNextBtn');
+  const certModalIssuer = document.getElementById('certModalIssuer');
+  const certModalFullTitle = document.getElementById('certModalFullTitle');
+  const certModalDate = document.getElementById('certModalDate');
+  const certModalDuration = document.getElementById('certModalDuration');
+  const certModalInstructor = document.getElementById('certModalInstructor');
+  const certModalCertId = document.getElementById('certModalCertId');
+  const certModalDesc = document.getElementById('certModalDesc');
+  const certModalTags = document.getElementById('certModalTags');
+  const certModalVerifyBtn = document.getElementById('certModalVerifyBtn');
+  const certModalRawImgBtn = document.getElementById('certModalRawImgBtn');
+  const certModalThumbs = document.getElementById('certModalThumbs');
+  const certModalTouchArea = document.getElementById('certModalTouchArea');
+
+  let currentCertIndex = 0;
+
+  function buildCertModalThumbs() {
+    const catalog = window.CERTIFICATES_CATALOG || [];
+    if (!certModalThumbs || certModalThumbs.children.length === catalog.length) return;
+    certModalThumbs.innerHTML = '';
+    catalog.forEach((item, idx) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'cert-thumb-btn';
+      btn.setAttribute('aria-label', `Sertifika ${idx + 1}`);
+      const img = document.createElement('img');
+      img.src = item.img;
+      img.alt = '';
+      img.loading = 'lazy';
+      btn.appendChild(img);
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        renderCertModal(idx);
+      });
+      certModalThumbs.appendChild(btn);
+    });
+  }
+
+  function renderCertModal(index) {
+    const catalog = window.CERTIFICATES_CATALOG || [];
+    if (!certModal || !certModalImg || !catalog.length) return;
+
+    currentCertIndex = ((index % catalog.length) + catalog.length) % catalog.length;
+    const item = catalog[currentCertIndex];
+    const lang = (window.i18n && window.i18n.getLang() === 'en') ? 'en' : 'tr';
+    const meta = item[lang] || item.tr;
+    const t = (key, fallback = '') => (window.i18n ? window.i18n.t(key) : fallback);
+
+    certModalImg.src = item.img;
+    certModalImg.alt = t(item.fullTitleKey);
+
+    if (certModalCounter) certModalCounter.textContent = `${currentCertIndex + 1} / ${catalog.length}`;
+    if (certModalTitle) certModalTitle.textContent = t(item.modalTitleKey, t('cert_modal_default_title', 'Sertifika Önizleme'));
+    if (certModalIssuer) certModalIssuer.textContent = t(item.issuerKey);
+    if (certModalFullTitle) certModalFullTitle.textContent = t(item.fullTitleKey);
+    if (certModalDate) certModalDate.textContent = meta.date || '—';
+    if (certModalDuration) certModalDuration.textContent = meta.duration || '—';
+    if (certModalInstructor) certModalInstructor.textContent = meta.instructor || '—';
+    if (certModalCertId) certModalCertId.textContent = meta.certId || '—';
+    if (certModalDesc) certModalDesc.textContent = t(item.descKey);
+
+    if (certModalTags) {
+      certModalTags.innerHTML = '';
+      (meta.tags || []).forEach(tag => {
+        const span = document.createElement('span');
+        span.className = 'cert-tag-pill';
+        span.textContent = tag;
+        certModalTags.appendChild(span);
+      });
+    }
+
+    if (certModalVerifyBtn) {
+      if (item.verifyUrl) {
+        certModalVerifyBtn.href = item.verifyUrl;
+        certModalVerifyBtn.style.display = 'inline-flex';
+      } else {
+        certModalVerifyBtn.href = '#';
+        certModalVerifyBtn.style.display = 'none';
+      }
+    }
+
+    if (certModalRawImgBtn) {
+      certModalRawImgBtn.href = item.img;
+    }
+
+    buildCertModalThumbs();
+    if (certModalThumbs) {
+      Array.from(certModalThumbs.children).forEach((thumbBtn, idx) => {
+        const isActive = idx === currentCertIndex;
+        thumbBtn.classList.toggle('active', isActive);
+        if (isActive) {
+          thumbBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+      });
+    }
+  }
+
+  function stepCertModal(delta) {
+    renderCertModal(currentCertIndex + delta);
+  }
 
   function openCertModal(imgSrc, title, titleKey) {
     if (!certModal || !certModalImg) return;
-    certModalImg.src = imgSrc;
-    const translatedTitle = titleKey && window.i18n ? window.i18n.t(titleKey) : title;
-    if (certModalTitle) certModalTitle.textContent = translatedTitle || (window.i18n ? window.i18n.t('cert_modal_default_title') : 'Sertifika Önizleme');
+    const catalog = window.CERTIFICATES_CATALOG || [];
+    const foundIdx = catalog.findIndex(item => item.img === imgSrc);
+    if (foundIdx >= 0) {
+      renderCertModal(foundIdx);
+    } else {
+      certModalImg.src = imgSrc;
+      const translatedTitle = titleKey && window.i18n ? window.i18n.t(titleKey) : title;
+      if (certModalTitle) certModalTitle.textContent = translatedTitle || (window.i18n ? window.i18n.t('cert_modal_default_title') : 'Sertifika Önizleme');
+    }
     certModal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
   }
@@ -707,17 +816,64 @@ document.addEventListener('DOMContentLoaded', () => {
     certModalCloseBtn.addEventListener('click', closeCertModal);
   }
 
+  if (certModalPrevBtn) {
+    certModalPrevBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      stepCertModal(-1);
+    });
+  }
+
+  if (certModalNextBtn) {
+    certModalNextBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      stepCertModal(1);
+    });
+  }
+
   if (certModal) {
     certModal.addEventListener('click', (e) => {
       if (e.target === certModal) closeCertModal();
     });
   }
 
+  // Klavye kısayolları: ESC kapatır, Sol/Sağ ok veya A/D sertifikalar arası gezer
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && certModal && certModal.style.display === 'flex') {
+    if (!certModal || certModal.style.display !== 'flex') return;
+    const tag = (document.activeElement && document.activeElement.tagName) ? document.activeElement.tagName.toLowerCase() : '';
+    if (tag === 'input' || tag === 'textarea') return;
+
+    const k = e.key;
+    if (k === 'Escape') {
+      e.preventDefault();
       closeCertModal();
+    } else if (k === 'ArrowRight' || k === 'd' || k === 'D') {
+      e.preventDefault();
+      stepCertModal(1);
+    } else if (k === 'ArrowLeft' || k === 'a' || k === 'A') {
+      e.preventDefault();
+      stepCertModal(-1);
     }
   });
+
+  // Mobil kaydırma (Touch Swipe)
+  if (certModalTouchArea) {
+    let touchStartX = 0;
+    let touchStartY = 0;
+    certModalTouchArea.addEventListener('touchstart', (e) => {
+      if (!e.touches || !e.touches.length) return;
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    certModalTouchArea.addEventListener('touchend', (e) => {
+      if (!certModal || certModal.style.display !== 'flex' || !e.changedTouches || !e.changedTouches.length) return;
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      const dy = e.changedTouches[0].clientY - touchStartY;
+      if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy) * 1.2) {
+        stepCertModal(dx < 0 ? 1 : -1);
+      }
+    }, { passive: true });
+  }
 
 
 
@@ -858,9 +1014,12 @@ document.addEventListener('DOMContentLoaded', () => {
     refreshHomeSliders();
     loadAndRenderSplitView();
 
-    // Detay sayfası açıksa, yeni dildeki verilerle tekrar çiz
+    // Detay sayfası veya sertifika modalı açıksa, yeni dildeki verilerle tekrar çiz
     if (portfolioDetailView && portfolioDetailView.style.display !== 'none' && activeProjectId) {
       openProjectDetailModal(activeProjectId, false);
+    }
+    if (certModal && certModal.style.display === 'flex') {
+      renderCertModal(currentCertIndex);
     }
   });
 

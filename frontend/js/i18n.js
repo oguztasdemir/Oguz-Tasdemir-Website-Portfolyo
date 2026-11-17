@@ -189,6 +189,15 @@ const I18N_DICTIONARY = {
     certs_zoom_hint: "Büyütmek için tıkla",
     cert_modal_default_title: "Sertifika Önizleme",
     cert_verify_btn: "Resmi Doğrulama ↗",
+    cert_modal_kbd_hint: "← / → · A / D · ESC",
+    cert_meta_date_lbl: "Alınma Tarihi",
+    cert_meta_duration_lbl: "Süre / Format",
+    cert_meta_instructor_lbl: "Eğitmen / Onay Makamı",
+    cert_meta_id_lbl: "Sertifika No / ID",
+    cert_meta_desc_lbl: "Eğitim Kapsamı & Kazanılan Yetkinlikler",
+    cert_meta_tags_lbl: "İlişkili Teknik Yetkinlikler",
+    cert_modal_verify_cta: "Resmi Doğrulama Sayfası ↗",
+    cert_modal_raw_cta: "Görseli Tam Boyut Aç ↗",
     certs_pillar_1: "Üretken AI, LLM & Ajanlar (4 Belge: BTK, TRAI, AWS, Google)",
     certs_pillar_2: "Veri Bilimi & Makine Öğrenmesi (3 Belge: Coderspace 48s, Udemy 21.5s, BTK)",
     certs_pillar_3: "FinTech & Borsa Ekosistemi (1 Belge: FIN-E Summit)",
@@ -483,6 +492,15 @@ const I18N_DICTIONARY = {
     certs_zoom_hint: "Click to zoom",
     cert_modal_default_title: "Certificate Preview",
     cert_verify_btn: "Verify Credential ↗",
+    cert_modal_kbd_hint: "← / → · A / D · ESC",
+    cert_meta_date_lbl: "Issue Date",
+    cert_meta_duration_lbl: "Duration / Format",
+    cert_meta_instructor_lbl: "Instructor / Authority",
+    cert_meta_id_lbl: "Credential ID",
+    cert_meta_desc_lbl: "Scope & Acquired Competencies",
+    cert_meta_tags_lbl: "Related Technical Skills",
+    cert_modal_verify_cta: "Official Verification Page ↗",
+    cert_modal_raw_cta: "Open Full-Size Image ↗",
     certs_pillar_1: "Generative AI, LLMs & Agents (4 Credentials: BTK, TRAI, AWS, Google)",
     certs_pillar_2: "Data Science & Machine Learning (3 Credentials: Coderspace 48h, Udemy 21.5h, BTK)",
     certs_pillar_3: "FinTech & Capital Markets (1 Credential: FIN-E Summit)",
@@ -673,6 +691,250 @@ class I18nManager {
     window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
   }
 }
+
+// Doğrulanmış Sertifikalar & Eğitim Belgeleri Yapılandırılmış Kataloğu (10 Belge)
+window.CERTIFICATES_CATALOG = [
+  {
+    id: "fine-summit",
+    img: "assets/certificates/ogrenci-kariyeri-fine-summit.jpeg",
+    verifyUrl: "",
+    issuerKey: "cert_1_issuer",
+    titleKey: "cert_1_title",
+    fullTitleKey: "cert_1_full_title",
+    descKey: "cert_1_desc",
+    modalTitleKey: "cert_1_modal_title",
+    tr: {
+      date: "3 Şubat 2026",
+      duration: "Tam Gün Zirve",
+      instructor: "Öğrenci Kariyeri & Borsa İstanbul",
+      certId: "Resmi Katılım Belgesi",
+      tags: ["FinTech", "Borsa Ekosistemi", "Açık Bankacılık", "Algoritmik Finans"]
+    },
+    en: {
+      date: "Feb 3, 2026",
+      duration: "Full-Day Summit",
+      instructor: "Ogrenci Kariyeri & Borsa Istanbul",
+      certId: "Official Participation",
+      tags: ["FinTech", "Capital Markets", "Open Banking", "Algorithmic Finance"]
+    }
+  },
+  {
+    id: "trai-aws-agents",
+    img: "assets/certificates/trai-yapay-zeka-ajanlari.png",
+    verifyUrl: "",
+    issuerKey: "cert_2_issuer",
+    titleKey: "cert_2_title",
+    fullTitleKey: "cert_2_full_title",
+    descKey: "cert_2_desc",
+    modalTitleKey: "cert_2_modal_title",
+    tr: {
+      date: "24 Ekim 2025",
+      duration: "Zirve Atölyesi",
+      instructor: "Görkem Yöntem (AWS SA)",
+      certId: "TRAI Zirve Belgesi",
+      tags: ["AI Agents", "AWS Cloud", "Tool Calling", "RAG Güvenliği"]
+    },
+    en: {
+      date: "Oct 24, 2025",
+      duration: "Summit Workshop",
+      instructor: "Gorkem Yontem (AWS SA)",
+      certId: "TRAI Summit Credential",
+      tags: ["AI Agents", "AWS Cloud", "Tool Calling", "RAG Security"]
+    }
+  },
+  {
+    id: "coderspace-summer",
+    img: "assets/certificates/certificate-additional.png",
+    verifyUrl: "",
+    issuerKey: "cert_3_issuer",
+    titleKey: "cert_3_title",
+    fullTitleKey: "cert_3_full_title",
+    descKey: "cert_3_desc",
+    modalTitleKey: "cert_3_modal_title",
+    tr: {
+      date: "14 Tem – 7 Ağu 2026",
+      duration: "4 Hafta / 48 Saat",
+      instructor: "Coderspace & 9 Teknoloji Partneri",
+      certId: "0d204b91-f21b-4a45-8b11-29a7ecc5ad9b",
+      tags: ["Python & SQL", "Feature Engineering", "CatBoost / XGBoost", "Scikit-Learn"]
+    },
+    en: {
+      date: "Jul 14 – Aug 7, 2026",
+      duration: "4 Weeks / 48 Hours",
+      instructor: "Coderspace & 9 Tech Partners",
+      certId: "0d204b91-f21b-4a45-8b11-29a7ecc5ad9b",
+      tags: ["Python & SQL", "Feature Engineering", "CatBoost / XGBoost", "Scikit-Learn"]
+    }
+  },
+  {
+    id: "trai-google-genai",
+    img: "assets/certificates/trai-genai-oyunu-yakala.png",
+    verifyUrl: "",
+    issuerKey: "cert_4_issuer",
+    titleKey: "cert_4_title",
+    fullTitleKey: "cert_4_full_title",
+    descKey: "cert_4_desc",
+    modalTitleKey: "cert_4_modal_title",
+    tr: {
+      date: "24 Ekim 2025",
+      duration: "Zirve Oturumu",
+      instructor: "Can Franko (Google Gemini)",
+      certId: "TRAI Zirve Belgesi",
+      tags: ["Google Gemini", "Generative AI", "Multimodal LLM", "Prompt Tasarımı"]
+    },
+    en: {
+      date: "Oct 24, 2025",
+      duration: "Summit Session",
+      instructor: "Can Franko (Google Gemini)",
+      certId: "TRAI Summit Credential",
+      tags: ["Google Gemini", "Generative AI", "Multimodal LLM", "Prompt Design"]
+    }
+  },
+  {
+    id: "btk-claude",
+    img: "assets/certificates/btk-anthropic-claude.png",
+    verifyUrl: "https://www.btkakademi.gov.tr/portal/certificate/validate?certificateId=BozfxnegJv",
+    issuerKey: "cert_5_issuer",
+    titleKey: "cert_5_title",
+    fullTitleKey: "cert_5_full_title",
+    descKey: "cert_5_desc",
+    modalTitleKey: "cert_5_modal_title",
+    tr: {
+      date: "3 Mayıs 2026",
+      duration: "Çevrim İçi Uzmanlık",
+      instructor: "BTK Akademi (Mustafa Ermiş)",
+      certId: "BozfxnegJv",
+      tags: ["Anthropic Claude", "Constitutional AI", "Context Management", "Python API"]
+    },
+    en: {
+      date: "May 3, 2026",
+      duration: "Online Specialization",
+      instructor: "BTK Academy (Mustafa Ermis)",
+      certId: "BozfxnegJv",
+      tags: ["Anthropic Claude", "Constitutional AI", "Context Management", "Python API"]
+    }
+  },
+  {
+    id: "btk-genai",
+    img: "assets/certificates/btk-uretken-yapay-zeka.png",
+    verifyUrl: "https://www.btkakademi.gov.tr/portal/certificate/validate?certificateId=PVghM8kNKr",
+    issuerKey: "cert_6_issuer",
+    titleKey: "cert_6_title",
+    fullTitleKey: "cert_6_full_title",
+    descKey: "cert_6_desc",
+    modalTitleKey: "cert_6_modal_title",
+    tr: {
+      date: "2 Mayıs 2026",
+      duration: "Çevrim İçi Sertifika",
+      instructor: "BTK Akademi (Mustafa Ermiş)",
+      certId: "PVghM8kNKr",
+      tags: ["Transformer", "Self-Attention", "Latent Diffusion", "LoRA Fine-Tuning"]
+    },
+    en: {
+      date: "May 2, 2026",
+      duration: "Online Certificate",
+      instructor: "BTK Academy (Mustafa Ermis)",
+      certId: "PVghM8kNKr",
+      tags: ["Transformer", "Self-Attention", "Latent Diffusion", "LoRA Fine-Tuning"]
+    }
+  },
+  {
+    id: "btk-data-literacy",
+    img: "assets/certificates/btk-veri-okuryazarligi.png",
+    verifyUrl: "https://www.btkakademi.gov.tr/portal/certificate/validate?certificateId=VlzzCga88bv",
+    issuerKey: "cert_7_issuer",
+    titleKey: "cert_7_title",
+    fullTitleKey: "cert_7_full_title",
+    descKey: "cert_7_desc",
+    modalTitleKey: "cert_7_modal_title",
+    tr: {
+      date: "3 Mayıs 2026",
+      duration: "Çevrim İçi Sertifika",
+      instructor: "BTK Akademi (Mustafa Ermiş)",
+      certId: "VlzzCga88bv",
+      tags: ["İstatistiksel Çıkarım", "Outlier Analizi", "Veri Kalitesi", "Görselleştirme"]
+    },
+    en: {
+      date: "May 3, 2026",
+      duration: "Online Certificate",
+      instructor: "BTK Academy (Mustafa Ermis)",
+      certId: "VlzzCga88bv",
+      tags: ["Statistical Inference", "Outlier Analysis", "Data Quality", "Visualization"]
+    }
+  },
+  {
+    id: "inovatim",
+    img: "assets/certificates/inovatim-sertifika.jpg",
+    verifyUrl: "",
+    issuerKey: "cert_8_issuer",
+    titleKey: "cert_8_title",
+    fullTitleKey: "cert_8_full_title",
+    descKey: "cert_8_desc",
+    modalTitleKey: "cert_8_modal_title",
+    tr: {
+      date: "Şubat – Mayıs 2019",
+      duration: "Dönem Projesi (Lise)",
+      instructor: "Prof. Dr. Kerem Alkin (TİM)",
+      certId: "TİM İnovaTİM Belgesi",
+      tags: ["Arduino", "C / C++", "Robotik Kodlama", "Gömülü Sistemler"]
+    },
+    en: {
+      date: "Feb – May 2019",
+      duration: "Term Project (High School)",
+      instructor: "Prof. Dr. Kerem Alkin (TIM)",
+      certId: "TIM InovaTIM Credential",
+      tags: ["Arduino", "C / C++", "Robotics", "Embedded Systems"]
+    }
+  },
+  {
+    id: "medeniyet-python101",
+    img: "assets/certificates/medeniyet-bil101.png",
+    verifyUrl: "",
+    issuerKey: "cert_9_issuer",
+    titleKey: "cert_9_title",
+    fullTitleKey: "cert_9_full_title",
+    descKey: "cert_9_desc",
+    modalTitleKey: "cert_9_modal_title",
+    tr: {
+      date: "Şubat 2022",
+      duration: "Fakülte / Kulüp Programı",
+      instructor: "İMÜ Proje Kulübü & GDSC",
+      certId: "Başarı Belgesi",
+      tags: ["Python 101", "Veri Yapıları", "Algoritmalar", "OOP"]
+    },
+    en: {
+      date: "February 2022",
+      duration: "University Track",
+      instructor: "IMU Project Club & GDSC",
+      certId: "Certificate of Achievement",
+      tags: ["Python 101", "Data Structures", "Algorithms", "OOP"]
+    }
+  },
+  {
+    id: "udemy-python-ai-101",
+    img: "assets/certificates/udemy-python-yapay-zeka-101.jpg",
+    verifyUrl: "https://www.udemy.com/certificate/UC-a96b3261-338c-4b52-b03c-32c9bf51c3da/",
+    issuerKey: "cert_10_issuer",
+    titleKey: "cert_10_title",
+    fullTitleKey: "cert_10_full_title",
+    descKey: "cert_10_desc",
+    modalTitleKey: "cert_10_modal_title",
+    tr: {
+      date: "28 Ekim 2025",
+      duration: "21.5 Saat Video + Uygulama",
+      instructor: "Tuncay Erol (Udemy)",
+      certId: "UC-a96b3261-338c-4b52-b03c-32c9bf51c3da",
+      tags: ["Python & OOP", "NumPy / Pandas", "Scikit-Learn", "21.5 Saat"]
+    },
+    en: {
+      date: "October 28, 2025",
+      duration: "21.5 Hours Applied",
+      instructor: "Tuncay Erol (Udemy)",
+      certId: "UC-a96b3261-338c-4b52-b03c-32c9bf51c3da",
+      tags: ["Python & OOP", "NumPy / Pandas", "Scikit-Learn", "21.5 Hours"]
+    }
+  }
+];
 
 // Global Singleton Instance
 window.i18n = new I18nManager();

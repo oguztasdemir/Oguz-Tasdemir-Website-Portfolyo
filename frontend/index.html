@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/style.css?v=6.1">
+  <link rel="stylesheet" href="css/style.css?v=6.2">
 </head>
   <!-- MOBİL MENÜ KARARTMA ARKA PLANI (BACKDROP) -->
   <div class="rail-backdrop" id="railBackdrop"></div>
@@ -1389,16 +1389,81 @@
     </div>
   </div>
 
-  <!-- SERTİFİKA BÜYÜTME MODALI (LIGHTBOX) -->
-  <div class="cert-modal-backdrop" id="certModal" style="display: none;">
+  <!-- SERTİFİKA BÜYÜTME VE DETAY MODALI (SPLIT LIGHTBOX) -->
+  <div class="cert-modal-backdrop" id="certModal" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="certModalTitle">
     <div class="cert-modal-container">
       <div class="cert-modal-header">
-        <span class="cert-modal-title" id="certModalTitle" data-i18n="cert_modal_default_title">Sertifika Önizleme</span>
-        <button class="cert-modal-close" id="certModalCloseBtn" aria-label="Kapat">&times;</button>
+        <div class="cert-modal-header-left">
+          <span class="cert-modal-counter" id="certModalCounter">1 / 10</span>
+          <span class="cert-modal-title" id="certModalTitle" data-i18n="cert_modal_default_title">Sertifika Önizleme</span>
+        </div>
+        <div class="cert-modal-header-right">
+          <span class="cert-modal-kbd-hint" data-i18n="cert_modal_kbd_hint">&larr; / &rarr; &middot; A / D &middot; ESC</span>
+          <button class="cert-modal-close" id="certModalCloseBtn" aria-label="Kapat">&times;</button>
+        </div>
       </div>
-      <div class="cert-modal-body">
-        <img src="" alt="Sertifika Önizleme" id="certModalImg">
+
+      <div class="cert-modal-split-body" id="certModalTouchArea">
+        <!-- Sol: Görsel Sahnesi + İlerleme Tuşları -->
+        <div class="cert-modal-stage">
+          <button type="button" class="cert-modal-nav-btn prev" id="certModalPrevBtn" aria-label="Önceki Sertifika" title="Önceki (← / A)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <img src="" alt="Sertifika Önizleme" id="certModalImg">
+          <button type="button" class="cert-modal-nav-btn next" id="certModalNextBtn" aria-label="Sonraki Sertifika" title="Sonraki (→ / D)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
+
+        <!-- Sağ: Sertifika Detay ve Doğrulama Paneli -->
+        <aside class="cert-modal-sidebar">
+          <span class="cert-modal-issuer" id="certModalIssuer"></span>
+          <h3 class="cert-modal-full-title" id="certModalFullTitle"></h3>
+
+          <div class="cert-modal-meta-grid">
+            <div class="cert-meta-item">
+              <span class="cert-meta-label" data-i18n="cert_meta_date_lbl">Alınma Tarihi</span>
+              <strong class="cert-meta-val" id="certModalDate"></strong>
+            </div>
+            <div class="cert-meta-item">
+              <span class="cert-meta-label" data-i18n="cert_meta_duration_lbl">Süre / Format</span>
+              <strong class="cert-meta-val" id="certModalDuration"></strong>
+            </div>
+            <div class="cert-meta-item">
+              <span class="cert-meta-label" data-i18n="cert_meta_instructor_lbl">Eğitmen / Onay Makamı</span>
+              <strong class="cert-meta-val" id="certModalInstructor"></strong>
+            </div>
+            <div class="cert-meta-item">
+              <span class="cert-meta-label" data-i18n="cert_meta_id_lbl">Sertifika No / ID</span>
+              <strong class="cert-meta-val mono" id="certModalCertId"></strong>
+            </div>
+          </div>
+
+          <div class="cert-modal-desc-box">
+            <span class="cert-meta-label" data-i18n="cert_meta_desc_lbl">Eğitim Kapsamı &amp; Kazanılan Yetkinlikler</span>
+            <p class="cert-modal-desc" id="certModalDesc"></p>
+          </div>
+
+          <div class="cert-modal-tags-box">
+            <span class="cert-meta-label" data-i18n="cert_meta_tags_lbl">İlişkili Teknik Yetkinlikler</span>
+            <div class="cert-tags-row" id="certModalTags"></div>
+          </div>
+
+          <div class="cert-modal-actions">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="cert-modal-action-btn verify" id="certModalVerifyBtn" style="display: none;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              <span id="certModalVerifyBtnText" data-i18n="cert_modal_verify_cta">Resmi Doğrulama Sayfası &nearr;</span>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="cert-modal-action-btn secondary" id="certModalRawImgBtn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              <span id="certModalRawImgBtnText" data-i18n="cert_modal_raw_cta">Görseli Tam Boyut Aç &nearr;</span>
+            </a>
+          </div>
+        </aside>
       </div>
+
+      <!-- Alt Küçük Görsel Şeridi (Thumbnail Strip) -->
+      <div class="cert-modal-thumbs" id="certModalThumbs"></div>
     </div>
   </div>
 
@@ -1485,12 +1550,12 @@
   </div>
 
   <!-- Scriptler -->
-  <script src="js/projects-data.js?v=6.1"></script>
-  <script src="js/projects-en.js?v=6.1"></script>
-  <script src="js/zip-builder.js?v=6.1"></script>
-  <script src="js/i18n.js?v=6.1"></script>
-  <script src="js/api.js?v=6.1"></script>
-  <script src="js/ui.js?v=6.1"></script>
-  <script src="js/app.js?v=6.1"></script>
+  <script src="js/projects-data.js?v=6.2"></script>
+  <script src="js/projects-en.js?v=6.2"></script>
+  <script src="js/zip-builder.js?v=6.2"></script>
+  <script src="js/i18n.js?v=6.2"></script>
+  <script src="js/api.js?v=6.2"></script>
+  <script src="js/ui.js?v=6.2"></script>
+  <script src="js/app.js?v=6.2"></script>
 </body>
 </html>
