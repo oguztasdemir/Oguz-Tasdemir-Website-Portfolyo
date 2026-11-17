@@ -41,14 +41,18 @@ const UI = {
       'Açık Kaynak & Oyun': 'Open Source & Gaming'
     };
 
-    const title = (isEn && pEn.title) ? pEn.title : project.title;
-    const summary = (isEn && pEn.summary) ? pEn.summary : project.summary;
-    const badge = (isEn && pEn.badge) ? pEn.badge : project.badge;
+    const title = (isEn && pEn.title) ? pEn.title : (project.title || project.id);
+    const summary = (isEn && pEn.summary) ? pEn.summary : (project.summary || '');
+    const defaultBadge = isPrivateFallback(project)
+      ? (isEn ? 'Proprietary R&D' : 'Özel Ar-Ge')
+      : (isEn ? 'Production System' : 'Üretim Sistemi');
+    function isPrivateFallback(proj) { return proj.visibility === 'private'; }
+    const badge = (isEn && pEn.badge) ? pEn.badge : (project.badge || defaultBadge);
     const highlightMetric = (isEn && pEn.highlightMetric) ? pEn.highlightMetric : (project.highlightMetric || '');
     
-    let categoryLabel = project.categoryLabel;
+    let categoryLabel = project.categoryLabel || project.category || (isEn ? 'Software System' : 'Yazılım Sistemi');
     if (isEn) {
-      categoryLabel = pEn.categoryLabel || categoryMapEn[project.categoryLabel] || project.categoryLabel;
+      categoryLabel = pEn.categoryLabel || categoryMapEn[project.categoryLabel] || categoryLabel;
     }
 
     return {
@@ -80,12 +84,14 @@ const UI = {
     container.innerHTML = projects.map(project => {
       const techs = (project.techStack || []).slice(0, 4);
       const isPrivate = project.visibility === 'private';
-      const academicLabel = isEn ? '🎓 Academic' : '🎓 Akademik';
+      const academicLabel = isEn ? 'Academic' : 'Akademik';
       const publicBadgeLabel = isEn ? 'Open Source' : 'Açık Kaynak';
       const privateBadgeLabel = isEn ? 'Proprietary' : 'Özel Ar-Ge';
       const devBadgeLabel = isEn ? 'Active R&D' : 'Geliştirme / Ar-Ge';
       const detailBtnLabel = isEn ? 'Architecture & Details' : 'Mimarisi & Detay';
       const liveDemoLabel = isEn ? 'Live Demo' : 'Canlı Demo';
+      const hasPreview = Array.isArray(project.screenshots) && project.screenshots.length > 0;
+      const previewThumb = hasPreview ? project.screenshots[0].src : null;
 
       return `
         <article class="portfolio-wide-card ${isPrivate ? 'card-tier-private' : 'card-tier-public'}" data-id="${project.id}" tabindex="0" role="button">
@@ -93,7 +99,10 @@ const UI = {
             <div class="wide-card-categories-row">
               <span class="wide-card-category">${project.categoryLabel}</span>
               ${Array.isArray(project.categories) && project.categories.includes('academic') ? `
-                <span class="wide-card-academic-pill" title="${academicLabel}">${academicLabel}</span>
+                <span class="wide-card-academic-pill" title="${academicLabel}">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                  <span>${academicLabel}</span>
+                </span>
               ` : ''}
             </div>
             <div class="wide-card-meta-right">
@@ -112,8 +121,18 @@ const UI = {
             </div>
           </div>
 
-          <h3 class="wide-card-title">${project.title}</h3>
-          <p class="wide-card-summary">${project.summary}</p>
+          <div class="wide-card-body-split">
+            <div class="wide-card-copy">
+              <h3 class="wide-card-title">${project.title}</h3>
+              <p class="wide-card-summary">${project.summary}</p>
+            </div>
+            ${previewThumb ? `
+              <div class="wide-card-preview-box">
+                <img src="${previewThumb}" alt="${project.title}" loading="lazy">
+                <span class="wide-card-preview-count">${project.screenshots.length} ${isEn ? 'Screens' : 'Görsel'}</span>
+              </div>
+            ` : ''}
+          </div>
 
           <!-- Kart İçi Teknoloji Etiketleri -->
           <div class="wide-card-tech-list">
@@ -600,24 +619,34 @@ class ProcessEngine:
         <!-- 2. MODERN SEKME (TAB) NAVİGASYON ŞERİDİ -->
         <div class="stage-tabs-nav-bar" role="tablist">
           <button class="stage-tab-btn active" data-tab="overview" title="${isEn ? 'Overview & Problem' : 'Genel Bakış & Problem'}">
-            <span class="tab-icon">📊</span>
+            <span class="tab-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+            </span>
             <span class="tab-title">${isEn ? 'Overview' : 'Genel Bakış'}</span>
           </button>
           <button class="stage-tab-btn" data-tab="flow" title="${isEn ? 'System Flow & Execution Steps' : 'Sistem Akış Şeması & Adım Adım Çalışma'}">
-            <span class="tab-icon">🔄</span>
+            <span class="tab-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="18" cy="18" r="3"></circle><circle cx="6" cy="6" r="3"></circle><path d="M13 6h3a2 2 0 0 1 2 2v7"></path><line x1="6" y1="9" x2="6" y2="21"></line></svg>
+            </span>
             <span class="tab-title">${isEn ? 'Flow Diagram' : 'Akış Şeması'}</span>
           </button>
           <button class="stage-tab-btn" data-tab="architecture" title="${isEn ? 'System Architecture & Solutions' : 'Sistem Mimarisi & Çözülen Problem'}">
-            <span class="tab-icon">🏛️</span>
+            <span class="tab-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            </span>
             <span class="tab-title">${isEn ? 'Architecture' : 'Sistem Mimarisi'}</span>
           </button>
           <button class="stage-tab-btn" data-tab="quickstart" title="${isEn ? 'Quick Start & Local Setup' : 'Hızlı Başlat & Kurulum'}">
-            <span class="tab-icon">⚡</span>
+            <span class="tab-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            </span>
             <span class="tab-title">${isEn ? 'Quick Start' : 'Hızlı Başlat'}</span>
             <span class="tab-pill-badge">${isEn ? 'Guide' : 'Rehber'}</span>
           </button>
           <button class="stage-tab-btn" data-tab="code" title="${isEn ? 'Code Explorer & Directory Tree' : 'Kod Gezgini & Dizin Mimarisi'}">
-            <span class="tab-icon">📁</span>
+            <span class="tab-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            </span>
             <span class="tab-title">${isEn ? 'Code Explorer' : 'Kod Gezgini'}</span>
           </button>
         </div>
@@ -625,7 +654,7 @@ class ProcessEngine:
         <!-- 3. SEKME İÇERİKLERİ (TABS CONTAINER) -->
         <div class="stage-tabs-viewport">
           
-          <!-- ================= TAB 1: GENEL BAKIŞ & PROBLEM ================= -->
+          <!-- ================= TAB 1: GENEL BAKIŞ & HİKAYE ÖNCELİKLİ AKIŞ ================= -->
           <div class="stage-tab-pane active" id="tabPane-overview">
             
             <!-- Dil Dağılım Çubuğu -->
@@ -654,51 +683,141 @@ class ProcessEngine:
               </div>
             </div>
 
-            ${project.videoUrl ? `
-              <div class="case-study-box">
-                <div class="case-box-title-row">
-                  <span class="case-box-num">🎥</span>
-                  <h3 class="case-box-header">${isEn ? 'Live Application Walkthrough Video' : 'Canlı Uygulama & Arayüz Tanıtım Videosu'}</h3>
-                </div>
-                <div style="margin-top: 14px; border-radius: 10px; overflow: hidden; border: 1px solid rgba(59, 130, 246, 0.25); background: #000;">
-                  <video controls preload="metadata" style="width: 100%; max-height: 460px; display: block;">
-                    <source src="${project.videoUrl}" type="video/webm">
-                    ${isEn ? 'Your browser does not support WebM video playback.' : 'Tarayıcınız WebM video oynatmayı desteklemiyor.'}
-                  </video>
+            ${((project.screenshots && project.screenshots.length > 0) || project.videoUrl || (project.resultsComparison && project.resultsComparison.length > 0)) ? `
+              <div class="evidence-jump-bar">
+                <span class="evidence-jump-label">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                  <span>${isEn ? 'Verified Showcase & Proof Assets:' : 'Doğrulanmış Vitrin & Kanıt Dosyaları:'}</span>
+                </span>
+                <div class="evidence-jump-actions">
+                  ${(project.screenshots && project.screenshots.length > 0) ? `
+                    <button type="button" class="evidence-jump-pill" data-dock-target="gallery">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line></svg>
+                      <span>${project.screenshots.length} ${isEn ? 'Screenshots' : 'Ekran Görüntüsü'}</span>
+                    </button>
+                  ` : ''}
+                  ${project.videoUrl ? `
+                    <button type="button" class="evidence-jump-pill" data-dock-target="video">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                      <span>${isEn ? 'Watch Video Demo' : 'Tanıtım Videosunu Aç'}</span>
+                    </button>
+                  ` : ''}
+                  ${(project.resultsComparison && project.resultsComparison.length > 0) ? `
+                    <button type="button" class="evidence-jump-pill" data-dock-target="proof">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      <span>${isEn ? 'Input–Output Proof' : 'Girdi–Çıktı Kanıtı'}</span>
+                    </button>
+                  ` : ''}
                 </div>
               </div>
             ` : ''}
 
-            ${(project.screenshots && project.screenshots.length > 0) ? `
+            <!-- ÖNCELİK 1: HİKAYE & ÇÖZÜLEN PROBLEM (İKİ KOLONLU BENTO GRID) -->
+            <div class="narrative-dual-grid">
+              <div class="case-study-box developer-story-card">
+                <div class="case-box-title-row">
+                  <span class="case-box-num">01</span>
+                  <h3 class="case-box-header">${isEn ? 'Why Did I Build This Project? (Developer Story)' : 'Neden Bu Projeyi Geliştirdim? (Geliştirici Hikayesi)'}</h3>
+                </div>
+                <p class="case-box-text">${projectWhyStory}</p>
+              </div>
+
               <div class="case-study-box">
                 <div class="case-box-title-row">
-                  <span class="case-box-num">🖼️</span>
-                  <h3 class="case-box-header">${isEn ? 'Interface Gallery & Visual Preview' : 'Arayüz Ekran Görüntüleri & Görsel Önizleme'}</h3>
+                  <span class="case-box-num">02</span>
+                  <h3 class="case-box-header">${isEn ? 'Problem Encountered & Technical Need' : 'Karşılaşılan Problem & Teknik İhtiyaç'}</h3>
                 </div>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: 14px;">
-                  ${project.screenshots.map(img => {
-                    const cap = (isEn && img.captionEn) ? img.captionEn : (img.caption || project.title);
-                    return `
-                      <div class="gallery-thumb-card js-lightbox-trigger" role="button" tabindex="0" data-lightbox-src="${escapeHtml(img.src)}" data-lightbox-caption="${escapeHtml(cap)}">
-                        <span class="gallery-zoom-badge" aria-hidden="true">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-                        </span>
-                        <img src="${escapeHtml(img.src)}" alt="${escapeHtml(cap)}" style="width: 100%; height: 175px; object-fit: cover; display: block;" loading="lazy">
-                        <div style="padding: 8px 12px; font-size: 0.76rem; color: var(--text-muted); font-family: var(--font-mono);">${escapeHtml((isEn && img.captionEn) ? img.captionEn : (img.caption || ''))}</div>
+                <p class="case-box-text">${problemText}</p>
+              </div>
+            </div>
+
+            <!-- ÖNCELİK 2: ÖNE ÇIKAN YETENEKLER -->
+            ${features.length > 0 ? `
+              <div class="case-study-box">
+                <div class="case-box-title-row">
+                  <span class="case-box-num">03</span>
+                  <h3 class="case-box-header">${isEn ? 'Key Features & Solutions' : 'Öne Çıkan Özellikler & Çözümler'}</h3>
+                </div>
+                <ul class="features-check-stack two-col">
+                  ${features.map(feat => `
+                    <li>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      <span>${feat}</span>
+                    </li>
+                  `).join('')}
+                </ul>
+              </div>
+            ` : ''}
+
+            <!-- ÖNCELİK 3: KOMPAKT STÜDYO MEDYA & VİDEO PENCERESİ (SEKMELİ DOCK) -->
+            ${((project.screenshots && project.screenshots.length > 0) || project.videoUrl) ? (() => {
+              const hasScreens = project.screenshots && project.screenshots.length > 0;
+              const defaultDockTab = hasScreens ? 'gallery' : 'video';
+              return `
+                <div class="studio-media-dock" id="studioMediaDock">
+                  <div class="studio-dock-header">
+                    <div class="studio-dock-title-wrap">
+                      <div class="studio-dock-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                      <span class="case-box-num">04</span>
+                      <h3 class="case-box-header">${isEn ? 'Interface Showcase & Media Studio' : 'Uygulama Vitrini & Medya Stüdyosu'}</h3>
+                    </div>
+                    <div class="studio-dock-tabs">
+                      ${hasScreens ? `
+                        <button type="button" class="studio-dock-tab-btn ${defaultDockTab === 'gallery' ? 'active' : ''}" data-dock-tab="gallery">
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                          <span>${isEn ? `Screenshots (${project.screenshots.length})` : `Ekran Görüntüleri (${project.screenshots.length})`}</span>
+                        </button>
+                      ` : ''}
+                      ${project.videoUrl ? `
+                        <button type="button" class="studio-dock-tab-btn ${defaultDockTab === 'video' ? 'active' : ''}" data-dock-tab="video">
+                          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                          <span>${isEn ? 'Walkthrough Video' : 'Tanıtım Videosu'}</span>
+                        </button>
+                      ` : ''}
+                    </div>
+                  </div>
+                  <div class="studio-dock-body">
+                    ${hasScreens ? `
+                      <div class="studio-dock-panel ${defaultDockTab === 'gallery' ? 'active' : ''}" data-dock-panel="gallery">
+                        <div class="studio-gallery-grid">
+                          ${project.screenshots.map(img => {
+                            const cap = (isEn && img.captionEn) ? img.captionEn : (img.caption || project.title);
+                            return `
+                              <div class="gallery-thumb-card js-lightbox-trigger" role="button" tabindex="0" data-lightbox-src="${escapeHtml(img.src)}" data-lightbox-caption="${escapeHtml(cap)}">
+                                <span class="gallery-zoom-badge" aria-hidden="true">
+                                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                </span>
+                                <img src="${escapeHtml(img.src)}" alt="${escapeHtml(cap)}" style="width: 100%; height: 175px; object-fit: cover; display: block;" loading="lazy">
+                                <div style="padding: 8px 12px; font-size: 0.76rem; color: var(--text-muted); font-family: var(--font-mono);">${escapeHtml((isEn && img.captionEn) ? img.captionEn : (img.caption || ''))}</div>
+                              </div>
+                            `;
+                          }).join('')}
+                        </div>
                       </div>
-                    `;
-                  }).join('')}
+                    ` : ''}
+                    ${project.videoUrl ? `
+                      <div class="studio-dock-panel ${defaultDockTab === 'video' ? 'active' : ''}" data-dock-panel="video">
+                        <div class="studio-video-frame">
+                          <video controls preload="metadata">
+                            <source src="${project.videoUrl}" type="video/webm">
+                            ${isEn ? 'Your browser does not support WebM video playback.' : 'Tarayıcınız WebM video oynatmayı desteklemiyor.'}
+                          </video>
+                        </div>
+                      </div>
+                    ` : ''}
+                  </div>
                 </div>
-              </div>
-            ` : ''}
+              `;
+            })() : ''}
 
+            <!-- ÖNCELİK 4: ÖRNEK SONUÇLAR & GİRDİ-ÇIKTI KIYASLAMASI -->
             ${(project.resultsComparison && project.resultsComparison.length > 0) ? `
-              <div class="case-study-box">
+              <div class="case-study-box" id="proofComparisonSection">
                 <div class="case-box-title-row">
-                  <span class="case-box-num">🎯</span>
+                  <span class="case-box-num">05</span>
                   <h3 class="case-box-header">${isEn ? 'Sample Results & Input-Output Comparison (Proof of Work)' : 'Örnek Sonuçlar & Girdi-Çıktı Kıyaslaması (Proof of Work)'}</h3>
                 </div>
-                <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 16px;">
+                <div class="proof-scenarios-stack">
                   ${project.resultsComparison.map(rc => {
                     const scenarioTitle = (isEn && rc.modeTitleEn) ? rc.modeTitleEn : (rc.modeTitle || '');
                     const inLabel = isEn ? (rc.inputLabelEn || '1. INPUT IMAGE') : (rc.inputLabel || '1. GİREN GÖRSEL (INPUT)');
@@ -706,9 +825,9 @@ class ProcessEngine:
                     const inCap = scenarioTitle ? `${scenarioTitle} — ${inLabel}` : inLabel;
                     const outCap = scenarioTitle ? `${scenarioTitle} — ${outLabel}` : outLabel;
                     return `
-                      <div style="background: rgba(15, 23, 42, 0.55); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 12px; padding: 16px;">
-                        <div style="font-size: 0.85rem; font-weight: 700; color: #60a5fa; margin-bottom: 12px; font-family: var(--font-mono);">${scenarioTitle}</div>
-                        <div style="display: grid; grid-template-columns: ${rc.inputImg ? '1fr 1.2fr 1fr' : '1.3fr 1fr'}; gap: 14px; align-items: center;">
+                      <div class="proof-scenario-card">
+                        <div style="font-size: 0.85rem; font-weight: 700; color: #38bdf8; margin-bottom: 12px; font-family: var(--font-mono);">${scenarioTitle}</div>
+                        <div class="proof-scenario-grid ${rc.inputImg ? 'three-col' : 'two-col'}">
                           ${rc.inputImg ? `
                             <div class="proof-img-card js-lightbox-trigger" role="button" tabindex="0" data-lightbox-src="${escapeHtml(rc.inputImg)}" data-lightbox-caption="${escapeHtml(inCap)}">
                               <span class="gallery-zoom-badge" aria-hidden="true">
@@ -722,7 +841,7 @@ class ProcessEngine:
                             <div style="font-size: 0.72rem; color: #38bdf8; font-weight: 700; margin-bottom: 6px;">${isEn ? (rc.processLabelEn || (rc.inputImg ? '2. PROMPT & MODEL' : '1. PROMPT & PARAMETERS')) : (rc.processLabel || (rc.inputImg ? '2. KOMUT (PROMPT) & MODEL' : '1. KOMUT (PROMPT) & PARAMETRELER'))}</div>
                             <div><strong>${isEn ? (rc.promptLabelEn || 'Prompt') : (rc.promptLabel || 'Prompt')}:</strong> "${(isEn && rc.promptEn) ? rc.promptEn : (rc.promptTr || '')}"</div>
                             ${(!isEn && rc.promptEn) ? `<div style="margin-top: 6px; color: var(--text-muted); font-style: italic; font-size: 0.75rem;"><strong>EN:</strong> "${rc.promptEn}"</div>` : ''}
-                            ${rc.meta ? `<div style="margin-top: 8px; font-family: var(--font-mono); font-size: 0.72rem; color: #34d399;">⚡ ${(isEn && rc.metaEn) ? rc.metaEn : rc.meta}</div>` : ''}
+                            ${rc.meta ? `<div style="margin-top: 8px; font-family: var(--font-mono); font-size: 0.72rem; color: #34d399;">${(isEn && rc.metaEn) ? rc.metaEn : rc.meta}</div>` : ''}
                           </div>
                           ${rc.outputImg ? `
                             <div class="proof-img-card js-lightbox-trigger" role="button" tabindex="0" data-lightbox-src="${escapeHtml(rc.outputImg)}" data-lightbox-caption="${escapeHtml(outCap)}">
@@ -741,42 +860,6 @@ class ProcessEngine:
               </div>
             ` : ''}
 
-            <!-- Neden Geliştirdim? Doğal Geliştirici Hikayesi -->
-            <div class="case-study-box developer-story-card">
-              <div class="case-box-title-row">
-                <span class="case-box-num">01</span>
-                <h3 class="case-box-header">${isEn ? 'Why Did I Build This Project? (Developer Story)' : 'Neden Bu Projeyi Geliştirdim? (Geliştirici Hikayesi)'}</h3>
-              </div>
-              <p class="case-box-text">${projectWhyStory}</p>
-            </div>
-
-            <!-- Çözülen Problem & Teknik İhtiyaç -->
-            <div class="case-study-box">
-              <div class="case-box-title-row">
-                <span class="case-box-num">02</span>
-                <h3 class="case-box-header">${isEn ? 'Problem Encountered & Technical Need' : 'Karşılaşılan Problem & Teknik İhtiyaç'}</h3>
-              </div>
-              <p class="case-box-text">${problemText}</p>
-            </div>
-
-            <!-- Öne Çıkan Yetenekler & Çözümler -->
-            ${features.length > 0 ? `
-              <div class="case-study-box">
-                <div class="case-box-title-row">
-                  <span class="case-box-num">03</span>
-                  <h3 class="case-box-header">${isEn ? 'Key Features & Solutions' : 'Öne Çıkan Özellikler & Çözümler'}</h3>
-                </div>
-                <ul class="features-check-stack">
-                  ${features.map(feat => `
-                    <li>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                      <span>${feat}</span>
-                    </li>
-                  `).join('')}
-                </ul>
-              </div>
-            ` : ''}
-
           </div>
 
           <!-- ================= TAB 2: SİSTEM AKIŞ ŞEMASI ================= -->
@@ -791,7 +874,7 @@ class ProcessEngine:
               
               ${pipelineSteps ? `
                 <div class="system-pipeline-container" style="margin-top: 20px;">
-                  <div class="system-pipeline-header">⚡ ${isEn ? 'Step-by-Step Execution Pipeline:' : 'Adım Adım Çalışma Akışı:'}</div>
+                  <div class="system-pipeline-header">${isEn ? 'Step-by-Step Execution Pipeline:' : 'Adım Adım Çalışma Akışı:'}</div>
                   <div class="system-pipeline-steps">
                     ${pipelineSteps.map((step, idx) => `
                       <div class="pipeline-step-node">
@@ -821,7 +904,7 @@ class ProcessEngine:
               
               ${challengeText ? `
                 <div class="case-box-subdetail" style="margin-top: 24px;">
-                  <div class="case-subdetail-tag">💡 ${isEn ? 'Most Critical Technical Challenge Solved' : 'Çözülen En Kritik Teknik Zorluk'}</div>
+                  <div class="case-subdetail-tag">${isEn ? 'Most Critical Technical Challenge Solved' : 'Çözülen En Kritik Teknik Zorluk'}</div>
                   <p class="case-box-text">${challengeText}</p>
                 </div>
               ` : ''}
@@ -1008,6 +1091,44 @@ class ProcessEngine:
       btn.addEventListener('click', () => {
         const targetTab = btn.getAttribute('data-target-tab');
         if (targetTab) switchTab(targetTab);
+      });
+    });
+
+    // Stüdyo Medya Dock Sekmeleri (Ekran Görüntüleri <-> Tanıtım Videosu) & Hızlı Geçişler
+    const activateDockTab = (target) => {
+      const dock = container.querySelector('#studioMediaDock');
+      if (!dock) return;
+      dock.querySelectorAll('.studio-dock-tab-btn').forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-dock-tab') === target);
+      });
+      dock.querySelectorAll('.studio-dock-panel').forEach(p => {
+        const isTarget = p.getAttribute('data-dock-panel') === target;
+        p.classList.toggle('active', isTarget);
+        if (!isTarget) {
+          const vid = p.querySelector('video');
+          if (vid && !vid.paused) vid.pause();
+        }
+      });
+    };
+
+    container.querySelectorAll('.studio-dock-tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-dock-tab');
+        if (target) activateDockTab(target);
+      });
+    });
+
+    container.querySelectorAll('.evidence-jump-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        const target = pill.getAttribute('data-dock-target');
+        if (target === 'proof') {
+          const proofEl = container.querySelector('#proofComparisonSection');
+          if (proofEl) proofEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else if (target === 'gallery' || target === 'video') {
+          activateDockTab(target);
+          const dock = container.querySelector('#studioMediaDock');
+          if (dock) dock.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       });
     });
 

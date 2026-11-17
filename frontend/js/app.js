@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Öne Çıkan Proje Kartlarına Tıklandığında Doğrudan Projeler Sayfasında Detayını Açma
-  const homeProjectSliderCards = document.querySelectorAll('.home-project-slider-card');
+  const homeProjectSliderCards = document.querySelectorAll('.home-project-slider-card, .flagship-item');
   homeProjectSliderCards.forEach(card => {
     card.addEventListener('click', () => {
       const projId = card.getAttribute('data-project-id');
@@ -182,6 +182,15 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Kart Üzerinde Fare Takip Eden Radial Spotlight (--mouse-x / --mouse-y)
+  document.addEventListener('mousemove', (e) => {
+    const targetCard = e.target.closest('.showcase-card, .home-project-slider-card, .portfolio-wide-card');
+    if (!targetCard) return;
+    const rect = targetCard.getBoundingClientRect();
+    targetCard.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+    targetCard.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+  }, { passive: true });
 
   // Ana Sayfa Odak Kartlarına Tıklandığında İlgili Kategoriyle Projelere Geçiş
   const showcaseCards = document.querySelectorAll('.showcase-card');

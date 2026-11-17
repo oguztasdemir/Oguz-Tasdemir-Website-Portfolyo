@@ -7,6 +7,13 @@
   height: 100%;
   overflow: hidden;
   background-color: var(--bg-app-deep);
+  background-image: radial-gradient(rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+[data-theme="light"] .workbench-main-area,
+[data-theme="light"] .workbench-viewport {
+  background-image: radial-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px);
 }
 
 .workspace-view {
@@ -19,7 +26,7 @@
 .workspace-view.active {
   display: flex;
   opacity: 1;
-  animation: viewFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: studioStageEnter 0.28s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @keyframes viewFadeIn {
@@ -423,7 +430,7 @@
   padding-bottom: 60px;
 }
 
-/* Geniş Proje Kartı Tasarımı (Optimize Edilmiş Kompakt Hiyerarşi) */
+/* Geniş Proje Kartı Tasarımı (Optimize Edilmiş Kompakt Hiyerarşi + Spotlight + Medya Önizleme) */
 .portfolio-wide-card {
   background: var(--bg-panel);
   border: 1px solid var(--border-panel);
@@ -432,15 +439,98 @@
   display: flex;
   flex-direction: column;
   cursor: pointer;
-  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
   position: relative;
+  overflow: hidden;
+}
+
+.portfolio-wide-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(360px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(56, 189, 248, 0.08), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.portfolio-wide-card:hover::before {
+  opacity: 1;
+}
+
+.portfolio-wide-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .portfolio-wide-card:hover {
   transform: translateY(-2px);
-  border-color: #4a5568;
+  border-color: rgba(56, 189, 248, 0.45);
   background: var(--bg-card-hover);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
+.wide-card-body-split {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  flex: 1;
+}
+
+.wide-card-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.wide-card-preview-box {
+  width: 144px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--border-card);
+  background: #07090e;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.wide-card-preview-box img {
+  width: 100%;
+  height: 88px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.28s ease;
+}
+
+.portfolio-wide-card:hover .wide-card-preview-box img {
+  transform: scale(1.05);
+}
+
+.wide-card-preview-count {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  background: rgba(9, 11, 16, 0.85);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+  .wide-card-body-split {
+    flex-direction: column;
+  }
+  .wide-card-preview-box {
+    width: 100%;
+  }
+  .wide-card-preview-box img {
+    height: 130px;
+  }
 }
 
 .portfolio-wide-card.last-focused-card {

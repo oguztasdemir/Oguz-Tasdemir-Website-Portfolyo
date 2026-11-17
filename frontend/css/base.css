@@ -5,39 +5,39 @@
    ========================================================================== */
 
 :root {
-  /* MAT KARBON & DOĞAL GRAFİT PALETİ (Sade, Profesyonel Koyu Tema) */
-  --bg-app-deep: #0e1117;         /* Sade koyu zemin */
-  --bg-panel: #161b22;            /* Paneller ve kartlar */
-  --bg-panel-elevated: #1f242c;   /* Yükseltilmiş bloklar */
-  --bg-card: #161b22;             /* Kart gövdesi */
-  --bg-card-hover: #1c222b;       /* Kart hover */
-  --bg-card-active: #212833;      /* Aktif öğe */
-  --bg-input: #12151b;            /* Giriş alanları */
-  --bg-tag: #21262d;
+  /* OBSİDİYEN & KARBON STÜDYO PALETİ */
+  --bg-app-deep: #090b10;         /* Derin obsidyen zemin */
+  --bg-panel: #10131a;            /* Stüdyo paneller ve kartlar */
+  --bg-panel-elevated: #161a24;   /* Yükseltilmiş bloklar */
+  --bg-card: #11151e;             /* Kart gövdesi */
+  --bg-card-hover: #171c28;       /* Kart hover */
+  --bg-card-active: #1d2332;      /* Aktif öğe */
+  --bg-input: #0d1017;            /* Giriş alanları */
+  --bg-tag: rgba(255, 255, 255, 0.04);
 
-  --border-dim: #2b313a;          /* Temiz, sakin kenarlık */
-  --border-panel: #30363d;        /* Panel sınırları */
-  --border-card: #2d333b;         /* Kart sınırları */
-  --border-card-active: #4a7bb0;  /* Dengeli, sakin mavi sınır */
-  --border-focus: #4a7bb0;
+  --border-dim: rgba(255, 255, 255, 0.07);          /* İnce kenarlık */
+  --border-panel: rgba(255, 255, 255, 0.11);        /* Panel sınırları */
+  --border-card: rgba(255, 255, 255, 0.09);         /* Kart sınırları */
+  --border-card-active: rgba(56, 189, 248, 0.45);   /* Aktif vurgu sınırı */
+  --border-focus: rgba(56, 189, 248, 0.55);
 
-  --text-bright: #f0f3f6;         /* Doğal beyaz başlıklar */
-  --text-main: #c9d1d9;           /* Rahat okunur nötr metin */
+  --text-bright: #f8fafc;         /* Yüksek okunaklı başlıklar */
+  --text-main: #cbd5e1;           /* Gövde metni */
   --text-muted: #8b949e;          /* İkincil metin */
 
-  --accent-blue: #58a6ff;         /* Klasik GitHub/mühendislik mavisi (göz yormaz) */
-  --accent-emerald: #3fb950;      /* Sakin yeşil */
-  --accent-amber: #d29922;        /* Sakin altın sarısı */
-  --accent-red: #f85149;          /* Kırmızı */
+  --accent-blue: #38bdf8;         /* Hassas buz mavisi vurgu */
+  --accent-emerald: #10b981;      /* Doğrulanmış durum yeşili */
+  --accent-amber: #f59e0b;        /* Metrik vurgusu */
+  --accent-red: #f87171;          /* Uyarı / hata */
 
   --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
   --radius-xs: 4px;
-  --radius-sm: 6px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
 }
 
 /* ==========================================================================
@@ -142,6 +142,28 @@ html, body {
   height: 100vh;
   overflow: hidden;
   background-color: var(--bg-app-deep);
+}
+
+@keyframes studioStageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes staggeredCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* ==========================================================================
