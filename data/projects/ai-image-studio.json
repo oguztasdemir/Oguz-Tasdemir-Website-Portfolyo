@@ -30,49 +30,139 @@
   "screenshots": [
     {
       "src": "frontend/assets/projects/ai-image-studio/screenshot_2_img2img_workspace.png",
-      "caption": "Image-to-Image Stüdyo Çalışma Alanı & Canlı Çeviri"
+      "caption": "Image-to-Image Stüdyo Çalışma Alanı & Canlı Çeviri",
+      "captionEn": "Image-to-Image Studio Workspace & Live Translation"
     },
     {
       "src": "frontend/assets/projects/ai-image-studio/screenshot_1_projects_hub.png",
-      "caption": "Proje Merkezi & Oturum Kartları"
+      "caption": "Proje Merkezi & Oturum Kartları",
+      "captionEn": "Projects Hub & Session Management Cards"
     },
     {
       "src": "frontend/assets/projects/ai-image-studio/screenshot_3_model_selector.png",
-      "caption": "Çoklu Model Seçici (SDXL, InstructPix2Pix, Inpaint)"
+      "caption": "Çoklu Model Seçici (SDXL, InstructPix2Pix, Inpaint)",
+      "captionEn": "Multi-Model Selector (SDXL, InstructPix2Pix, Inpaint)"
     },
     {
       "src": "frontend/assets/projects/ai-image-studio/screenshot_4_hardware_telemetry.png",
-      "caption": "Canlı GPU & VRAM Donanım Telemetri Monitörü"
+      "caption": "Canlı GPU & VRAM Donanım Telemetri Monitörü",
+      "captionEn": "Live GPU & VRAM Hardware Telemetry Monitor"
     },
     {
       "src": "frontend/assets/projects/ai-image-studio/screenshot_5_models_manager.png",
-      "caption": "Model Ağırlıkları & VRAM Önyükleme Yöneticisi"
+      "caption": "Model Ağırlıkları & VRAM Önyükleme Yöneticisi",
+      "captionEn": "Model Weights & VRAM Preload Manager"
     }
   ],
   "resultsComparison": [
     {
       "modeTitle": "MOD 1: Image-to-Image (Görselden Görsele Dönüşüm #1 — Gün Batımı)",
+      "modeTitleEn": "MODE 1: Image-to-Image (Transformation #1 — Golden Hour)",
       "inputImg": "frontend/assets/projects/ai-image-studio/result_img2img_input.jpg",
       "promptTr": "Sinematik altın saat gün batımı ışıklandırması, sıcak iç mekan aydınlatması ve havuz yansıması",
       "promptEn": "Cinematic golden hour sunset lighting, warm interior illumination and pool reflection, 8k architectural render",
       "meta": "Model: InstructPix2Pix / SDXL • Süre: 4.2 sn • Çözünürlük: 1024x1024",
+      "metaEn": "Model: InstructPix2Pix / SDXL • Time: 4.2s • Resolution: 1024x1024",
       "outputImg": "frontend/assets/projects/ai-image-studio/result_img2img_output_dusk.jpg"
     },
     {
       "modeTitle": "MOD 1: Image-to-Image (Görselden Görsele Dönüşüm #2 — Kış & Kar Atmosferi)",
+      "modeTitleEn": "MODE 1: Image-to-Image (Transformation #2 — Winter Snow)",
       "inputImg": "frontend/assets/projects/ai-image-studio/result_img2img_input.jpg",
       "promptTr": "Kış mevsimi, yoğun kar yağışı, çam ağaçları üzerinde kar ve içeride sıcak şömine ışığı",
       "promptEn": "Winter season, heavy snowfall, snow-covered pine trees and warm cozy fireplace glow inside",
       "meta": "Model: InstructPix2Pix / SDXL • Süre: 4.8 sn • Çözünürlük: 1024x1024",
+      "metaEn": "Model: InstructPix2Pix / SDXL • Time: 4.8s • Resolution: 1024x1024",
       "outputImg": "frontend/assets/projects/ai-image-studio/result_img2img_output_winter.jpg"
     },
     {
       "modeTitle": "MOD 2: Text-to-Image (Metinden Sıfırdan Görsel Üretim — 1024px SDXL)",
+      "modeTitleEn": "MODE 2: Text-to-Image (Synthesis from Text — 1024px SDXL)",
       "inputImg": null,
       "promptTr": "Gece vakti fütüristik Neo-Tokyo siberpunk sokak arası, parlayan mavi ve kehribar holografik tabelalar, yağmurlu taş zeminde neon yansımalar, sinematik sis, 8k gerçekçi mimari render",
       "promptEn": "Futuristic neo-Tokyo cyberpunk alleyway at night, glowing holographic signs, rain-slicked cobblestones reflecting neon blue and amber lights, cinematic volumetric fog, 8k photorealistic",
       "meta": "Model: Playground v2.5 Aesthetic (SDXL) • Süre: 3.9 sn • Çözünürlük: 1024x1024 (25 Adım)",
+      "metaEn": "Model: Playground v2.5 Aesthetic (SDXL) • Time: 3.9s • Resolution: 1024x1024 (25 Steps)",
       "outputImg": "frontend/assets/projects/ai-image-studio/result_txt2img_cyberpunk.jpg"
+    }
+  ],
+  "videoUrl": "frontend/assets/projects/ai-image-studio/demo_video.webm",
+  "pipelineSteps": [
+    {
+      "num": "01",
+      "title": "Model & Oturum Seçimi",
+      "desc": "SDXL / InstructPix2Pix / Inpaint",
+      "detail": "Proje oturumu açılır ve kullanılacak yerel diffüzyon modeli seçilir."
+    },
+    {
+      "num": "02",
+      "title": "Görsel & Türkçe Komut Girişi",
+      "desc": "Canlı Otomatik Çeviri & Sözlük",
+      "detail": "Kaynak görsel ve Türkçe prompt anlık İngilizce model girdisine çevrilir."
+    },
+    {
+      "num": "03",
+      "title": "FP16 CUDA Tensör Üretimi",
+      "desc": "VRAM Koruma & Bellek Yönetimi",
+      "detail": "Attention slicing ve FP16 ile 8 GB VRAM sınırını aşmadan çıktı üretilir."
+    },
+    {
+      "num": "04",
+      "title": "Yerel SQLite Arşiv & Önizleme",
+      "desc": "Meta-Veri Kaydı & Tek Tıkla Tekrar",
+      "detail": "Üretilen görsel tohum/adım parametreleriyle diske ve arşive kaydedilir."
+    }
+  ],
+  "folderTree": "📁 Görsel Oluşturma/\n├── 📄 main.py                      # FastAPI sunucu başlatıcı, statik web ve endpointler\n├── 📄 BASLAT.bat                   # Tek tıkla yerel başlatma betiği\n├── 📁 app/                         # Çekirdek iş mantığı ve AI motoru\n│   ├── 📄 database.py              # SQLite WAL modu & proje/üretim geçmişi\n│   ├── 📄 image_engine.py          # Diffusers / PyTorch CUDA & VRAM yöneticisi\n│   └── 📄 translator.py            # Önbellekli + çevrimdışı sözlük destekli çevirmen\n├── 📁 web/                         # Koyu cam (glassmorphism) web arayüzü\n│   ├── 📄 index.html               # Çoklu mod ve modal iskeleti\n│   ├── 📄 style.css                # Modern stüdyo stilleri\n│   ├── 📄 app.js                   # Frontend koordinatörü\n│   └── 📁 js/\n│       ├── 📁 core/ (i18n.js, state.js, storage.js)\n│       └── 📁 services/api.js      # API istemcisi\n└── 📁 data/                        # SQLite veritabanı ve yerel çıktılar",
+  "codeFiles": {
+    "main.py": "import os\nimport sys\nimport time\nimport io\nimport base64\nimport webbrowser\nimport threading\nfrom pathlib import Path\nfrom fastapi import FastAPI, UploadFile, File, Form, HTTPException, Request\nfrom fastapi.staticfiles import StaticFiles\nfrom fastapi.responses import JSONResponse, Response\nfrom fastapi.middleware.cors import CORSMiddleware\nimport uvicorn\n\nfrom app.database import (\n    init_db, log_action, save_generation_record, get_generation_history, \n    delete_generation_record, clear_all_generation_history, OUTPUTS_DIR,\n    get_projects, create_project, delete_project, rename_project\n)\nfrom app.image_engine import engine\nfrom app.translator import translate_to_english\n\nBASE_DIR = Path(__file__).resolve().parent\nWEB_DIR = BASE_DIR / \"web\"\n\napp = FastAPI(title=\"Img2Img Studio\", docs_url=None, redoc_url=None)\n\napp.add_middleware(\n    CORSMiddleware,\n    allow_origins=[\"*\"],\n    allow_credentials=True,\n    allow_methods=[\"*\"],\n    allow_headers=[\"*\"],\n)\n\n# Custom No-Cache & Clean Log Middleware (VIBE Standards)\n@app.middleware(\"http\")\nasync def vibe_middleware(request: Request, call_next):\n    path = request.url.path\n    if path in [\"/\", \"/index.html\"]:\n        print(f\"\\n[🔄 SAYFA YENİLENDİ / F5] Web arayüzü başarıyla yenilendi -> {request.client.host if request.client else '127.0.0.1'}\")\n    \n    response = await call_next(request)\n    # F5 no-cache headers\n    response.headers[\"Cache-Control\"] = \"no-store, no-cache, must-revalidate, max-age=0\"\n    response.headers[\"Pragma\"] = \"no-cache\"\n    response.headers[\"Expires\"] = \"0\"\n    return response\n\n@app.get(\"/api/models\")\ndef get_models():\n    return engine.get_models_info()\n\n@app.get(\"/api/hardware\")\ndef get_hardware():\n    return engine.get_models_info()\n\n@app.post(\"/api/load-model\")\ndef preload_model(model_id: str = Form(...), mode: str = Form(\"img2img\")):\n    def _do_load():\n# ... (devamı repo kaynak kodunda)",
+    "app/image_engine.py": "import os\nimport sys\nimport io\nimport time\nimport base64\nfrom pathlib import Path\nfrom PIL import Image, ImageOps, ImageFilter\nimport numpy as np\n\n# Dynamically ensure Roaming user site-packages are visible if needed\nroaming_site = os.path.expanduser(r\"~\\AppData\\Roaming\\Python\\Python313\\site-packages\")\nif os.path.exists(roaming_site) and roaming_site not in sys.path:\n    sys.path.insert(0, roaming_site)\n\n# E: diski öncelikli model ve cache yolu (Yarın E diski takılınca doğrudan orayı kullanır)\nMODELS_CACHE_DIR = r\"E:\\huggingface\" if os.path.exists(r\"E:\\huggingface\") else os.path.expanduser(r\"~/.cache/huggingface/hub\")\nos.environ[\"HF_HOME\"] = MODELS_CACHE_DIR\n\ndef resolve_model_path(local_subpath: str, hf_repo_id: str) -> str:\n    e_path = os.path.join(r\"E:\\huggingface\", local_subpath)\n    if os.path.exists(e_path):\n        return e_path\n    c_path = os.path.join(MODELS_CACHE_DIR, local_subpath)\n    if os.path.exists(c_path):\n        return c_path\n    return hf_repo_id\n\nAVAILABLE_MODELS = {\n    \"smart-inpaint\": {\n        \"name\": \"Zero-Shot Smart Inpaint (Fırçasız Metinle Düzenleme)\",\n        \"path\": \"runwayml/stable-diffusion-inpainting\",\n        \"type\": \"smart-inpaint\",\n        \"desc\": \"Fırça gerektirmez! 'Pantolonu kaldır', 'ceketi siyah yap' gibi komutlardaki nesneyi otomatik algılar ve düzenler.\",\n        \"default_steps\": 25,\n        \"default_guidance\": 7.5,\n        \"default_strength\": 0.85\n    },\n    \"instruct-pix2pix\": {\n        \"name\": \"InstructPix2Pix (Doğal Komut Dönüştürücü)\",\n        \"path\": resolve_model_path(r\"models--timbrooks--instruct-pix2pix\\snapshots\\31519b5cb02a7fd89b906d88731cd4d6a7bbf88d\", \"timbrooks/instruct-pix2pix\"),\n        \"type\": \"instruct-pix2pix\",\n        \"desc\": \"Orijinal kişiyi ve kıyafeti bozmadan saç, gözlük, arka plan gibi hedefli kısımları dönüştürür.\",\n        \"default_steps\": 30,\n        \"default_guidance\": 7.5,\n        \"default_image_guidance\": 1.85\n    },\n    \"sdxl-turbo\": {\n        \"name\": \"SDXL Turbo (Süper Hızlı Dönüşüm)\",\n        \"path\": resolve_model_path(r\"models--stabilityai--sdxl-turbo\\snapshots\\71153311d3dbb46851df1931d3ca6e939de83304\", \"stabilityai/sdxl-turbo\"),\n        \"type\": \"img2img\",\n        \"desc\": \"1-4 adımda anında yüksek çözünürlüklü görsel üretir.\",\n        \"default_steps\": 4,\n        \"default_guidance\": 0.0,\n        \"default_strength\": 0.5\n    },\n    \"playground-v2.5\": {\n        \"name\": \"Playground v2.5 Aesthetic (Ultra Detay 1024px)\",\n        \"path\": resolve_model_path(r\"models--playgroundai--playground-v2.5-1024px-aesthetic\\snapshots\\1e032f13f2fe6db2dc49947dbdbd196e753de573\", \"playgroundai/playground-v2.5-1024px-aesthetic\"),\n        \"type\": \"img2img\",\n        \"desc\": \"En yüksek fotoğraf gerçekçiliği ve estetik kalite sunan 1024px SDXL motoru.\",\n# ... (devamı repo kaynak kodunda)",
+    "app/translator.py": "def normalize_text(text: str) -> str:\n    t = text.lower()\n    mapping = {\n        'ı': 'i', 'ğ': 'g', 'ü': 'u', 'ş': 's', 'ö': 'o', 'ç': 'c',\n        'İ': 'i', 'Ğ': 'g', 'Ü': 'u', 'Ş': 's', 'Ö': 'o', 'Ç': 'c'\n    }\n    for k, v in mapping.items():\n        t = t.replace(k, v)\n    return t\n\ndef translate_to_english(text: str) -> str:\n    if not text or not text.strip():\n        return \"\"\n    \n    text = text.strip()\n    if text in _TRANSLATION_CACHE:\n        return _TRANSLATION_CACHE[text]\n    norm = normalize_text(text)\n    \n    # Hizli kaldirma kurali kontrolu\n    if any(rm in norm for rm in [\"kaldir\", \"cikar\", \"sil\", \"yok et\"]):\n        for tr_word, en_word in FAST_DICTIONARY.items():\n            if tr_word in norm and en_word not in [\"remove\", \"turn into\", \"replace with\"]:\n                res = f\"remove {en_word}, natural background, realistic skin and texture\"\n                _TRANSLATION_CACHE[text] = res\n                return res\n    \n    try:\n        translated = GoogleTranslator(source='auto', target='en').translate(text)\n        if translated:\n            _TRANSLATION_CACHE[text] = translated\n            return translated\n    except Exception as e:\n        print(f\"Ceviri hatasi (Yerel sozluk devreye girdi): {e}\")\n        \n    # Offline / Rate-limit yerel sozluk fallback\n    out_words = norm\n    for tr_k, en_v in sorted(FAST_DICTIONARY.items(), key=lambda x: -len(x[0])):\n        out_words = out_words.replace(tr_k, en_v)\n    _TRANSLATION_CACHE[text] = out_words\n    return out_words\n\ndef parse_target_and_prompt(text: str):\n    norm = normalize_text(text)\n    en_text = translate_to_english(text).lower()\n    \n    clothing_keywords = [\n        \"pants\", \"trousers\", \"jeans\", \"shorts\", \"skirt\", \"dress\",\n        \"jacket\", \"coat\", \"hoodie\", \"shirt\", \"t-shirt\", \"sweater\",\n        \"shoes\", \"hat\", \"glasses\", \"sunglasses\", \"hair\", \"beard\"\n    ]\n    \n    target_object = None\n    for kw in clothing_keywords:\n        if kw in en_text:\n            target_object = kw\n            break\n            \n    if not target_object:\n        words = en_text.split()\n        target_object = words[-1] if words else \"object\"\n        \n    is_removal = any(r in en_text for r in [\"remove\", \"take off\", \"delete\", \"without\", \"clear\"])\n    if is_removal:\n        replacement = \"seamless natural texture, high quality, clean background, matching anatomy\"\n    else:\n        replacement = en_text\n        \n    return target_object, replacement\n",
+    "web/app.js": "import { state } from './js/core/state.js';\nimport { translations } from './js/core/i18n.js';\nimport { \n  fetchProjects, createProjectApi, renameProjectApi, deleteProjectApi,\n  fetchModels, fetchHardware, preloadModel, \n  generateImage, generateTxt2Img, \n  fetchHistory, deleteHistoryItem, clearAllHistory, fetchTranslation \n} from './js/services/api.js';\nimport { saveToCache, getFromCache, removeFromCache } from './js/core/storage.js';\n\n// DOM Elements - Top Status\nconst gpuStatusEl = document.getElementById('gpuStatus');\nconst systemStatusDot = document.getElementById('systemStatusDot');\nconst topVramText = document.getElementById('topVramText');\nconst topVramBar = document.getElementById('topVramBar');\n\n// Projects Hub vs Active Workspace Elements\nconst projectsHubContainer = document.getElementById('projectsHubContainer');\nconst activeWorkspaceContainer = document.getElementById('activeWorkspaceContainer');\nconst projectsCardGrid = document.getElementById('projectsCardGrid');\nconst openNewProjectModalBtn = document.getElementById('openNewProjectModalBtn');\nconst btnBackToProjectsHub = document.getElementById('btnBackToProjectsHub');\nconst currentActiveProjectTitle = document.getElementById('currentActiveProjectTitle');\nconst clearProjectArchiveBtn = document.getElementById('clearProjectArchiveBtn');\nconst hubMainTitle = document.getElementById('hubMainTitle');\nconst hubMainSub = document.getElementById('hubMainSub');\n\n// Modals\nconst newProjectModal = document.getElementById('newProjectModal');\nconst closeProjectModalBtn = document.getElementById('closeProjectModalBtn');\nconst cancelProjectModalBtn = document.getElementById('cancelProjectModalBtn');\nconst confirmCreateProjectBtn = document.getElementById('confirmCreateProjectBtn');\nconst newProjectNameInput = document.getElementById('newProjectNameInput');\nconst newProjectDescInput = document.getElementById('newProjectDescInput');\n\nconst editProjectModal = document.getElementById('editProjectModal');\nconst closeEditProjectModalBtn = document.getElementById('closeEditProjectModalBtn');\nconst cancelEditProjectModalBtn = document.getElementById('cancelEditProjectModalBtn');\nconst confirmEditProjectBtn = document.getElementById('confirmEditProjectBtn');\nconst editProjectOldName = document.getElementById('editProjectOldName');\nconst editProjectNameInput = document.getElementById('editProjectNameInput');\nconst editProjectDescInput = document.getElementById('editProjectDescInput');\n\nconst projectDetailsModal = document.getElementById('projectDetailsModal');\nconst closeProjectDetailsModalBtn = document.getElementById('closeProjectDetailsModalBtn');\nconst detailsProjectName = document.getElementById('detailsProjectName');\nconst detailsProjectDesc = document.getElementById('detailsProjectDesc');\nconst detailsProjectCount = document.getElementById('detailsProjectCount');\nconst detailsProjectDate = document.getElementById('detailsProjectDate');\nconst btnEnterProjectFromDetails = document.getElementById('btnEnterProjectFromDetails');\n\nconst hardwareModal = document.getElementById('hardwareModal');\nconst modelsModal = document.getElementById('modelsModal');\nconst languageModal = document.getElementById('languageModal');\nconst settingsModal = document.getElementById('settingsModal');\n# ... (devamı repo kaynak kodunda)",
+    "requirements.txt": "fastapi>=0.110.0\nuvicorn>=0.29.0\ntorch>=2.2.0\ndiffusers>=0.27.0\ntransformers>=4.39.0\npillow>=10.0.0\npsutil>=5.9.0\ndeep-translator>=1.11.4\n"
+  },
+  "qaPool": [
+    {
+      "q": "S1: Bu projeyi geliştirmeye neden ihtiyaç duydunuz? Çözdüğünüz asıl darboğaz neydi?",
+      "qEn": "Q1: Why did you build this project? What bottleneck did it solve?",
+      "a": "Mevcut hazır araçların (ComfyUI / A1111) karmaşık node yapısını ortadan kaldırmak, harici ücretli servislere veya API anahtarlarına bağımlı kalmadan doğrudan yerel donanım üzerinde hızlı sonuç üreten hafif bir stüdyo arayüzü kurguladım.",
+      "aEn": "To eliminate the cluttered node graph complexity of tools like ComfyUI and run rapid local GPU synthesis without external paid API keys or cloud dependencies."
+    },
+    {
+      "q": "S2: Neden bu mimariyi ve teknoloji yığınını tercih ettiniz?",
+      "qEn": "Q2: Why did you choose this architecture and tech stack?",
+      "a": "PyTorch + Diffusers motorunu FastAPI ve hafif Vanilla JS arayüzüyle bağlayarak düşük bellek tüketimi, doğrudan CUDA VRAM telemetrisi ve sıfır framework şişkinliğiyle anlık yanıt veren modüler bir yapı kurdum.",
+      "aEn": "Connecting PyTorch + Diffusers via FastAPI to a lightweight Vanilla JS UI delivers low memory overhead, live CUDA VRAM telemetry, and zero frontend framework bloat."
+    },
+    {
+      "q": "S3: Kod mimarisinde modülerliği ve sürdürülebilirliği nasıl sağladınız?",
+      "qEn": "Q3: How did you structure modularity and maintainability?",
+      "a": "Model yönetimi (image_engine.py), çeviri/sözlük katmanı (translator.py), SQLite WAL veritabanı (database.py) ve arayüz modülleri (state, api, i18n) tek sorumluluk prensibiyle ayrı katmanlarda izole edildi.",
+      "aEn": "Model lifecycle (image_engine.py), translation fallback (translator.py), SQLite WAL storage (database.py), and UI modules are strictly separated by responsibility."
+    },
+    {
+      "q": "S4: Geliştirme sürecinde karşılaştığınız en büyük teknik zorluk neydi ve nasıl çözdünüz?",
+      "qEn": "Q4: What was the biggest technical challenge and how did you solve it?",
+      "a": "8 GB VRAM sınırında yüksek çözünürlüklü SDXL modellerinin bellek taşması (CUDA OOM) yapması ve harici disk/ağ kesintilerinde sistemin tıkanmasıydı. Attention slicing, FP16 bellek boşaltma, resolve_model_path() disk fallback ve çevrimdışı çeviri sözlüğüyle çözüldü.",
+      "aEn": "Preventing CUDA OOM on 8GB VRAM GPUs and avoiding missing external disk/API failures—solved via FP16 + attention slicing, dynamic path fallback, and an offline dictionary cache."
+    },
+    {
+      "q": "S5: Veri miktarı veya eşzamanlı istek sayısı artsaydı nasıl ölçeklerdiniz?",
+      "qEn": "Q5: How would you scale this for concurrent requests?",
+      "a": "Tek GPU kuyruğunu Redis/Celery tabanlı asenkron işçi (worker) havuzuna taşıyıp üretim isteklerini sıralı veya çoklu GPU node'larına dağıtarak paralel ölçeklerdim.",
+      "aEn": "Move single-GPU inference into a Redis/Celery worker queue to distribute generation jobs cleanly across worker nodes."
+    },
+    {
+      "q": "S6: Veri bütünlüğü ve kaynak yönetimi adına hangi önlemleri aldınız?",
+      "qEn": "Q6: What safeguards handle data integrity and resource cleanup?",
+      "a": "Yeni model yüklenmeden önce aktif pipeline silinip torch.cuda.empty_cache() çağrılır; SQLite WAL modu ve timeout ayarlarıyla eşzamanlı okuma/yazma kilitlenmeleri önlenir.",
+      "aEn": "Active pipelines are explicitly unloaded with torch.cuda.empty_cache() before switching models, while SQLite WAL mode prevents database lock contention."
+    },
+    {
+      "q": "S7: Projeye bugün sıfırdan başlasaydınız neyi farklı yapardınız?",
+      "qEn": "Q7: What would you do differently starting from scratch today?",
+      "a": "Model çıkarım adımlarını WebSocket üzerinden gerçek zamanlı ilerleme akışıyla sunup, API şemaları ve UI sınıfları için otomatik bütünlük testlerini en baştan entegre ederdim.",
+      "aEn": "Stream step-by-step diffusion progress over WebSockets and add automated UI class/API contract tests from day one."
     }
   ]
 }

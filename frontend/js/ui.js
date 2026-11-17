@@ -321,6 +321,9 @@ const UI = {
       if (isEn && pEn.pipelineSteps && Array.isArray(pEn.pipelineSteps)) {
         return pEn.pipelineSteps;
       }
+      if (!isEn && Array.isArray(project.pipelineSteps) && project.pipelineSteps.length > 0) {
+        return project.pipelineSteps;
+      }
       
       const pid = (project.id || '').toLowerCase();
       const flowsTr = {
@@ -448,6 +451,25 @@ class ProcessEngine:
           const pkg = t.toLowerCase().split(' ')[0].replace(/[^a-z0-9_-]/g, '');
           return `${pkg || 'core-engine'} >= 1.0.0`;
         }).join('\n')
+    };
+
+    const escapeHtml = (str) => String(str || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+
+    const activeFiles = (project.codeFiles && typeof project.codeFiles === 'object' && Object.keys(project.codeFiles).length > 0)
+      ? project.codeFiles
+      : sampleFiles;
+    const activeFileKeys = Object.keys(activeFiles);
+    const firstFileKey = activeFileKeys[0] || 'main.py';
+    const getFileIcon = (fname) => {
+      if (fname.endsWith('.py')) return '🐍';
+      if (fname.endsWith('.js') || fname.endsWith('.ts')) return '📜';
+      if (fname.endsWith('.css')) return '🎨';
+      if (fname.endsWith('.html')) return '🌐';
+      if (fname.endsWith('.txt') || fname.endsWith('.md')) return '📦';
+      return '📄';
     };
 
     container.innerHTML = `
@@ -631,6 +653,21 @@ class ProcessEngine:
               </div>
             </div>
 
+            ${project.videoUrl ? `
+              <div class="case-study-box">
+                <div class="case-box-title-row">
+                  <span class="case-box-num">🎥</span>
+                  <h3 class="case-box-header">${isEn ? 'Live Application Walkthrough Video' : 'Canlı Uygulama & Arayüz Tanıtım Videosu'}</h3>
+                </div>
+                <div style="margin-top: 14px; border-radius: 10px; overflow: hidden; border: 1px solid rgba(59, 130, 246, 0.25); background: #000;">
+                  <video controls preload="metadata" style="width: 100%; max-height: 460px; display: block;">
+                    <source src="${project.videoUrl}" type="video/webm">
+                    ${isEn ? 'Your browser does not support WebM video playback.' : 'Tarayıcınız WebM video oynatmayı desteklemiyor.'}
+                  </video>
+                </div>
+              </div>
+            ` : ''}
+
             ${(project.screenshots && project.screenshots.length > 0) ? `
               <div class="case-study-box">
                 <div class="case-box-title-row">
@@ -640,8 +677,8 @@ class ProcessEngine:
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: 14px;">
                   ${project.screenshots.map(img => `
                     <a href="${img.src}" target="_blank" rel="noopener noreferrer" style="display: block; border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; background: rgba(0,0,0,0.3); text-decoration: none; transition: transform 0.2s;">
-                      <img src="${img.src}" alt="${img.caption || project.title}" style="width: 100%; height: 175px; object-fit: cover; display: block;" loading="lazy">
-                      <div style="padding: 8px 12px; font-size: 0.76rem; color: var(--text-muted); font-family: var(--font-mono);">${img.caption || ''}</div>
+                      <img src="${img.src}" alt="${(isEn && img.captionEn) ? img.captionEn : (img.caption || project.title)}" style="width: 100%; height: 175px; object-fit: cover; display: block;" loading="lazy">
+                      <div style="padding: 8px 12px; font-size: 0.76rem; color: var(--text-muted); font-family: var(--font-mono);">${(isEn && img.captionEn) ? img.captionEn : (img.caption || '')}</div>
                     </a>
                   `).join('')}
                 </div>
@@ -657,23 +694,23 @@ class ProcessEngine:
                 <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 16px;">
                   ${project.resultsComparison.map(rc => `
                     <div style="background: rgba(15, 23, 42, 0.55); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 12px; padding: 16px;">
-                      <div style="font-size: 0.85rem; font-weight: 700; color: #60a5fa; margin-bottom: 12px; font-family: var(--font-mono);">${rc.modeTitle || ''}</div>
+                      <div style="font-size: 0.85rem; font-weight: 700; color: #60a5fa; margin-bottom: 12px; font-family: var(--font-mono);">${(isEn && rc.modeTitleEn) ? rc.modeTitleEn : (rc.modeTitle || '')}</div>
                       <div style="display: grid; grid-template-columns: ${rc.inputImg ? '1fr 1.2fr 1fr' : '1.3fr 1fr'}; gap: 14px; align-items: center;">
                         ${rc.inputImg ? `
                           <a href="${rc.inputImg}" target="_blank" rel="noopener noreferrer" style="text-decoration: none; text-align: center;">
-                            <div style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 6px; font-weight: 600;">1. GİREN GÖRSEL (INPUT)</div>
+                            <div style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 6px; font-weight: 600;">${isEn ? '1. INPUT IMAGE' : '1. GİREN GÖRSEL (INPUT)'}</div>
                             <img src="${rc.inputImg}" alt="Input" style="width: 100%; max-height: 210px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(255,255,255,0.12);">
                           </a>
                         ` : ''}
                         <div style="background: rgba(0,0,0,0.35); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px; font-size: 0.8rem; line-height: 1.5; color: var(--text-main);">
-                          <div style="font-size: 0.72rem; color: #38bdf8; font-weight: 700; margin-bottom: 6px;">${rc.inputImg ? '2. KOMUT (PROMPT) & MODEL' : '1. KOMUT (PROMPT) & PARAMETRELER'}</div>
-                          <div><strong>Prompt:</strong> "${rc.promptTr || ''}"</div>
-                          ${rc.promptEn ? `<div style="margin-top: 6px; color: var(--text-muted); font-style: italic; font-size: 0.75rem;"><strong>EN:</strong> "${rc.promptEn}"</div>` : ''}
-                          ${rc.meta ? `<div style="margin-top: 8px; font-family: var(--font-mono); font-size: 0.72rem; color: #34d399;">⚡ ${rc.meta}</div>` : ''}
+                          <div style="font-size: 0.72rem; color: #38bdf8; font-weight: 700; margin-bottom: 6px;">${rc.inputImg ? (isEn ? '2. PROMPT & MODEL' : '2. KOMUT (PROMPT) & MODEL') : (isEn ? '1. PROMPT & PARAMETERS' : '1. KOMUT (PROMPT) & PARAMETRELER')}</div>
+                          <div><strong>Prompt:</strong> "${(isEn && rc.promptEn) ? rc.promptEn : (rc.promptTr || '')}"</div>
+                          ${(!isEn && rc.promptEn) ? `<div style="margin-top: 6px; color: var(--text-muted); font-style: italic; font-size: 0.75rem;"><strong>EN:</strong> "${rc.promptEn}"</div>` : ''}
+                          ${rc.meta ? `<div style="margin-top: 8px; font-family: var(--font-mono); font-size: 0.72rem; color: #34d399;">⚡ ${(isEn && rc.metaEn) ? rc.metaEn : rc.meta}</div>` : ''}
                         </div>
                         ${rc.outputImg ? `
                           <a href="${rc.outputImg}" target="_blank" rel="noopener noreferrer" style="text-decoration: none; text-align: center;">
-                            <div style="font-size: 0.72rem; color: #34d399; margin-bottom: 6px; font-weight: 700;">${rc.inputImg ? '3. ÇIKAN GÖRSEL (OUTPUT)' : '2. ÜRETİLEN GÖRSEL (OUTPUT)'}</div>
+                            <div style="font-size: 0.72rem; color: #34d399; margin-bottom: 6px; font-weight: 700;">${rc.inputImg ? (isEn ? '3. OUTPUT IMAGE' : '3. ÇIKAN GÖRSEL (OUTPUT)') : (isEn ? '2. GENERATED IMAGE (OUTPUT)' : '2. ÜRETİLEN GÖRSEL (OUTPUT)')}</div>
                             <img src="${rc.outputImg}" alt="Output" style="width: 100%; max-height: 210px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(52, 211, 153, 0.35);">
                           </a>
                         ` : ''}
@@ -770,6 +807,23 @@ class ProcessEngine:
               ` : ''}
             </div>
 
+            ${(project.qaPool && project.qaPool.length > 0) ? `
+              <div class="case-study-box" style="margin-top: 18px;">
+                <div class="case-box-title-row">
+                  <span class="case-box-num">02</span>
+                  <h3 class="case-box-header">${isEn ? '02. Technical Q&A & Engineering Defense' : '02. Kapsamlı Teknik Soru-Cevap (Q&A)'}</h3>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 14px;">
+                  ${project.qaPool.map(qa => `
+                    <div style="background: rgba(15, 23, 42, 0.45); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 10px; padding: 14px;">
+                      <div style="font-size: 0.85rem; font-weight: 700; color: #60a5fa; margin-bottom: 6px;">${(isEn && qa.qEn) ? qa.qEn : qa.q}</div>
+                      <div style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.55;">${(isEn && qa.aEn) ? qa.aEn : qa.a}</div>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            ` : ''}
+
           </div>
 
           <!-- ================= TAB 4: HIZLI BAŞLAT & KURULUM ================= -->
@@ -829,41 +883,31 @@ class ProcessEngine:
                   <span>${isEn ? 'Project Files' : 'Proje Dosyaları'}</span>
                 </div>
                 <div class="code-tree-items-list" id="codeTreeItemsList">
-                  <button class="code-tree-file-btn active" data-file="main.py">
-                    <span class="file-icon">🐍</span>
-                    <span class="file-name">main.py</span>
-                  </button>
-                  <button class="code-tree-file-btn" data-file="backend/app.py">
-                    <span class="file-icon">⚙️</span>
-                    <span class="file-name">backend/app.py</span>
-                  </button>
-                  <button class="code-tree-file-btn" data-file="backend/core_engine.py">
-                    <span class="file-icon">🧠</span>
-                    <span class="file-name">backend/core_engine.py</span>
-                  </button>
-                  <button class="code-tree-file-btn" data-file="requirements.txt">
-                    <span class="file-icon">📦</span>
-                    <span class="file-name">requirements.txt</span>
-                  </button>
+                  ${activeFileKeys.map((fname, idx) => `
+                    <button class="code-tree-file-btn ${idx === 0 ? 'active' : ''}" data-file="${fname}">
+                      <span class="file-icon">${getFileIcon(fname)}</span>
+                      <span class="file-name">${fname}</span>
+                    </button>
+                  `).join('')}
                 </div>
 
                 <!-- Klasör Hiyerarşisi Özeti -->
                 <div class="code-tree-ascii-wrap">
                   <div class="code-tree-ascii-title">${isEn ? 'Full Directory Hierarchy:' : 'Tam Dizin Hiyerarşisi:'}</div>
-                  <pre class="code-tree-ascii-pre"><code>${folderTree}</code></pre>
+                  <pre class="code-tree-ascii-pre"><code>${escapeHtml(folderTree)}</code></pre>
                 </div>
               </div>
 
               <!-- Sağ: Kod Önizleme Penceresi -->
               <div class="code-preview-pane">
                 <div class="code-preview-header">
-                  <span class="code-preview-filename" id="codePreviewFilename">📄 main.py</span>
+                  <span class="code-preview-filename" id="codePreviewFilename">${getFileIcon(firstFileKey)} ${firstFileKey}</span>
                   <button class="code-copy-btn" id="btnCopyActiveCode">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                     <span>${isEn ? 'Copy Code' : 'Kodu Kopyala'}</span>
                   </button>
                 </div>
-                <pre class="code-preview-pre"><code id="codePreviewContent">${sampleFiles['main.py']}</code></pre>
+                <pre class="code-preview-pre"><code id="codePreviewContent">${escapeHtml(activeFiles[firstFileKey] || '')}</code></pre>
               </div>
 
             </div>
@@ -982,9 +1026,9 @@ class ProcessEngine:
         fileButtons.forEach(b => b.classList.remove('active'));
         fBtn.classList.add('active');
         const fileName = fBtn.getAttribute('data-file');
-        if (codePreviewFilename) codePreviewFilename.textContent = `📄 ${fileName}`;
-        if (codePreviewContent && sampleFiles[fileName]) {
-          codePreviewContent.textContent = sampleFiles[fileName];
+        if (codePreviewFilename) codePreviewFilename.textContent = `${getFileIcon(fileName)} ${fileName}`;
+        if (codePreviewContent && activeFiles[fileName]) {
+          codePreviewContent.textContent = activeFiles[fileName];
         }
       });
     });
