@@ -1118,6 +1118,36 @@ const PROJECTS_DATA = [
     },
     "githubUrl": "https://github.com/oguztasdemir/Altyapi-Manager",
     "visibility": "public",
+    "screenshots": [
+      {
+        "src": "assets/projects/altyapi-manager/01_dashboard_genel_bakis.png",
+        "caption": "Kulüp Gösterge Paneli (Genel Bakış, Maç Bildirimleri & Hızlı Metrikler)"
+      },
+      {
+        "src": "assets/projects/altyapi-manager/02_kadro_ve_profiller.png",
+        "caption": "Aktif Kadro Listesi, Mevki Dağılımları ve Oyuncu Kartları"
+      },
+      {
+        "src": "assets/projects/altyapi-manager/03_arda_guler_fm_karnesi.png",
+        "caption": "Football Manager Stili Detaylı Oyuncu Karnesi, Nitelik Dağılımı ve Gelişim Grafiği"
+      },
+      {
+        "src": "assets/projects/altyapi-manager/04_interaktif_taktik_tahtasi.png",
+        "caption": "İnteraktif Taktik Tahtası, Saha Dizilimi ve Formasyon Simülasyonu"
+      },
+      {
+        "src": "assets/projects/altyapi-manager/05_yoklama_defteri.png",
+        "caption": "Antrenman Yoklama Defteri, Katılım Analizleri ve Devamsızlık Takibi"
+      },
+      {
+        "src": "assets/projects/altyapi-manager/06_mali_isler_ve_butce.png",
+        "caption": "Mali İşler & Gelir/Gider/Aidat Bütçe Takip Merkezi"
+      },
+      {
+        "src": "assets/projects/altyapi-manager/07_turnuva_ve_lig_yonetimi.png",
+        "caption": "Turnuva, Lig Puan Durumu ve Fikstür Yönetimi"
+      }
+    ],
     "tags": [
       "desktop-app",
       "management-system",
