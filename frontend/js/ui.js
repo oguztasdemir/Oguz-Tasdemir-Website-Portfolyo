@@ -648,6 +648,42 @@ class ProcessEngine:
               </div>
             ` : ''}
 
+            ${(project.resultsComparison && project.resultsComparison.length > 0) ? `
+              <div class="case-study-box">
+                <div class="case-box-title-row">
+                  <span class="case-box-num">🎯</span>
+                  <h3 class="case-box-header">${isEn ? 'Sample Results & Input-Output Comparison (Proof of Work)' : 'Örnek Sonuçlar & Girdi-Çıktı Kıyaslaması (Proof of Work)'}</h3>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 16px;">
+                  ${project.resultsComparison.map(rc => `
+                    <div style="background: rgba(15, 23, 42, 0.55); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 12px; padding: 16px;">
+                      <div style="font-size: 0.85rem; font-weight: 700; color: #60a5fa; margin-bottom: 12px; font-family: var(--font-mono);">${rc.modeTitle || ''}</div>
+                      <div style="display: grid; grid-template-columns: ${rc.inputImg ? '1fr 1.2fr 1fr' : '1.3fr 1fr'}; gap: 14px; align-items: center;">
+                        ${rc.inputImg ? `
+                          <a href="${rc.inputImg}" target="_blank" rel="noopener noreferrer" style="text-decoration: none; text-align: center;">
+                            <div style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 6px; font-weight: 600;">1. GİREN GÖRSEL (INPUT)</div>
+                            <img src="${rc.inputImg}" alt="Input" style="width: 100%; max-height: 210px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(255,255,255,0.12);">
+                          </a>
+                        ` : ''}
+                        <div style="background: rgba(0,0,0,0.35); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px; font-size: 0.8rem; line-height: 1.5; color: var(--text-main);">
+                          <div style="font-size: 0.72rem; color: #38bdf8; font-weight: 700; margin-bottom: 6px;">${rc.inputImg ? '2. KOMUT (PROMPT) & MODEL' : '1. KOMUT (PROMPT) & PARAMETRELER'}</div>
+                          <div><strong>Prompt:</strong> "${rc.promptTr || ''}"</div>
+                          ${rc.promptEn ? `<div style="margin-top: 6px; color: var(--text-muted); font-style: italic; font-size: 0.75rem;"><strong>EN:</strong> "${rc.promptEn}"</div>` : ''}
+                          ${rc.meta ? `<div style="margin-top: 8px; font-family: var(--font-mono); font-size: 0.72rem; color: #34d399;">⚡ ${rc.meta}</div>` : ''}
+                        </div>
+                        ${rc.outputImg ? `
+                          <a href="${rc.outputImg}" target="_blank" rel="noopener noreferrer" style="text-decoration: none; text-align: center;">
+                            <div style="font-size: 0.72rem; color: #34d399; margin-bottom: 6px; font-weight: 700;">${rc.inputImg ? '3. ÇIKAN GÖRSEL (OUTPUT)' : '2. ÜRETİLEN GÖRSEL (OUTPUT)'}</div>
+                            <img src="${rc.outputImg}" alt="Output" style="width: 100%; max-height: 210px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(52, 211, 153, 0.35);">
+                          </a>
+                        ` : ''}
+                      </div>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            ` : ''}
+
             <!-- Neden Geliştirdim? Doğal Geliştirici Hikayesi -->
             <div class="case-study-box developer-story-card">
               <div class="case-box-title-row">

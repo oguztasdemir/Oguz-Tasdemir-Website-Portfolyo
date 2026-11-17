@@ -48,5 +48,31 @@
       "src": "frontend/assets/projects/ai-image-studio/screenshot_5_models_manager.png",
       "caption": "Model Ağırlıkları & VRAM Önyükleme Yöneticisi"
     }
+  ],
+  "resultsComparison": [
+    {
+      "modeTitle": "MOD 1: Image-to-Image (Görselden Görsele Dönüşüm #1 — Gün Batımı)",
+      "inputImg": "frontend/assets/projects/ai-image-studio/result_img2img_input.jpg",
+      "promptTr": "Sinematik altın saat gün batımı ışıklandırması, sıcak iç mekan aydınlatması ve havuz yansıması",
+      "promptEn": "Cinematic golden hour sunset lighting, warm interior illumination and pool reflection, 8k architectural render",
+      "meta": "Model: InstructPix2Pix / SDXL • Süre: 4.2 sn • Çözünürlük: 1024x1024",
+      "outputImg": "frontend/assets/projects/ai-image-studio/result_img2img_output_dusk.jpg"
+    },
+    {
+      "modeTitle": "MOD 1: Image-to-Image (Görselden Görsele Dönüşüm #2 — Kış & Kar Atmosferi)",
+      "inputImg": "frontend/assets/projects/ai-image-studio/result_img2img_input.jpg",
+      "promptTr": "Kış mevsimi, yoğun kar yağışı, çam ağaçları üzerinde kar ve içeride sıcak şömine ışığı",
+      "promptEn": "Winter season, heavy snowfall, snow-covered pine trees and warm cozy fireplace glow inside",
+      "meta": "Model: InstructPix2Pix / SDXL • Süre: 4.8 sn • Çözünürlük: 1024x1024",
+      "outputImg": "frontend/assets/projects/ai-image-studio/result_img2img_output_winter.jpg"
+    },
+    {
+      "modeTitle": "MOD 2: Text-to-Image (Metinden Sıfırdan Görsel Üretim — 1024px SDXL)",
+      "inputImg": null,
+      "promptTr": "Gece vakti fütüristik Neo-Tokyo siberpunk sokak arası, parlayan mavi ve kehribar holografik tabelalar, yağmurlu taş zeminde neon yansımalar, sinematik sis, 8k gerçekçi mimari render",
+      "promptEn": "Futuristic neo-Tokyo cyberpunk alleyway at night, glowing holographic signs, rain-slicked cobblestones reflecting neon blue and amber lights, cinematic volumetric fog, 8k photorealistic",
+      "meta": "Model: Playground v2.5 Aesthetic (SDXL) • Süre: 3.9 sn • Çözünürlük: 1024x1024 (25 Adım)",
+      "outputImg": "frontend/assets/projects/ai-image-studio/result_txt2img_cyberpunk.jpg"
+    }
   ]
 }
