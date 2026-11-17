@@ -15,7 +15,7 @@
     "Stable Diffusion & LoRA",
     "FastAPI"
   ],
-  "githubUrl": "https://github.com/oguztasdemir/webtoon-lora-suite",
+  "githubUrl": null,
   "demoUrl": null,
   "caseStudy": {
     "problem": "Hem Doğal Dil İşleme (NLP) hem de Diffusers ile LoRA ve YOLO nesne tanıma/segmentasyon eğitimlerinde kendimi derinlemesine geliştirmek için bu projeyi başlattım. Amacım, YOLO ve LoRA ile webtoon panellerini ve karakterlerini tutarlı şekilde üretebilecek bir boru hattı kurarak, özgün webtoon hikayeleri oluşturup dijital platformlarda yayınlayarak gelir elde edebileceğim profesyonel bir içerik üretim altyapısı kurmaktı.",

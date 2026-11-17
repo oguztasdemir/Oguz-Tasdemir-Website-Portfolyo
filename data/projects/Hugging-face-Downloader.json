@@ -13,7 +13,7 @@
     "Tqdm Stream",
     "CLI"
   ],
-  "githubUrl": "https://github.com/oguztasdemir/Hugging-face-Downloader",
+  "githubUrl": "https://github.com/oguztasdemir/HuggingFace-Model-Indirme-Araci",
   "caseStudy": {
     "problem": "HuggingFace üzerindeki devasa yapay zeka modellerini indirirken anlık indirme ve yükleme hızlarını net şekilde görmek, modelin bilgisayarımdaki mevcut donanıma (VRAM, RAM, CPU/GPU) uygun olup olmadığını erkenden anlamak ve olası internet kopmalarında indirmeyi baştan başlatmadan kaldığı yerden devam ettirmek için bu aracı geliştirdim.",
     "architecture": "Araç, HuggingFace Hub REST API ile doğrudan haberleşir. Kullanıcı model adını girdiğinde model deposunun tüm dosya ağacı ve dosya hashleri anında çekilir. İndirme motoru, HTTP Range isteklerini kullanarak dosyayı paralel iş parçacıklarına böler ve çok kanallı (multi-threaded chunk streaming) indirme yapar. Her bir parça diske yazılırken anlık indirme hızı, aktarım süresi ve kalan boyut zengin bir terminal arayüzüyle gösterilir. Bağlantı kesilse bile indirilen baytlar korunur ve bağlantı geldiğinde 1 bayt bile kaybetmeden kaldığı yerden devam eder.",

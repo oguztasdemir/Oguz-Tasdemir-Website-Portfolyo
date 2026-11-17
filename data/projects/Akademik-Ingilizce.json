@@ -35,5 +35,6 @@
     "yds",
     "yokdil"
   ],
-  "demoUrl": null
+  "demoUrl": "https://yokdilapp.vercel.app/#/landing",
+  "demoUrl2": "https://yds-quizlet.vercel.app"
 }

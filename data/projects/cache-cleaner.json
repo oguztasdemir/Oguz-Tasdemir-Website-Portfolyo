@@ -13,7 +13,7 @@
     "Multi-threading",
     "Shutil"
   ],
-  "githubUrl": "https://github.com/oguztasdemir/cache-cleaner",
+  "githubUrl": "https://github.com/oguztasdemir/Gelistirici-Sistem-ve-Onbellek-Temizleyici",
   "demoUrl": null,
   "caseStudy": {
     "problem": "Yapay zeka modelleri (HuggingFace, PyTorch, Ollama), derleme artıkları (node_modules, .next, target), pip/npm önbellekleri ve Docker imaj kalıntıları geliştirici bilgisayarlarının SSD disklerini fark ettirmeden 30-50 GB seviyesinde doldurarak sistemi kilitler. Mevcut disk temizleme araçları ise (CCleaner vb.) geliştirici araçlarının önbellek yollarını tanımaz veya kullanıcıya hangi klasörün ne kadar yer kapladığını şeffafça göstermeden kritik dosyaları silme riski yaratır. Bu sistemi, yazılım geliştiricilere özel, güvenli ve derinlemesine klasör analizli bir temizleme çözümü sunmak için geliştirdim.",

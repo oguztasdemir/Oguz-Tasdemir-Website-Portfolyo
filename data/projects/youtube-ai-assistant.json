@@ -13,7 +13,7 @@
     "YouTube Data API",
     "Vanilla JS Studio"
   ],
-  "githubUrl": "https://github.com/oguztasdemir/youtube-ai-assistant",
+  "githubUrl": null,
   "demoUrl": null,
   "caseStudy": {
     "problem": "YouTube linklerini girdiğimde videoların transkriptlerini otomatik çekip içeriği özetleyen, anlatılan konuyu detaylı şekilde açıklayan, ek çalışma belgeleri hazırlayan ve akademik/teknik kaynakça (bibliyografya) üretmemi sağlayan kapsamlı bir asistan ihtiyacım vardı. Saatlerce süren videoları baştan sona izlemeden aradığım kritik bilgilere ulaşmak ve projelerim için güvenilir kaynak listeleri derlemek amacıyla bu sistemi kurdum.",

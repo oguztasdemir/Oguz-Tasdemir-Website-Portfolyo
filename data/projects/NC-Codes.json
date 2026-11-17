@@ -13,7 +13,7 @@
     "Event-Driven Scripting",
     "UTF-8 Encoding"
   ],
-  "githubUrl": "https://github.com/oguztasdemir/NC-Codes",
+  "githubUrl": "https://github.com/oguztasdemir/Transformice-Lua-Script-Arsivi",
   "demoUrl": null,
   "caseStudy": {
     "problem": "2013 yılında Transformice oyun topluluğunda kabile evleri ve özel odalar oyuncuların sadece sohbet ettiği durağan alanlardı. Oyuncuların oda içerisinde etkileşime girebileceği, yarışabileceği, mini oyunlar oynayabileceği veya otomatik skor tablosu tutabilecekleri esnek ve hatasız script mekanizmaları bulunmuyordu. Oyuncuları saatlerce odada tutacak, gerçek zamanlı fizik motoruyla entegre çalışan ve sunucu tarafında çökmeyen eğlenceli mini oyun sistemlerine ihtiyaç vardı. İlk programlama temellerimi attığım bu projede zengin bir script kütüphanesi inşa ettim.",

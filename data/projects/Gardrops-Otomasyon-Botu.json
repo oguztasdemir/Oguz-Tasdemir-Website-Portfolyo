@@ -13,7 +13,7 @@
     "Requests",
     "DOM Scraper"
   ],
-  "githubUrl": "https://github.com/oguztasdemir/Gardrops-Otomasyon-Botu",
+  "githubUrl": "https://github.com/oguztasdemir/Gardrops-Pazaryeri-Otomasyon-Botu",
   "demoUrl": null,
   "caseStudy": {
     "problem": "2022 yılında Gardrops platformunda butik satış yaparken mağaza trafiğini artırmak için takipçileri takip etmek istiyordum. Ancak Gardrops'un arayüzünde ciddi bir frontend bug'ı (hatası) vardı: Bir mağazanın takipçiler listesine girip bir kullanıcıyı 'Takip Et'e bastığınızda arayüz takip edilmiş gibi gösteriyordu; ancak sayfayı yenileyip (F5) aynı listeye tekrar baktığınızda o kullanıcı yine takip edilmiyor gibi görünüyordu. Arayüzün bu yanıltıcı durumuna aldanıp butona tekrar basıldığında ise sistem aslında takip edilmiş olan kullanıcıyı 'Takipten Çıkarıyordu'. Bu kısır döngüyü ve buton karmaşasını çözmek için kullanıcı adlarını yerelde kaydedip takip durumunu kendi algoritmasıyla hatasız yöneten bir otomasyon kurdum.",

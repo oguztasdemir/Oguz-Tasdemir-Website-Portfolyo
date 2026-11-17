@@ -26,5 +26,27 @@
       "Üretilen görselleri parametreleriyle birlikte arşivleme ve tek tıkla çoğaltma",
       "Gözü yormayan sade ve modern stüdyo kontrol paneli"
     ]
-  }
+  },
+  "screenshots": [
+    {
+      "src": "frontend/assets/projects/ai-image-studio/screenshot_2_img2img_workspace.png",
+      "caption": "Image-to-Image Stüdyo Çalışma Alanı & Canlı Çeviri"
+    },
+    {
+      "src": "frontend/assets/projects/ai-image-studio/screenshot_1_projects_hub.png",
+      "caption": "Proje Merkezi & Oturum Kartları"
+    },
+    {
+      "src": "frontend/assets/projects/ai-image-studio/screenshot_3_model_selector.png",
+      "caption": "Çoklu Model Seçici (SDXL, InstructPix2Pix, Inpaint)"
+    },
+    {
+      "src": "frontend/assets/projects/ai-image-studio/screenshot_4_hardware_telemetry.png",
+      "caption": "Canlı GPU & VRAM Donanım Telemetri Monitörü"
+    },
+    {
+      "src": "frontend/assets/projects/ai-image-studio/screenshot_5_models_manager.png",
+      "caption": "Model Ağırlıkları & VRAM Önyükleme Yöneticisi"
+    }
+  ]
 }

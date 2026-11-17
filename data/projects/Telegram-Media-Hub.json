@@ -13,7 +13,7 @@
     "SQLite",
     "Rate-Limiter"
   ],
-  "githubUrl": "https://github.com/oguztasdemir/Telegram-Media-Hub",
+  "githubUrl": "https://github.com/oguztasdemir/Telegram-Kanal-Medya-Yonetim-Paneli",
   "demoUrl": null,
   "caseStudy": {
     "problem": "Telegram üzerindeki kanallarda ve gruplarda paylaşılan büyük dosyaları, ders materyallerini veya arşivleri Telegram masaüstü uygulamasından tek tek elle indirmek zahmetliydi ve indirmeyi kolaylaştıracak esnek bir yapı yoktu. Dosyaları türlerine göre sınıflandırıp bilgisayara indirmeyi çok daha pratik ve hızlı hale getirmek için bu medya yöneticisini geliştirdim.",

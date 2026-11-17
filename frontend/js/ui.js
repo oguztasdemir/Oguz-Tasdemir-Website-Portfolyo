@@ -631,6 +631,23 @@ class ProcessEngine:
               </div>
             </div>
 
+            ${(project.screenshots && project.screenshots.length > 0) ? `
+              <div class="case-study-box">
+                <div class="case-box-title-row">
+                  <span class="case-box-num">🖼️</span>
+                  <h3 class="case-box-header">${isEn ? 'Interface Gallery & Visual Preview' : 'Arayüz Ekran Görüntüleri & Görsel Önizleme'}</h3>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: 14px;">
+                  ${project.screenshots.map(img => `
+                    <a href="${img.src}" target="_blank" rel="noopener noreferrer" style="display: block; border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; background: rgba(0,0,0,0.3); text-decoration: none; transition: transform 0.2s;">
+                      <img src="${img.src}" alt="${img.caption || project.title}" style="width: 100%; height: 175px; object-fit: cover; display: block;" loading="lazy">
+                      <div style="padding: 8px 12px; font-size: 0.76rem; color: var(--text-muted); font-family: var(--font-mono);">${img.caption || ''}</div>
+                    </a>
+                  `).join('')}
+                </div>
+              </div>
+            ` : ''}
+
             <!-- Neden Geliştirdim? Doğal Geliştirici Hikayesi -->
             <div class="case-study-box developer-story-card">
               <div class="case-box-title-row">

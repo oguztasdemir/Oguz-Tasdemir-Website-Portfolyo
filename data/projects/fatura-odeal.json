@@ -13,7 +13,7 @@
     "SQLite",
     "Excel/JSON Exporter"
   ],
-  "githubUrl": "https://github.com/oguztasdemir/Odeal-Fatura-Kesme-Otomasyonu",
+  "githubUrl": "https://github.com/oguztasdemir/Odeal-eFatura-Kesme-Otomasyonu",
   "demoUrl": null,
   "caseStudy": {
     "problem": "Perakende operasyonlarımızda Ödeal portalı üzerinden hem gelen e-faturaları düzenli olarak bilgisayara çekip arşivlemek hem de yeni faturaları hızlıca sisteme yazıp kesmek ciddi bir manuel operasyondu. Portala sürekli giriş yapmak, faturaları tek tek elle indirmek ve fatura bilgilerini girmek zaman alıyordu. Bu süreci otomatize ederek hem portaldan faturaları toplu çekip sınıflandıran hem de fatura yazma işlemlerini pratikleştiren otonom bir bot geliştirdim.",

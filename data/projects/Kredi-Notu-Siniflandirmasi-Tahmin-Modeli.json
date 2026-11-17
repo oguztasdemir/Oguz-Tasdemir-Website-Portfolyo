@@ -14,7 +14,7 @@
     "Feature Engineering",
     "XGBoost"
   ],
-  "githubUrl": "https://github.com/oguztasdemir/Kredi-Notu-Siniflandirmasi-Tahmin-Modeli",
+  "githubUrl": "https://github.com/oguztasdemir/Kredi-Risk-Notu-Tahmin-Modeli",
   "demoUrl": null,
   "caseStudy": {
     "problem": "Üniversite 4. sınıf Makine Öğrenmesi (Machine Learning) dersi dönem projem ve ödevim kapsamında geliştirdiğim bir modelleme çalışmasıdır. Bankacılık ve finans alanındaki müşteri veri setlerinde dengesiz sınıf dağılımlarını (ödenmeyen kredilerin azınlıkta olması) ele alarak, müşterilerin kredi notu ve risk düzeyini yüksek doğrulukla sınıflandıran bir makine öğrenmesi boru hattı inşa ettim.",
