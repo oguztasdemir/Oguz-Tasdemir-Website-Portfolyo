@@ -232,9 +232,95 @@
 }
 
 .cert-desc {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  line-height: 1.5;
+  font-size: 0.82rem;
+  color: var(--text-main);
+  line-height: 1.58;
+  margin-bottom: 14px;
+}
+
+/* Yetkinlik Alanı Özet Şeridi & Kart Alt Meta */
+.certs-pillars-strip {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.cert-pillar-chip {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 13px;
+  background: var(--bg-panel-elevated);
+  border: 1px solid var(--border-panel);
+  border-radius: var(--radius-xs);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+.cert-pillar-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: #58a6ff;
+  box-shadow: 0 0 8px rgba(88, 166, 255, 0.55);
+}
+
+.cert-footer-meta {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-panel);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cert-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cert-tag-pill {
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+  font-weight: 600;
+  color: #79c0ff;
+  background: var(--bg-tag);
+  border: 1px solid var(--border-dim);
+  padding: 2px 8px;
+  border-radius: var(--radius-xs);
+}
+
+.cert-verify-link {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #3fb950;
+  background: rgba(63, 185, 80, 0.1);
+  border: 1px solid rgba(63, 185, 80, 0.32);
+  padding: 3px 9px;
+  border-radius: var(--radius-xs);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.cert-verify-link:hover {
+  background: rgba(63, 185, 80, 0.2);
+  border-color: #3fb950;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .certs-pillars-strip {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Lightbox Modal */
