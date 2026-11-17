@@ -8,10 +8,11 @@
   "highlightMetric": "🚀 100+ MB/s Yerel Ağ Gigabit Hızı",
   "techStack": [
     "Python",
-    "WebSockets",
-    "mDNS / UDP Discovery",
-    "Zero-Config",
-    "Vanilla JS"
+    "Node.js & Express",
+    "SSE (Server-Sent Events)",
+    "Face-API.js",
+    "Multer & Archiver",
+    "Docker & Vanilla JS"
   ],
   "caseStudy": {
     "problem": "Apple (iPhone/iPad/Mac) cihazları ile Windows bilgisayarlar arasında USB kablosuyla dosya aktarımı yapmak sürücü uyumsuzlukları ve kısıtlamalar nedeniyle oldukça zor ve zahmetli bir süreçtir. İnternet üzerinden buluta yükleyip tekrar indirmek ise kotayı tüketir ve zaman kaybettirir. Bu sorunu çözmek için kabloya ihtiyaç duymadan, yalnızca aynı Wi-Fi ağı üzerinden QR kod okutarak saniyeler içinde bağlanan ve Apple ile Windows cihazlar arasında yüksek hızda doğrudan dosya aktarımı sağlayan yerel bir sistem kurdum.",
@@ -25,5 +26,124 @@
     ]
   },
   "githubUrl": "https://github.com/oguztasdemir/Airdrop-Local-P2P",
-  "visibility": "public"
+  "visibility": "public",
+  "videoUrl": "assets/projects/Airdrop-Local/demo_video.webm",
+  "screenshots": [
+    {
+      "src": "assets/projects/Airdrop-Local/screenshot_1_files_dashboard.png",
+      "caption": "Masaüstü Dosya Yönetimi (Aktif Durum, Klasörler & Boş Alan)",
+      "captionEn": "Desktop File Manager (Active Status, Folders & Free Space)"
+    },
+    {
+      "src": "assets/projects/Airdrop-Local/screenshot_2_qr_connect.png",
+      "caption": "QR Kod ile Mobil Eşleşme & Bağlı Cihazlar (iPhone 15 Pro)",
+      "captionEn": "QR Code Mobile Pairing & Connected Devices (iPhone 15 Pro)"
+    },
+    {
+      "src": "assets/projects/Airdrop-Local/screenshot_3_live_chat_clipboard.png",
+      "caption": "Cihazlar Arası Canlı Sohbet & Ortak Pano (SSE Senkronizasyon)",
+      "captionEn": "Cross-Device Live Chat & Shared Clipboard (SSE Sync)"
+    },
+    {
+      "src": "assets/projects/Airdrop-Local/screenshot_4_face_recognition.png",
+      "caption": "Tarayıcı İçi Yapay Zekâ Destekli Yüz Tanıma (Face-API.js)",
+      "captionEn": "In-Browser AI Face Recognition & Grouping (Face-API.js)"
+    },
+    {
+      "src": "assets/projects/Airdrop-Local/screenshot_5_account_storage.png",
+      "caption": "Hesabım, Oda Kullanımı & Disk Depolama İstatistikleri",
+      "captionEn": "Account, Room Usage & Disk Storage Telemetry"
+    },
+    {
+      "src": "assets/projects/Airdrop-Local/screenshot_6_mobile_ios_view.png",
+      "caption": "Mobil (iOS / Android) Hızlı Yükleme & Alt Navigasyon Görünümü",
+      "captionEn": "Mobile (iOS / Android) Quick Upload & Bottom Navigation"
+    }
+  ],
+  "resultsComparison": [
+    {
+      "modeTitle": "SENARYO: iPhone 15 Pro -> Windows Yerel Ağ Aktarımı & Canlı Senkronizasyon",
+      "modeTitleEn": "SCENARIO: iPhone 15 Pro -> Windows LAN Transfer & Live Synchronization",
+      "inputLabel": "1. MOBİL GİRDİ (QR & YÜKLEME)",
+      "inputLabelEn": "1. MOBILE INPUT (QR & UPLOAD)",
+      "processLabel": "2. SÜREÇ & AĞ PROTOKOLÜ",
+      "processLabelEn": "2. PROCESS & NETWORK PROTOCOL",
+      "outputLabel": "3. MASAÜSTÜ ÇIKTI (SENKRONİZE)",
+      "outputLabelEn": "3. DESKTOP OUTPUT (SYNCHRONIZED)",
+      "promptLabel": "Aktarım",
+      "promptLabelEn": "Transfer",
+      "inputImg": "assets/projects/Airdrop-Local/screenshot_6_mobile_ios_view.png",
+      "promptTr": "QR kod ile Proje Transfer Odası (PIN: 2) bağlantısı, 4 dosya (2 adet 4K render görsel + PDF + TXT) yükleme ve canlı sohbet / ortak pano yayını",
+      "promptEn": "Passwordless QR join to Room #2 (PIN: 2), multi-file upload (4 files totaling 1.77 MB), and real-time chat/clipboard sync via SSE",
+      "meta": "100+ MB/s Yerel Wi-Fi Aktarımı • 4 Dosya (1.77 MB) • 0 KB İnternet Kotası",
+      "metaEn": "100+ MB/s Local Wi-Fi Transfer • 4 Files (1.77 MB) • 0 KB Cloud Data Used",
+      "outputImg": "assets/projects/Airdrop-Local/screenshot_1_files_dashboard.png"
+    }
+  ],
+  "pipelineSteps": [
+    {
+      "num": "01",
+      "title": "QR Kod ile Anında Eşleşme",
+      "desc": "Python + Yerel Ağ IP Tespiti",
+      "detail": "Kablo veya mağaza uygulaması olmadan kamera ile QR kod okutularak odaya girilir."
+    },
+    {
+      "num": "02",
+      "title": "Oda & Sandbox İzolasyonu",
+      "desc": "PIN & Hesap Bazlı Depolama",
+      "detail": "Yüklenen her dosya account/session dizinine izole edilerek güvenlik sağlanır."
+    },
+    {
+      "num": "03",
+      "title": "Canlı SSE Senkronizasyonu",
+      "desc": "Express + EventSource Akışı",
+      "detail": "Dosya listesi, bağlı cihazlar, sohbet ve ortak pano tüm ekranlarda anında güncellenir."
+    },
+    {
+      "num": "04",
+      "title": "Face-API & Toplu Yönetim",
+      "desc": "Yüz Gruplama & ZIP Arşivleme",
+      "detail": "Fotoğraflardaki yüzler yerelde taranır; seçilen dosyalar tek tıkla ZIP indirilir."
+    }
+  ],
+  "folderTree": "📁 Airdrop-Local-P2P/\n├── 📄 main.py                   # Python başlatıcı (IP tespiti, bağımlılık & tarayıcı açılışı)\n├── 📄 package.json              # Node.js bağımlılıkları (Express, Multer, Archiver, bcryptjs)\n├── 📄 Dockerfile                # Konteyner imaj yapılandırması\n├── 📁 src/                      # Node.js / Express arka uç sunucusu\n│   ├── 📄 server.js             # Ana HTTP sunucu ve çoklu rota birleştirici\n│   ├── 📄 authRoutes.js         # Kayıt, giriş, misafir modu ve yüz profili API\n│   ├── 📄 sessionRoutes.js      # SSE (Server-Sent Events) canlı oda ve cihaz akışı\n│   ├── 📄 fileRoutes.js         # Dosya yükleme, ZIP, depolama istatistiği & disk alanı\n│   ├── 📄 folderRoutes.js       # Klasör yönetimi ve Windows dizin eşleme\n│   └── 📄 chatRoutes.js         # Canlı sohbet ve ortak pano API'leri\n└── 📁 public/                   # Koyu cam (glassmorphism) PC & Mobil SPA arayüzü\n    ├── 📄 index.html            # PC & Mobil sekmeli arayüz iskeleti\n    ├── 📄 style.css             # Karanlık/Aydınlık tema & vurgu stilleri\n    ├── 📄 app.js                # Ön yüz koordinatörü ve SSE istemcisi\n    └── 📁 js/ (auth.js, files.js, faces.js, media.js, clipboard.js, state.js)",
+  "codeFiles": {
+    "main.py": "import os\nimport subprocess\nimport sys\nimport time\nimport webbrowser\nimport socket\nimport signal\nimport atexit\n\nPORT = 3000\nAPP_DIR = os.path.dirname(os.path.abspath(__file__))\n\n# Load port from .env if exists\nenv_path = os.path.join(APP_DIR, \".env\")\nif os.path.exists(env_path):\n    try:\n        with open(env_path, \"r\", encoding=\"utf-8\") as f:\n            for line in f:\n                if line.strip().startswith(\"PORT=\"):\n                    val = line.strip().split(\"=\")[1].strip()\n                    if val:\n                        PORT = int(val)\n    except Exception:\n        pass\n\ndef get_local_ip():\n    \"\"\"Detects the primary local network IP address of the host computer.\"\"\"\n    try:\n        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)\n        s.connect((\"8.8.8.8\", 80))\n        ip = s.getsockname()[0]\n        s.close()\n        return ip\n    except Exception:\n        return \"127.0.0.1\"\n\ndef check_node_installed():\n    \"\"\"Checks if Node.js is installed on the system.\"\"\"\n    try:\n        subprocess.run([\"node\", \"-v\"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True)\n        return True\n    except (subprocess.CalledProcessError, FileNotFoundError):\n        return False\n\ndef install_dependencies():\n    \"\"\"Installs npm packages if node_modules folder is missing.\"\"\"\n    node_modules_path = os.path.join(APP_DIR, \"node_modules\")\n    if not os.path.exists(node_modules_path):\n        print(\"[*] node_modules bulunamadı. Bağımlılıklar yükleniyor...\")\n        try:\n            subprocess.run([\"npm\", \"install\"], cwd=APP_DIR, shell=True, check=True)\n            print(\"[+] Bağımlılıklar başarıyla yüklendi.\")\n        except subprocess.CalledProcessError as e:\n            print(f\"[-] npm install başarısız oldu: {e}\")\n            sys.exit(1)\n\ndef run_server():\n    \"\"\"Launches the Node.js server and keeps it running regardless of Ctrl+C.\"\"\"\n    if not check_node_installed():\n        print(\"[-] Hata: Node.js bilgisayarınızda yüklü değil. Lütfen önce Node.js yükleyin (https://nodejs.org/).\")\n// ... (devamı GitHub deposunda)",
+    "src/server.js": "require('dotenv').config();\nconst express = require('express');\nconst { exec } = require('child_process');\nconst path = require('path');\nconst fs = require('fs');\nconst downloadModels = require('./download-models');\n\n// Start download of face-api models asynchronously on startup\ndownloadModels().catch(err => {\n  console.error('Yüz tanıma modelleri indirilemedi:', err.message);\n});\n\nconst {\n  PORT,\n  uploadsDir,\n  sessions,\n  saveSessions,\n  getSessionUploadsDir,\n  getLocalIpAddress\n} = require('./config');\n\nconst app = express();\n\n// Middleware to extract X-PIN session identifier\nfunction pinAuth(req, res, next) {\n  const pin = req.headers['x-pin'] || req.query.pin;\n  req.sessionPin = pin;\n  next();\n}\n\napp.use(express.json());\napp.use(pinAuth);\n\n// Serve static frontend files\napp.use(express.static(path.resolve(__dirname, '..', 'public')));\napp.use('/downloads', express.static(uploadsDir));\n\n// Mount Routers\nconst authRoutes = require('./authRoutes');\nconst { router: sessionRoutes } = require('./sessionRoutes');\nconst folderRoutes = require('./folderRoutes');\nconst fileRoutes = require('./fileRoutes');\nconst chatRoutes = require('./chatRoutes');\n\napp.use('/api/auth', authRoutes);\napp.use('/api/sessions', sessionRoutes);\napp.use('/api/folders', folderRoutes);\napp.use('/api', fileRoutes); // routes start with /files etc.\napp.use('/api', chatRoutes); // routes start with /chat, /clipboard\n\n// Status & IP Endpoint\napp.get('/api/status', (req, res) => {\n  const localIp = getLocalIpAddress();\n  const os = require('os');\n  res.json({\n    ip: localIp,\n    port: PORT,\n    uploadUrl: `http://${localIp}:${PORT}`,\n    freeMem: os.freemem(),\n    totalMem: os.totalmem()\n// ... (devamı GitHub deposunda)",
+    "public/app.js": "import { state, getUrlPin, secureFetch, showToast, showCustomAlert, getSecureMediaUrl, formatBytes, escapeHtml } from './js/state.js';\nimport { initAuthListeners, showPinModal, showDeviceNameModal, showAccountModal, hideAccountModal, loadSettingsData } from './js/auth.js';\nimport { initClipboardListeners, fetchChatMessages, fetchClipboard, renderClipboard } from './js/clipboard.js';\nimport { initMediaListeners } from './js/media.js';\nimport { initFaceListeners, loadProfileReferences } from './js/faces.js';\nimport { fetchFolders, fetchFiles, fetchMobileFiles, uploadPCFiles, uploadMobileFiles, resetMobileUploadQueue, getFilesFromDataTransfer, renameFolder, deleteFolder, mapFolder, initBatchActions, createNewFolder } from './js/files.js';\n\ndocument.addEventListener('DOMContentLoaded', () => {\n  // DOM selectors\n  const statusBadge = document.getElementById('statusBadge');\n  const statusText = statusBadge.querySelector('.status-text');\n  const desktopView = document.getElementById('desktopView');\n  const mobileView = document.getElementById('mobileView');\n  const ipAddressText = document.getElementById('ipAddressText');\n  const copyUrlBtn = document.getElementById('copyUrlBtn');\n  const refreshBtn = document.getElementById('refreshBtn');\n  const downloadZipBtn = document.getElementById('downloadZipBtn');\n  const folderSelectPC = document.getElementById('folderSelectPC');\n  const newFolderBtnPC = document.getElementById('newFolderBtnPC');\n  const renameFolderBtnPC = document.getElementById('renameFolderBtnPC');\n  const deleteFolderBtnPC = document.getElementById('deleteFolderBtnPC');\n  const mapFolderBtnPC = document.getElementById('mapFolderBtnPC');\n  const pcDropArea = document.getElementById('pcDropArea');\n  const pcFileInput = document.getElementById('pcFileInput');\n  const pcFolderInput = document.getElementById('pcFolderInput');\n  const pcFolderSelectLink = document.getElementById('pcFolderSelectLink');\n  const devicesList = document.getElementById('devicesList');\n\n  // Mobile DOM selectors\n  const fileInput = document.getElementById('fileInput');\n  const dropArea = document.getElementById('dropArea');\n  const clearBtn = document.getElementById('clearBtn');\n  const uploadForm = document.getElementById('uploadForm');\n  const previewContainer = document.getElementById('previewContainer');\n  const mobileActions = document.getElementById('mobileActions');\n  const progressArea = document.getElementById('progressArea');\n  const progressBar = document.getElementById('progressBar');\n  const newFolderBtnMobile = document.getElementById('newFolderBtnMobile');\n  const folderSelectMobileFiles = document.getElementById('folderSelectMobileFiles');\n\n  // Initialize all modular listeners\n  initAuthListeners(startApp);\n  initClipboardListeners();\n  initMediaListeners();\n  initFaceListeners();\n  initBatchActions();\n\n  // Setup Views based on Device Type\n  if (state.isMobile) {\n    desktopView.classList.remove('active');\n    mobileView.classList.add('active');\n    setupMobileTabs();\n  } else {\n    desktopView.classList.add('active');\n    mobileView.classList.remove('active');\n  }\n\n  // Setup Theme & Accent\n  setupThemeAndAccent();\n\n// ... (devamı GitHub deposunda)",
+    "public/js/faces.js": "import { state, secureFetch, showToast, showCustomAlert, getSecureMediaUrl, getFileClass } from './state.js';\nimport { applySearchAndSort } from './files.js';\n\n// DOM Elements\nconst faceFinderPanel = document.getElementById('faceFinderPanel');\nconst toggleFaceFinderBtn = document.getElementById('toggleFaceFinderBtn');\nconst closeFaceFinderBtn = document.getElementById('closeFaceFinderBtn');\nconst faceRefDropzone = document.getElementById('faceRefDropzone');\nconst faceRefInput = document.getElementById('faceRefInput');\nconst faceRefPreview = document.getElementById('faceRefPreview');\nconst faceInteractiveContainer = document.getElementById('faceInteractiveContainer');\nconst faceSelectionHelpText = document.getElementById('faceSelectionHelpText');\nconst faceMatchThreshold = document.getElementById('faceMatchThreshold');\nconst thresholdValueText = document.getElementById('thresholdValueText');\nconst startFaceScanBtn = document.getElementById('startFaceScanBtn');\nconst clearFaceScanBtn = document.getElementById('clearFaceScanBtn');\nconst faceScanProgressArea = document.getElementById('faceScanProgressArea');\nconst faceScanProgressText = document.getElementById('faceScanProgressText');\nconst faceScanProgressBar = document.getElementById('faceScanProgressBar');\nconst faceScanProgressPercent = document.getElementById('faceScanProgressPercent');\n\nconst profileRefDropzone = document.getElementById('profileRefDropzone');\nconst profileRefInput = document.getElementById('profileRefInput');\nconst profileRefPreview = document.getElementById('profileRefPreview');\nconst profileInteractiveContainer = document.getElementById('profileInteractiveContainer');\nconst profileSelectionHelpText = document.getElementById('profileSelectionHelpText');\nconst profileReferencesGrid = document.getElementById('profileReferencesGrid');\nconst findMeBtn = document.getElementById('findMeBtn');\n\n// Load Face API models\nexport async function loadFaceModels() {\n  if (state.modelsLoaded) return;\n  updateFaceScanStatus('Yüz tanıma modelleri yükleniyor...', 10);\n  try {\n    await faceapi.nets.ssdMobilenetv1.loadFromUri('/models');\n    updateFaceScanStatus('Yüz tanıma modelleri yükleniyor... (1/4)', 30);\n    await faceapi.nets.faceLandmark68Net.loadFromUri('/models');\n    updateFaceScanStatus('Yüz tanıma modelleri yükleniyor... (2/4)', 60);\n    await faceapi.nets.faceRecognitionNet.loadFromUri('/models');\n    updateFaceScanStatus('Yüz tanıma modelleri yükleniyor... (3/4)', 80);\n    await faceapi.nets.tinyFaceDetector.loadFromUri('/models');\n    \n    state.modelsLoaded = true;\n    updateFaceScanStatus('Modeller başarıyla yüklendi. Görsel taramaya hazır.', 100);\n    setTimeout(() => {\n      if (!state.isScanning && faceScanProgressArea) {\n        faceScanProgressArea.classList.add('hidden');\n      }\n    }, 2000);\n  } catch (err) {\n    console.error('Yüz tanıma modelleri yüklenemedi:', err);\n    updateFaceScanStatus('Hata: Modeller yüklenemedi. Dosya eksik veya hatalı.', 0);\n  }\n}\n\n// ... (devamı GitHub deposunda)",
+    "package.json": "{\n  \"name\": \"airdrop-local\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Local Wi-Fi file transfer from iPhone to PC\",\n  \"main\": \"src/server.js\",\n  \"scripts\": {\n    \"start\": \"node src/server.js\",\n    \"dev\": \"node src/server.js\"\n  },\n  \"dependencies\": {\n    \"@ffmpeg-installer/ffmpeg\": \"^1.1.0\",\n    \"adm-zip\": \"^0.5.10\",\n    \"archiver\": \"^6.0.2\",\n    \"bcryptjs\": \"^3.0.3\",\n    \"dotenv\": \"^16.4.5\",\n    \"express\": \"^4.21.2\",\n    \"fluent-ffmpeg\": \"^2.1.3\",\n    \"multer\": \"^1.4.5-lts.1\",\n    \"nodemailer\": \"^9.0.0\"\n  }\n}\n"
+  },
+  "qaPool": [
+    {
+      "q": "S1: Bu projeyi geliştirmeye neden ihtiyaç duydunuz? Çözdüğünüz asıl darboğaz neydi?",
+      "qEn": "Q1: Why did you build this project? What bottleneck did it solve?",
+      "a": "iPhone ile Windows bilgisayarlar arasında USB kablo sürücü sorunları olmadan ve bulut servislerinin kota/hız limitlerine takılmadan doğrudan aynı Wi-Fi üzerinden yüksek hızlı aktarım yapabilmek için geliştirdim.",
+      "aEn": "To transfer files between iPhones and Windows PCs over local Wi-Fi without USB driver headaches or cloud quota/speed bottlenecks."
+    },
+    {
+      "q": "S2: Neden Node.js/Express + Python hibrit başlatıcı ve SSE tercih ettiniz?",
+      "qEn": "Q2: Why choose a Python launcher + Node.js/Express + SSE architecture?",
+      "a": "Python yerel ağ IP adresini ve Node bağımlılıklarını tek komutla yönetirken, Express + Multer büyük dosya akışını çok hızlı işler; SSE (Server-Sent Events) ise tam çift yönlü WebSocket karmaşıklığı olmadan bağlı cihazları ve panoyu anlık senkronize eder.",
+      "aEn": "Python handles zero-config IP detection and startup checks, Express + Multer streams large multipart uploads fast, and SSE synchronizes connected peers and clipboard state cleanly over HTTP."
+    },
+    {
+      "q": "S3: Çoklu kullanıcı ve oda güvenliğini nasıl izole ettiniz?",
+      "qEn": "Q3: How did you isolate multi-user and multi-session rooms?",
+      "a": "Her istek X-PIN başlığı ve kullanıcı oturumu üzerinden doğrulanır; dosyalar downloads/account_<username>/session_<pin>/ dizinlerinde path traversal korumasıyla (path.basename + getSafeFilePath) yalıtılır.",
+      "aEn": "Requests authenticate via X-PIN and user accounts, storing files inside isolated account/session directories guarded by path traversal checks."
+    },
+    {
+      "q": "S4: Geliştirme ve test aşamasında karşılaştığınız teknik hatalar nelerdi?",
+      "qEn": "Q4: What bugs did you encounter and resolve during testing?",
+      "a": "Test sırasında public/app.js içinde mapFolderBtnPC DOM referansının eksikliği (ReferenceError) nedeniyle durum ve klasör çağrılarının koptuğu, escapeHtml importunun unutulduğu, fetchChatMessages çağrısının başlangıçta atlandığı ve loadSettingsData fonksiyonunun doğru DOM elementlerini güncellemediği tespit edilip düzeltildi.",
+      "aEn": "Fixed an undefined mapFolderBtnPC ReferenceError blocking startup calls, added the missing escapeHtml import, invoked fetchChatMessages() on startup, and wired loadSettingsData() to #settingsStorageText/#settingsStorageMaxText."
+    },
+    {
+      "q": "S5: Yüz tanıma özelliğini sunucu yerine neden tarayıcıda (Face-API.js) koşturdunuz?",
+      "qEn": "Q5: Why run face recognition in the browser via Face-API.js?",
+      "a": "Kullanıcı fotoğraflarını harici sunuculara göndermeden gizliliği %100 korumak ve istemcinin kendi GPU/WebGL gücünü kullanarak sunucu CPU yükünü sıfıra indirmek için Face-API.js modellerini yerelde çalıştırdım.",
+      "aEn": "To preserve 100% photo privacy and offload tensor computation to client WebGL without burdening the lightweight Node.js server."
+    }
+  ]
 }

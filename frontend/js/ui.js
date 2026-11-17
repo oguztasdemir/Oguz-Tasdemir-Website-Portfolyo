@@ -698,19 +698,19 @@ class ProcessEngine:
                       <div style="display: grid; grid-template-columns: ${rc.inputImg ? '1fr 1.2fr 1fr' : '1.3fr 1fr'}; gap: 14px; align-items: center;">
                         ${rc.inputImg ? `
                           <a href="${rc.inputImg}" target="_blank" rel="noopener noreferrer" style="text-decoration: none; text-align: center;">
-                            <div style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 6px; font-weight: 600;">${isEn ? '1. INPUT IMAGE' : '1. GİREN GÖRSEL (INPUT)'}</div>
+                            <div style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 6px; font-weight: 600;">${isEn ? (rc.inputLabelEn || '1. INPUT IMAGE') : (rc.inputLabel || '1. GİREN GÖRSEL (INPUT)')}</div>
                             <img src="${rc.inputImg}" alt="Input" style="width: 100%; max-height: 210px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(255,255,255,0.12);">
                           </a>
                         ` : ''}
                         <div style="background: rgba(0,0,0,0.35); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px; font-size: 0.8rem; line-height: 1.5; color: var(--text-main);">
-                          <div style="font-size: 0.72rem; color: #38bdf8; font-weight: 700; margin-bottom: 6px;">${rc.inputImg ? (isEn ? '2. PROMPT & MODEL' : '2. KOMUT (PROMPT) & MODEL') : (isEn ? '1. PROMPT & PARAMETERS' : '1. KOMUT (PROMPT) & PARAMETRELER')}</div>
-                          <div><strong>Prompt:</strong> "${(isEn && rc.promptEn) ? rc.promptEn : (rc.promptTr || '')}"</div>
+                          <div style="font-size: 0.72rem; color: #38bdf8; font-weight: 700; margin-bottom: 6px;">${isEn ? (rc.processLabelEn || (rc.inputImg ? '2. PROMPT & MODEL' : '1. PROMPT & PARAMETERS')) : (rc.processLabel || (rc.inputImg ? '2. KOMUT (PROMPT) & MODEL' : '1. KOMUT (PROMPT) & PARAMETRELER'))}</div>
+                          <div><strong>${isEn ? (rc.promptLabelEn || 'Prompt') : (rc.promptLabel || 'Prompt')}:</strong> "${(isEn && rc.promptEn) ? rc.promptEn : (rc.promptTr || '')}"</div>
                           ${(!isEn && rc.promptEn) ? `<div style="margin-top: 6px; color: var(--text-muted); font-style: italic; font-size: 0.75rem;"><strong>EN:</strong> "${rc.promptEn}"</div>` : ''}
                           ${rc.meta ? `<div style="margin-top: 8px; font-family: var(--font-mono); font-size: 0.72rem; color: #34d399;">⚡ ${(isEn && rc.metaEn) ? rc.metaEn : rc.meta}</div>` : ''}
                         </div>
                         ${rc.outputImg ? `
                           <a href="${rc.outputImg}" target="_blank" rel="noopener noreferrer" style="text-decoration: none; text-align: center;">
-                            <div style="font-size: 0.72rem; color: #34d399; margin-bottom: 6px; font-weight: 700;">${rc.inputImg ? (isEn ? '3. OUTPUT IMAGE' : '3. ÇIKAN GÖRSEL (OUTPUT)') : (isEn ? '2. GENERATED IMAGE (OUTPUT)' : '2. ÜRETİLEN GÖRSEL (OUTPUT)')}</div>
+                            <div style="font-size: 0.72rem; color: #34d399; margin-bottom: 6px; font-weight: 700;">${isEn ? (rc.outputLabelEn || (rc.inputImg ? '3. OUTPUT IMAGE' : '2. GENERATED IMAGE (OUTPUT)')) : (rc.outputLabel || (rc.inputImg ? '3. ÇIKAN GÖRSEL (OUTPUT)' : '2. ÜRETİLEN GÖRSEL (OUTPUT)'))}</div>
                             <img src="${rc.outputImg}" alt="Output" style="width: 100%; max-height: 210px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(52, 211, 153, 0.35);">
                           </a>
                         ` : ''}
