@@ -456,7 +456,8 @@ class ProcessEngine:
     const escapeHtml = (str) => String(str || '')
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;');
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
 
     const activeFiles = (project.codeFiles && typeof project.codeFiles === 'object' && Object.keys(project.codeFiles).length > 0)
       ? project.codeFiles
@@ -675,12 +676,18 @@ class ProcessEngine:
                   <h3 class="case-box-header">${isEn ? 'Interface Gallery & Visual Preview' : 'Arayüz Ekran Görüntüleri & Görsel Önizleme'}</h3>
                 </div>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: 14px;">
-                  ${project.screenshots.map(img => `
-                    <a href="${img.src}" target="_blank" rel="noopener noreferrer" style="display: block; border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; background: rgba(0,0,0,0.3); text-decoration: none; transition: transform 0.2s;">
-                      <img src="${img.src}" alt="${(isEn && img.captionEn) ? img.captionEn : (img.caption || project.title)}" style="width: 100%; height: 175px; object-fit: cover; display: block;" loading="lazy">
-                      <div style="padding: 8px 12px; font-size: 0.76rem; color: var(--text-muted); font-family: var(--font-mono);">${(isEn && img.captionEn) ? img.captionEn : (img.caption || '')}</div>
-                    </a>
-                  `).join('')}
+                  ${project.screenshots.map(img => {
+                    const cap = (isEn && img.captionEn) ? img.captionEn : (img.caption || project.title);
+                    return `
+                      <div class="gallery-thumb-card js-lightbox-trigger" role="button" tabindex="0" data-lightbox-src="${escapeHtml(img.src)}" data-lightbox-caption="${escapeHtml(cap)}">
+                        <span class="gallery-zoom-badge" aria-hidden="true">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                        </span>
+                        <img src="${escapeHtml(img.src)}" alt="${escapeHtml(cap)}" style="width: 100%; height: 175px; object-fit: cover; display: block;" loading="lazy">
+                        <div style="padding: 8px 12px; font-size: 0.76rem; color: var(--text-muted); font-family: var(--font-mono);">${escapeHtml((isEn && img.captionEn) ? img.captionEn : (img.caption || ''))}</div>
+                      </div>
+                    `;
+                  }).join('')}
                 </div>
               </div>
             ` : ''}
@@ -692,31 +699,44 @@ class ProcessEngine:
                   <h3 class="case-box-header">${isEn ? 'Sample Results & Input-Output Comparison (Proof of Work)' : 'Örnek Sonuçlar & Girdi-Çıktı Kıyaslaması (Proof of Work)'}</h3>
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 16px;">
-                  ${project.resultsComparison.map(rc => `
-                    <div style="background: rgba(15, 23, 42, 0.55); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 12px; padding: 16px;">
-                      <div style="font-size: 0.85rem; font-weight: 700; color: #60a5fa; margin-bottom: 12px; font-family: var(--font-mono);">${(isEn && rc.modeTitleEn) ? rc.modeTitleEn : (rc.modeTitle || '')}</div>
-                      <div style="display: grid; grid-template-columns: ${rc.inputImg ? '1fr 1.2fr 1fr' : '1.3fr 1fr'}; gap: 14px; align-items: center;">
-                        ${rc.inputImg ? `
-                          <a href="${rc.inputImg}" target="_blank" rel="noopener noreferrer" style="text-decoration: none; text-align: center;">
-                            <div style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 6px; font-weight: 600;">${isEn ? (rc.inputLabelEn || '1. INPUT IMAGE') : (rc.inputLabel || '1. GİREN GÖRSEL (INPUT)')}</div>
-                            <img src="${rc.inputImg}" alt="Input" style="width: 100%; max-height: 210px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(255,255,255,0.12);">
-                          </a>
-                        ` : ''}
-                        <div style="background: rgba(0,0,0,0.35); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px; font-size: 0.8rem; line-height: 1.5; color: var(--text-main);">
-                          <div style="font-size: 0.72rem; color: #38bdf8; font-weight: 700; margin-bottom: 6px;">${isEn ? (rc.processLabelEn || (rc.inputImg ? '2. PROMPT & MODEL' : '1. PROMPT & PARAMETERS')) : (rc.processLabel || (rc.inputImg ? '2. KOMUT (PROMPT) & MODEL' : '1. KOMUT (PROMPT) & PARAMETRELER'))}</div>
-                          <div><strong>${isEn ? (rc.promptLabelEn || 'Prompt') : (rc.promptLabel || 'Prompt')}:</strong> "${(isEn && rc.promptEn) ? rc.promptEn : (rc.promptTr || '')}"</div>
-                          ${(!isEn && rc.promptEn) ? `<div style="margin-top: 6px; color: var(--text-muted); font-style: italic; font-size: 0.75rem;"><strong>EN:</strong> "${rc.promptEn}"</div>` : ''}
-                          ${rc.meta ? `<div style="margin-top: 8px; font-family: var(--font-mono); font-size: 0.72rem; color: #34d399;">⚡ ${(isEn && rc.metaEn) ? rc.metaEn : rc.meta}</div>` : ''}
+                  ${project.resultsComparison.map(rc => {
+                    const scenarioTitle = (isEn && rc.modeTitleEn) ? rc.modeTitleEn : (rc.modeTitle || '');
+                    const inLabel = isEn ? (rc.inputLabelEn || '1. INPUT IMAGE') : (rc.inputLabel || '1. GİREN GÖRSEL (INPUT)');
+                    const outLabel = isEn ? (rc.outputLabelEn || (rc.inputImg ? '3. OUTPUT IMAGE' : '2. GENERATED IMAGE (OUTPUT)')) : (rc.outputLabel || (rc.inputImg ? '3. ÇIKAN GÖRSEL (OUTPUT)' : '2. ÜRETİLEN GÖRSEL (OUTPUT)'));
+                    const inCap = scenarioTitle ? `${scenarioTitle} — ${inLabel}` : inLabel;
+                    const outCap = scenarioTitle ? `${scenarioTitle} — ${outLabel}` : outLabel;
+                    return `
+                      <div style="background: rgba(15, 23, 42, 0.55); border: 1px solid rgba(59, 130, 246, 0.22); border-radius: 12px; padding: 16px;">
+                        <div style="font-size: 0.85rem; font-weight: 700; color: #60a5fa; margin-bottom: 12px; font-family: var(--font-mono);">${scenarioTitle}</div>
+                        <div style="display: grid; grid-template-columns: ${rc.inputImg ? '1fr 1.2fr 1fr' : '1.3fr 1fr'}; gap: 14px; align-items: center;">
+                          ${rc.inputImg ? `
+                            <div class="proof-img-card js-lightbox-trigger" role="button" tabindex="0" data-lightbox-src="${escapeHtml(rc.inputImg)}" data-lightbox-caption="${escapeHtml(inCap)}">
+                              <span class="gallery-zoom-badge" aria-hidden="true">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                              </span>
+                              <div style="font-size: 0.72rem; color: var(--text-muted); margin-bottom: 6px; font-weight: 600;">${inLabel}</div>
+                              <img src="${escapeHtml(rc.inputImg)}" alt="${escapeHtml(inCap)}" style="width: 100%; max-height: 210px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(255,255,255,0.12); display: block;">
+                            </div>
+                          ` : ''}
+                          <div style="background: rgba(0,0,0,0.35); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 12px; font-size: 0.8rem; line-height: 1.5; color: var(--text-main);">
+                            <div style="font-size: 0.72rem; color: #38bdf8; font-weight: 700; margin-bottom: 6px;">${isEn ? (rc.processLabelEn || (rc.inputImg ? '2. PROMPT & MODEL' : '1. PROMPT & PARAMETERS')) : (rc.processLabel || (rc.inputImg ? '2. KOMUT (PROMPT) & MODEL' : '1. KOMUT (PROMPT) & PARAMETRELER'))}</div>
+                            <div><strong>${isEn ? (rc.promptLabelEn || 'Prompt') : (rc.promptLabel || 'Prompt')}:</strong> "${(isEn && rc.promptEn) ? rc.promptEn : (rc.promptTr || '')}"</div>
+                            ${(!isEn && rc.promptEn) ? `<div style="margin-top: 6px; color: var(--text-muted); font-style: italic; font-size: 0.75rem;"><strong>EN:</strong> "${rc.promptEn}"</div>` : ''}
+                            ${rc.meta ? `<div style="margin-top: 8px; font-family: var(--font-mono); font-size: 0.72rem; color: #34d399;">⚡ ${(isEn && rc.metaEn) ? rc.metaEn : rc.meta}</div>` : ''}
+                          </div>
+                          ${rc.outputImg ? `
+                            <div class="proof-img-card js-lightbox-trigger" role="button" tabindex="0" data-lightbox-src="${escapeHtml(rc.outputImg)}" data-lightbox-caption="${escapeHtml(outCap)}">
+                              <span class="gallery-zoom-badge" aria-hidden="true">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                              </span>
+                              <div style="font-size: 0.72rem; color: #34d399; margin-bottom: 6px; font-weight: 700;">${outLabel}</div>
+                              <img src="${escapeHtml(rc.outputImg)}" alt="${escapeHtml(outCap)}" style="width: 100%; max-height: 210px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(52, 211, 153, 0.35); display: block;">
+                            </div>
+                          ` : ''}
                         </div>
-                        ${rc.outputImg ? `
-                          <a href="${rc.outputImg}" target="_blank" rel="noopener noreferrer" style="text-decoration: none; text-align: center;">
-                            <div style="font-size: 0.72rem; color: #34d399; margin-bottom: 6px; font-weight: 700;">${isEn ? (rc.outputLabelEn || (rc.inputImg ? '3. OUTPUT IMAGE' : '2. GENERATED IMAGE (OUTPUT)')) : (rc.outputLabel || (rc.inputImg ? '3. ÇIKAN GÖRSEL (OUTPUT)' : '2. ÜRETİLEN GÖRSEL (OUTPUT)'))}</div>
-                            <img src="${rc.outputImg}" alt="Output" style="width: 100%; max-height: 210px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(52, 211, 153, 0.35);">
-                          </a>
-                        ` : ''}
                       </div>
-                    </div>
-                  `).join('')}
+                    `;
+                  }).join('')}
                 </div>
               </div>
             ` : ''}
@@ -1203,7 +1223,212 @@ class ProcessEngine:
       });
     }
 
+    this.initImageLightbox(container, isEn);
+
     container.scrollTo({ top: 0, behavior: 'smooth' });
+  },
+
+  initImageLightbox(container, isEn) {
+    let modal = document.getElementById('imageLightboxModal');
+    if (!modal) {
+      modal = document.createElement('div');
+      modal.id = 'imageLightboxModal';
+      modal.className = 'image-lightbox-overlay';
+      modal.setAttribute('role', 'dialog');
+      modal.setAttribute('aria-modal', 'true');
+      modal.innerHTML = `
+        <div class="image-lightbox-topbar">
+          <div class="image-lightbox-meta">
+            <span class="image-lightbox-counter" id="lightboxCounter">1 / 1</span>
+            <span class="image-lightbox-hints" id="lightboxHints"></span>
+          </div>
+          <button type="button" class="image-lightbox-close" id="lightboxCloseBtn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            <span id="lightboxCloseText">ESC</span>
+          </button>
+        </div>
+        <div class="image-lightbox-stage" id="lightboxStage">
+          <button type="button" class="image-lightbox-nav-btn" id="lightboxPrevBtn" aria-label="Previous image">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <img class="image-lightbox-img" id="lightboxImage" src="" alt="">
+          <button type="button" class="image-lightbox-nav-btn" id="lightboxNextBtn" aria-label="Next image">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
+        <div class="image-lightbox-footer">
+          <div class="image-lightbox-caption" id="lightboxCaption"></div>
+          <div class="image-lightbox-thumbs" id="lightboxThumbs"></div>
+        </div>
+      `;
+      document.body.appendChild(modal);
+    }
+
+    const triggers = Array.from(container.querySelectorAll('.js-lightbox-trigger'));
+    const images = [];
+    const seenSrc = new Set();
+    triggers.forEach(el => {
+      const src = el.getAttribute('data-lightbox-src');
+      const caption = el.getAttribute('data-lightbox-caption') || '';
+      if (src && !seenSrc.has(src)) {
+        seenSrc.add(src);
+        images.push({ src, caption });
+      }
+    });
+
+    if (!window.__portfolioLightboxState) {
+      window.__portfolioLightboxState = { items: [], index: 0 };
+
+      const getEl = (id) => document.getElementById(id);
+      const renderSlide = () => {
+        const st = window.__portfolioLightboxState;
+        const m = getEl('imageLightboxModal');
+        if (!st.items.length || !m) return;
+        const current = st.items[st.index];
+        const imgEl = getEl('lightboxImage');
+        const counterEl = getEl('lightboxCounter');
+        const captionEl = getEl('lightboxCaption');
+        const thumbsEl = getEl('lightboxThumbs');
+        const prevBtn = getEl('lightboxPrevBtn');
+        const nextBtn = getEl('lightboxNextBtn');
+
+        if (imgEl) {
+          imgEl.src = current.src;
+          imgEl.alt = current.caption || '';
+        }
+        if (counterEl) counterEl.textContent = `${st.index + 1} / ${st.items.length}`;
+        if (captionEl) captionEl.textContent = current.caption || '';
+
+        const single = st.items.length <= 1;
+        if (prevBtn) prevBtn.classList.toggle('hidden-single', single);
+        if (nextBtn) nextBtn.classList.toggle('hidden-single', single);
+
+        if (thumbsEl) {
+          thumbsEl.querySelectorAll('.image-lightbox-thumb-btn').forEach((btn, idx) => {
+            btn.classList.toggle('active', idx === st.index);
+          });
+        }
+      };
+
+      const stepLightbox = (delta) => {
+        const st = window.__portfolioLightboxState;
+        if (!st.items.length) return;
+        st.index = (st.index + delta + st.items.length) % st.items.length;
+        renderSlide();
+      };
+
+      const closeLightbox = () => {
+        const m = getEl('imageLightboxModal');
+        if (m) m.classList.remove('active');
+      };
+
+      window.__portfolioLightboxActions = { renderSlide, stepLightbox, closeLightbox };
+
+      const prevBtn = getEl('lightboxPrevBtn');
+      const nextBtn = getEl('lightboxNextBtn');
+      const closeBtn = getEl('lightboxCloseBtn');
+      const stage = getEl('lightboxStage');
+
+      if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); stepLightbox(-1); });
+      if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); stepLightbox(1); });
+      if (closeBtn) closeBtn.addEventListener('click', (e) => { e.stopPropagation(); closeLightbox(); });
+
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal || e.target === stage) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        const m = getEl('imageLightboxModal');
+        if (!m || !m.classList.contains('active')) return;
+        const key = e.key;
+        if (key === 'Escape') {
+          e.preventDefault();
+          e.stopPropagation();
+          e.stopImmediatePropagation();
+          closeLightbox();
+        } else if (key === 'ArrowRight' || key === 'd' || key === 'D') {
+          e.preventDefault();
+          e.stopPropagation();
+          stepLightbox(1);
+        } else if (key === 'ArrowLeft' || key === 'a' || key === 'A') {
+          e.preventDefault();
+          e.stopPropagation();
+          stepLightbox(-1);
+        }
+      }, true);
+
+      let touchStartX = 0;
+      let touchStartY = 0;
+      if (stage) {
+        stage.addEventListener('touchstart', (e) => {
+          if (!e.changedTouches || !e.changedTouches.length) return;
+          touchStartX = e.changedTouches[0].clientX;
+          touchStartY = e.changedTouches[0].clientY;
+        }, { passive: true });
+        stage.addEventListener('touchend', (e) => {
+          if (!e.changedTouches || !e.changedTouches.length) return;
+          const dx = e.changedTouches[0].clientX - touchStartX;
+          const dy = e.changedTouches[0].clientY - touchStartY;
+          if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+            stepLightbox(dx < 0 ? 1 : -1);
+          }
+        }, { passive: true });
+      }
+    }
+
+    const st = window.__portfolioLightboxState;
+    const actions = window.__portfolioLightboxActions;
+    st.items = images;
+
+    const hintsEl = document.getElementById('lightboxHints');
+    const closeTextEl = document.getElementById('lightboxCloseText');
+    if (hintsEl) {
+      hintsEl.textContent = isEn
+        ? '← / → or A / D: Navigate • Swipe on Mobile • ESC: Close'
+        : '← / → veya A / D: Gezin • Mobilde Kaydır • ESC: Kapat';
+    }
+    if (closeTextEl) {
+      closeTextEl.textContent = isEn ? 'Close (ESC)' : 'Kapat (ESC)';
+    }
+
+    const thumbsEl = document.getElementById('lightboxThumbs');
+    if (thumbsEl) {
+      thumbsEl.innerHTML = '';
+      images.forEach((item, idx) => {
+        const tBtn = document.createElement('button');
+        tBtn.type = 'button';
+        tBtn.className = 'image-lightbox-thumb-btn';
+        const tImg = document.createElement('img');
+        tImg.src = item.src;
+        tImg.alt = item.caption || '';
+        tBtn.appendChild(tImg);
+        tBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          st.index = idx;
+          actions.renderSlide();
+        });
+        thumbsEl.appendChild(tBtn);
+      });
+    }
+
+    triggers.forEach(el => {
+      const openThis = (e) => {
+        e.preventDefault();
+        const src = el.getAttribute('data-lightbox-src');
+        const idx = st.items.findIndex(item => item.src === src);
+        st.index = idx >= 0 ? idx : 0;
+        modal.classList.add('active');
+        actions.renderSlide();
+      };
+      el.addEventListener('click', openThis);
+      el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          openThis(e);
+        }
+      });
+    });
   },
 
   showToast(message, toastBar, toastText) {

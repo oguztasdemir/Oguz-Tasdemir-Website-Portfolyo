@@ -452,6 +452,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ESC tuşuyla projeler listesine geri dönme
   document.addEventListener('keydown', (e) => {
+    const lb = document.getElementById('imageLightboxModal');
+    if (lb && lb.classList.contains('active')) return;
     if (e.key === 'Escape' && portfolioDetailView && portfolioDetailView.style.display !== 'none') {
       closeProjectDetailModal();
     }
