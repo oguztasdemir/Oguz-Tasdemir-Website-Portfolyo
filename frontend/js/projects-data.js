@@ -476,27 +476,27 @@ const PROJECTS_DATA = [
     },
     "screenshots": [
       {
-        "src": "frontend/assets/projects/ai-image-studio/screenshot_2_img2img_workspace.png",
+        "src": "assets/projects/ai-image-studio/screenshot_2_img2img_workspace.png",
         "caption": "Image-to-Image Stüdyo Çalışma Alanı & Canlı Çeviri",
         "captionEn": "Image-to-Image Studio Workspace & Live Translation"
       },
       {
-        "src": "frontend/assets/projects/ai-image-studio/screenshot_1_projects_hub.png",
+        "src": "assets/projects/ai-image-studio/screenshot_1_projects_hub.png",
         "caption": "Proje Merkezi & Oturum Kartları",
         "captionEn": "Projects Hub & Session Management Cards"
       },
       {
-        "src": "frontend/assets/projects/ai-image-studio/screenshot_3_model_selector.png",
+        "src": "assets/projects/ai-image-studio/screenshot_3_model_selector.png",
         "caption": "Çoklu Model Seçici (SDXL, InstructPix2Pix, Inpaint)",
         "captionEn": "Multi-Model Selector (SDXL, InstructPix2Pix, Inpaint)"
       },
       {
-        "src": "frontend/assets/projects/ai-image-studio/screenshot_4_hardware_telemetry.png",
+        "src": "assets/projects/ai-image-studio/screenshot_4_hardware_telemetry.png",
         "caption": "Canlı GPU & VRAM Donanım Telemetri Monitörü",
         "captionEn": "Live GPU & VRAM Hardware Telemetry Monitor"
       },
       {
-        "src": "frontend/assets/projects/ai-image-studio/screenshot_5_models_manager.png",
+        "src": "assets/projects/ai-image-studio/screenshot_5_models_manager.png",
         "caption": "Model Ağırlıkları & VRAM Önyükleme Yöneticisi",
         "captionEn": "Model Weights & VRAM Preload Manager"
       }
@@ -505,22 +505,22 @@ const PROJECTS_DATA = [
       {
         "modeTitle": "MOD 1: Image-to-Image (Görselden Görsele Dönüşüm #1 — Gün Batımı)",
         "modeTitleEn": "MODE 1: Image-to-Image (Transformation #1 — Golden Hour)",
-        "inputImg": "frontend/assets/projects/ai-image-studio/result_img2img_input.jpg",
+        "inputImg": "assets/projects/ai-image-studio/result_img2img_input.jpg",
         "promptTr": "Sinematik altın saat gün batımı ışıklandırması, sıcak iç mekan aydınlatması ve havuz yansıması",
         "promptEn": "Cinematic golden hour sunset lighting, warm interior illumination and pool reflection, 8k architectural render",
         "meta": "Model: InstructPix2Pix / SDXL • Süre: 4.2 sn • Çözünürlük: 1024x1024",
         "metaEn": "Model: InstructPix2Pix / SDXL • Time: 4.2s • Resolution: 1024x1024",
-        "outputImg": "frontend/assets/projects/ai-image-studio/result_img2img_output_dusk.jpg"
+        "outputImg": "assets/projects/ai-image-studio/result_img2img_output_dusk.jpg"
       },
       {
         "modeTitle": "MOD 1: Image-to-Image (Görselden Görsele Dönüşüm #2 — Kış & Kar Atmosferi)",
         "modeTitleEn": "MODE 1: Image-to-Image (Transformation #2 — Winter Snow)",
-        "inputImg": "frontend/assets/projects/ai-image-studio/result_img2img_input.jpg",
+        "inputImg": "assets/projects/ai-image-studio/result_img2img_input.jpg",
         "promptTr": "Kış mevsimi, yoğun kar yağışı, çam ağaçları üzerinde kar ve içeride sıcak şömine ışığı",
         "promptEn": "Winter season, heavy snowfall, snow-covered pine trees and warm cozy fireplace glow inside",
         "meta": "Model: InstructPix2Pix / SDXL • Süre: 4.8 sn • Çözünürlük: 1024x1024",
         "metaEn": "Model: InstructPix2Pix / SDXL • Time: 4.8s • Resolution: 1024x1024",
-        "outputImg": "frontend/assets/projects/ai-image-studio/result_img2img_output_winter.jpg"
+        "outputImg": "assets/projects/ai-image-studio/result_img2img_output_winter.jpg"
       },
       {
         "modeTitle": "MOD 2: Text-to-Image (Metinden Sıfırdan Görsel Üretim — 1024px SDXL)",
@@ -530,10 +530,10 @@ const PROJECTS_DATA = [
         "promptEn": "Futuristic neo-Tokyo cyberpunk alleyway at night, glowing holographic signs, rain-slicked cobblestones reflecting neon blue and amber lights, cinematic volumetric fog, 8k photorealistic",
         "meta": "Model: Playground v2.5 Aesthetic (SDXL) • Süre: 3.9 sn • Çözünürlük: 1024x1024 (25 Adım)",
         "metaEn": "Model: Playground v2.5 Aesthetic (SDXL) • Time: 3.9s • Resolution: 1024x1024 (25 Steps)",
-        "outputImg": "frontend/assets/projects/ai-image-studio/result_txt2img_cyberpunk.jpg"
+        "outputImg": "assets/projects/ai-image-studio/result_txt2img_cyberpunk.jpg"
       }
     ],
-    "videoUrl": "frontend/assets/projects/ai-image-studio/demo_video.webm",
+    "videoUrl": "assets/projects/ai-image-studio/demo_video.webm",
     "pipelineSteps": [
       {
         "num": "01",
