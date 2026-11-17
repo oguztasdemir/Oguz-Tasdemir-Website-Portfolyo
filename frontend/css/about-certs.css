@@ -453,18 +453,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px 64px;
+  padding: 24px 64px;
   overflow: hidden;
   border-right: 1px solid var(--border-panel);
   user-select: none;
+  min-height: 0;
 }
 
 .cert-modal-stage img {
   max-width: 100%;
-  max-height: calc(92vh - 175px);
+  max-height: 100%;
+  width: auto;
+  height: auto;
   object-fit: contain;
   border-radius: 6px;
   box-shadow: 0 12px 38px rgba(0, 0, 0, 0.65);
+  display: block;
+  margin: auto;
 }
 
 .cert-modal-nav-btn {
