@@ -1,27 +1,42 @@
 {
   "id": "Akademik-Ingilizce",
   "title": "Akademik İngilizce & Sınav Kelime Kampı",
+  "titleEn": "Academic English & Exam Vocabulary Camp Platform",
   "category": "academic",
   "categoryLabel": "Akademik İngilizce & Sınav",
+  "categoryLabelEn": "Academic English & Exam Prep",
   "badge": "Eğitim Teknolojisi",
-  "summary": "YÖKDİL ve YDS sınavlarındaki geçmiş soruları analiz ederek en kritik kelimeleri bağlamıyla öğreten ve eksikleri tespit eden interaktif sınav hazırlık platformu.",
-  "highlightMetric": "📚 10.000+ Soru & Kelime Frekans Analitiği",
+  "badgeEn": "EdTech Platform",
+  "summary": "YÖKDİL ve YDS sınavlarındaki geçmiş soruları analiz ederek en kritik kelimeleri bağlamıyla öğreten, çift arayüzlü (Web & Mobil PWA) interaktif sınav hazırlık platformu.",
+  "summaryEn": "Dual-interface (Desktop Web & Mobile PWA) academic exam prep platform featuring 9 past YÖKDİL exams, instant contextual translation, Bilge AI study coach, and automated error analysis.",
+  "highlightMetric": "📚 1.504 Akademik Kelime & 9 Tam Çıkmış YÖKDİL Sınavı",
+  "highlightMetricEn": "📚 1,504 Academic Words & 9 Full Past YÖKDİL Exams",
   "techStack": [
-    "Python",
-    "FastAPI",
-    "PDFPlumber OCR",
-    "NLP Tokenizer",
-    "Vanilla JS"
+    "React 19 & Vite 8",
+    "Node.js & Express",
+    "JWT & bcryptjs",
+    "PDF.js & jsPDF",
+    "SheetJS (xlsx)",
+    "Python"
   ],
   "caseStudy": {
-    "problem": "YDS ve YÖKDİL gibi akademik dil sınavlarına hazırlanırken kelimeleri rastgele ezberlemek yerine geçmiş sınavlarda en çok çıkan kök kelimeleri öğrenmek istiyordum. Hem kendi sınav hazırlığımda odaklı çalışabilmek hem de sınava hazırlanan arkadaşlarımın isteği üzerine birlikte soru ve kelime pratiği yapabileceğimiz interaktif bir sınav kampı platformu geliştirdim.",
-    "architecture": "Sistemin çekirdeğinde Python ve NLTK/spaCy tabanlı bir NLP metin madenciliği motoru yer alır. Geçmiş akademik sınav metinleri ve bilimsel makaleler taranarak morfolojik kök ayrıştırma (lemmatization) ve TF-IDF (Terim Frekansı - Ters Belge Frekansı) analizi yapılır; böylece sınavlarda en yüksek ayırt ediciliğe sahip kelimeler puanlanır. Kullanıcı arayüzünde ise Leitner 5 kutulu aralıklı tekrar algoritması (Spaced Repetition System - SRS) çalışır. Sistem adayın yanlış yaptığı kelimeleri daha sık periyotlarla önüne getirirken, kalıcı hafızaya aktarılanları daha uzun aralıklarla test eder.",
-    "keyChallenge": "İngilizce düzensiz fiillerin ve türemiş köklerin öğrenciye parçalanmadan bir bütün kelime ailesi olarak sunulması gerekiyordu. WordNet ontolojisini bağlayarak ilişkili kelime ağaçlarını otomatik türeten bir semantik haritalama algoritması kurguladım.",
+    "problem": "YDS ve YÖKDİL gibi akademik dil sınavlarına hazırlanırken kelimeleri rastgele ezberlemek yerine geçmiş sınavlarda en çok çıkan kök kelimeleri, bağlaçları ve edat kalıplarını çıkmış sorular üzerinde pratik ederek öğrenmek istiyordum. Hem kendi sınav hazırlığımda odaklı çalışabilmek hem de arkadaşlarla ortak soru/kelime pratiği yapabilmek için harici ücretli API anahtarına bağlı kalmadan yerel çalışan kapsamlı bir platform geliştirdim.",
+    "problemEn": "Preparing for YDS/YÖKDİL by memorizing isolated word lists wastes time compared to practicing high-frequency roots inside real past exam sentences. I built an end-to-end study platform with dual Web/Mobile UIs and local NLP lookup that requires zero paid external API keys.",
+    "architecture": "Sistem masaüstü tarayıcılar (Web Gui, Port 5173) ve mobil cihazlar (Mobil Gui, Port 5174) için tasarlanmış iki React 19 arayüzü ile Node.js/Express arka ucundan (Port 5000, Vercel Serverless uyumlu) oluşur. Dataset/yokdil altındaki 9 çıkmış sınav, 1.504 kelimelik sözlük, 60 günlük kamp verisi ve 13 gramer dersi servis edilir; yanlış cevaplarda /api/:category/exams/:examId/explain/:qNumber rotası şıkları sözlükle çözüp yapısal açıklama üretir.",
+    "architectureEn": "Two React 19 + Vite 8 frontends (Desktop Web & Mobile PWA) talk to a unified Node.js/Express API (Vercel Serverless ready). Past exam JSONs, 1,504-word dictionaries, 60-day study camps, and 13 grammar modules are served alongside JWT cloud sync and structured question error analysis.",
+    "keyChallenge": "Okuma parçalarında tıklanan çekimli İngilizce kelimeleri (-s, -ed, -ing, -ies) kök sözlükle eşleştirmek, paralel Türkçe metindeki karşılıklarını kök benzerliğiyle vurgulamak ve 1.504 kelimelik kullanıcı defterini 100 KB Express JSON limitine takılmadan (10mb + res.ok korumaları) senkronize etmek en kritik mühendislik noktalarıydı.",
+    "keyChallengeEn": "Stemming inflected English tokens during instant reader lookup, highlighting matching Turkish root tokens across parallel passages, and fixing a 413 Payload Too Large bottleneck when syncing 1,504-word notebooks via JWT.",
     "features": [
-      "YDS ve YÖKDİL'e hazırlanan arkadaşlarla birlikte çalışma ve kelime pekiştirme platformu",
-      "Fen, Sağlık ve Sosyal alanlarına özel sınav kelime kampları",
-      "Geçmiş sınav metinlerinden çıkarılan kök kelime frekans analizi",
-      "Aralıklı tekrar algoritmasıyla (SRS) kalıcı hafıza pekiştirme"
+      "Çift Arayüz (Masaüstü Web & Mobil PWA) + QR kod ile cihazlar arası JWT çalışma eşitlemesi",
+      "9 tam YÖKDİL çıkmış sınav simülasyonu, soru haritası ve otomatik şık/gramer çözüm analizi",
+      "Paralel İngilizce-Türkçe okuma parçaları ve tıklamalı anlık sözlük çevirisi",
+      "60 günlük Kelime Kampı, Excel içe aktarımlı Özel Kamp, PDF/DOCX/XLSX karne çıktısı ve Bilge Baykuş Asistanı"
+    ],
+    "featuresEn": [
+      "Dual Desktop Web & Mobile PWA UIs with QR device linking and JWT progress sync",
+      "9 full past YÖKDİL exams with automatic option-by-option analysis on incorrect answers",
+      "Parallel English-Turkish reading passages with instant click-to-translate stemming",
+      "60-day Vocabulary Camp, custom Excel import, PDF/DOCX/XLSX export, and Bilge Owl NLP assistant"
     ]
   },
   "githubUrl": "https://github.com/oguztasdemir/Akademik-Ingilizce",
@@ -29,12 +44,149 @@
   "tags": [
     "education",
     "exam-prep",
+    "react",
+    "nodejs",
     "nlp",
-    "python",
-    "vocabulary",
     "yds",
     "yokdil"
   ],
   "demoUrl": "https://yokdilapp.vercel.app/#/landing",
-  "demoUrl2": "https://yds-quizlet.vercel.app"
+  "demoUrl2": "https://yds-quizlet.vercel.app",
+  "videoUrl": "assets/projects/Akademik-Ingilizce/demo_video.webm",
+  "screenshots": [
+    {
+      "src": "assets/projects/Akademik-Ingilizce/screenshot_1_dashboard_camps.png",
+      "caption": "Öğrenci Paneli (Dashboard), Günlük Hedefler & Çalışma Serisi",
+      "captionEn": "Student Dashboard, Daily Goals & Study Streak"
+    },
+    {
+      "src": "assets/projects/Akademik-Ingilizce/screenshot_2_vocab_leitner_camp.png",
+      "caption": "60 Günlük Kelime Kampı, Kart Pratiği & Karne Dışa Aktarma",
+      "captionEn": "60-Day Vocabulary Camp, Flashcards & Report Export"
+    },
+    {
+      "src": "assets/projects/Akademik-Ingilizce/screenshot_3_exam_question_analysis.png",
+      "caption": "Çıkmış Sınav Simülasyonu & Otomatik Şık/Sözlük Analizi",
+      "captionEn": "Past Exam Simulator & Automatic Option/Dictionary Breakdown"
+    },
+    {
+      "src": "assets/projects/Akademik-Ingilizce/screenshot_4_reading_popover_translation.png",
+      "caption": "Paralel İngilizce-Türkçe Okuma & Tıklamalı Kelime Çevirisi",
+      "captionEn": "Parallel Bilingual Reader & Click-to-Translate Breakdown"
+    },
+    {
+      "src": "assets/projects/Akademik-Ingilizce/screenshot_5_ai_owl_coach_mistakes.png",
+      "caption": "5 Aşamalı Konu Anlatımı & Bilge Baykuş Sohbet Asistanı",
+      "captionEn": "5-Step Grammar Lessons & Bilge Owl Study Coach"
+    },
+    {
+      "src": "assets/projects/Akademik-Ingilizce/screenshot_6_mobile_pwa_view.png",
+      "caption": "Mobil PWA Arayüzü (Port 5174, 390x844 Dokunmatik Tasarım)",
+      "captionEn": "Mobile PWA Interface (Port 5174, 390x844 Responsive View)"
+    }
+  ],
+  "resultsComparison": [
+    {
+      "modeTitle": "SENARYO 1: YÖKDİL Sınav Hata Analizi -> Paralel Okuma Kök Çevirisi",
+      "modeTitleEn": "SCENARIO 1: YÖKDİL Exam Error Breakdown -> Parallel Reader Lookup",
+      "inputLabel": "1. SINAV & HATA ANALİZİ",
+      "inputLabelEn": "1. EXAM & ERROR ANALYSIS",
+      "processLabel": "2. EXPRESS API & KÖK SÖZLÜK",
+      "processLabelEn": "2. EXPRESS API & STEM LEXICON",
+      "outputLabel": "3. PARALEL OKUMA & ÇEVİRİ",
+      "outputLabelEn": "3. PARALLEL READER & GLOSSARY",
+      "promptLabel": "Akış",
+      "promptLabelEn": "Flow",
+      "inputImg": "assets/projects/Akademik-Ingilizce/screenshot_3_exam_question_analysis.png",
+      "promptTr": "2018 İlkbahar Soru #1 yanlış şık analizinden (/api/fen/exams/2018-ilkbahar/explain/1 -> 'C: essential') paralel okuma metninde 'transformation' kelime çözümüne geçiş",
+      "promptEn": "From 2018-ilkbahar Q1 option breakdown ('C: essential') via /explain/1 (200 OK) to clicking 'transformation' in the bilingual passage reader",
+      "meta": "200 OK • 1.504 Kelimelik Sözlük • Anlık Kök & Şık Analizi",
+      "metaEn": "200 OK • 1,504-Word Dictionary • Live Option & Root Analysis",
+      "outputImg": "assets/projects/Akademik-Ingilizce/screenshot_4_reading_popover_translation.png"
+    },
+    {
+      "modeTitle": "SENARYO 2: Bilge Asistan NLP Koçu <-> Mobil PWA Bulut Senkronizasyonu",
+      "modeTitleEn": "SCENARIO 2: Bilge Owl NLP Coach <-> Mobile PWA Cloud Sync",
+      "inputLabel": "1. DERS & BİLGELİK ASİSTANI",
+      "inputLabelEn": "1. GRAMMAR & AI COACH",
+      "processLabel": "2. JWT & 10MB JSON SYNC",
+      "processLabelEn": "2. JWT & 10MB JSON SYNC",
+      "outputLabel": "3. MOBİL PWA GÖRÜNÜMÜ",
+      "outputLabelEn": "3. MOBILE PWA INTERFACE",
+      "promptLabel": "Süreç",
+      "promptLabelEn": "Process",
+      "inputImg": "assets/projects/Akademik-Ingilizce/screenshot_5_ai_owl_coach_mistakes.png",
+      "promptTr": "Bilge Asistan'a 'essential nedir?' sorgusu ('gerekli | Çıkmış sınav sıklığı: 13') + 1.504 kelimelik defterin JWT / 10MB /api/user/sync üzerinden Mobil PWA'ya eşitlenmesi",
+      "promptEn": "Querying Bilge Coach ('essential nedir?' -> meaning + exam frequency: 13) synced seamlessly via JWT / 10MB /api/user/sync to Mobile PWA",
+      "meta": "Port 5173 <-> Port 5174 • Express 5000 • 0 Ağ Hatası",
+      "metaEn": "Port 5173 <-> Port 5174 • Express 5000 • Zero Failed Requests",
+      "outputImg": "assets/projects/Akademik-Ingilizce/screenshot_6_mobile_pwa_view.png"
+    }
+  ],
+  "pipelineSteps": [
+    {
+      "num": "01",
+      "title": "Dataset & Sınav Havuzu",
+      "desc": "9 Çıkmış YÖKDİL & 1.504 Kelime",
+      "detail": "Sınav JSON'ları, 60 günlük kelime kampları, 13 gramer ünitesi ve paralel okumalar yüklenir."
+    },
+    {
+      "num": "02",
+      "title": "Çift Arayüz (Web & Mobil)",
+      "desc": "React 19 + Vite 8",
+      "detail": "Masaüstü çalışma konsolu (5173) ve mobil dokunmatik PWA (5174) eşzamanlı çalışır."
+    },
+    {
+      "num": "03",
+      "title": "Express API & Sözlük",
+      "desc": "Soru Analizi & Kök Çeviri",
+      "detail": "Yanlış sorularda şık bazlı açıklama üretilir; okuma metinlerinde kelime kökleri çevrilir."
+    },
+    {
+      "num": "04",
+      "title": "Hata Kutusu & Karne",
+      "desc": "JWT Sync & PDF/DOCX/XLSX",
+      "detail": "Yanlışlar Hata Kutusu'na aktarılır; ilerleme JWT ile eşitlenip rapor olarak dışa aktarılır."
+    }
+  ],
+  "folderTree": "📁 Akademik-Ingilizce/\n├── 📄 main.py                         # Express (5000), Web (5173) & Mobil (5174) birleşik başlatıcı\n├── 📄 vercel.json                     # Vercel sunucusuz API & statik build yönlendirmeleri\n├── 📁 api/server.js                   # Vercel Serverless Express sarmalayıcı\n├── 📁 Dataset/yokdil/                 # Başarımlar & Fen sınav/kamp/gramer/sözlük JSON arşivi\n│   ├── 📄 achievements.json\n│   └── 📁 fen/ (cikmis_sinavlar/, kelime_kampi/, konu_anlatimi/, paragraflar/, dictionary.json)\n├── 📁 Web Gui/                        # Masaüstü React 19 + Vite 8 arayüzü & backend\n│   ├── 📁 backend/\n│   │   ├── 📄 server.js               # Express API (exams, vocabulary, explain, translate, chat, auth, sync)\n│   │   └── 📁 data/user_db.json       # Profil & çalışma ilerleme deposu\n│   └── 📁 src/features/               # quiz, camp, vocabulary, paragraphs, mistakes, lectures, games, smart-study\n└── 📁 Mobil Gui/                      # Mobil öncelikli React 19 + Vite 8 PWA arayüzü",
+  "codeFiles": {
+    "main.py": "import os\nimport sys\nimport subprocess\nimport time\nimport webbrowser\nimport signal\n\n# Global subprocess handles\nbackend_process = None\nweb_process = None\nmobil_process = None\n\ndef signal_handler(sig, frame):\n    print(\"\\n[main.py] Kapatma sinyali alındı. Sunucular sonlandırılıyor...\")\n    cleanup()\n    sys.exit(0)\n\ndef cleanup():\n    global backend_process, web_process, mobil_process\n    # Terminate backend\n    if backend_process:\n        print(\"[main.py] Backend sunucusu kapatılıyor...\")\n        try:\n            backend_process.terminate()\n            backend_process.wait(timeout=3)\n        except Exception:\n            backend_process.kill()\n            \n    # Terminate Web Gui\n    if web_process:\n        print(\"[main.py] Web Gui sunucusu kapatılıyor...\")\n        try:\n            web_process.terminate()\n            web_process.wait(timeout=3)\n        except Exception:\n            web_process.kill()\n\n    # Terminate Mobil Gui\n    if mobil_process:\n        print(\"[main.py] Mobil Gui sunucusu kapatılıyor...\")\n        try:\n            mobil_process.terminate()\n            mobil_process.wait(timeout=3)\n        except Exception:\n            mobil_process.kill()\n\n    print(\"[main.py] Tüm işlemler temizlendi. İyi günler!\")\n\n# Register signal handlers for clean exit\nsignal.signal(signal.SIGINT, signal_handler)\nsignal.signal(signal.SIGTERM, signal_handler)\n\ndef run_npm_install(path):\n    print(f\"[main.py] '{path}' dizininde paketler kontrol ediliyor...\")\n    node_modules_path = os.path.join(path, \"node_modules\")\n    \n    if not os.path.exists(node_modules_path):\n        print(f\"[main.py] node_modules bulunamadı. npm install çalıştırılıyor in '{path}'...\")\n        try:\n            # Use shell=True for windows npm compatibility\n            subprocess.run(\"npm install\", cwd=path, shell=True, check=True)\n            print(f\"[main.py] Paket kurulumu başarıyla tamamlandı: '{path}'\")\n        except subprocess.CalledProcessError as e:\n            print(f\"[main.py] HATA: npm install başarısız oldu in '{path}': {e}\")\n            sys.exit(1)\n// ... (devamı GitHub deposunda)",
+    "Web Gui/backend/server.js": "const express = require('express');\nconst cors = require('cors');\nconst path = require('path');\nconst fs = require('fs');\n\nconst app = express();\nconst PORT = process.env.PORT || 5000;\n\napp.use(cors());\napp.use(express.json({ limit: '10mb' }));\n\n// Reference root-level folders\nconst getPdfsPath = () => {\n  let p = path.join(process.cwd(), 'Web Gui', 'pdfs');\n  if (fs.existsSync(p)) return p;\n  p = path.join(__dirname, '..', 'pdfs');\n  return p;\n};\n\nconst getDatasetPath = () => {\n  let p = path.join(process.cwd(), 'Dataset', 'yokdil');\n  if (fs.existsSync(p)) return p;\n  p = path.join(__dirname, '..', '..', 'Dataset', 'yokdil');\n  return p;\n};\n\nconst pdfsDir = getPdfsPath();\nconst datasetDir = getDatasetPath();\nconst resolveLecturesDir = () => {\n  const genelLectures = path.join(datasetDir, 'genel', 'lectures');\n  if (fs.existsSync(genelLectures)) return genelLectures;\n  return path.join(datasetDir, 'fen', 'konu_anlatimi');\n};\nconst lecturesDir = resolveLecturesDir();\nconst questionsDir = datasetDir;\n\nconst getQuestionsDir = (req) => {\n  const category = req.params.category || req.query.category || 'fen';\n  const catPath = path.join(datasetDir, category);\n  return fs.existsSync(catPath) ? catPath : path.join(datasetDir, 'fen');\n};\n\n// Serve PDF files statically\napp.use('/pdfs', express.static(pdfsDir));\n\n// Serve dataset statically from root\nconst getDatasetRootPath = () => {\n  let p = path.join(process.cwd(), 'Dataset');\n  if (fs.existsSync(p)) return p;\n  p = path.join(__dirname, '..', '..', 'Dataset');\n  return p;\n};\napp.use('/dataset', express.static(getDatasetRootPath()));\n\n\n// Serve the generated clean PDF from the root workspace folder\napp.get('/pdfs/YOKDIL_Temiz_Soru_Kitapcigi.pdf', (req, res) => {\n  const pdfPath = path.join(pdfsDir, 'YÖKDİL_Temiz_Soru_Kitapçığı.pdf');\n  if (fs.existsSync(pdfPath)) {\n    res.sendFile(pdfPath);\n  } else {\n    res.status(404).send('PDF file not found');\n  }\n});\n\n// ... (devamı GitHub deposunda)",
+    "Web Gui/src/App.jsx": "import React, { useState, useEffect, useRef } from 'react';\nimport {\n  Trophy, TrendingUp, Volume2, Plus, Play, ArrowRight,\n  Sun, Moon, Eye, ShieldAlert\n} from 'lucide-react';\n\n// Import Modular Components\nimport MascotOwl from './components/common/MascotOwl';\nimport MascotPet from './components/common/MascotPet';\nimport Confetti from './components/common/Confetti';\nimport TranslationPopover from './components/common/TranslationPopover';\nimport Sidebar from './components/layout/Sidebar';\nimport QuizSection from './features/quiz/QuizSection';\nimport VocabularySection from './features/vocabulary/VocabularySection';\nimport LecturesSection from './features/lectures/LecturesSection';\nimport PerformanceSection from './features/performance/PerformanceSection';\nimport SettingsSection from './features/settings/SettingsSection';\nimport PetSection from './features/pet/PetSection';\nimport GamesSection from './features/games/GamesSection';\nimport MistakeInbox from './features/mistakes/MistakeInbox';\nimport ParagraphsSection from './features/paragraphs/ParagraphsSection';\nimport AuthModal from './components/common/AuthModal';\nimport SmartStudySection from './features/smart-study/SmartStudySection';\nimport CampSection from './features/camp/CampSection';\nimport BookExerciseSection from './features/book-exercise/BookExerciseSection';\nimport { renderMarkdown } from './utils/markdown';\nimport { playCorrectSound, playIncorrectSound, playGoalSound } from './utils/audio';\nimport achievementsData from '@dataset/yokdil/achievements.json';\n\nimport fallbackExamsFen from '@dataset/yokdil/fen/cikmis_sinavlar/sinav_listesi.json';\nconst fallbackExamsSosyal = fallbackExamsFen;\nconst fallbackExamsSaglik = fallbackExamsFen;\n\nconst lectureModules = import.meta.glob('../../Dataset/yokdil/*/konu_anlatimi/*.md', { query: '?raw', import: 'default' });\nconst examDetailModules = import.meta.glob('../../Dataset/yokdil/*/cikmis_sinavlar/*.json');\n\nconst getLectureContent = async (category, filename) => {\n  const targetSubstr = `${category}/konu_anlatimi/${filename}`;\n  let key = Object.keys(lectureModules).find(k => k.includes(targetSubstr));\n  if (!key && category !== 'fen') {\n    const fallbackSubstr = `fen/konu_anlatimi/${filename}`;\n    key = Object.keys(lectureModules).find(k => k.includes(fallbackSubstr));\n  }\n  if (key) {\n    const loader = lectureModules[key];\n    const content = await loader();\n    return content;\n  }\n  return '';\n};\n\n\nimport fallbackVocabFen from '@dataset/yokdil/fen/gelismis_kelime_kampi/akademik_kelime_listesi.json';\nconst fallbackVocabSosyal = fallbackVocabFen;\nconst fallbackVocabSaglik = fallbackVocabFen;\n\nimport fallbackDictFen from '@dataset/yokdil/fen/dictionary.json';\nconst fallbackDictSosyal = fallbackDictFen;\nconst fallbackDictSaglik = fallbackDictFen;\n\nconst BACKEND_URL = import.meta.env.VITE_BACKEND_URL || (\n  window.location.hostname === 'localhost' || \n  window.location.hostname === '127.0.0.1' || \n  window.location.hostname.startsWith('192.168.') || \n  window.location.hostname.startsWith('10.') || \n// ... (devamı GitHub deposunda)",
+    "Web Gui/src/features/quiz/QuizSection.jsx": "import React, { useState } from 'react';\nimport MascotOwl from '../../components/common/MascotOwl';\n\nconst cleanQuestionText = (text, qNum) => {\n  if (!text) return '';\n  let cleaned = text;\n  cleaned = cleaned.replace(/^\\[[^\\]]+\\]\\s*/i, '');\n  \n  const qRegexStart = new RegExp(`^Question\\\\s*${qNum}:?\\\\s*`, 'i');\n  cleaned = cleaned.replace(qRegexStart, '');\n  \n  const qRegexEnd = new RegExp(`\\\\s*Question\\\\s*${qNum}:?\\\\s*$`, 'i');\n  cleaned = cleaned.replace(qRegexEnd, '');\n\n  // Remove leading numbers like \"25. \", \"25- \", \"25) \"\n  cleaned = cleaned.replace(new RegExp(`^\\\\s*${qNum}\\\\s*[.\\\\-)]\\\\s*`, 'i'), '');\n  cleaned = cleaned.replace(new RegExp(`^\\\\s*${qNum}\\\\s+`, 'i'), '');\n\n  // Replace parenthesized numbers like \"(25)----\" or \"(25) ----\" with just \"----\"\n  cleaned = cleaned.replace(new RegExp(`\\\\(${qNum}\\\\)\\\\s*-*`, 'g'), '----');\n  cleaned = cleaned.replace(new RegExp(`\\\\b${qNum}\\\\b\\\\s*-+`, 'g'), '----');\n  \n  return cleaned.trim();\n};\n\nconst QuizSection = ({\n  selectedExam,\n  quizActive,\n  setQuizActive,\n  quizQuestions,\n  currentQuizIndex,\n  setCurrentQuizIndex,\n  flagged,\n  handleToggleFlag,\n  playSpeechAudio,\n  fontSize,\n  handleTextSelection,\n  selectedOption,\n  setSelectedOption,\n  answers,\n  handleSaveAnswer,\n  activeExplanation,\n  renderMarkdown,\n  handleSubmitExam,\n  timerIntervalRef,\n  setExamRunning,\n  mascotState,\n  setMascotState,\n  mascotSpeech,\n  setMascotSpeech,\n  questionTimeSpent\n}) => {\n  const [speechSpeed, setSpeechSpeed] = useState(1);\n  const [showMap, setShowMap] = useState(false);\n  const [showExplanation, setShowExplanation] = useState(false);\n  const [showCheatSheet, setShowCheatSheet] = useState(false);\n  const [secondsLeft, setSecondsLeft] = useState(180 * 60); // 3 hours countdown\n\n  React.useEffect(() => {\n    if (!quizActive) return;\n    const interval = setInterval(() => {\n      setSecondsLeft(prev => {\n        if (prev <= 1) {\n          clearInterval(interval);\n          if (handleSubmitExam) handleSubmitExam();\n// ... (devamı GitHub deposunda)",
+    "Web Gui/src/features/mistakes/MistakeInbox.jsx": "import React, { useState } from 'react';\nimport { ShieldAlert, CheckCircle2, XCircle, ArrowRight, BookOpen, Star, ChevronLeft, RefreshCw, Trophy } from 'lucide-react';\n\nconst MistakeInbox = ({\n  activeTab,\n  mistakes = [],\n  setMistakes,\n  exams = [],\n  playSpeechAudio,\n  renderMarkdown,\n  activeExplanation,\n  loadQuestionExplanation,\n  setActiveExplanation,\n  wordStats = {},\n  vocabPracticeList = [],\n  notebook = [],\n  recordWordStat,\n  questionStats = {}\n}) => {\n  const [mistakeSection, setMistakeSection] = useState('summary'); // 'summary', 'tests', 'camp', 'reading', 'vocabulary'\n  \n  // Test mistakes states\n  const [activeMistakeIndex, setActiveMistakeIndex] = useState(null);\n  const [selectedOption, setSelectedOption] = useState(null);\n  const [isAnswered, setIsAnswered] = useState(false);\n\n  // Marathon Mode states\n  const [isMarathonMode, setIsMarathonMode] = useState(false);\n  const [marathonIndex, setMarathonIndex] = useState(0);\n\n  // Vocabulary states\n  const [activeWordIndex, setActiveWordIndex] = useState(null);\n  \n  // Expanded mistake details states\n  const [activeCampIndex, setActiveCampIndex] = useState(null);\n  const [activeReadingIndex, setActiveReadingIndex] = useState(null);\n\n  if (activeTab !== 'mistakes') return null;\n\n  const safeMistakes = mistakes || [];\n\n  // Filter mistakes by category\n  const examMistakesList = safeMistakes.filter(m => !m.type || m.type === 'exam_question');\n  const campMistakesList = safeMistakes.filter(m => m.type === 'camp_question');\n  const readingMistakesList = safeMistakes.filter(m => m.type === 'reading_question');\n\n  // Vocabulary / Word Mistakes Pool\n  const pool = notebook.length > 0 ? notebook : vocabPracticeList;\n  const oldVocabMistakes = pool.filter(word => {\n    if (!word || !word.english) return false;\n    const stats = wordStats[word.english.toLowerCase()] || { correct: 0, wrong: 0 };\n    return stats.wrong > 0;\n  });\n\n  const wordMistakesFromType = safeMistakes.filter(m => m.type === 'word');\n  \n  // Combine all word mistakes, avoiding duplicates by english word\n  const allWordMistakes = [...wordMistakesFromType.map(wm => ({\n    english: wm.word,\n    turkish: wm.meaning,\n    sentence: wm.sentence,\n    translation: wm.translation,\n    isFromType: true,\n    id: wm.id\n  }))];\n// ... (devamı GitHub deposunda)"
+  },
+  "qaPool": [
+    {
+      "q": "S1: Bu projeyi geliştirmeye neden ihtiyaç duydunuz? Çözdüğünüz asıl darboğaz neydi?",
+      "qEn": "Q1: Why did you build this project? What bottleneck did it solve?",
+      "a": "YDS/YÖKDİL hazırlığında kelimeleri bağlamdan kopuk şekilde ezberlemek ciddi zaman kaybı yaratıyordu. Harici ücretli servislere bağımlı kalmadan çalışan, geçmiş sınav metinlerindeki kelime sıklığını hesaplayan ve çıkmış sorularla bütünleşik pratik sunan bir platform kurdum.",
+      "aEn": "Memorizing isolated word lists slows exam prep down. I built an offline-ready platform that computes real word frequencies across past exams and unifies vocabulary camps with exam practice without paid external API keys."
+    },
+    {
+      "q": "S2: Neden Node.js/Express arka ucunu hem masaüstü (Web Gui) hem mobil (Mobil Gui) React uygulamalarıyla eşlediniz?",
+      "qEn": "Q2: Why pair one Express backend with separate Web Gui and Mobil Gui React apps?",
+      "a": "Bilgisayarda uzun okuma parçaları ve 80 soruluk sınavlar için geniş yerleşim gerekirken, mobilde tek elle kart kaydırma ve alt gezinme barı daha verimlidir. İki arayüzün aynı Express API'yi ve JWT sync ucunu paylaşması cihazlar arası kesintisiz geçiş sağlar.",
+      "aEn": "Desktop fits 80-question exams and side-by-side parallel reading, whereas mobile benefits from bottom navigation and touch flashcards—all sharing one Express API and JWT sync endpoint."
+    },
+    {
+      "q": "S3: Okuma parçalarında tıklamalı kelime çevirisi ve Türkçe eşleştirme nasıl çalışıyor?",
+      "qEn": "Q3: How do instant word lookup and parallel Turkish highlighting work in the reader?",
+      "a": "ParagraphsSection her kelimeyi tıklanabilir tokenlara ayırır; yerel sözlükte doğrudan veya ek soyma kurallarıyla (-s, -ed, -ing, -ies) arama yapar, bulamazsa /api/:category/translate rotasına düşer. Bulunan Türkçe anlam paralel sütunda kök benzerliğiyle vurgulanır.",
+      "aEn": "ParagraphsSection tokenizes each word into clickable spans, checks local inflections (-s, -ed, -ing, -ies) before falling back to /api/:category/translate, and highlights matching Turkish root words in the parallel column."
+    },
+    {
+      "q": "S4: Canlı test ve doğrulama aşamasında hangi kritik teknik hataları tespit edip çözdünüz?",
+      "qEn": "Q4: Which real bugs did you uncover and fix during live verification?",
+      "a": "1.504 kelimelik defter eşitlemesinin Express varsayılan 100 KB sınırına takılarak /api/user/sync ucunda 413 vermesi (limit: '10mb' ile çözüldü), Mobil Gui içindeki eksik sosyal/saglik importlarının vite build'i kırması, backend exams/vocabulary/lectures/passages/explain yollarının güncel Dataset/yokdil/fen dizinlerine bağlanması ve AuthModal'ın /api/auth/guest ucuna yönlendirilmesi çözüldü.",
+      "aEn": "Fixed 413 Payload Too Large on /api/user/sync via express.json({ limit: '10mb' }), aliased missing sosyal/saglik imports in Mobil Gui to fen fallback, realigned backend routes to Dataset/yokdil/fen/* and question.correct_option, added res.ok guards, and wired AuthModal to /api/auth/guest."
+    },
+    {
+      "q": "S5: Kullanıcı ve sınav verisi 100 katına çıksaydı mimariyi nasıl ölçeklerdiniz?",
+      "qEn": "Q5: How would you scale this architecture for 100x more users and data?",
+      "a": "Yerel user_db.json deposunu PostgreSQL veya SQLite WAL indeksli tablolara taşır, sözlük ve sınav frekans sorgularını Redis önbelleğine alır, Web Gui ve Mobil Gui ortak özelliklerini tek monorepo paketinde birleştirirdim.",
+      "aEn": "Migrate user_db.json to indexed PostgreSQL/SQLite WAL storage, cache frequency and dictionary lookups in Redis, and extract duplicated hooks/features into a shared monorepo package."
+    }
+  ]
 }
