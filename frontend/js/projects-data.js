@@ -1286,6 +1286,7 @@ const PROJECTS_DATA = [
   },
   {
     "id": "Gardrops-Otomasyon-Botu",
+    "videoUrl": "assets/projects/Gardrops-Otomasyon-Botu/demo_gardrops_botu.mp4",
     "title": "Gardrops Pazaryeri & Takip Otomasyonu (2022)",
     "category": "web",
     "categoryLabel": "Pazaryeri Takip & Etkileşim Botu",
