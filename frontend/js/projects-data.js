@@ -81,6 +81,39 @@ const PROJECTS_DATA = [
   },
   {
     "id": "OYMAPOS-Barkod-Sistemi",
+    "videoUrl": "assets/projects/OYMAPOS-Barkod-Sistemi/demo_oymapos.mp4",
+    "gallery": [
+      {
+        "src": "assets/projects/OYMAPOS-Barkod-Sistemi/01_ana_sayfa_canli_kasa_ozeti.png",
+        "title": "Canlı Kasa Özeti & Ana Kontrol Paneli",
+        "description": "Günlük ciro, fiş adedi, kâr oranı ve anlık kasa durum göstergeleri."
+      },
+      {
+        "src": "assets/projects/OYMAPOS-Barkod-Sistemi/02_hizli_satis_kasa_ve_barkod_paneli.png",
+        "title": "Hızlı Satış (POS) & Barkod Okuma Paneli",
+        "description": "Seri barkod okuma, çoklu sepet park sistemi, para üstü hesabı ve hızlı tuşlar."
+      },
+      {
+        "src": "assets/projects/OYMAPOS-Barkod-Sistemi/03_stok_katalogu_ve_urun_kartlari.png",
+        "title": "Ürün Kataloğu & Stok Takip Merkezi",
+        "description": "4.900+ kayıtlı ürün, barkod eşleme, kritik stok alarmları ve fiyat güncelleme."
+      },
+      {
+        "src": "assets/projects/OYMAPOS-Barkod-Sistemi/04_manav_terazi_ve_dijital_tarti.png",
+        "title": "Manav & Terazi PLU Yönetimi",
+        "description": "Gramajlı ürünler için hızlı PLU kodları ve dijital terazi entegrasyonu."
+      },
+      {
+        "src": "assets/projects/OYMAPOS-Barkod-Sistemi/05_gun_sonu_z_raporu_ve_kar_analizi.png",
+        "title": "Gün Sonu Z-Raporu & Mali Denetim",
+        "description": "Nakit/Kredi kartı dökümü, vergi oranları ve perakende kârlılık raporları."
+      },
+      {
+        "src": "assets/projects/OYMAPOS-Barkod-Sistemi/06_termal_etiket_ve_raf_fisi_tasarimi.png",
+        "title": "Termal Etiket & Raf Fişi Baskı Motoru",
+        "description": "ESC/POS uyumlu raf etiketi şablonları, barkod basımı ve doğrudan termal çıktı."
+      }
+    ],
     "title": "OymaPOS — Perakende Barkodlu Satış & Stok Yönetimi",
     "category": "fintech",
     "categoryLabel": "FinTech & Perakende Kasa",
