@@ -351,6 +351,7 @@
   border-radius: 10px;
   max-width: 1220px;
   width: 96vw;
+  height: 92vh;
   max-height: 92vh;
   display: flex;
   flex-direction: column;
@@ -440,11 +441,11 @@
 
 .cert-modal-split-body {
   display: grid;
-  grid-template-columns: minmax(0, 1.45fr) 390px;
-  min-height: 480px;
-  max-height: calc(92vh - 125px);
-  overflow: hidden;
+  grid-template-columns: minmax(0, 1.45fr) 400px;
+  min-height: 0;
+  height: 100%;
   flex: 1 1 auto;
+  overflow: hidden;
 }
 
 .cert-modal-stage {
@@ -458,6 +459,7 @@
   border-right: 1px solid var(--border-panel);
   user-select: none;
   min-height: 0;
+  height: 100%;
 }
 
 .cert-modal-stage img {
@@ -513,6 +515,28 @@
   flex-direction: column;
   gap: 11px;
   background: #0f141c;
+  min-height: 0;
+  height: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(56, 189, 248, 0.45) rgba(255, 255, 255, 0.04);
+}
+
+.cert-modal-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cert-modal-sidebar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 4px;
+}
+
+.cert-modal-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.4);
+  border-radius: 4px;
+}
+
+.cert-modal-sidebar::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8;
 }
 
 .cert-modal-issuer {
