@@ -1322,6 +1322,7 @@ const PROJECTS_DATA = [
   },
   {
     "id": "EA-FIFA-Fikstur",
+    "videoUrl": "assets/projects/EA-FIFA-Fikstur/demo_fifa_fikstur.mp4",
     "title": "Turnuva & Dinamik Fikstür / Kura Çekim Motoru",
     "category": "web",
     "categoryLabel": "Algoritmik Kura & Fikstür Motoru",
