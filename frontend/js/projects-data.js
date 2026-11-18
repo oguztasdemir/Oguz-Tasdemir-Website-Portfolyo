@@ -1147,6 +1147,29 @@ const PROJECTS_DATA = [
         "Markdown ve PDF formatında çalışma notu dışa aktarımı"
       ]
     },
+    "gallery": [
+      {
+        "url": "frontend/assets/projects/youtube-ai-assistant/01_zaman_damgali_transkript_ve_arama_paneli.png",
+        "caption": "Zaman Damgalı Transkript Çekimi & Semantik Metin Arama Paneli"
+      },
+      {
+        "url": "frontend/assets/projects/youtube-ai-assistant/02_yerel_llm_ile_otonom_video_ozeti.png",
+        "caption": "Ollama Yerel LLM ile Otonom Yönetici Özeti & Kilit Çıkarımlar"
+      },
+      {
+        "url": "frontend/assets/projects/youtube-ai-assistant/03_akademik_kaynakca_ve_calisma_notu_uretici.png",
+        "caption": "Akademik Kaynakça (APA Bibliyografya) & Markdown/PDF Çalışma Notu Üretimi"
+      },
+      {
+        "url": "frontend/assets/projects/youtube-ai-assistant/04_semantik_rag_soru_cevap_ve_asistan.png",
+        "caption": "Yerel RAG Vektör Veritabanı ile Video Üzerinde Soru-Cevap Asistanı"
+      },
+      {
+        "url": "frontend/assets/projects/youtube-ai-assistant/05_toplu_oynatma_listesi_analiz_paneli.png",
+        "caption": "Çoklu Video / Oynatma Listesi (Playlist) Toplu Transkripsiyon & Analiz"
+      }
+    ],
+    "videoUrl": "frontend/assets/projects/youtube-ai-assistant/demo_youtube_assistant.mp4",
     "visibility": "private"
   },
   {
