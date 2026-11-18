@@ -518,6 +518,34 @@ const PROJECTS_DATA = [
   },
   {
     "id": "cortex-planner",
+    "videoUrl": "assets/projects/cortex-planner/demo_cortex_planner.mp4",
+    "gallery": [
+      {
+        "src": "assets/projects/cortex-planner/01_kanban_gorev_panosu_ve_sprintler.png",
+        "title": "Kanban Görev Panosu & Sprintler",
+        "description": "Yazılım geliştirme adımlarını TODO, In Progress ve Done sütunlarında görselleştiren pano."
+      },
+      {
+        "src": "assets/projects/cortex-planner/02_hiyerarsik_gorev_dagilimi_ve_oncelikler.png",
+        "title": "Hiyerarşik Görev Dağılımı & Öncelikler",
+        "description": "Büyük yazılım hedeflerini atomik alt görevlere ve öncelik sıralarına bölen motor."
+      },
+      {
+        "src": "assets/projects/cortex-planner/03_github_projects_ve_issue_esitleme.png",
+        "title": "GitHub Projects & Issue Senkronizasyonu",
+        "description": "GitHub REST ve GraphQL API üzerinden açık issue'ları ve commit'leri yerelle senkronize etme."
+      },
+      {
+        "src": "assets/projects/cortex-planner/04_llm_mimari_analiz_ve_beyin_firtinasi.png",
+        "title": "LLM Mimari Beyin Fırtınası Asistanı",
+        "description": "Yerel dil modeliyle projeye eklenebilecek yeni modülleri ve refactor adımlarını üretme."
+      },
+      {
+        "src": "assets/projects/cortex-planner/05_yerel_yol_haritasi_ve_cevrimdisi_ajanda.png",
+        "title": "Yerel Yol Haritası & SQLite WAL Ajandası",
+        "description": "İnternet bağlantısı olmasa dahi geliştirici ajandasını ve proje notlarını saklayan sistem."
+      }
+    ],
     "title": "Geliştirici Görev & Proje Planlama İstasyonu",
     "category": "ai",
     "categoryLabel": "Yazılım Planlama & GitHub Senkronizasyonu",
