@@ -706,7 +706,30 @@ const PROJECTS_DATA = [
         "Ateş ve Su gibi web multiplayer oyunları uzaktan birlikte oynayabilme",
         "Düşük gecikmeli WebSocket ekran ve girdi senkronizasyonu"
       ]
-    }
+    },
+    "gallery": [
+      {
+        "url": "frontend/assets/projects/hyperbeam-browser/01_ates_ve_su_multiplayer_oyun_odasi.png",
+        "caption": "Ateş ve Su 2 Kişilik Eşzamanlı Multiplayer Web Oyunu & Çift Klavye Kontrolü"
+      },
+      {
+        "url": "frontend/assets/projects/hyperbeam-browser/02_senkronize_film_ve_video_izleme_odasi.png",
+        "caption": "Kayıpsız Senkronize Film / Video İzleme & Ortak Ses Yönlendirme Odası"
+      },
+      {
+        "url": "frontend/assets/projects/hyperbeam-browser/03_ortak_web_arastirmasi_ve_pdf_inceleme.png",
+        "caption": "Eşzamanlı Çoklu İmleç (Multi-Cursor) & Ortak Akademik PDF İnceleme"
+      },
+      {
+        "url": "frontend/assets/projects/hyperbeam-browser/04_sanal_oda_yonetim_ve_konteyner_paneli.png",
+        "caption": "Sanal Oda Yönetimi, Docker İzolasyonu & Oturum Güvenlik Paneli"
+      },
+      {
+        "url": "frontend/assets/projects/hyperbeam-browser/05_dusuk_gecikmeli_girdi_ve_ses_senkronizasyonu.png",
+        "caption": "Düşük Gecikmeli WebSocket İkili (Binary) Akış ve Jitter Buffer Analizi"
+      }
+    ],
+    "videoUrl": "frontend/assets/projects/hyperbeam-browser/demo_hyperbeam_browser.mp4"
   },
   {
     "id": "Oymapos-Etiket-Yazdirici",
