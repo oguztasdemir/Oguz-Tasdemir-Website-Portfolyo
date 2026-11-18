@@ -496,7 +496,8 @@ const PROJECTS_DATA = [
         "src": "assets/projects/Disk-Kurtarma-Araci/05_gelismis_tarama_ve_kurtarma_ayarlari.png",
         "caption": "Gelişmiş Tarama & Kurtarma Ayarları (Paralel İş Parçacıkları, Özel Blok Aralıkları)"
       }
-    ]
+    ],
+    "videoUrl": "assets/projects/Disk-Kurtarma-Araci/demo_disk_kurtarma_araci.mp4"
   },
   {
     "id": "crypto-analytics-engine",
