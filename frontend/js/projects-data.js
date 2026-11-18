@@ -854,6 +854,39 @@ const PROJECTS_DATA = [
   },
   {
     "id": "Hugging-face-Downloader",
+    "videoUrl": "assets/projects/Hugging-face-Downloader/demo_hf_downloader.mp4",
+    "gallery": [
+      {
+        "src": "assets/projects/Hugging-face-Downloader/01_model_arama_ve_repo_kesif_merkezi.png",
+        "title": "Model Arama ve Repo Keşif Merkezi",
+        "description": "Hugging Face Hub API üzerinden gerçek zamanlı arama, model filtreleme ve metadata paneli."
+      },
+      {
+        "src": "assets/projects/Hugging-face-Downloader/02_trend_modeller_ve_kategori_katalogu.png",
+        "title": "Trend Modeller & Keşfet Kataloğu",
+        "description": "LLM, Vision ve Audio kategorilerinde en çok indirilen modellerin dinamik vitrini."
+      },
+      {
+        "src": "assets/projects/Hugging-face-Downloader/03_akilli_indirme_kuyrugu_ve_hiz_grafigi.png",
+        "title": "Akıllı İndirme Kuyruğu & Hız Göstergesi",
+        "description": "Çok kanallı paralel dosya indirme, anlık bant genişliği ve kuyruk yönetimi."
+      },
+      {
+        "src": "assets/projects/Hugging-face-Downloader/04_cortex_ai_model_asistani_ve_chat.png",
+        "title": "Cortex AI Model Asistanı & Chat",
+        "description": "Model kartlarını (README) analiz eden ve donanım gereksinimlerini hesaplayan yerleşik AI sohbeti."
+      },
+      {
+        "src": "assets/projects/Hugging-face-Downloader/05_yerel_disk_tarama_ve_model_yonetimi.png",
+        "title": "Yerel Disk Tarama & Model Yönetimi",
+        "description": "Tüm sürücülerdeki Hugging Face önbelleklerini tespit eden ve disk alanı optimize eden yönetim aracı."
+      },
+      {
+        "src": "assets/projects/Hugging-face-Downloader/06_favori_modeller_ve_ozel_etiketler.png",
+        "title": "Favori Modeller & Özel Etiketler",
+        "description": "Sık kullanılan model ve ağırlıkların etiketlenerek kategorize edildiği hızlı erişim ekranı."
+      }
+    ],
     "title": "HuggingFace Model İndirme Yöneticisi",
     "category": "ai",
     "categoryLabel": "AI Model & Veri Seti Yöneticisi",
