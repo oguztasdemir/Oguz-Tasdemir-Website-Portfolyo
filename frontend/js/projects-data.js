@@ -631,6 +631,34 @@ const PROJECTS_DATA = [
   },
   {
     "id": "Oymapos-Etiket-Yazdirici",
+    "videoUrl": "assets/projects/Oymapos-Etiket-Yazdirici/demo_etiket_yazici.mp4",
+    "gallery": [
+      {
+        "src": "assets/projects/Oymapos-Etiket-Yazdirici/01_masaustu_raf_etiket_tasarim_studyo.png",
+        "title": "Masaüstü Raf Etiket Tasarım Stüdyosu",
+        "description": "Fiyat, birim gramaj, barkod ve mağaza logosu içeren görsel etiket şablonu arayüzü."
+      },
+      {
+        "src": "assets/projects/Oymapos-Etiket-Yazdirici/02_wifi_yerel_ag_senkronizasyon_paneli.png",
+        "title": "Wi-Fi Çoklu PC & Cihaz Senkronizasyonu",
+        "description": "Kasa bilgisayarını kasmadan yerel ağda çalışan bağımsız arka plan yazdırma servisi."
+      },
+      {
+        "src": "assets/projects/Oymapos-Etiket-Yazdirici/03_mobil_wifi_reyon_fiyat_guncelleyici.png",
+        "title": "Mobil Reyon Terminali (Telefon Arayüzü)",
+        "description": "Reyonda raftaki ürünün barkodunu kamerayla okutup anında yeni fiyat etiketi basma."
+      },
+      {
+        "src": "assets/projects/Oymapos-Etiket-Yazdirici/04_termal_yazici_ean13_onizleme.png",
+        "title": "Termal Yazıcı EAN-13 Barkod Kalibrasyonu",
+        "description": "Argox ve Xprinter donanımlarına doğrudan ham bayt (RAW) seviyesinde yüksek DPI çıktısı."
+      },
+      {
+        "src": "assets/projects/Oymapos-Etiket-Yazdirici/05_toplu_fiyat_ve_barkod_esleme.png",
+        "title": "Toplu Fiyat Listesi & Seri Baskı",
+        "description": "Excel ve toptancı listelerinden tek tıkla yüzlerce raf etiketini sırayla yazdırma."
+      }
+    ],
     "title": "OymaPOS Etiket — Dinamik Raf & Barkod Yazdırıcı",
     "category": "fintech",
     "categoryLabel": "FinTech & Termal Baskı Motoru",
