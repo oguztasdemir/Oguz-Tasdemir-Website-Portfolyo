@@ -1411,6 +1411,34 @@ const PROJECTS_DATA = [
   },
   {
     "id": "Telegram-Media-Hub",
+    "videoUrl": "assets/projects/Telegram-Media-Hub/demo_telegram_hub.mp4",
+    "gallery": [
+      {
+        "src": "assets/projects/Telegram-Media-Hub/01_ana_dashboard_ve_kanal_baglanti.png",
+        "title": "Kanal Bağlantı & Medya Yönetim Merkezi",
+        "description": "Telegram kanallarındaki dosya, arşiv ve ders materyallerini listeleyen ana kontrol paneli."
+      },
+      {
+        "src": "assets/projects/Telegram-Media-Hub/02_medya_filtreleme_ve_kategori_secimi.png",
+        "title": "Gelişmiş Medya & Format Filtresi",
+        "description": "MIME türü, dosya boyutu, tarih ve anahtar kelimeye göre akıllı dosya ayıklama."
+      },
+      {
+        "src": "assets/projects/Telegram-Media-Hub/03_asenkron_indirme_kuyrugu_ve_hiz.png",
+        "title": "Asenkron İndirme Kuyruğu & Çok Kanallı Hız",
+        "description": "MTProto protokolü üzerinden paralel chunk transferi ve anlık indirme hızı takibi."
+      },
+      {
+        "src": "assets/projects/Telegram-Media-Hub/04_sinav_sorusu_ve_pdf_ayristirici.png",
+        "title": "PDF & Sınav Sorusu Çıkarıcı Modül",
+        "description": "Kanallarda paylaşılan PDF dokümanlarını tarayıp soruları otomatik parse eden araç."
+      },
+      {
+        "src": "assets/projects/Telegram-Media-Hub/05_mtproto_ve_floodwait_yonetimi.png",
+        "title": "Rate-Limit & FloodWait Koruma Motoru",
+        "description": "Telegram API sınırlarını aşmadan arka planda sessiz ve kesintisiz dosya indirme."
+      }
+    ],
     "title": "Telegram Medya & Dosya İndirme Yöneticisi",
     "category": "desktop",
     "categoryLabel": "Masaüstü Medya & Kuyruk Yöneticisi",
