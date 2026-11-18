@@ -1469,6 +1469,34 @@ const PROJECTS_DATA = [
   },
   {
     "id": "cache-cleaner",
+    "videoUrl": "assets/projects/cache-cleaner/demo_cache_cleaner.mp4",
+    "gallery": [
+      {
+        "src": "assets/projects/cache-cleaner/01_gelistirici_onbellek_tarama_paneli.png",
+        "title": "Geliştirici Önbellek Tarama & Analiz Paneli",
+        "description": "pip, npm, HuggingFace, Gradle ve PyTorch geçici veri kalıntılarını tespit eden ana ekran."
+      },
+      {
+        "src": "assets/projects/cache-cleaner/02_disk_alani_ve_kategori_analizi.png",
+        "title": "Disk Alanı & Kategori Dağılımı",
+        "description": "SSD sürücülerindeki gereksiz GB'ları kategorilere ve dizinlere göre görselleştiren grafik."
+      },
+      {
+        "src": "assets/projects/cache-cleaner/03_node_modules_ve_pip_temizleyici.png",
+        "title": "Proje ve Derleme Artıkları Temizleyici",
+        "description": "Eski node_modules, .next ve target klasörlerini tarayıp tek tıkla geri dönüştüren modül."
+      },
+      {
+        "src": "assets/projects/cache-cleaner/04_mukerrer_dosya_bulucu.png",
+        "title": "Mükerrer Dosya ve Büyük Veri Bulucu",
+        "description": "Disk üzerinde gereksiz yer kaplayan çift dosyaları SHA-256 hash ile tespit eden araç."
+      },
+      {
+        "src": "assets/projects/cache-cleaner/05_guvenli_cop_kutusu_ve_ayarlar.png",
+        "title": "Güvenli Silme (Recycle Bin API) ve Ayarlar",
+        "description": "Dosyaları doğrudan yok etmek yerine güvenli çöp kutusuna taşıyan kilitli dosya motoru."
+      }
+    ],
     "title": "Geliştirici Disk & Önbellek Temizleme Aracı",
     "category": "desktop",
     "categoryLabel": "Geliştirici Disk & Önbellek Aracı",
