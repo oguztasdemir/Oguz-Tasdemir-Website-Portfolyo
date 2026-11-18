@@ -1108,6 +1108,39 @@ const PROJECTS_DATA = [
   },
   {
     "id": "KPSS-Sinav-Hazirlik",
+    "videoUrl": "assets/projects/KPSS-Sinav-Hazirlik/demo_kpss_sinav.mp4",
+    "gallery": [
+      {
+        "src": "assets/projects/KPSS-Sinav-Hazirlik/01_kpss_sinav_merkezi_ve_mod_secimi.png",
+        "title": "KPSS Sınav Merkezi & Mod Seçimi",
+        "description": "Genel Yetenek - Genel Kültür dersleri, deneme sınavı ve konu testleri seçim ekranı."
+      },
+      {
+        "src": "assets/projects/KPSS-Sinav-Hazirlik/02_interaktif_soru_cozum_ekrani.png",
+        "title": "İnteraktif Soru Çözüm Ekranı",
+        "description": "Canlı süre sayacı, soru işaretleme, net hesabı ve seçenek seçim arayüzü."
+      },
+      {
+        "src": "assets/projects/KPSS-Sinav-Hazirlik/03_akilli_cevap_ve_cozum_aciklamasi.png",
+        "title": "Akıllı Çözüm & Detaylı Açıklama",
+        "description": "Sorunun doğru cevabını, detaylı çözüm mantığını ve ilgili mevzuat maddesini gösteren panel."
+      },
+      {
+        "src": "assets/projects/KPSS-Sinav-Hazirlik/04_panel_ve_analiz_1.png",
+        "title": "Akıllı Hata Havuzu",
+        "description": "Adayın yanlış yaptığı ve boş bıraktığı soruları otomatik filtreleyen tekrar çalışma modülü."
+      },
+      {
+        "src": "assets/projects/KPSS-Sinav-Hazirlik/05_panel_ve_analiz_2.png",
+        "title": "Performans ve Başarı Grafiği",
+        "description": "Ders bazlı net dağılımı, süre analizi ve sınav hazırlık durum göstergeleri."
+      },
+      {
+        "src": "assets/projects/KPSS-Sinav-Hazirlik/06_panel_ve_analiz_3.png",
+        "title": "Geçmiş Deneme Sınavları & Arşiv",
+        "description": "Tamamlanan tüm denemelerin detaylı karnesi ve soru bazında inceleme ekranı."
+      }
+    ],
     "title": "KPSS Lisans GY-GK Hazırlık & Çıkmış Sorular Platformu",
     "category": "academic",
     "categoryLabel": "KPSS Sınav Hazırlık Platformu",
