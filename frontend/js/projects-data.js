@@ -269,22 +269,6 @@ const PROJECTS_DATA = [
       {
         "url": "frontend/assets/projects/portfolio-console/01_ana_sayfa_ve_proje_vitrini.png",
         "caption": "Kişisel Portfolyo Konsolu — Ana Sayfa & 26 Mühendislik Projesi Vitrini"
-      },
-      {
-        "url": "frontend/assets/projects/portfolio-console/02_sertifikalar_ve_akademik_yetkinlikler.png",
-        "caption": "Sertifikalar, Akademik Eğitimler & Doğrulanmış Yetkinlik Modülü"
-      },
-      {
-        "url": "frontend/assets/projects/portfolio-console/03_proje_detay_modali_ve_mimari_akis.png",
-        "caption": "Derinlemesine Proje İnceleme Modalı & 4 Adımlı Sistem Mimari Akışı"
-      },
-      {
-        "url": "frontend/assets/projects/portfolio-console/04_video_ve_galeri_oynatici_sekmesi.png",
-        "caption": "Medya Galerisi & H.264 Video Walkthrough Oynatıcı Sekmesi"
-      },
-      {
-        "url": "frontend/assets/projects/portfolio-console/05_mimari_kod_agaci_ve_teknik_sorular.png",
-        "caption": "Teknik Soru-Cevap (Q&A) Havuzu & Proje Mimari Kod Ağacı"
       }
     ],
     "videoUrl": "frontend/assets/projects/portfolio-console/demo_portfolio_console.mp4"
@@ -658,10 +642,6 @@ const PROJECTS_DATA = [
         "caption": "Kurtarılan Dosyalar Ağaç Görünümü (Kategorik Filtreleme, Dosya Boyutları & Durum)"
       },
       {
-        "src": "assets/projects/Disk-Kurtarma-Araci/03_disk_sektor_haritasi_ve_blok_analizi.png",
-        "caption": "Disk Sektör Haritası ve Blok Analiz Arayüzü (100 Blokluk Görsel Tarama Matrisi)"
-      },
-      {
         "src": "assets/projects/Disk-Kurtarma-Araci/04_medya_onizleme_ve_galeri_gorunumu.png",
         "caption": "Medya Önizleme & Klasör Galeri Modu (Görseller, Videolar & Ses Dosyaları)"
       },
@@ -755,24 +735,8 @@ const PROJECTS_DATA = [
     },
     "gallery": [
       {
-        "url": "frontend/assets/projects/hyperbeam-browser/01_ates_ve_su_multiplayer_oyun_odasi.png",
-        "caption": "Ateş ve Su 2 Kişilik Eşzamanlı Multiplayer Web Oyunu & Çift Klavye Kontrolü"
-      },
-      {
-        "url": "frontend/assets/projects/hyperbeam-browser/02_senkronize_film_ve_video_izleme_odasi.png",
-        "caption": "Kayıpsız Senkronize Film / Video İzleme & Ortak Ses Yönlendirme Odası"
-      },
-      {
-        "url": "frontend/assets/projects/hyperbeam-browser/03_ortak_web_arastirmasi_ve_pdf_inceleme.png",
-        "caption": "Eşzamanlı Çoklu İmleç (Multi-Cursor) & Ortak Akademik PDF İnceleme"
-      },
-      {
         "url": "frontend/assets/projects/hyperbeam-browser/04_sanal_oda_yonetim_ve_konteyner_paneli.png",
         "caption": "Sanal Oda Yönetimi, Docker İzolasyonu & Oturum Güvenlik Paneli"
-      },
-      {
-        "url": "frontend/assets/projects/hyperbeam-browser/05_dusuk_gecikmeli_girdi_ve_ses_senkronizasyonu.png",
-        "caption": "Düşük Gecikmeli WebSocket İkili (Binary) Akış ve Jitter Buffer Analizi"
       }
     ],
     "videoUrl": "frontend/assets/projects/hyperbeam-browser/demo_hyperbeam_browser.mp4"
@@ -1151,22 +1115,6 @@ const PROJECTS_DATA = [
       {
         "url": "frontend/assets/projects/youtube-ai-assistant/01_zaman_damgali_transkript_ve_arama_paneli.png",
         "caption": "Zaman Damgalı Transkript Çekimi & Semantik Metin Arama Paneli"
-      },
-      {
-        "url": "frontend/assets/projects/youtube-ai-assistant/02_yerel_llm_ile_otonom_video_ozeti.png",
-        "caption": "Ollama Yerel LLM ile Otonom Yönetici Özeti & Kilit Çıkarımlar"
-      },
-      {
-        "url": "frontend/assets/projects/youtube-ai-assistant/03_akademik_kaynakca_ve_calisma_notu_uretici.png",
-        "caption": "Akademik Kaynakça (APA Bibliyografya) & Markdown/PDF Çalışma Notu Üretimi"
-      },
-      {
-        "url": "frontend/assets/projects/youtube-ai-assistant/04_semantik_rag_soru_cevap_ve_asistan.png",
-        "caption": "Yerel RAG Vektör Veritabanı ile Video Üzerinde Soru-Cevap Asistanı"
-      },
-      {
-        "url": "frontend/assets/projects/youtube-ai-assistant/05_toplu_oynatma_listesi_analiz_paneli.png",
-        "caption": "Çoklu Video / Oynatma Listesi (Playlist) Toplu Transkripsiyon & Analiz"
       }
     ],
     "videoUrl": "frontend/assets/projects/youtube-ai-assistant/demo_youtube_assistant.mp4",
@@ -1434,31 +1382,6 @@ const PROJECTS_DATA = [
         "src": "assets/projects/KPSS-Sinav-Hazirlik/01_kpss_sinav_merkezi_ve_mod_secimi.png",
         "title": "KPSS Sınav Merkezi & Mod Seçimi",
         "description": "Genel Yetenek - Genel Kültür dersleri, deneme sınavı ve konu testleri seçim ekranı."
-      },
-      {
-        "src": "assets/projects/KPSS-Sinav-Hazirlik/02_interaktif_soru_cozum_ekrani.png",
-        "title": "İnteraktif Soru Çözüm Ekranı",
-        "description": "Canlı süre sayacı, soru işaretleme, net hesabı ve seçenek seçim arayüzü."
-      },
-      {
-        "src": "assets/projects/KPSS-Sinav-Hazirlik/03_akilli_cevap_ve_cozum_aciklamasi.png",
-        "title": "Akıllı Çözüm & Detaylı Açıklama",
-        "description": "Sorunun doğru cevabını, detaylı çözüm mantığını ve ilgili mevzuat maddesini gösteren panel."
-      },
-      {
-        "src": "assets/projects/KPSS-Sinav-Hazirlik/04_panel_ve_analiz_1.png",
-        "title": "Akıllı Hata Havuzu",
-        "description": "Adayın yanlış yaptığı ve boş bıraktığı soruları otomatik filtreleyen tekrar çalışma modülü."
-      },
-      {
-        "src": "assets/projects/KPSS-Sinav-Hazirlik/05_panel_ve_analiz_2.png",
-        "title": "Performans ve Başarı Grafiği",
-        "description": "Ders bazlı net dağılımı, süre analizi ve sınav hazırlık durum göstergeleri."
-      },
-      {
-        "src": "assets/projects/KPSS-Sinav-Hazirlik/06_panel_ve_analiz_3.png",
-        "title": "Geçmiş Deneme Sınavları & Arşiv",
-        "description": "Tamamlanan tüm denemelerin detaylı karnesi ve soru bazında inceleme ekranı."
       }
     ],
     "title": "KPSS Lisans GY-GK Hazırlık & Çıkmış Sorular Platformu",
@@ -1511,11 +1434,6 @@ const PROJECTS_DATA = [
         "src": "assets/projects/Soru-Uygulamasi/02_ders_dashboard_ve_istatistikler.png",
         "title": "Ders Dashboard & Performans Karnesi",
         "description": "Doğru, yanlış, boş sayıları, sınav hazırlık yüzdesi ve başarı istatistikleri."
-      },
-      {
-        "src": "assets/projects/Soru-Uygulamasi/03_interaktif_soru_cozum_ekrani.png",
-        "title": "İnteraktif Soru Çözüm & Süre Sayacı",
-        "description": "Final formatında soru işaretleme, anlık geri bildirim ve detaylı çözüm açıklaması."
       },
       {
         "src": "assets/projects/Soru-Uygulamasi/04_mobil_pwa_soru_cozum_arayuzu.png",
@@ -1653,11 +1571,6 @@ const PROJECTS_DATA = [
         "src": "assets/projects/Telegram-Media-Hub/04_sinav_sorusu_ve_pdf_ayristirici.png",
         "title": "PDF & Sınav Sorusu Çıkarıcı Modül",
         "description": "Kanallarda paylaşılan PDF dokümanlarını tarayıp soruları otomatik parse eden araç."
-      },
-      {
-        "src": "assets/projects/Telegram-Media-Hub/05_mtproto_ve_floodwait_yonetimi.png",
-        "title": "Rate-Limit & FloodWait Koruma Motoru",
-        "description": "Telegram API sınırlarını aşmadan arka planda sessiz ve kesintisiz dosya indirme."
       }
     ],
     "title": "Telegram Medya & Dosya İndirme Yöneticisi",
@@ -1691,33 +1604,7 @@ const PROJECTS_DATA = [
   {
     "id": "cache-cleaner",
     "videoUrl": "assets/projects/cache-cleaner/demo_cache_cleaner.mp4",
-    "gallery": [
-      {
-        "src": "assets/projects/cache-cleaner/01_gelistirici_onbellek_tarama_paneli.png",
-        "title": "Geliştirici Önbellek Tarama & Analiz Paneli",
-        "description": "pip, npm, HuggingFace, Gradle ve PyTorch geçici veri kalıntılarını tespit eden ana ekran."
-      },
-      {
-        "src": "assets/projects/cache-cleaner/02_disk_alani_ve_kategori_analizi.png",
-        "title": "Disk Alanı & Kategori Dağılımı",
-        "description": "SSD sürücülerindeki gereksiz GB'ları kategorilere ve dizinlere göre görselleştiren grafik."
-      },
-      {
-        "src": "assets/projects/cache-cleaner/03_node_modules_ve_pip_temizleyici.png",
-        "title": "Proje ve Derleme Artıkları Temizleyici",
-        "description": "Eski node_modules, .next ve target klasörlerini tarayıp tek tıkla geri dönüştüren modül."
-      },
-      {
-        "src": "assets/projects/cache-cleaner/04_mukerrer_dosya_bulucu.png",
-        "title": "Mükerrer Dosya ve Büyük Veri Bulucu",
-        "description": "Disk üzerinde gereksiz yer kaplayan çift dosyaları SHA-256 hash ile tespit eden araç."
-      },
-      {
-        "src": "assets/projects/cache-cleaner/05_guvenli_cop_kutusu_ve_ayarlar.png",
-        "title": "Güvenli Silme (Recycle Bin API) ve Ayarlar",
-        "description": "Dosyaları doğrudan yok etmek yerine güvenli çöp kutusuna taşıyan kilitli dosya motoru."
-      }
-    ],
+    "gallery": [],
     "title": "Geliştirici Disk & Önbellek Temizleme Aracı",
     "category": "desktop",
     "categoryLabel": "Geliştirici Disk & Önbellek Aracı",
@@ -1822,10 +1709,6 @@ const PROJECTS_DATA = [
     "visibility": "public",
     "demoUrl": null,
     "screenshots": [
-      {
-        "src": "assets/projects/EA-FIFA-Fikstur/01_ana_lobi_ve_turnuva_merkezi.png",
-        "caption": "Ana Lobi & Turnuva Yönetim Merkezi (Oda Kurulumu, Canlı Lig & Hızlı Aksiyonlar)"
-      },
       {
         "src": "assets/projects/EA-FIFA-Fikstur/02_yeni_lig_ve_turnuva_olusturma.png",
         "caption": "Yeni Lig & Turnuva Oluşturma Modülü (Format Seçimi, Oyuncu Sayısı & Kura Modeli)"
