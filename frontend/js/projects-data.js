@@ -793,6 +793,33 @@ const PROJECTS_DATA = [
         "İndirilen faturaları müşteri unvanı ve tarih bazında otomatik klasörleme"
       ]
     },
+    "gallery": [
+      {
+        "url": "frontend/assets/projects/fatura-odeal/01_ana_fatura_kesme_ve_iade_paneli.png",
+        "caption": "Ödeal Akıllı Fatura Paneli — Fatura İade ve Kesme İşlem Merkezi"
+      },
+      {
+        "url": "frontend/assets/projects/fatura-odeal/02_toplu_fatura_ve_arsiv_indirme_sihirbazi.png",
+        "caption": "Tarih Aralıklı Toplu Fatura & Arşiv İndirme Sihirbazı"
+      },
+      {
+        "url": "frontend/assets/projects/fatura-odeal/03_indirilen_faturalar_ve_arsiv_yonetimi.png",
+        "caption": "İndirilen Faturalar, PDF/XML Önizleme ve Arşiv Dosya Yöneticisi"
+      },
+      {
+        "url": "frontend/assets/projects/fatura-odeal/04_muhasebe_ve_fatura_islem_gecmisi.png",
+        "caption": "Muhasebe Raporlama ve Fatura İşlem Geçmişi Analitiği"
+      },
+      {
+        "url": "frontend/assets/projects/fatura-odeal/05_kayitli_firmalar_ve_vkn_yonetimi.png",
+        "caption": "Kayıtlı Cari Firmalar, VKN / TCKN Veritabanı ve Senkronizasyon"
+      },
+      {
+        "url": "frontend/assets/projects/fatura-odeal/06_sistem_ve_seri_no_ayarlari.png",
+        "caption": "Sistem Ayarları, Fatura Seri No Yapılandırması ve Tema Seçimi"
+      }
+    ],
+    "videoUrl": "frontend/assets/projects/fatura-odeal/demo_fatura_odeal.mp4",
     "visibility": "public",
     "tags": [
       "automation",
