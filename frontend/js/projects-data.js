@@ -264,7 +264,30 @@ const PROJECTS_DATA = [
         "title": "Çift Dilli Canlı Etkileşim",
         "desc": "Kullanıcı dil veya sekme değiştirdiğinde sayfa yenilenmeden tüm görünüm mikro animasyonlarla anında güncellenir."
       }
-    ]
+    ],
+    "gallery": [
+      {
+        "url": "frontend/assets/projects/portfolio-console/01_ana_sayfa_ve_proje_vitrini.png",
+        "caption": "Kişisel Portfolyo Konsolu — Ana Sayfa & 26 Mühendislik Projesi Vitrini"
+      },
+      {
+        "url": "frontend/assets/projects/portfolio-console/02_sertifikalar_ve_akademik_yetkinlikler.png",
+        "caption": "Sertifikalar, Akademik Eğitimler & Doğrulanmış Yetkinlik Modülü"
+      },
+      {
+        "url": "frontend/assets/projects/portfolio-console/03_proje_detay_modali_ve_mimari_akis.png",
+        "caption": "Derinlemesine Proje İnceleme Modalı & 4 Adımlı Sistem Mimari Akışı"
+      },
+      {
+        "url": "frontend/assets/projects/portfolio-console/04_video_ve_galeri_oynatici_sekmesi.png",
+        "caption": "Medya Galerisi & H.264 Video Walkthrough Oynatıcı Sekmesi"
+      },
+      {
+        "url": "frontend/assets/projects/portfolio-console/05_mimari_kod_agaci_ve_teknik_sorular.png",
+        "caption": "Teknik Soru-Cevap (Q&A) Havuzu & Proje Mimari Kod Ağacı"
+      }
+    ],
+    "videoUrl": "frontend/assets/projects/portfolio-console/demo_portfolio_console.mp4"
   },
   {
     "id": "Kredi-Notu-Siniflandirmasi-Tahmin-Modeli",
