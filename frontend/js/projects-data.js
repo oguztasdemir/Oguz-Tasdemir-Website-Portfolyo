@@ -1488,6 +1488,34 @@ const PROJECTS_DATA = [
   },
   {
     "id": "NC-Codes",
+    "videoUrl": "assets/projects/NC-Codes/demo_nc_codes.mp4",
+    "gallery": [
+      {
+        "src": "assets/projects/NC-Codes/01_night_ball_3d_futbol_fizik_motoru.png",
+        "title": "Night Ball 3D Futbol & Fizik Motoru",
+        "description": "TFM API üzerinde çalışan özel top fiziği, şut dinamikleri ve otomatik skor tabelası."
+      },
+      {
+        "src": "assets/projects/NC-Codes/02_battleground_savas_ve_can_bari.png",
+        "title": "Battleground Hayatta Kalma & Can Barı",
+        "description": "Oyuncular arası hasar sistemi, parçacık efektleri ve canlı eleme mekaniği."
+      },
+      {
+        "src": "assets/projects/NC-Codes/03_nc_teams_otomatik_kadro_yonetimi.png",
+        "title": "NC - Teams Otomatik Kadro & Eşleştirme",
+        "description": "Kabile üyelerini takımlara bölen, renk atayan ve kadro listesini yöneten motor."
+      },
+      {
+        "src": "assets/projects/NC-Codes/04_labirent_ve_hiz_yarisi_modulu.png",
+        "title": "Labirent Yarışı & Hız Testi",
+        "description": "Kontrol noktaları (checkpoints), kronometre ve peynir ödüllü yarış mini oyunu."
+      },
+      {
+        "src": "assets/projects/NC-Codes/05_kabile_evi_yonetim_ve_cekirdek_komutlar.png",
+        "title": "Kabile Evi Yönetim & Çekirdek Komut Kütüphanesi",
+        "description": "Sohbet üzerinden tetiklenen moderasyon, harita değiştirme ve VIP efekt komutları."
+      }
+    ],
     "title": "Transformice Lua Mini Oyun & Script Paketi (2013)",
     "category": "desktop",
     "categoryLabel": "Fizik & Lua Oyun Script Arşivi",
