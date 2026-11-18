@@ -207,6 +207,44 @@ const PROJECTS_DATA = [
   },
   {
     "id": "Kredi-Notu-Siniflandirmasi-Tahmin-Modeli",
+    "videoUrl": "assets/projects/Kredi-Notu-Siniflandirmasi-Tahmin-Modeli/demo_kredi_modeli.mp4",
+    "gallery": [
+      {
+        "src": "assets/projects/Kredi-Notu-Siniflandirmasi-Tahmin-Modeli/01_model_kiyaslama_ve_benchmarking.png",
+        "title": "Model Kıyaslama & Benchmarking Paneli",
+        "description": "Random Forest, LightGBM, CatBoost ve XGBoost modellerinin F1 ve ROC-AUC kıyaslaması."
+      },
+      {
+        "src": "assets/projects/Kredi-Notu-Siniflandirmasi-Tahmin-Modeli/02_optuna_hiperparametre_optimizasyonu.png",
+        "title": "Optuna Hiperparametre Optimizasyonu",
+        "description": "Bayesyen optimizasyon ile öğrenme oranı, ağaç derinliği ve ceza katsayılarının optimizasyonu."
+      },
+      {
+        "src": "assets/projects/Kredi-Notu-Siniflandirmasi-Tahmin-Modeli/03_hibrit_stacking_mimarisi.png",
+        "title": "Hibrit Stacking & Ensemble Mimarisi",
+        "description": "Farklı zayıf öğrenicileri meta-öğrenici altında birleştiren yüksek genellemeli model hattı."
+      },
+      {
+        "src": "assets/projects/Kredi-Notu-Siniflandirmasi-Tahmin-Modeli/04_100k_veri_final_dogrulama_raporu.png",
+        "title": "100.000 Satırlık Nihai Doğrulama",
+        "description": "Aşırı öğrenme ve veri sızıntısı denetimi sonrası test setindeki kesin doğruluk ve F1 çıktısı."
+      },
+      {
+        "src": "assets/projects/Kredi-Notu-Siniflandirmasi-Tahmin-Modeli/05_ozellik_korelasyon_ve_filtreleme.png",
+        "title": "Özellik Korelasyon & Filtreleme Isı Haritası",
+        "description": "Finansal değişkenler arasındaki çoklu doğrusal bağlantıyı (multicollinerarity) temizleyen analiz."
+      },
+      {
+        "src": "assets/projects/Kredi-Notu-Siniflandirmasi-Tahmin-Modeli/06_random_forest_onem_siralamasi.png",
+        "title": "Öznitelik Önem Sıralaması (Feature Importance)",
+        "description": "Kredi riskini belirlemede en yüksek ağırlığa sahip ilk 15 finansal gösterge dağılımı."
+      },
+      {
+        "src": "assets/projects/Kredi-Notu-Siniflandirmasi-Tahmin-Modeli/07_akademik_sonuc_ve_metrik_tablolari.png",
+        "title": "Akademik Sonuç & Metrik Tabloları",
+        "description": "Dönem projesi ve tez kapsamında derlenen karmaşıklık matrisi ve sınıflandırma raporları."
+      }
+    ],
     "title": "Kredi Notu Sınıflandırma & Risk Tahmin Modeli",
     "category": "academic",
     "categoryLabel": "Akademik Veri & ML Modellemesi",
