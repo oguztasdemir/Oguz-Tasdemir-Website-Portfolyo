@@ -468,7 +468,29 @@ const PROJECTS_DATA = [
       ]
     },
     "githubUrl": "https://github.com/oguztasdemir/Ham-Disk-ve-Veri-Kurtarma-Araci",
-    "visibility": "public"
+    "visibility": "public",
+    "screenshots": [
+      {
+        "src": "assets/projects/Disk-Kurtarma-Araci/01_gosterge_paneli_ve_surucu_secimi.png",
+        "caption": "Ana Gösterge Tablosu (Fiziksel Disk Seçimi, Donanım Telemetrisi & Kurtarma Durumu)"
+      },
+      {
+        "src": "assets/projects/Disk-Kurtarma-Araci/02_kurtarilan_dosyalar_ve_agac_gorunumu.png",
+        "caption": "Kurtarılan Dosyalar Ağaç Görünümü (Kategorik Filtreleme, Dosya Boyutları & Durum)"
+      },
+      {
+        "src": "assets/projects/Disk-Kurtarma-Araci/03_disk_sektor_haritasi_ve_blok_analizi.png",
+        "caption": "Disk Sektör Haritası ve Blok Analiz Arayüzü (100 Blokluk Görsel Tarama Matrisi)"
+      },
+      {
+        "src": "assets/projects/Disk-Kurtarma-Araci/04_medya_onizleme_ve_galeri_gorunumu.png",
+        "caption": "Medya Önizleme & Klasör Galeri Modu (Görseller, Videolar & Ses Dosyaları)"
+      },
+      {
+        "src": "assets/projects/Disk-Kurtarma-Araci/05_gelismis_tarama_ve_kurtarma_ayarlari.png",
+        "caption": "Gelişmiş Tarama & Kurtarma Ayarları (Paralel İş Parçacıkları, Özel Blok Aralıkları)"
+      }
+    ]
   },
   {
     "id": "crypto-analytics-engine",
