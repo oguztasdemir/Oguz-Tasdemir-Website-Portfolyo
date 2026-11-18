@@ -41,6 +41,36 @@ const PROJECTS_DATA = [
       "borsa-istanbul",
       "python",
       "pandas"
+    ],
+    "screenshots": [
+      {
+        "src": "assets/projects/bist-bilanco-karlilik-tahmini/01_sektorel_analiz_paneli.png",
+        "caption": "Sektörel Tahmin & Analiz Paneli (Genel BIST Özeti, Model Metrikleri & Filtreler)"
+      },
+      {
+        "src": "assets/projects/bist-bilanco-karlilik-tahmini/02_tarihsel_trend_analizi.png",
+        "caption": "Tarihsel USD Trend Analizi (Enflasyondan Arındırılmış Bilanço Rasyo Grafikleri)"
+      },
+      {
+        "src": "assets/projects/bist-bilanco-karlilik-tahmini/03_regresyon_kar_tahmini.png",
+        "caption": "Regresyon ile Net Kâr Tahmini (CatBoost / LightGBM ile Gelecek Çeyrek Tahmini)"
+      },
+      {
+        "src": "assets/projects/bist-bilanco-karlilik-tahmini/04_kar_zarar_siniflandirma.png",
+        "caption": "Kâr / Zarar Sınıflandırma Paneli (Makine Öğrenmesi Sınıflandırma Analizi)"
+      },
+      {
+        "src": "assets/projects/bist-bilanco-karlilik-tahmini/05_kar_artis_yon_tahmini.png",
+        "caption": "Kâr Artış Yönü Tahmini (%68.8 Doğrulukla Gelecek Dönem Yön Öngörüsü)"
+      },
+      {
+        "src": "assets/projects/bist-bilanco-karlilik-tahmini/06_sektorel_rakip_kiyaslama.png",
+        "caption": "Sektörel Rakip Kıyaslama Modülü (Şirketler Arası Bilanço & Rasyo Matrisi)"
+      },
+      {
+        "src": "assets/projects/bist-bilanco-karlilik-tahmini/07_yonetici_model_paneli.png",
+        "caption": "Yönetici & Model Değerlendirme Konsolu (Model Doğruluk & Çapraz Doğrulama Raporu)"
+      }
     ]
   },
   {
