@@ -1279,6 +1279,34 @@ const PROJECTS_DATA = [
   },
   {
     "id": "Soru-Uygulamasi",
+    "videoUrl": "assets/projects/Soru-Uygulamasi/demo_soru_uygulamasi.mp4",
+    "gallery": [
+      {
+        "src": "assets/projects/Soru-Uygulamasi/01_akademik_sinav_merkezi_ders_secimi.png",
+        "title": "Akademik Sınav Merkezi & Ders Seçimi",
+        "description": "Makine Öğrenmesi (ML), Üretken AI (GAI), Dijital Sürdürülebilirlik (DS) ve İSG ders seçimi."
+      },
+      {
+        "src": "assets/projects/Soru-Uygulamasi/02_ders_dashboard_ve_istatistikler.png",
+        "title": "Ders Dashboard & Performans Karnesi",
+        "description": "Doğru, yanlış, boş sayıları, sınav hazırlık yüzdesi ve başarı istatistikleri."
+      },
+      {
+        "src": "assets/projects/Soru-Uygulamasi/03_interaktif_soru_cozum_ekrani.png",
+        "title": "İnteraktif Soru Çözüm & Süre Sayacı",
+        "description": "Final formatında soru işaretleme, anlık geri bildirim ve detaylı çözüm açıklaması."
+      },
+      {
+        "src": "assets/projects/Soru-Uygulamasi/04_mobil_pwa_soru_cozum_arayuzu.png",
+        "title": "Mobil PWA Deneyimi (Akıllı Telefon)",
+        "description": "Dinamik QR kod okutularak mobil cihazlara kurulan ve internetsiz çalışan PWA arayüzü."
+      },
+      {
+        "src": "assets/projects/Soru-Uygulamasi/05_isg_ve_kanun_soru_havuzu.png",
+        "title": "İş Sağlığı ve Güvenliği 330+ Soru Havuzu",
+        "description": "Mevzuat ve tehlike sınıflarına göre ayrılmış kapsamlı sınav hazırlık deposu."
+      }
+    ],
     "title": "Akademik Sınav Hazırlık & Soru Çözüm Platformu (PWA)",
     "category": "academic",
     "categoryLabel": "Akademik Sınav Platformu (PWA)",
