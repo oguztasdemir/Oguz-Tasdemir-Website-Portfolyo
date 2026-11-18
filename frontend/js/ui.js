@@ -799,6 +799,7 @@ class ProcessEngine:
                       <div class="studio-dock-panel ${defaultDockTab === 'video' ? 'active' : ''}" data-dock-panel="video">
                         <div class="studio-video-frame">
                           <video controls preload="metadata">
+                            <source src="${project.videoUrl}" type="video/mp4">
                             <source src="${project.videoUrl}" type="video/webm">
                             ${isEn ? 'Your browser does not support WebM video playback.' : 'Tarayıcınız WebM video oynatmayı desteklemiyor.'}
                           </video>

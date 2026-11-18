@@ -76,7 +76,8 @@ const PROJECTS_DATA = [
         "caption": "Canlı Sektör ve Firma Seçimi (Sanayi & İmalat Sektörü, Firma Listesi ve Rasyo Analizi)"
       }
     ],
-    "video": "assets/projects/bist-bilanco-karlilik-tahmini/demo_bist_bilanco_kullanimi.mp4"
+    "video": "assets/projects/bist-bilanco-karlilik-tahmini/demo_bist_bilanco_kullanimi.mp4",
+    "videoUrl": "assets/projects/bist-bilanco-karlilik-tahmini/demo_bist_bilanco_kullanimi.mp4"
   },
   {
     "id": "OYMAPOS-Barkod-Sistemi",
