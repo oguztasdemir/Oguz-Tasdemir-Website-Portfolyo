@@ -143,6 +143,34 @@ const PROJECTS_DATA = [
   },
   {
     "id": "cortex",
+    "videoUrl": "assets/projects/cortex/demo_cortex.mp4",
+    "gallery": [
+      {
+        "src": "assets/projects/cortex/01_monaco_kod_editoru_ve_ast_sozdizimi.png",
+        "title": "Monaco Kod Editörü & AST Ağacı",
+        "description": "Python AST ve Tree-sitter ile fonksiyon seviyesinde ayrıştırılan yerel kod geliştirme ortamı."
+      },
+      {
+        "src": "assets/projects/cortex/02_derin_rag_ve_pdf_vektor_analizi.png",
+        "title": "Derin RAG & Hiyerarşik Doküman Analizörü",
+        "description": "PDF, Word ve Markdown teknik makaleleri ChromaDB vektör uzayına gömen analiz motoru."
+      },
+      {
+        "src": "assets/projects/cortex/03_hibrit_arama_dense_ve_bm25_vektor_uzayi.png",
+        "title": "Hibrit Arama (Dense Vector + BM25 Sparse)",
+        "description": "Anlamsal yakınlık ve kesin anahtar kelime eşleşmesini birleştiren yüksek doğruluklu RAG."
+      },
+      {
+        "src": "assets/projects/cortex/04_tamamen_yerel_air_gapped_llm_cikarimi.png",
+        "title": "%100 Yerel (Air-Gapped) LLM Çıkarımı",
+        "description": "Ollama ve Llama.cpp altyapısıyla harici buluta tek bayt sızdırmadan çalışan yerel yapay zeka."
+      },
+      {
+        "src": "assets/projects/cortex/05_kaynak_atifli_kod_asistani_ve_token_akisi.png",
+        "title": "Kaynak Atıflı AI Asistanı & SSE Akışı",
+        "description": "Doğrudan kaynak kod satırına ve PDF sayfasına referans veren daktilo efektli sohbet paneli."
+      }
+    ],
     "title": "Cortex — LLM Destekli IDE & RAG",
     "category": "ai",
     "categoryLabel": "Üretken Yapay Zeka & RAG Ajanı",
