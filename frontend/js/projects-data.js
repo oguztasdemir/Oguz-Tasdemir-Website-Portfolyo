@@ -388,6 +388,29 @@ const PROJECTS_DATA = [
         "Karakter tutarlılığını koruyan LoRA eğitim veri seti hazırlığı"
       ]
     },
+    "gallery": [
+      {
+        "url": "frontend/assets/projects/webtoon-lora-suite/01_yolov8_balon_ve_panel_segmentasyonu.png",
+        "caption": "YOLOv8-Seg ile Konuşma Balonu & Dikey Webtoon Panel Sınırları Segmentasyonu"
+      },
+      {
+        "url": "frontend/assets/projects/webtoon-lora-suite/02_lama_inpainting_balon_temizleme_ve_onarma.png",
+        "caption": "LaMa Fourier Inpainting ile Diyalog Balonlarını Temizleme & Çizim Onarımı"
+      },
+      {
+        "url": "frontend/assets/projects/webtoon-lora-suite/03_lora_egitimi_ve_karakter_tutarliligi.png",
+        "caption": "Diffusers SDXL LoRA Eğitimi & Karakter Çizim Tutarlılığı Doğrulama Hattı"
+      },
+      {
+        "url": "frontend/assets/projects/webtoon-lora-suite/04_uretken_yeni_sahne_ve_panel_duzenleme.png",
+        "caption": "ControlNet OpenPose ile Hikaye Metninden Yeni Webtoon Panelleri Üretimi"
+      },
+      {
+        "url": "frontend/assets/projects/webtoon-lora-suite/05_otomatik_etiketleme_ve_veri_seti_yonetimi.png",
+        "caption": "WD14 ConvNeXt ile Otomatik Etiketleme & Kalite Filtreli Veri Seti Yönetimi"
+      }
+    ],
+    "videoUrl": "frontend/assets/projects/webtoon-lora-suite/demo_webtoon_suite.mp4",
     "visibility": "private"
   },
   {
