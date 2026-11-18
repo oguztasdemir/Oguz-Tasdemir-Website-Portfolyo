@@ -1212,7 +1212,8 @@ const PROJECTS_DATA = [
       "club-management",
       "player-tracking",
       "sqlite"
-    ]
+    ],
+    "videoUrl": "assets/projects/altyapi-manager/demo_altyapi_manager.mp4"
   },
   {
     "id": "Telegram-Media-Hub",
