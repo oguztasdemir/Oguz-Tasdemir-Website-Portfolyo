@@ -70,8 +70,13 @@ const PROJECTS_DATA = [
       {
         "src": "assets/projects/bist-bilanco-karlilik-tahmini/07_yonetici_model_paneli.png",
         "caption": "Yönetici & Model Değerlendirme Konsolu (Model Doğruluk & Çapraz Doğrulama Raporu)"
+      },
+      {
+        "src": "assets/projects/bist-bilanco-karlilik-tahmini/08_canli_sektor_ve_firma_secim_analizi.png",
+        "caption": "Canlı Sektör ve Firma Seçimi (Sanayi & İmalat Sektörü, Firma Listesi ve Rasyo Analizi)"
       }
-    ]
+    ],
+    "video": "assets/projects/bist-bilanco-karlilik-tahmini/demo_bist_bilanco_kullanimi.mp4"
   },
   {
     "id": "OYMAPOS-Barkod-Sistemi",
