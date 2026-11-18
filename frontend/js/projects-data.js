@@ -654,7 +654,30 @@ const PROJECTS_DATA = [
         "Eğitim ve geriye dönük strateji doğrulama (Backtesting) ortamı",
         "Canlı borsa veri akışı ve senaryo stres testleri"
       ]
-    }
+    },
+    "gallery": [
+      {
+        "url": "frontend/assets/projects/crypto-analytics-engine/01_canli_emir_defteri_ve_derinlik_analizi.png",
+        "caption": "Canlı Emir Defteri (L2 Orderbook) & Derinlik Analizi Paneli"
+      },
+      {
+        "url": "frontend/assets/projects/crypto-analytics-engine/02_coklu_yatirimci_davranis_simulasyonu.png",
+        "caption": "Çoklu Yatırımcı Davranış Simülasyonu & Stres Testi Modülü"
+      },
+      {
+        "url": "frontend/assets/projects/crypto-analytics-engine/03_haber_ve_sosyal_duyarlilik_analizi.png",
+        "caption": "Yerel LLM ve FinBERT ile Finansal Haber Duyarlılık (Sentiment) Analizi"
+      },
+      {
+        "url": "frontend/assets/projects/crypto-analytics-engine/04_geriye_donuk_test_ve_strateji_dogrulama.png",
+        "caption": "Geriye Dönük Test (Backtesting) & Kantitatif Risk Doğrulama Motoru"
+      },
+      {
+        "url": "frontend/assets/projects/crypto-analytics-engine/05_portfoy_risk_yonetimi_ve_ccxt_durumu.png",
+        "caption": "Portföy Risk Yönetimi & Çoklu Borsa CCXT WebSocket Bağlantı Durumu"
+      }
+    ],
+    "videoUrl": "frontend/assets/projects/crypto-analytics-engine/demo_crypto_engine.mp4"
   },
   {
     "id": "hyperbeam-browser",
