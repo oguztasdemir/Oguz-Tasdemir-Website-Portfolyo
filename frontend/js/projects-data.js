@@ -1071,7 +1071,30 @@ const PROJECTS_DATA = [
         "Hata anında otomatik ekran görüntüsü yakalama ve PDF hata raporu basma",
         "Uçtan uca kalite güvence ve dayanıklılık doğrulama"
       ]
-    }
+    },
+    "gallery": [
+      {
+        "url": "frontend/assets/projects/ui-test-automation/01_e2e_test_kosucu_ve_suite_yonetim_paneli.png",
+        "caption": "E2E Test Koşucu, Senaryo Havuzu & Paralel Worker Yönetim Paneli"
+      },
+      {
+        "url": "frontend/assets/projects/ui-test-automation/02_opencv_sablon_esleme_ve_eleman_yakalama.png",
+        "caption": "OpenCV Bilgisayarlı Görü ile Win32 / Qt Buton ve İkon Yakalama Motoru"
+      },
+      {
+        "url": "frontend/assets/projects/ui-test-automation/03_otomatik_ekran_goruntulu_pdf_hata_raporu.png",
+        "caption": "ReportLab ile Hata Anında Otomatik Ekran Görüntülü PDF Tanı Raporlayıcı"
+      },
+      {
+        "url": "frontend/assets/projects/ui-test-automation/04_regresyon_ve_kararlilik_test_analitigi.png",
+        "caption": "Sürekli Regresyon Test Analitiği & Flaky Test İzolasyon Paneli"
+      },
+      {
+        "url": "frontend/assets/projects/ui-test-automation/05_yerel_llm_destekli_test_senaryosu_uretici.png",
+        "caption": "Doğal Dilden Otomatik Playwright Test Kodu Derleyen Yerel LLM Katmanı"
+      }
+    ],
+    "videoUrl": "frontend/assets/projects/ui-test-automation/demo_ui_test_automation.mp4"
   },
   {
     "id": "youtube-ai-assistant",
