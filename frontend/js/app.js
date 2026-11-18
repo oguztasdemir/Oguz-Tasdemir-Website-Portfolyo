@@ -66,6 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (updateState) {
       window.location.hash = `view=${viewId}`;
+      sessionStorage.setItem('active_view', viewId);
+      sessionStorage.removeItem('active_project_id');
+      sessionStorage.removeItem('active_cert_index');
       localStorage.setItem('active_view', viewId);
       localStorage.removeItem('active_project_id');
     }
@@ -420,6 +423,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (updateHash) {
       window.location.hash = `project=${projectId}&tab=${initialTabToUse}`;
+      sessionStorage.setItem('active_view', 'projects');
+      sessionStorage.setItem('active_project_id', projectId);
+      sessionStorage.setItem('active_project_tab', initialTabToUse);
       localStorage.setItem('active_project_id', projectId);
       localStorage.setItem('active_project_tab', initialTabToUse);
     }
@@ -451,6 +457,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (updateHash) {
       window.location.hash = `view=projects`;
+      sessionStorage.setItem('active_view', 'projects');
+      sessionStorage.removeItem('active_project_id');
+      sessionStorage.removeItem('active_project_tab');
       localStorage.removeItem('active_project_id');
     }
   }
@@ -718,7 +727,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  function renderCertModal(index) {
+  function renderCertModal(index, updateHash = true) {
     const catalog = window.CERTIFICATES_CATALOG || [];
     if (!certModal || !certModalImg || !catalog.length) return;
 
@@ -765,6 +774,11 @@ document.addEventListener('DOMContentLoaded', () => {
       certModalRawImgBtn.href = item.img;
     }
 
+    if (updateHash) {
+      window.location.hash = `view=certificates&cert=${currentCertIndex + 1}`;
+      sessionStorage.setItem('active_cert_index', String(currentCertIndex));
+    }
+
     buildCertModalThumbs();
     if (certModalThumbs) {
       Array.from(certModalThumbs.children).forEach((thumbBtn, idx) => {
@@ -778,15 +792,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function stepCertModal(delta) {
-    renderCertModal(currentCertIndex + delta);
+    renderCertModal(currentCertIndex + delta, true);
   }
 
-  function openCertModal(imgSrc, title, titleKey) {
+  function openCertModal(imgSrc, title, titleKey, updateHash = true) {
     if (!certModal || !certModalImg) return;
     const catalog = window.CERTIFICATES_CATALOG || [];
     const foundIdx = catalog.findIndex(item => item.img === imgSrc);
     if (foundIdx >= 0) {
-      renderCertModal(foundIdx);
+      renderCertModal(foundIdx, updateHash);
     } else {
       certModalImg.src = imgSrc;
       const translatedTitle = titleKey && window.i18n ? window.i18n.t(titleKey) : title;
@@ -796,11 +810,15 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = 'hidden';
   }
 
-  function closeCertModal() {
+  function closeCertModal(updateHash = true) {
     if (!certModal) return;
     certModal.style.display = 'none';
     if (certModalImg) certModalImg.src = '';
     document.body.style.overflow = '';
+    sessionStorage.removeItem('active_cert_index');
+    if (updateHash) {
+      window.location.hash = 'view=certificates';
+    }
   }
 
   document.querySelectorAll('.cert-card').forEach(card => {
@@ -1028,16 +1046,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const rawHash = window.location.hash.replace(/^#/, '').trim();
     if (!rawHash) return null;
 
-    // Format: project=xyz&tab=quickstart VEYA view=certs
+    // Format: project=xyz&tab=quickstart VEYA view=certs VEYA view=certificates&cert=2
     const params = new URLSearchParams(rawHash);
     const projectId = params.get('project');
     const tabId = params.get('tab');
     const viewId = params.get('view');
+    const certNum = params.get('cert');
 
-    return { projectId, tabId, viewId };
+    return { projectId, tabId, viewId, certNum };
   }
 
-  // 13. Başlat ve Durumu Geri Yükle (F5 Yenileme Koruması & Durum Geri Yükleme)
+  // 13. Başlat ve Durumu Geri Yükle (F5 Yenileme Koruması & Oturum Koruması)
   async function initApp() {
     // 1. Dil Sistemini Uygula
     if (window.i18n) {
@@ -1058,23 +1077,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
     await loadAndRenderSplitView();
 
-    // 4. F5 atıldığında veya sayfa yüklendiğinde mevcut ekranda kalma mantığı (URL hash & localStorage)
+    // 4. F5 atıldığında veya sayfa yüklendiğinde mevcut ekranda kalma mantığı:
+    //    - Eğer URL hash varsa (örn: F5 atılmış veya doğrudan bir sekme linki açılmış), hash'teki durum önceliklidir.
+    //    - Eğer URL hash yoksa: sessionStorage kontrol edilir (aynı tarayıcı sekmesinde F5/gezinme yapılıyorsa).
+    //    - Eğer tarayıcı sıfırdan açıldıysa (sessionStorage yok ve hash yok), doğrudan Ana Sayfa ('home') açılır!
     const hashState = parseStateFromHash();
-    const savedView = localStorage.getItem('active_view');
-    const savedProjectId = localStorage.getItem('active_project_id');
-    const savedTab = localStorage.getItem('active_project_tab');
+    const sessionActiveView = sessionStorage.getItem('active_view');
+    const sessionActiveProject = sessionStorage.getItem('active_project_id');
+    const sessionActiveTab = sessionStorage.getItem('active_project_tab');
+    const sessionCertIdx = sessionStorage.getItem('active_cert_index');
 
     if (hashState && hashState.projectId) {
       switchWorkspaceView('projects', false);
       openProjectDetailModal(hashState.projectId, false, hashState.tabId || 'overview');
     } else if (hashState && hashState.viewId) {
       switchWorkspaceView(hashState.viewId, false);
-    } else if (savedProjectId) {
-      switchWorkspaceView('projects', false);
-      openProjectDetailModal(savedProjectId, true, savedTab || 'overview');
-    } else if (savedView) {
-      switchWorkspaceView(savedView, true);
+      if (hashState.viewId === 'certificates' && hashState.certNum) {
+        const certIdx = parseInt(hashState.certNum, 10) - 1;
+        const catalog = window.CERTIFICATES_CATALOG || [];
+        if (!isNaN(certIdx) && certIdx >= 0 && certIdx < catalog.length) {
+          setTimeout(() => {
+            renderCertModal(certIdx, false);
+            certModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+          }, 60);
+        }
+      }
+    } else if (sessionActiveProject) {
+      switchWorkspaceView('projects', true);
+      openProjectDetailModal(sessionActiveProject, true, sessionActiveTab || 'overview');
+    } else if (sessionActiveView) {
+      switchWorkspaceView(sessionActiveView, true);
+      if (sessionActiveView === 'certificates' && sessionCertIdx !== null) {
+        const certIdx = parseInt(sessionCertIdx, 10);
+        const catalog = window.CERTIFICATES_CATALOG || [];
+        if (!isNaN(certIdx) && certIdx >= 0 && certIdx < catalog.length) {
+          setTimeout(() => {
+            renderCertModal(certIdx, true);
+            certModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+          }, 60);
+        }
+      }
     } else {
+      // İlk defa tarayıcıdan siteye girildiğinde ana sayfa açılsın
       switchWorkspaceView('home', true);
     }
   }
@@ -1087,6 +1133,17 @@ document.addEventListener('DOMContentLoaded', () => {
       openProjectDetailModal(state.projectId, false, state.tabId);
     } else if (state && state.viewId) {
       switchWorkspaceView(state.viewId, false);
+      if (state.viewId === 'certificates' && state.certNum) {
+        const certIdx = parseInt(state.certNum, 10) - 1;
+        const catalog = window.CERTIFICATES_CATALOG || [];
+        if (!isNaN(certIdx) && certIdx >= 0 && certIdx < catalog.length) {
+          renderCertModal(certIdx, false);
+          certModal.style.display = 'flex';
+          document.body.style.overflow = 'hidden';
+        }
+      } else if (state.viewId === 'certificates' && !state.certNum) {
+        closeCertModal(false);
+      }
     }
   });
 
