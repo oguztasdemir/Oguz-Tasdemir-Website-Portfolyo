@@ -1334,7 +1334,37 @@ const PROJECTS_DATA = [
     },
     "githubUrl": "https://github.com/oguztasdemir/FIFA-Lig-ve-Turnuva-Fikstur-Motoru",
     "visibility": "public",
-    "demoUrl": null
+    "demoUrl": null,
+    "screenshots": [
+      {
+        "src": "assets/projects/EA-FIFA-Fikstur/01_ana_lobi_ve_turnuva_merkezi.png",
+        "caption": "Ana Lobi & Turnuva Yönetim Merkezi (Oda Kurulumu, Canlı Lig & Hızlı Aksiyonlar)"
+      },
+      {
+        "src": "assets/projects/EA-FIFA-Fikstur/02_yeni_lig_ve_turnuva_olusturma.png",
+        "caption": "Yeni Lig & Turnuva Oluşturma Modülü (Format Seçimi, Oyuncu Sayısı & Kura Modeli)"
+      },
+      {
+        "src": "assets/projects/EA-FIFA-Fikstur/03_odaya_katil_ve_davet_kodu.png",
+        "caption": "Odaya Katılma & Çok Oyunculu Davet Kodu Ekranı (Anlık Senkronizasyon)"
+      },
+      {
+        "src": "assets/projects/EA-FIFA-Fikstur/04_takimlar_ve_reyting_havuzu.png",
+        "caption": "Takımlar, Kulüp Havuzu ve Reyting Dağılımı (Dengeli Kura & Takım Seçimi)"
+      },
+      {
+        "src": "assets/projects/EA-FIFA-Fikstur/05_turnuva_kurallari_ve_yapilandirma.png",
+        "caption": "Turnuva Kuralları, Seri Başı Mantığı ve Fikstür Yapılandırması"
+      },
+      {
+        "src": "assets/projects/EA-FIFA-Fikstur/06_gecmis_turnuvalar_ve_sampiyonlar.png",
+        "caption": "Geçmiş Turnuvalar, Şampiyonlar Arşivi ve İstatistik Müzesi"
+      },
+      {
+        "src": "assets/projects/EA-FIFA-Fikstur/07_veri_yonetimi_ve_kadro_guncelleme.png",
+        "caption": "Veri Yönetimi, Güncel Kadro & JSON Dışa Aktarma Konsolu"
+      }
+    ]
   },
   {
     "id": "NC-Codes",
