@@ -1304,7 +1304,13 @@ const PROJECTS_DATA = [
         "Ban riskini sıfıra indiren insansı rastgele bekleme aralıkları"
       ]
     },
-    "visibility": "public"
+    "visibility": "public",
+    "screenshots": [
+      {
+        "src": "assets/projects/Gardrops-Otomasyon-Botu/01_gardrops_otomasyon_konsolu_ve_diferansiyel_filtre.png",
+        "caption": "Gardrops Pazaryeri Takip Konsolu (Diferansiyel Önbellek, Kitle Havuzu & Telemetri)"
+      }
+    ]
   },
   {
     "id": "EA-FIFA-Fikstur",
