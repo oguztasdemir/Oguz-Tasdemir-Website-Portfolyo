@@ -45,35 +45,43 @@ const PROJECTS_DATA = [
     "screenshots": [
       {
         "src": "assets/projects/bist-bilanco-karlilik-tahmini/01_sektorel_analiz_paneli.png",
-        "caption": "Sektörel Tahmin & Analiz Paneli (Genel BIST Özeti, Model Metrikleri & Filtreler)"
+        "caption": "Sektörel Tahmin & Analiz Paneli (Genel BIST Özeti, Model Metrikleri & Filtreler)",
+        "captionEn": "bist bilanco karlilik tahmini — Interface View #1"
       },
       {
         "src": "assets/projects/bist-bilanco-karlilik-tahmini/02_tarihsel_trend_analizi.png",
-        "caption": "Tarihsel USD Trend Analizi (Enflasyondan Arındırılmış Bilanço Rasyo Grafikleri)"
+        "caption": "Tarihsel USD Trend Analizi (Enflasyondan Arındırılmış Bilanço Rasyo Grafikleri)",
+        "captionEn": "bist bilanco karlilik tahmini — Interface View #2"
       },
       {
         "src": "assets/projects/bist-bilanco-karlilik-tahmini/03_regresyon_kar_tahmini.png",
-        "caption": "Regresyon ile Net Kâr Tahmini (CatBoost / LightGBM ile Gelecek Çeyrek Tahmini)"
+        "caption": "Regresyon ile Net Kâr Tahmini (CatBoost / LightGBM ile Gelecek Çeyrek Tahmini)",
+        "captionEn": "bist bilanco karlilik tahmini — Interface View #3"
       },
       {
         "src": "assets/projects/bist-bilanco-karlilik-tahmini/04_kar_zarar_siniflandirma.png",
-        "caption": "Kâr / Zarar Sınıflandırma Paneli (Makine Öğrenmesi Sınıflandırma Analizi)"
+        "caption": "Kâr / Zarar Sınıflandırma Paneli (Makine Öğrenmesi Sınıflandırma Analizi)",
+        "captionEn": "bist bilanco karlilik tahmini — Interface View #4"
       },
       {
         "src": "assets/projects/bist-bilanco-karlilik-tahmini/05_kar_artis_yon_tahmini.png",
-        "caption": "Kâr Artış Yönü Tahmini (%68.8 Doğrulukla Gelecek Dönem Yön Öngörüsü)"
+        "caption": "Kâr Artış Yönü Tahmini (%68.8 Doğrulukla Gelecek Dönem Yön Öngörüsü)",
+        "captionEn": "bist bilanco karlilik tahmini — Interface View #5"
       },
       {
         "src": "assets/projects/bist-bilanco-karlilik-tahmini/06_sektorel_rakip_kiyaslama.png",
-        "caption": "Sektörel Rakip Kıyaslama Modülü (Şirketler Arası Bilanço & Rasyo Matrisi)"
+        "caption": "Sektörel Rakip Kıyaslama Modülü (Şirketler Arası Bilanço & Rasyo Matrisi)",
+        "captionEn": "bist bilanco karlilik tahmini — Interface View #6"
       },
       {
         "src": "assets/projects/bist-bilanco-karlilik-tahmini/07_yonetici_model_paneli.png",
-        "caption": "Yönetici & Model Değerlendirme Konsolu (Model Doğruluk & Çapraz Doğrulama Raporu)"
+        "caption": "Yönetici & Model Değerlendirme Konsolu (Model Doğruluk & Çapraz Doğrulama Raporu)",
+        "captionEn": "bist bilanco karlilik tahmini — Interface View #7"
       },
       {
         "src": "assets/projects/bist-bilanco-karlilik-tahmini/08_canli_sektor_ve_firma_secim_analizi.png",
-        "caption": "Canlı Sektör ve Firma Seçimi (Sanayi & İmalat Sektörü, Firma Listesi ve Rasyo Analizi)"
+        "caption": "Canlı Sektör ve Firma Seçimi (Sanayi & İmalat Sektörü, Firma Listesi ve Rasyo Analizi)",
+        "captionEn": "bist bilanco karlilik tahmini — Interface View #8"
       }
     ],
     "video": "assets/projects/bist-bilanco-karlilik-tahmini/demo_bist_bilanco_kullanimi.mp4",
@@ -111,27 +119,33 @@ const PROJECTS_DATA = [
     "screenshots": [
       {
         "src": "assets/projects/OYMAPOS-Barkod-Sistemi/01_ana_sayfa_canli_kasa_ozeti.png",
-        "caption": "Canlı Kasa Özeti & Ana Kontrol Paneli — Günlük ciro, fiş adedi, kâr oranı ve anlık kasa durum göstergeleri."
+        "caption": "Canlı Kasa Özeti & Ana Kontrol Paneli — Günlük ciro, fiş adedi, kâr oranı ve anlık kasa durum göstergeleri.",
+        "captionEn": "OYMAPOS Barkod Sistemi — Interface View #1"
       },
       {
         "src": "assets/projects/OYMAPOS-Barkod-Sistemi/02_hizli_satis_kasa_ve_barkod_paneli.png",
-        "caption": "Hızlı Satış (POS) & Barkod Okuma Paneli — Seri barkod okuma, çoklu sepet park sistemi, para üstü hesabı ve hızlı tuşlar."
+        "caption": "Hızlı Satış (POS) & Barkod Okuma Paneli — Seri barkod okuma, çoklu sepet park sistemi, para üstü hesabı ve hızlı tuşlar.",
+        "captionEn": "OYMAPOS Barkod Sistemi — Interface View #2"
       },
       {
         "src": "assets/projects/OYMAPOS-Barkod-Sistemi/03_stok_katalogu_ve_urun_kartlari.png",
-        "caption": "Ürün Kataloğu & Stok Takip Merkezi — 4.900+ kayıtlı ürün, barkod eşleme, kritik stok alarmları ve fiyat güncelleme."
+        "caption": "Ürün Kataloğu & Stok Takip Merkezi — 4.900+ kayıtlı ürün, barkod eşleme, kritik stok alarmları ve fiyat güncelleme.",
+        "captionEn": "OYMAPOS Barkod Sistemi — Interface View #3"
       },
       {
         "src": "assets/projects/OYMAPOS-Barkod-Sistemi/04_manav_terazi_ve_dijital_tarti.png",
-        "caption": "Manav & Terazi PLU Yönetimi — Gramajlı ürünler için hızlı PLU kodları ve dijital terazi entegrasyonu."
+        "caption": "Manav & Terazi PLU Yönetimi — Gramajlı ürünler için hızlı PLU kodları ve dijital terazi entegrasyonu.",
+        "captionEn": "OYMAPOS Barkod Sistemi — Interface View #4"
       },
       {
         "src": "assets/projects/OYMAPOS-Barkod-Sistemi/05_gun_sonu_z_raporu_ve_kar_analizi.png",
-        "caption": "Gün Sonu Z-Raporu & Mali Denetim — Nakit/Kredi kartı dökümü, vergi oranları ve perakende kârlılık raporları."
+        "caption": "Gün Sonu Z-Raporu & Mali Denetim — Nakit/Kredi kartı dökümü, vergi oranları ve perakende kârlılık raporları.",
+        "captionEn": "OYMAPOS Barkod Sistemi — Interface View #5"
       },
       {
         "src": "assets/projects/OYMAPOS-Barkod-Sistemi/06_termal_etiket_ve_raf_fisi_tasarimi.png",
-        "caption": "Termal Etiket & Raf Fişi Baskı Motoru — ESC/POS uyumlu raf etiketi şablonları, barkod basımı ve doğrudan termal çıktı."
+        "caption": "Termal Etiket & Raf Fişi Baskı Motoru — ESC/POS uyumlu raf etiketi şablonları, barkod basımı ve doğrudan termal çıktı.",
+        "captionEn": "OYMAPOS Barkod Sistemi — Interface View #6"
       }
     ]
   },
@@ -171,23 +185,28 @@ const PROJECTS_DATA = [
     "screenshots": [
       {
         "src": "assets/projects/cortex/01_monaco_kod_editoru_ve_ast_sozdizimi.png",
-        "caption": "Monaco Kod Editörü & AST Ağacı — Python AST ve Tree-sitter ile fonksiyon seviyesinde ayrıştırılan yerel kod geliştirme ortamı."
+        "caption": "Monaco Kod Editörü & AST Ağacı — Python AST ve Tree-sitter ile fonksiyon seviyesinde ayrıştırılan yerel kod geliştirme ortamı.",
+        "captionEn": "cortex — Interface View #1"
       },
       {
         "src": "assets/projects/cortex/02_derin_rag_ve_pdf_vektor_analizi.png",
-        "caption": "Derin RAG & Hiyerarşik Doküman Analizörü — PDF, Word ve Markdown teknik makaleleri ChromaDB vektör uzayına gömen analiz motoru."
+        "caption": "Derin RAG & Hiyerarşik Doküman Analizörü — PDF, Word ve Markdown teknik makaleleri ChromaDB vektör uzayına gömen analiz motoru.",
+        "captionEn": "cortex — Interface View #2"
       },
       {
         "src": "assets/projects/cortex/03_hibrit_arama_dense_ve_bm25_vektor_uzayi.png",
-        "caption": "Hibrit Arama (Dense Vector + BM25 Sparse) — Anlamsal yakınlık ve kesin anahtar kelime eşleşmesini birleştiren yüksek doğruluklu RAG."
+        "caption": "Hibrit Arama (Dense Vector + BM25 Sparse) — Anlamsal yakınlık ve kesin anahtar kelime eşleşmesini birleştiren yüksek doğruluklu RAG.",
+        "captionEn": "cortex — Interface View #3"
       },
       {
         "src": "assets/projects/cortex/04_tamamen_yerel_air_gapped_llm_cikarimi.png",
-        "caption": "%100 Yerel (Air-Gapped) LLM Çıkarımı — Ollama ve Llama.cpp altyapısıyla harici buluta tek bayt sızdırmadan çalışan yerel yapay zeka."
+        "caption": "%100 Yerel (Air-Gapped) LLM Çıkarımı — Ollama ve Llama.cpp altyapısıyla harici buluta tek bayt sızdırmadan çalışan yerel yapay zeka.",
+        "captionEn": "cortex — Interface View #4"
       },
       {
         "src": "assets/projects/cortex/05_kaynak_atifli_kod_asistani_ve_token_akisi.png",
-        "caption": "Kaynak Atıflı AI Asistanı & SSE Akışı — Doğrudan kaynak kod satırına ve PDF sayfasına referans veren daktilo efektli sohbet paneli."
+        "caption": "Kaynak Atıflı AI Asistanı & SSE Akışı — Doğrudan kaynak kod satırına ve PDF sayfasına referans veren daktilo efektli sohbet paneli.",
+        "captionEn": "cortex — Interface View #5"
       }
     ]
   },
@@ -199,12 +218,11 @@ const PROJECTS_DATA = [
     "visibility": "public",
     "summary": "25+ mühendislik projesini, matematik tezini ve düşük seviyeli sistem çözümlerini harici UI kütüphanesi kullanmadan %100 Vanilla CSS ve canlı çift dil motoruyla sunan interaktif çalışma konsolu.",
     "techStack": [
-      "Python",
-      "FastAPI",
       "Vanilla JS (ES6+)",
-      "Vanilla CSS3",
-      "i18n Engine",
-      "Uvicorn"
+      "HTML5 & CSS3",
+      "GitHub Pages (CI/CD)",
+      "İnteraktif Medya & Lightbox",
+      "TR/EN i18n Motoru"
     ],
     "githubUrl": "https://github.com/oguztasdemir/Oguz-Tasdemir-Website-Portfolyo",
     "demoUrl": "https://oguztasdemir.github.io/Oguz-Tasdemir-Website-Portfolyo/",
@@ -258,25 +276,32 @@ const PROJECTS_DATA = [
     "screenshots": [
       {
         "src": "assets/projects/portfolio-console/01_ana_sayfa_ve_proje_vitrini.png",
-        "caption": "Kişisel Portfolyo Konsolu — Ana Sayfa & Karşılama Sahnesi"
+        "caption": "Kişisel Portfolyo Konsolu — Ana Sayfa & Karşılama Sahnesi",
+        "captionEn": "portfolio console — Interface View #1"
       },
       {
         "src": "assets/projects/portfolio-console/02_projeler_vitrini_ve_filtreleme.png",
-        "caption": "26 Mühendislik Projesi Vitrini & Kategori / Teknoloji Filtreleme"
+        "caption": "26 Mühendislik Projesi Vitrini & Kategori / Teknoloji Filtreleme",
+        "captionEn": "portfolio console — Interface View #2"
       },
       {
         "src": "assets/projects/portfolio-console/03_proje_detay_modali_ve_mimari_akis.png",
-        "caption": "Proje Detay Görünümü — Teknoloji Ağırlıkları, Mimari & Medya Kanıtları"
+        "caption": "Proje Detay Görünümü — Teknoloji Ağırlıkları, Mimari & Medya Kanıtları",
+        "captionEn": "portfolio console — Interface View #3"
       },
       {
         "src": "assets/projects/portfolio-console/04_sertifikalar_ve_akademik_yetkinlikler.png",
-        "caption": "Sertifikalar & Akademik Yetkinlikler Paneli"
+        "caption": "Sertifikalar & Akademik Yetkinlikler Paneli",
+        "captionEn": "portfolio console — Interface View #4"
       },
       {
         "src": "assets/projects/portfolio-console/05_hakkimda_ve_muhendislik_profili.png",
-        "caption": "Hakkımda — Matematik & Yazılım Mühendisliği Profili"
+        "caption": "Hakkımda — Matematik & Yazılım Mühendisliği Profili",
+        "captionEn": "portfolio console — Interface View #5"
       }
-    ]
+    ],
+    "badge": "Açık Kaynak Web",
+    "highlightMetric": "⚡ 26 Mühendislik Projesi & İnteraktif Mimari Vitrini"
   },
   {
     "id": "Kredi-Notu-Siniflandirmasi-Tahmin-Modeli",
@@ -312,31 +337,38 @@ const PROJECTS_DATA = [
     "screenshots": [
       {
         "src": "assets/projects/Kredi-Notu-Siniflandirmasi-Tahmin-Modeli/01_model_kiyaslama_ve_benchmarking.png",
-        "caption": "Model Kıyaslama & Benchmarking Paneli — Random Forest, LightGBM, CatBoost ve XGBoost modellerinin F1 ve ROC-AUC kıyaslaması."
+        "caption": "Model Kıyaslama & Benchmarking Paneli — Random Forest, LightGBM, CatBoost ve XGBoost modellerinin F1 ve ROC-AUC kıyaslaması.",
+        "captionEn": "Kredi Notu Siniflandirmasi Tahmin Modeli — Interface View #1"
       },
       {
         "src": "assets/projects/Kredi-Notu-Siniflandirmasi-Tahmin-Modeli/02_optuna_hiperparametre_optimizasyonu.png",
-        "caption": "Optuna Hiperparametre Optimizasyonu — Bayesyen optimizasyon ile öğrenme oranı, ağaç derinliği ve ceza katsayılarının optimizasyonu."
+        "caption": "Optuna Hiperparametre Optimizasyonu — Bayesyen optimizasyon ile öğrenme oranı, ağaç derinliği ve ceza katsayılarının optimizasyonu.",
+        "captionEn": "Kredi Notu Siniflandirmasi Tahmin Modeli — Interface View #2"
       },
       {
         "src": "assets/projects/Kredi-Notu-Siniflandirmasi-Tahmin-Modeli/03_hibrit_stacking_mimarisi.png",
-        "caption": "Hibrit Stacking & Ensemble Mimarisi — Farklı zayıf öğrenicileri meta-öğrenici altında birleştiren yüksek genellemeli model hattı."
+        "caption": "Hibrit Stacking & Ensemble Mimarisi — Farklı zayıf öğrenicileri meta-öğrenici altında birleştiren yüksek genellemeli model hattı.",
+        "captionEn": "Kredi Notu Siniflandirmasi Tahmin Modeli — Interface View #3"
       },
       {
         "src": "assets/projects/Kredi-Notu-Siniflandirmasi-Tahmin-Modeli/04_100k_veri_final_dogrulama_raporu.png",
-        "caption": "100.000 Satırlık Nihai Doğrulama — Aşırı öğrenme ve veri sızıntısı denetimi sonrası test setindeki kesin doğruluk ve F1 çıktısı."
+        "caption": "100.000 Satırlık Nihai Doğrulama — Aşırı öğrenme ve veri sızıntısı denetimi sonrası test setindeki kesin doğruluk ve F1 çıktısı.",
+        "captionEn": "Kredi Notu Siniflandirmasi Tahmin Modeli — Interface View #4"
       },
       {
         "src": "assets/projects/Kredi-Notu-Siniflandirmasi-Tahmin-Modeli/05_ozellik_korelasyon_ve_filtreleme.png",
-        "caption": "Özellik Korelasyon & Filtreleme Isı Haritası — Finansal değişkenler arasındaki çoklu doğrusal bağlantıyı (multicollinerarity) temizleyen analiz."
+        "caption": "Özellik Korelasyon & Filtreleme Isı Haritası — Finansal değişkenler arasındaki çoklu doğrusal bağlantıyı (multicollinerarity) temizleyen analiz.",
+        "captionEn": "Kredi Notu Siniflandirmasi Tahmin Modeli — Interface View #5"
       },
       {
         "src": "assets/projects/Kredi-Notu-Siniflandirmasi-Tahmin-Modeli/06_random_forest_onem_siralamasi.png",
-        "caption": "Öznitelik Önem Sıralaması (Feature Importance) — Kredi riskini belirlemede en yüksek ağırlığa sahip ilk 15 finansal gösterge dağılımı."
+        "caption": "Öznitelik Önem Sıralaması (Feature Importance) — Kredi riskini belirlemede en yüksek ağırlığa sahip ilk 15 finansal gösterge dağılımı.",
+        "captionEn": "Kredi Notu Siniflandirmasi Tahmin Modeli — Interface View #6"
       },
       {
         "src": "assets/projects/Kredi-Notu-Siniflandirmasi-Tahmin-Modeli/07_akademik_sonuc_ve_metrik_tablolari.png",
-        "caption": "Akademik Sonuç & Metrik Tabloları — Dönem projesi ve tez kapsamında derlenen karmaşıklık matrisi ve sınıflandırma raporları."
+        "caption": "Akademik Sonuç & Metrik Tabloları — Dönem projesi ve tez kapsamında derlenen karmaşıklık matrisi ve sınıflandırma raporları.",
+        "captionEn": "Kredi Notu Siniflandirmasi Tahmin Modeli — Interface View #7"
       }
     ]
   },
@@ -375,23 +407,28 @@ const PROJECTS_DATA = [
     "screenshots": [
       {
         "src": "assets/projects/webtoon-lora-suite/01_yolov8_balon_ve_panel_segmentasyonu.png",
-        "caption": "YOLOv8-Seg ile Konuşma Balonu & Dikey Webtoon Panel Sınırları Segmentasyonu"
+        "caption": "YOLOv8-Seg ile Konuşma Balonu & Dikey Webtoon Panel Sınırları Segmentasyonu",
+        "captionEn": "webtoon lora suite — Interface View #1"
       },
       {
         "src": "assets/projects/webtoon-lora-suite/02_lama_inpainting_balon_temizleme_ve_onarma.png",
-        "caption": "LaMa Fourier Inpainting ile Diyalog Balonlarını Temizleme & Çizim Onarımı"
+        "caption": "LaMa Fourier Inpainting ile Diyalog Balonlarını Temizleme & Çizim Onarımı",
+        "captionEn": "webtoon lora suite — Interface View #2"
       },
       {
         "src": "assets/projects/webtoon-lora-suite/03_lora_egitimi_ve_karakter_tutarliligi.png",
-        "caption": "Diffusers SDXL LoRA Eğitimi & Karakter Çizim Tutarlılığı Doğrulama Hattı"
+        "caption": "Diffusers SDXL LoRA Eğitimi & Karakter Çizim Tutarlılığı Doğrulama Hattı",
+        "captionEn": "webtoon lora suite — Interface View #3"
       },
       {
         "src": "assets/projects/webtoon-lora-suite/04_uretken_yeni_sahne_ve_panel_duzenleme.png",
-        "caption": "ControlNet OpenPose ile Hikaye Metninden Yeni Webtoon Panelleri Üretimi"
+        "caption": "ControlNet OpenPose ile Hikaye Metninden Yeni Webtoon Panelleri Üretimi",
+        "captionEn": "webtoon lora suite — Interface View #4"
       },
       {
         "src": "assets/projects/webtoon-lora-suite/05_otomatik_etiketleme_ve_veri_seti_yonetimi.png",
-        "caption": "WD14 ConvNeXt ile Otomatik Etiketleme & Kalite Filtreli Veri Seti Yönetimi"
+        "caption": "WD14 ConvNeXt ile Otomatik Etiketleme & Kalite Filtreli Veri Seti Yönetimi",
+        "captionEn": "webtoon lora suite — Interface View #5"
       }
     ]
   },
@@ -577,23 +614,28 @@ const PROJECTS_DATA = [
     "screenshots": [
       {
         "src": "assets/projects/cortex-planner/01_kanban_gorev_panosu_ve_sprintler.png",
-        "caption": "Kanban Görev Panosu & Sprintler — Yazılım geliştirme adımlarını TODO, In Progress ve Done sütunlarında görselleştiren pano."
+        "caption": "Kanban Görev Panosu & Sprintler — Yazılım geliştirme adımlarını TODO, In Progress ve Done sütunlarında görselleştiren pano.",
+        "captionEn": "cortex planner — Interface View #1"
       },
       {
         "src": "assets/projects/cortex-planner/02_hiyerarsik_gorev_dagilimi_ve_oncelikler.png",
-        "caption": "Hiyerarşik Görev Dağılımı & Öncelikler — Büyük yazılım hedeflerini atomik alt görevlere ve öncelik sıralarına bölen motor."
+        "caption": "Hiyerarşik Görev Dağılımı & Öncelikler — Büyük yazılım hedeflerini atomik alt görevlere ve öncelik sıralarına bölen motor.",
+        "captionEn": "cortex planner — Interface View #2"
       },
       {
         "src": "assets/projects/cortex-planner/03_github_projects_ve_issue_esitleme.png",
-        "caption": "GitHub Projects & Issue Senkronizasyonu — GitHub REST ve GraphQL API üzerinden açık issue'ları ve commit'leri yerelle senkronize etme."
+        "caption": "GitHub Projects & Issue Senkronizasyonu — GitHub REST ve GraphQL API üzerinden açık issue'ları ve commit'leri yerelle senkronize etme.",
+        "captionEn": "cortex planner — Interface View #3"
       },
       {
         "src": "assets/projects/cortex-planner/04_llm_mimari_analiz_ve_beyin_firtinasi.png",
-        "caption": "LLM Mimari Beyin Fırtınası Asistanı — Yerel dil modeliyle projeye eklenebilecek yeni modülleri ve refactor adımlarını üretme."
+        "caption": "LLM Mimari Beyin Fırtınası Asistanı — Yerel dil modeliyle projeye eklenebilecek yeni modülleri ve refactor adımlarını üretme.",
+        "captionEn": "cortex planner — Interface View #4"
       },
       {
         "src": "assets/projects/cortex-planner/05_yerel_yol_haritasi_ve_cevrimdisi_ajanda.png",
-        "caption": "Yerel Yol Haritası & SQLite WAL Ajandası — İnternet bağlantısı olmasa dahi geliştirici ajandasını ve proje notlarını saklayan sistem."
+        "caption": "Yerel Yol Haritası & SQLite WAL Ajandası — İnternet bağlantısı olmasa dahi geliştirici ajandasını ve proje notlarını saklayan sistem.",
+        "captionEn": "cortex planner — Interface View #5"
       }
     ]
   },
@@ -609,7 +651,7 @@ const PROJECTS_DATA = [
       "Python",
       "Win32 Raw Disk API",
       "File Carving Signatures",
-      "PySide",
+      "Tkinter",
       "Thread Pool"
     ],
     "caseStudy": {
@@ -628,19 +670,23 @@ const PROJECTS_DATA = [
     "screenshots": [
       {
         "src": "assets/projects/Disk-Kurtarma-Araci/01_gosterge_paneli_ve_surucu_secimi.png",
-        "caption": "Ana Gösterge Tablosu (Fiziksel Disk Seçimi, Donanım Telemetrisi & Kurtarma Durumu)"
+        "caption": "Ana Gösterge Tablosu (Fiziksel Disk Seçimi, Donanım Telemetrisi & Kurtarma Durumu)",
+        "captionEn": "Disk Kurtarma Araci — Interface View #1"
       },
       {
         "src": "assets/projects/Disk-Kurtarma-Araci/02_kurtarilan_dosyalar_ve_agac_gorunumu.png",
-        "caption": "Kurtarılan Dosyalar Ağaç Görünümü (Kategorik Filtreleme, Dosya Boyutları & Durum)"
+        "caption": "Kurtarılan Dosyalar Ağaç Görünümü (Kategorik Filtreleme, Dosya Boyutları & Durum)",
+        "captionEn": "Disk Kurtarma Araci — Interface View #2"
       },
       {
         "src": "assets/projects/Disk-Kurtarma-Araci/04_medya_onizleme_ve_galeri_gorunumu.png",
-        "caption": "Medya Önizleme & Klasör Galeri Modu (Görseller, Videolar & Ses Dosyaları)"
+        "caption": "Medya Önizleme & Klasör Galeri Modu (Görseller, Videolar & Ses Dosyaları)",
+        "captionEn": "Disk Kurtarma Araci — Interface View #3"
       },
       {
         "src": "assets/projects/Disk-Kurtarma-Araci/05_gelismis_tarama_ve_kurtarma_ayarlari.png",
-        "caption": "Gelişmiş Tarama & Kurtarma Ayarları (Paralel İş Parçacıkları, Özel Blok Aralıkları)"
+        "caption": "Gelişmiş Tarama & Kurtarma Ayarları (Paralel İş Parçacıkları, Özel Blok Aralıkları)",
+        "captionEn": "Disk Kurtarma Araci — Interface View #4"
       }
     ],
     "videoUrl": "assets/projects/Disk-Kurtarma-Araci/demo_disk_kurtarma_araci.mp4"
@@ -656,7 +702,7 @@ const PROJECTS_DATA = [
     "highlightMetric": "📈 Davranışsal Risk Analizi & Canlı Emir Defteri Motoru",
     "techStack": [
       "Python",
-      "FastAPI",
+      "Flask",
       "Pandas & NumPy",
       "Yerel LLM Karar Katmanı",
       "WebSocket Akışı",
@@ -678,23 +724,28 @@ const PROJECTS_DATA = [
     "screenshots": [
       {
         "src": "assets/projects/crypto-analytics-engine/01_canli_emir_defteri_ve_derinlik_analizi.png",
-        "caption": "Canlı Emir Defteri (L2 Orderbook) & Derinlik Analizi Paneli"
+        "caption": "Canlı Emir Defteri (L2 Orderbook) & Derinlik Analizi Paneli",
+        "captionEn": "crypto analytics engine — Interface View #1"
       },
       {
         "src": "assets/projects/crypto-analytics-engine/02_coklu_yatirimci_davranis_simulasyonu.png",
-        "caption": "Çoklu Yatırımcı Davranış Simülasyonu & Stres Testi Modülü"
+        "caption": "Çoklu Yatırımcı Davranış Simülasyonu & Stres Testi Modülü",
+        "captionEn": "crypto analytics engine — Interface View #2"
       },
       {
         "src": "assets/projects/crypto-analytics-engine/03_haber_ve_sosyal_duyarlilik_analizi.png",
-        "caption": "Yerel LLM ve FinBERT ile Finansal Haber Duyarlılık (Sentiment) Analizi"
+        "caption": "Yerel LLM ve FinBERT ile Finansal Haber Duyarlılık (Sentiment) Analizi",
+        "captionEn": "crypto analytics engine — Interface View #3"
       },
       {
         "src": "assets/projects/crypto-analytics-engine/04_geriye_donuk_test_ve_strateji_dogrulama.png",
-        "caption": "Geriye Dönük Test (Backtesting) & Kantitatif Risk Doğrulama Motoru"
+        "caption": "Geriye Dönük Test (Backtesting) & Kantitatif Risk Doğrulama Motoru",
+        "captionEn": "crypto analytics engine — Interface View #4"
       },
       {
         "src": "assets/projects/crypto-analytics-engine/05_portfoy_risk_yonetimi_ve_ccxt_durumu.png",
-        "caption": "Portföy Risk Yönetimi & Çoklu Borsa CCXT WebSocket Bağlantı Durumu"
+        "caption": "Portföy Risk Yönetimi & Çoklu Borsa CCXT WebSocket Bağlantı Durumu",
+        "captionEn": "crypto analytics engine — Interface View #5"
       }
     ]
   },
@@ -730,23 +781,28 @@ const PROJECTS_DATA = [
     "screenshots": [
       {
         "src": "assets/projects/hyperbeam-browser/01_sanal_oda_giris_ve_oturum_olusturma.png",
-        "caption": "Sanal Tarayıcı Odası Giriş & Şifreli Oturum Oluşturma Ekranı"
+        "caption": "Sanal Tarayıcı Odası Giriş & Şifreli Oturum Oluşturma Ekranı",
+        "captionEn": "hyperbeam browser — Interface View #1"
       },
       {
         "src": "assets/projects/hyperbeam-browser/02_canli_sanal_tarayici_ve_sohbet_odasi.png",
-        "caption": "Canlı Puppeteer Sanal Tarayıcı Akışı & Yan Sohbet Paneli"
+        "caption": "Canlı Puppeteer Sanal Tarayıcı Akışı & Yan Sohbet Paneli",
+        "captionEn": "hyperbeam browser — Interface View #2"
       },
       {
         "src": "assets/projects/hyperbeam-browser/03_ortak_web_gezinme_ve_canli_yayin.png",
-        "caption": "Eşzamanlı Ortak Web Gezinme & Canlı Görüntü Aktarımı"
+        "caption": "Eşzamanlı Ortak Web Gezinme & Canlı Görüntü Aktarımı",
+        "captionEn": "hyperbeam browser — Interface View #3"
       },
       {
         "src": "assets/projects/hyperbeam-browser/04_katilimci_yonetimi_ve_ortak_arastirma.png",
-        "caption": "Katılımcı Listesi, WebRTC Ses/Kamera Kontrolleri & Ortak Araştırma"
+        "caption": "Katılımcı Listesi, WebRTC Ses/Kamera Kontrolleri & Ortak Araştırma",
+        "captionEn": "hyperbeam browser — Interface View #4"
       },
       {
         "src": "assets/projects/hyperbeam-browser/05_tam_ekran_tarayici_gorunumu.png",
-        "caption": "Yan Panel Gizlenmiş Tam Ekran Sanal Tarayıcı Görünümü"
+        "caption": "Yan Panel Gizlenmiş Tam Ekran Sanal Tarayıcı Görünümü",
+        "captionEn": "hyperbeam browser — Interface View #5"
       }
     ]
   },
@@ -782,23 +838,28 @@ const PROJECTS_DATA = [
     "screenshots": [
       {
         "src": "assets/projects/Oymapos-Etiket-Yazdirici/01_masaustu_raf_etiket_tasarim_studyo.png",
-        "caption": "Masaüstü Raf Etiket Tasarım Stüdyosu — Fiyat, birim gramaj, barkod ve mağaza logosu içeren görsel etiket şablonu arayüzü."
+        "caption": "Masaüstü Raf Etiket Tasarım Stüdyosu — Fiyat, birim gramaj, barkod ve mağaza logosu içeren görsel etiket şablonu arayüzü.",
+        "captionEn": "Oymapos Etiket Yazdirici — Interface View #1"
       },
       {
         "src": "assets/projects/Oymapos-Etiket-Yazdirici/02_wifi_yerel_ag_senkronizasyon_paneli.png",
-        "caption": "Wi-Fi Çoklu PC & Cihaz Senkronizasyonu — Kasa bilgisayarını kasmadan yerel ağda çalışan bağımsız arka plan yazdırma servisi."
+        "caption": "Wi-Fi Çoklu PC & Cihaz Senkronizasyonu — Kasa bilgisayarını kasmadan yerel ağda çalışan bağımsız arka plan yazdırma servisi.",
+        "captionEn": "Oymapos Etiket Yazdirici — Interface View #2"
       },
       {
         "src": "assets/projects/Oymapos-Etiket-Yazdirici/03_mobil_wifi_reyon_fiyat_guncelleyici.png",
-        "caption": "Mobil Reyon Terminali (Telefon Arayüzü) — Reyonda raftaki ürünün barkodunu kamerayla okutup anında yeni fiyat etiketi basma."
+        "caption": "Mobil Reyon Terminali (Telefon Arayüzü) — Reyonda raftaki ürünün barkodunu kamerayla okutup anında yeni fiyat etiketi basma.",
+        "captionEn": "Oymapos Etiket Yazdirici — Interface View #3"
       },
       {
         "src": "assets/projects/Oymapos-Etiket-Yazdirici/04_termal_yazici_ean13_onizleme.png",
-        "caption": "Termal Yazıcı EAN-13 Barkod Kalibrasyonu — Argox ve Xprinter donanımlarına doğrudan ham bayt (RAW) seviyesinde yüksek DPI çıktısı."
+        "caption": "Termal Yazıcı EAN-13 Barkod Kalibrasyonu — Argox ve Xprinter donanımlarına doğrudan ham bayt (RAW) seviyesinde yüksek DPI çıktısı.",
+        "captionEn": "Oymapos Etiket Yazdirici — Interface View #4"
       },
       {
         "src": "assets/projects/Oymapos-Etiket-Yazdirici/05_toplu_fiyat_ve_barkod_esleme.png",
-        "caption": "Toplu Fiyat Listesi & Seri Baskı — Excel ve toptancı listelerinden tek tıkla yüzlerce raf etiketini sırayla yazdırma."
+        "caption": "Toplu Fiyat Listesi & Seri Baskı — Excel ve toptancı listelerinden tek tıkla yüzlerce raf etiketini sırayla yazdırma.",
+        "captionEn": "Oymapos Etiket Yazdirici — Interface View #5"
       }
     ]
   },
@@ -809,10 +870,10 @@ const PROJECTS_DATA = [
     "categoryLabel": "FinTech & e-Fatura Otomasyonu",
     "badge": "Açık Kaynak Sistem",
     "summary": "Ödeal portalından binlerce e-fatura ve arşivi oturum kopmalarına takılmadan, tarih aralığına göre otonom sorgulayıp PDF formatında klasörleyen otomasyon aracı.",
-    "highlightMetric": "⚡ %99.8 Kesintisiz Toplu Fatura Arşivleme",
+    "highlightMetric": "⚡ Saatler Süren Toplu Fatura İndirme İşini Dakikalara İndirir (%99.8)",
     "techStack": [
       "Python",
-      "Playwright Stealth",
+      "Selenium WebDriver",
       "Headless Chrome",
       "SQLite",
       "Excel/JSON Exporter"
@@ -842,27 +903,33 @@ const PROJECTS_DATA = [
     "screenshots": [
       {
         "src": "assets/projects/fatura-odeal/01_ana_fatura_kesme_ve_iade_paneli.png",
-        "caption": "Ödeal Akıllı Fatura Paneli — Fatura İade ve Kesme İşlem Merkezi"
+        "caption": "Ödeal Akıllı Fatura Paneli — Fatura İade ve Kesme İşlem Merkezi",
+        "captionEn": "fatura odeal — Interface View #1"
       },
       {
         "src": "assets/projects/fatura-odeal/02_toplu_fatura_ve_arsiv_indirme_sihirbazi.png",
-        "caption": "Tarih Aralıklı Toplu Fatura & Arşiv İndirme Sihirbazı"
+        "caption": "Tarih Aralıklı Toplu Fatura & Arşiv İndirme Sihirbazı",
+        "captionEn": "fatura odeal — Interface View #2"
       },
       {
         "src": "assets/projects/fatura-odeal/03_indirilen_faturalar_ve_arsiv_yonetimi.png",
-        "caption": "İndirilen Faturalar, PDF/XML Önizleme ve Arşiv Dosya Yöneticisi"
+        "caption": "İndirilen Faturalar, PDF/XML Önizleme ve Arşiv Dosya Yöneticisi",
+        "captionEn": "fatura odeal — Interface View #3"
       },
       {
         "src": "assets/projects/fatura-odeal/04_muhasebe_ve_fatura_islem_gecmisi.png",
-        "caption": "Muhasebe Raporlama ve Fatura İşlem Geçmişi Analitiği"
+        "caption": "Muhasebe Raporlama ve Fatura İşlem Geçmişi Analitiği",
+        "captionEn": "fatura odeal — Interface View #4"
       },
       {
         "src": "assets/projects/fatura-odeal/05_kayitli_firmalar_ve_vkn_yonetimi.png",
-        "caption": "Kayıtlı Cari Firmalar, VKN / TCKN Veritabanı ve Senkronizasyon"
+        "caption": "Kayıtlı Cari Firmalar, VKN / TCKN Veritabanı ve Senkronizasyon",
+        "captionEn": "fatura odeal — Interface View #5"
       },
       {
         "src": "assets/projects/fatura-odeal/06_sistem_ve_seri_no_ayarlari.png",
-        "caption": "Sistem Ayarları, Fatura Seri No Yapılandırması ve Tema Seçimi"
+        "caption": "Sistem Ayarları, Fatura Seri No Yapılandırması ve Tema Seçimi",
+        "captionEn": "fatura odeal — Interface View #6"
       }
     ]
   },
@@ -1067,23 +1134,28 @@ const PROJECTS_DATA = [
     "screenshots": [
       {
         "src": "assets/projects/ui-test-automation/01_e2e_test_kosucu_ve_suite_yonetim_paneli.png",
-        "caption": "E2E Test Koşucu, Senaryo Havuzu & Paralel Worker Yönetim Paneli"
+        "caption": "E2E Test Koşucu, Senaryo Havuzu & Paralel Worker Yönetim Paneli",
+        "captionEn": "ui test automation — Interface View #1"
       },
       {
         "src": "assets/projects/ui-test-automation/02_opencv_sablon_esleme_ve_eleman_yakalama.png",
-        "caption": "OpenCV Bilgisayarlı Görü ile Win32 / Qt Buton ve İkon Yakalama Motoru"
+        "caption": "OpenCV Bilgisayarlı Görü ile Win32 / Qt Buton ve İkon Yakalama Motoru",
+        "captionEn": "ui test automation — Interface View #2"
       },
       {
         "src": "assets/projects/ui-test-automation/03_otomatik_ekran_goruntulu_pdf_hata_raporu.png",
-        "caption": "ReportLab ile Hata Anında Otomatik Ekran Görüntülü PDF Tanı Raporlayıcı"
+        "caption": "ReportLab ile Hata Anında Otomatik Ekran Görüntülü PDF Tanı Raporlayıcı",
+        "captionEn": "ui test automation — Interface View #3"
       },
       {
         "src": "assets/projects/ui-test-automation/04_regresyon_ve_kararlilik_test_analitigi.png",
-        "caption": "Sürekli Regresyon Test Analitiği & Flaky Test İzolasyon Paneli"
+        "caption": "Sürekli Regresyon Test Analitiği & Flaky Test İzolasyon Paneli",
+        "captionEn": "ui test automation — Interface View #4"
       },
       {
         "src": "assets/projects/ui-test-automation/05_yerel_llm_destekli_test_senaryosu_uretici.png",
-        "caption": "Doğal Dilden Otomatik Playwright Test Kodu Derleyen Yerel LLM Katmanı"
+        "caption": "Doğal Dilden Otomatik Playwright Test Kodu Derleyen Yerel LLM Katmanı",
+        "captionEn": "ui test automation — Interface View #5"
       }
     ]
   },
@@ -1120,23 +1192,28 @@ const PROJECTS_DATA = [
     "screenshots": [
       {
         "src": "assets/projects/youtube-ai-assistant/01_zaman_damgali_transkript_ve_arama_paneli.png",
-        "caption": "Cortex AI YouTube Studio — Ana Sohbet & Transkript Asistanı"
+        "caption": "Cortex AI YouTube Studio — Ana Sohbet & Transkript Asistanı",
+        "captionEn": "youtube ai assistant — Interface View #1"
       },
       {
         "src": "assets/projects/youtube-ai-assistant/02_kitaplik_ve_oynatma_listeleri.png",
-        "caption": "Kitaplığım — Kayıtlı Oynatma Listeleri & .m3u Dışa Aktarma"
+        "caption": "Kitaplığım — Kayıtlı Oynatma Listeleri & .m3u Dışa Aktarma",
+        "captionEn": "youtube ai assistant — Interface View #2"
       },
       {
         "src": "assets/projects/youtube-ai-assistant/03_video_gorselleri_ve_medya_galerisi.png",
-        "caption": "Video Görselleri & Bölüm Kapak Önizleme Galerisi"
+        "caption": "Video Görselleri & Bölüm Kapak Önizleme Galerisi",
+        "captionEn": "youtube ai assistant — Interface View #3"
       },
       {
         "src": "assets/projects/youtube-ai-assistant/04_yerel_ollama_llm_ayarlari.png",
-        "caption": "Yerel Ollama LLM Sunucu & Model Yapılandırma Paneli"
+        "caption": "Yerel Ollama LLM Sunucu & Model Yapılandırma Paneli",
+        "captionEn": "youtube ai assistant — Interface View #4"
       },
       {
         "src": "assets/projects/youtube-ai-assistant/05_youtube_api_ve_baglanti_ayarlari.png",
-        "caption": "YouTube Data API & Google OAuth 2.0 Bağlantı Ayarları"
+        "caption": "YouTube Data API & Google OAuth 2.0 Bağlantı Ayarları",
+        "captionEn": "youtube ai assistant — Interface View #5"
       }
     ]
   },
@@ -1146,7 +1223,7 @@ const PROJECTS_DATA = [
     "title": "HuggingFace Model İndirme Yöneticisi",
     "category": "ai",
     "categoryLabel": "AI Model & Veri Seti Yöneticisi",
-    "badge": "Açık Kaynak CLI",
+    "badge": "Açık Kaynak Masaüstü (GUI)",
     "summary": "HuggingFace üzerindeki devasa yapay zeka modellerini ve ağırlık dosyalarını internet kopsa bile kaldığı yerden devam ettiren (resume) çok parçalı indirme CLI aracı.",
     "highlightMetric": "⚡ Kopmaya Dayanıklı Çok Kanallı İndirme",
     "techStack": [
@@ -1172,27 +1249,33 @@ const PROJECTS_DATA = [
     "screenshots": [
       {
         "src": "assets/projects/Hugging-face-Downloader/01_model_arama_ve_repo_kesif_merkezi.png",
-        "caption": "Model Arama ve Repo Keşif Merkezi — Hugging Face Hub API üzerinden gerçek zamanlı arama, model filtreleme ve metadata paneli."
+        "caption": "Model Arama ve Repo Keşif Merkezi — Hugging Face Hub API üzerinden gerçek zamanlı arama, model filtreleme ve metadata paneli.",
+        "captionEn": "Hugging face Downloader — Interface View #1"
       },
       {
         "src": "assets/projects/Hugging-face-Downloader/02_trend_modeller_ve_kategori_katalogu.png",
-        "caption": "Trend Modeller & Keşfet Kataloğu — LLM, Vision ve Audio kategorilerinde en çok indirilen modellerin dinamik vitrini."
+        "caption": "Trend Modeller & Keşfet Kataloğu — LLM, Vision ve Audio kategorilerinde en çok indirilen modellerin dinamik vitrini.",
+        "captionEn": "Hugging face Downloader — Interface View #2"
       },
       {
         "src": "assets/projects/Hugging-face-Downloader/03_akilli_indirme_kuyrugu_ve_hiz_grafigi.png",
-        "caption": "Akıllı İndirme Kuyruğu & Hız Göstergesi — Çok kanallı paralel dosya indirme, anlık bant genişliği ve kuyruk yönetimi."
+        "caption": "Akıllı İndirme Kuyruğu & Hız Göstergesi — Çok kanallı paralel dosya indirme, anlık bant genişliği ve kuyruk yönetimi.",
+        "captionEn": "Hugging face Downloader — Interface View #3"
       },
       {
         "src": "assets/projects/Hugging-face-Downloader/04_cortex_ai_model_asistani_ve_chat.png",
-        "caption": "Cortex AI Model Asistanı & Chat — Model kartlarını (README) analiz eden ve donanım gereksinimlerini hesaplayan yerleşik AI sohbeti."
+        "caption": "Cortex AI Model Asistanı & Chat — Model kartlarını (README) analiz eden ve donanım gereksinimlerini hesaplayan yerleşik AI sohbeti.",
+        "captionEn": "Hugging face Downloader — Interface View #4"
       },
       {
         "src": "assets/projects/Hugging-face-Downloader/05_yerel_disk_tarama_ve_model_yonetimi.png",
-        "caption": "Yerel Disk Tarama & Model Yönetimi — Tüm sürücülerdeki Hugging Face önbelleklerini tespit eden ve disk alanı optimize eden yönetim aracı."
+        "caption": "Yerel Disk Tarama & Model Yönetimi — Tüm sürücülerdeki Hugging Face önbelleklerini tespit eden ve disk alanı optimize eden yönetim aracı.",
+        "captionEn": "Hugging face Downloader — Interface View #5"
       },
       {
         "src": "assets/projects/Hugging-face-Downloader/06_favori_modeller_ve_ozel_etiketler.png",
-        "caption": "Favori Modeller & Özel Etiketler — Sık kullanılan model ve ağırlıkların etiketlenerek kategorize edildiği hızlı erişim ekranı."
+        "caption": "Favori Modeller & Özel Etiketler — Sık kullanılan model ve ağırlıkların etiketlenerek kategorize edildiği hızlı erişim ekranı.",
+        "captionEn": "Hugging face Downloader — Interface View #6"
       }
     ]
   },
@@ -1400,7 +1483,7 @@ const PROJECTS_DATA = [
     "techStack": [
       "JavaScript (Vanilla ES6+)",
       "HTML5 & CSS3 (Glassmorphism)",
-      "Edge Serverless & CDN",
+      "Static Web & GitHub Pages",
       "LocalStorage & Analytics API",
       "JSON Soru Veritabanı"
     ],
@@ -1430,27 +1513,33 @@ const PROJECTS_DATA = [
     "screenshots": [
       {
         "src": "assets/projects/KPSS-Sinav-Hazirlik/01_kpss_sinav_merkezi_ve_mod_secimi.png",
-        "caption": "KPSS Sınav Merkezi & Ana Panel — Genel Yetenek - Genel Kültür dersleri, günlük hedef takibi ve hızlı erişim kartları."
+        "caption": "KPSS Sınav Merkezi & Ana Panel — Genel Yetenek - Genel Kültür dersleri, günlük hedef takibi ve hızlı erişim kartları.",
+        "captionEn": "KPSS Sinav Hazirlik — Interface View #1"
       },
       {
         "src": "assets/projects/KPSS-Sinav-Hazirlik/02_cikmis_sorular_ve_yil_secimi.png",
-        "caption": "Son 16 Yılın Çıkmış KPSS Soruları — 2010–2025 arası ÖSYM çıkmış sınavlarının yıl ve branş bazlı ilerleme listesi."
+        "caption": "Son 16 Yılın Çıkmış KPSS Soruları — 2010–2025 arası ÖSYM çıkmış sınavlarının yıl ve branş bazlı ilerleme listesi.",
+        "captionEn": "KPSS Sinav Hazirlik — Interface View #2"
       },
       {
         "src": "assets/projects/KPSS-Sinav-Hazirlik/03_130_dk_sinav_simulatoru.png",
-        "caption": "130 Dakikalık Gerçek Sınav Simülatörü — 120 soruluk tam zamanlı deneme sınavı ve süre yönetimi simülasyonu."
+        "caption": "130 Dakikalık Gerçek Sınav Simülatörü — 120 soruluk tam zamanlı deneme sınavı ve süre yönetimi simülasyonu.",
+        "captionEn": "KPSS Sinav Hazirlik — Interface View #3"
       },
       {
         "src": "assets/projects/KPSS-Sinav-Hazirlik/04_soru_bankasi_ve_brans_filtreleme.png",
-        "caption": "Soru Bankası & Branş Filtreleme — Tarih, Coğrafya, Vatandaşlık, Türkçe ve Matematik soru havuzları."
+        "caption": "Soru Bankası & Branş Filtreleme — Tarih, Coğrafya, Vatandaşlık, Türkçe ve Matematik soru havuzları.",
+        "captionEn": "KPSS Sinav Hazirlik — Interface View #4"
       },
       {
         "src": "assets/projects/KPSS-Sinav-Hazirlik/05_konu_anlatimi_ve_calisma_notlari.png",
-        "caption": "Konu Anlatımı & Çalışma Notları — Ders bazlı özet konu anlatımları ve hızlı tekrar kartları."
+        "caption": "Konu Anlatımı & Çalışma Notları — Ders bazlı özet konu anlatımları ve hızlı tekrar kartları.",
+        "captionEn": "KPSS Sinav Hazirlik — Interface View #5"
       },
       {
         "src": "assets/projects/KPSS-Sinav-Hazirlik/06_istatistik_ve_performans_analizi.png",
-        "caption": "İstatistik & Performans Analizi — Doğru/yanlış dağılımları, net ortalamaları ve konu bazlı başarı takibi."
+        "caption": "İstatistik & Performans Analizi — Doğru/yanlış dağılımları, net ortalamaları ve konu bazlı başarı takibi.",
+        "captionEn": "KPSS Sinav Hazirlik — Interface View #6"
       }
     ]
   },
@@ -1494,19 +1583,23 @@ const PROJECTS_DATA = [
     "screenshots": [
       {
         "src": "assets/projects/Soru-Uygulamasi/01_akademik_sinav_merkezi_ders_secimi.png",
-        "caption": "Akademik Sınav Merkezi & Ders Seçimi — Makine Öğrenmesi (ML), Üretken AI (GAI), Dijital Sürdürülebilirlik (DS) ve İSG ders seçimi."
+        "caption": "Akademik Sınav Merkezi & Ders Seçimi — Makine Öğrenmesi (ML), Üretken AI (GAI), Dijital Sürdürülebilirlik (DS) ve İSG ders seçimi.",
+        "captionEn": "Soru Uygulamasi — Interface View #1"
       },
       {
         "src": "assets/projects/Soru-Uygulamasi/02_ders_dashboard_ve_istatistikler.png",
-        "caption": "Ders Dashboard & Performans Karnesi — Doğru, yanlış, boş sayıları, sınav hazırlık yüzdesi ve başarı istatistikleri."
+        "caption": "Ders Dashboard & Performans Karnesi — Doğru, yanlış, boş sayıları, sınav hazırlık yüzdesi ve başarı istatistikleri.",
+        "captionEn": "Soru Uygulamasi — Interface View #2"
       },
       {
         "src": "assets/projects/Soru-Uygulamasi/04_mobil_pwa_soru_cozum_arayuzu.png",
-        "caption": "Mobil PWA Deneyimi (Akıllı Telefon) — Dinamik QR kod okutularak mobil cihazlara kurulan ve internetsiz çalışan PWA arayüzü."
+        "caption": "Mobil PWA Deneyimi (Akıllı Telefon) — Dinamik QR kod okutularak mobil cihazlara kurulan ve internetsiz çalışan PWA arayüzü.",
+        "captionEn": "Soru Uygulamasi — Interface View #3"
       },
       {
         "src": "assets/projects/Soru-Uygulamasi/05_isg_ve_kanun_soru_havuzu.png",
-        "caption": "İş Sağlığı ve Güvenliği 330+ Soru Havuzu — Mevzuat ve tehlike sınıflarına göre ayrılmış kapsamlı sınav hazırlık deposu."
+        "caption": "İş Sağlığı ve Güvenliği 330+ Soru Havuzu — Mevzuat ve tehlike sınıflarına göre ayrılmış kapsamlı sınav hazırlık deposu.",
+        "captionEn": "Soru Uygulamasi — Interface View #4"
       }
     ]
   },
@@ -1541,31 +1634,38 @@ const PROJECTS_DATA = [
     "screenshots": [
       {
         "src": "assets/projects/altyapi-manager/01_dashboard_genel_bakis.png",
-        "caption": "Kulüp Gösterge Paneli (Genel Bakış, Maç Bildirimleri & Hızlı Metrikler)"
+        "caption": "Kulüp Gösterge Paneli (Genel Bakış, Maç Bildirimleri & Hızlı Metrikler)",
+        "captionEn": "altyapi manager — Interface View #1"
       },
       {
         "src": "assets/projects/altyapi-manager/02_kadro_ve_profiller.png",
-        "caption": "Aktif Kadro Listesi, Mevki Dağılımları ve Oyuncu Kartları"
+        "caption": "Aktif Kadro Listesi, Mevki Dağılımları ve Oyuncu Kartları",
+        "captionEn": "altyapi manager — Interface View #2"
       },
       {
         "src": "assets/projects/altyapi-manager/03_arda_guler_fm_karnesi.png",
-        "caption": "Football Manager Stili Detaylı Oyuncu Karnesi, Nitelik Dağılımı ve Gelişim Grafiği"
+        "caption": "Football Manager Stili Detaylı Oyuncu Karnesi, Nitelik Dağılımı ve Gelişim Grafiği",
+        "captionEn": "altyapi manager — Interface View #3"
       },
       {
         "src": "assets/projects/altyapi-manager/04_interaktif_taktik_tahtasi.png",
-        "caption": "İnteraktif Taktik Tahtası, Saha Dizilimi ve Formasyon Simülasyonu"
+        "caption": "İnteraktif Taktik Tahtası, Saha Dizilimi ve Formasyon Simülasyonu",
+        "captionEn": "altyapi manager — Interface View #4"
       },
       {
         "src": "assets/projects/altyapi-manager/05_yoklama_defteri.png",
-        "caption": "Antrenman Yoklama Defteri, Katılım Analizleri ve Devamsızlık Takibi"
+        "caption": "Antrenman Yoklama Defteri, Katılım Analizleri ve Devamsızlık Takibi",
+        "captionEn": "altyapi manager — Interface View #5"
       },
       {
         "src": "assets/projects/altyapi-manager/06_mali_isler_ve_butce.png",
-        "caption": "Mali İşler & Gelir/Gider/Aidat Bütçe Takip Merkezi"
+        "caption": "Mali İşler & Gelir/Gider/Aidat Bütçe Takip Merkezi",
+        "captionEn": "altyapi manager — Interface View #6"
       },
       {
         "src": "assets/projects/altyapi-manager/07_turnuva_ve_lig_yonetimi.png",
-        "caption": "Turnuva, Lig Puan Durumu ve Fikstür Yönetimi"
+        "caption": "Turnuva, Lig Puan Durumu ve Fikstür Yönetimi",
+        "captionEn": "altyapi manager — Interface View #7"
       }
     ],
     "tags": [
@@ -1610,19 +1710,23 @@ const PROJECTS_DATA = [
     "screenshots": [
       {
         "src": "assets/projects/Telegram-Media-Hub/01_ana_dashboard_ve_kanal_baglanti.png",
-        "caption": "Kanal Bağlantı & Medya Yönetim Merkezi — Telegram kanallarındaki dosya, arşiv ve ders materyallerini listeleyen ana kontrol paneli."
+        "caption": "Kanal Bağlantı & Medya Yönetim Merkezi — Telegram kanallarındaki dosya, arşiv ve ders materyallerini listeleyen ana kontrol paneli.",
+        "captionEn": "Telegram Media Hub — Interface View #1"
       },
       {
         "src": "assets/projects/Telegram-Media-Hub/02_medya_filtreleme_ve_kategori_secimi.png",
-        "caption": "Gelişmiş Medya & Format Filtresi — MIME türü, dosya boyutu, tarih ve anahtar kelimeye göre akıllı dosya ayıklama."
+        "caption": "Gelişmiş Medya & Format Filtresi — MIME türü, dosya boyutu, tarih ve anahtar kelimeye göre akıllı dosya ayıklama.",
+        "captionEn": "Telegram Media Hub — Interface View #2"
       },
       {
         "src": "assets/projects/Telegram-Media-Hub/03_asenkron_indirme_kuyrugu_ve_hiz.png",
-        "caption": "Asenkron İndirme Kuyruğu & Çok Kanallı Hız — MTProto protokolü üzerinden paralel chunk transferi ve anlık indirme hızı takibi."
+        "caption": "Asenkron İndirme Kuyruğu & Çok Kanallı Hız — MTProto protokolü üzerinden paralel chunk transferi ve anlık indirme hızı takibi.",
+        "captionEn": "Telegram Media Hub — Interface View #3"
       },
       {
         "src": "assets/projects/Telegram-Media-Hub/04_sinav_sorusu_ve_pdf_ayristirici.png",
-        "caption": "PDF & Sınav Sorusu Çıkarıcı Modül — Kanallarda paylaşılan PDF dokümanlarını tarayıp soruları otomatik parse eden araç."
+        "caption": "PDF & Sınav Sorusu Çıkarıcı Modül — Kanallarda paylaşılan PDF dokümanlarını tarayıp soruları otomatik parse eden araç.",
+        "captionEn": "Telegram Media Hub — Interface View #4"
       }
     ]
   },
@@ -1667,23 +1771,28 @@ const PROJECTS_DATA = [
     "screenshots": [
       {
         "src": "assets/projects/cache-cleaner/01_gelistirici_onbellek_tarama_paneli.png",
-        "caption": "Sistem & Önbellek Temizleyici Ana Paneli — Python pip, Astral uv, Node.js npm, PyTorch/HuggingFace ve Ollama önbelleklerini tek ekranda tarama."
+        "caption": "Sistem & Önbellek Temizleyici Ana Paneli — Python pip, Astral uv, Node.js npm, PyTorch/HuggingFace ve Ollama önbelleklerini tek ekranda tarama.",
+        "captionEn": "cache cleaner — Interface View #1"
       },
       {
         "src": "assets/projects/cache-cleaner/02_node_modules_ve_proje_temizleyici.png",
-        "caption": "Proje Temizleyici (node_modules & venv) — Geliştirme klasörlerindeki atıl derleme ve bağımlılık klasörlerini güvenle temizleme."
+        "caption": "Proje Temizleyici (node_modules & venv) — Geliştirme klasörlerindeki atıl derleme ve bağımlılık klasörlerini güvenle temizleme.",
+        "captionEn": "cache cleaner — Interface View #2"
       },
       {
         "src": "assets/projects/cache-cleaner/03_disk_alani_ve_buyuk_dosya_analizi.png",
-        "caption": "Büyük Dosya & Disk Alanı Analizi — Diskte en çok yer kaplayan büyük dosyaları hızlıca tespit eden analiz ekranı."
+        "caption": "Büyük Dosya & Disk Alanı Analizi — Diskte en çok yer kaplayan büyük dosyaları hızlıca tespit eden analiz ekranı.",
+        "captionEn": "cache cleaner — Interface View #3"
       },
       {
         "src": "assets/projects/cache-cleaner/04_mukerrer_dosya_bulucu.png",
-        "caption": "Kopya (Mükerrer) Dosya Bulucu — Hash tabanlı tarama ile tekrarlanan dosyaları belirleyip alanı geri kazanma."
+        "caption": "Kopya (Mükerrer) Dosya Bulucu — Hash tabanlı tarama ile tekrarlanan dosyaları belirleyip alanı geri kazanma.",
+        "captionEn": "cache cleaner — Interface View #4"
       },
       {
         "src": "assets/projects/cache-cleaner/05_guvenli_cop_kutusu_ve_ayarlar.png",
-        "caption": "İstatistikler & Güvenlik Ayarları — Geri kazanılan toplam alan, güvenli geri dönüşüm ve dil/tema yapılandırması."
+        "caption": "İstatistikler & Güvenlik Ayarları — Geri kazanılan toplam alan, güvenli geri dönüşüm ve dil/tema yapılandırması.",
+        "captionEn": "cache cleaner — Interface View #5"
       }
     ]
   },
@@ -1720,7 +1829,8 @@ const PROJECTS_DATA = [
     "screenshots": [
       {
         "src": "assets/projects/Gardrops-Otomasyon-Botu/01_gardrops_otomasyon_konsolu_ve_diferansiyel_filtre.png",
-        "caption": "Gardrops Pazaryeri Takip Konsolu (Diferansiyel Önbellek, Kitle Havuzu & Telemetri)"
+        "caption": "Gardrops Pazaryeri Takip Konsolu (Diferansiyel Önbellek, Kitle Havuzu & Telemetri)",
+        "captionEn": "Gardrops Otomasyon Botu — Interface View #1"
       }
     ]
   },
@@ -1757,27 +1867,33 @@ const PROJECTS_DATA = [
     "screenshots": [
       {
         "src": "assets/projects/EA-FIFA-Fikstur/02_yeni_lig_ve_turnuva_olusturma.png",
-        "caption": "Yeni Lig & Turnuva Oluşturma Modülü (Format Seçimi, Oyuncu Sayısı & Kura Modeli)"
+        "caption": "Yeni Lig & Turnuva Oluşturma Modülü (Format Seçimi, Oyuncu Sayısı & Kura Modeli)",
+        "captionEn": "EA FIFA Fikstur — Interface View #1"
       },
       {
         "src": "assets/projects/EA-FIFA-Fikstur/03_odaya_katil_ve_davet_kodu.png",
-        "caption": "Odaya Katılma & Çok Oyunculu Davet Kodu Ekranı (Anlık Senkronizasyon)"
+        "caption": "Odaya Katılma & Çok Oyunculu Davet Kodu Ekranı (Anlık Senkronizasyon)",
+        "captionEn": "EA FIFA Fikstur — Interface View #2"
       },
       {
         "src": "assets/projects/EA-FIFA-Fikstur/04_takimlar_ve_reyting_havuzu.png",
-        "caption": "Takımlar, Kulüp Havuzu ve Reyting Dağılımı (Dengeli Kura & Takım Seçimi)"
+        "caption": "Takımlar, Kulüp Havuzu ve Reyting Dağılımı (Dengeli Kura & Takım Seçimi)",
+        "captionEn": "EA FIFA Fikstur — Interface View #3"
       },
       {
         "src": "assets/projects/EA-FIFA-Fikstur/05_turnuva_kurallari_ve_yapilandirma.png",
-        "caption": "Turnuva Kuralları, Seri Başı Mantığı ve Fikstür Yapılandırması"
+        "caption": "Turnuva Kuralları, Seri Başı Mantığı ve Fikstür Yapılandırması",
+        "captionEn": "EA FIFA Fikstur — Interface View #4"
       },
       {
         "src": "assets/projects/EA-FIFA-Fikstur/06_gecmis_turnuvalar_ve_sampiyonlar.png",
-        "caption": "Geçmiş Turnuvalar, Şampiyonlar Arşivi ve İstatistik Müzesi"
+        "caption": "Geçmiş Turnuvalar, Şampiyonlar Arşivi ve İstatistik Müzesi",
+        "captionEn": "EA FIFA Fikstur — Interface View #5"
       },
       {
         "src": "assets/projects/EA-FIFA-Fikstur/07_veri_yonetimi_ve_kadro_guncelleme.png",
-        "caption": "Veri Yönetimi, Güncel Kadro & JSON Dışa Aktarma Konsolu"
+        "caption": "Veri Yönetimi, Güncel Kadro & JSON Dışa Aktarma Konsolu",
+        "captionEn": "EA FIFA Fikstur — Interface View #6"
       }
     ]
   },
@@ -1815,23 +1931,28 @@ const PROJECTS_DATA = [
     "screenshots": [
       {
         "src": "assets/projects/NC-Codes/01_night_ball_3d_futbol_fizik_motoru.png",
-        "caption": "Night Ball 3D Futbol & Fizik Motoru — TFM API üzerinde çalışan özel top fiziği, şut dinamikleri ve otomatik skor tabelası."
+        "caption": "Night Ball 3D Futbol & Fizik Motoru — TFM API üzerinde çalışan özel top fiziği, şut dinamikleri ve otomatik skor tabelası.",
+        "captionEn": "NC Codes — Interface View #1"
       },
       {
         "src": "assets/projects/NC-Codes/02_battleground_savas_ve_can_bari.png",
-        "caption": "Battleground Hayatta Kalma & Can Barı — Oyuncular arası hasar sistemi, parçacık efektleri ve canlı eleme mekaniği."
+        "caption": "Battleground Hayatta Kalma & Can Barı — Oyuncular arası hasar sistemi, parçacık efektleri ve canlı eleme mekaniği.",
+        "captionEn": "NC Codes — Interface View #2"
       },
       {
         "src": "assets/projects/NC-Codes/03_nc_teams_otomatik_kadro_yonetimi.png",
-        "caption": "NC - Teams Otomatik Kadro & Eşleştirme — Kabile üyelerini takımlara bölen, renk atayan ve kadro listesini yöneten motor."
+        "caption": "NC - Teams Otomatik Kadro & Eşleştirme — Kabile üyelerini takımlara bölen, renk atayan ve kadro listesini yöneten motor.",
+        "captionEn": "NC Codes — Interface View #3"
       },
       {
         "src": "assets/projects/NC-Codes/04_labirent_ve_hiz_yarisi_modulu.png",
-        "caption": "Labirent Yarışı & Hız Testi — Kontrol noktaları (checkpoints), kronometre ve peynir ödüllü yarış mini oyunu."
+        "caption": "Labirent Yarışı & Hız Testi — Kontrol noktaları (checkpoints), kronometre ve peynir ödüllü yarış mini oyunu.",
+        "captionEn": "NC Codes — Interface View #4"
       },
       {
         "src": "assets/projects/NC-Codes/05_kabile_evi_yonetim_ve_cekirdek_komutlar.png",
-        "caption": "Kabile Evi Yönetim & Çekirdek Komut Kütüphanesi — Sohbet üzerinden tetiklenen moderasyon, harita değiştirme ve VIP efekt komutları."
+        "caption": "Kabile Evi Yönetim & Çekirdek Komut Kütüphanesi — Sohbet üzerinden tetiklenen moderasyon, harita değiştirme ve VIP efekt komutları.",
+        "captionEn": "NC Codes — Interface View #5"
       }
     ]
   }
