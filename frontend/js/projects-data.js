@@ -268,7 +268,23 @@ const PROJECTS_DATA = [
     "gallery": [
       {
         "url": "frontend/assets/projects/portfolio-console/01_ana_sayfa_ve_proje_vitrini.png",
-        "caption": "Kişisel Portfolyo Konsolu — Ana Sayfa & 26 Mühendislik Projesi Vitrini"
+        "caption": "Kişisel Portfolyo Konsolu — Ana Sayfa & Karşılama Sahnesi"
+      },
+      {
+        "url": "frontend/assets/projects/portfolio-console/02_projeler_vitrini_ve_filtreleme.png",
+        "caption": "26 Mühendislik Projesi Vitrini & Kategori / Teknoloji Filtreleme"
+      },
+      {
+        "url": "frontend/assets/projects/portfolio-console/03_proje_detay_modali_ve_mimari_akis.png",
+        "caption": "Proje Detay Görünümü — Teknoloji Ağırlıkları, Mimari & Medya Kanıtları"
+      },
+      {
+        "url": "frontend/assets/projects/portfolio-console/04_sertifikalar_ve_akademik_yetkinlikler.png",
+        "caption": "Sertifikalar & Akademik Yetkinlikler Paneli"
+      },
+      {
+        "url": "frontend/assets/projects/portfolio-console/05_hakkimda_ve_muhendislik_profili.png",
+        "caption": "Hakkımda — Matematik & Yazılım Mühendisliği Profili"
       }
     ],
     "videoUrl": "frontend/assets/projects/portfolio-console/demo_portfolio_console.mp4"
@@ -735,8 +751,24 @@ const PROJECTS_DATA = [
     },
     "gallery": [
       {
-        "url": "frontend/assets/projects/hyperbeam-browser/04_sanal_oda_yonetim_ve_konteyner_paneli.png",
-        "caption": "Sanal Oda Yönetimi, Docker İzolasyonu & Oturum Güvenlik Paneli"
+        "url": "frontend/assets/projects/hyperbeam-browser/01_sanal_oda_giris_ve_oturum_olusturma.png",
+        "caption": "Sanal Tarayıcı Odası Giriş & Şifreli Oturum Oluşturma Ekranı"
+      },
+      {
+        "url": "frontend/assets/projects/hyperbeam-browser/02_canli_sanal_tarayici_ve_sohbet_odasi.png",
+        "caption": "Canlı Puppeteer Sanal Tarayıcı Akışı & Yan Sohbet Paneli"
+      },
+      {
+        "url": "frontend/assets/projects/hyperbeam-browser/03_ortak_web_gezinme_ve_canli_yayin.png",
+        "caption": "Eşzamanlı Ortak Web Gezinme & Canlı Görüntü Aktarımı"
+      },
+      {
+        "url": "frontend/assets/projects/hyperbeam-browser/04_katilimci_yonetimi_ve_ortak_arastirma.png",
+        "caption": "Katılımcı Listesi, WebRTC Ses/Kamera Kontrolleri & Ortak Araştırma"
+      },
+      {
+        "url": "frontend/assets/projects/hyperbeam-browser/05_tam_ekran_tarayici_gorunumu.png",
+        "caption": "Yan Panel Gizlenmiş Tam Ekran Sanal Tarayıcı Görünümü"
       }
     ],
     "videoUrl": "frontend/assets/projects/hyperbeam-browser/demo_hyperbeam_browser.mp4"
@@ -1114,7 +1146,23 @@ const PROJECTS_DATA = [
     "gallery": [
       {
         "url": "frontend/assets/projects/youtube-ai-assistant/01_zaman_damgali_transkript_ve_arama_paneli.png",
-        "caption": "Zaman Damgalı Transkript Çekimi & Semantik Metin Arama Paneli"
+        "caption": "Cortex AI YouTube Studio — Ana Sohbet & Transkript Asistanı"
+      },
+      {
+        "url": "frontend/assets/projects/youtube-ai-assistant/02_kitaplik_ve_oynatma_listeleri.png",
+        "caption": "Kitaplığım — Kayıtlı Oynatma Listeleri & .m3u Dışa Aktarma"
+      },
+      {
+        "url": "frontend/assets/projects/youtube-ai-assistant/03_video_gorselleri_ve_medya_galerisi.png",
+        "caption": "Video Görselleri & Bölüm Kapak Önizleme Galerisi"
+      },
+      {
+        "url": "frontend/assets/projects/youtube-ai-assistant/04_yerel_ollama_llm_ayarlari.png",
+        "caption": "Yerel Ollama LLM Sunucu & Model Yapılandırma Paneli"
+      },
+      {
+        "url": "frontend/assets/projects/youtube-ai-assistant/05_youtube_api_ve_baglanti_ayarlari.png",
+        "caption": "YouTube Data API & Google OAuth 2.0 Bağlantı Ayarları"
       }
     ],
     "videoUrl": "frontend/assets/projects/youtube-ai-assistant/demo_youtube_assistant.mp4",
@@ -1380,8 +1428,33 @@ const PROJECTS_DATA = [
     "gallery": [
       {
         "src": "assets/projects/KPSS-Sinav-Hazirlik/01_kpss_sinav_merkezi_ve_mod_secimi.png",
-        "title": "KPSS Sınav Merkezi & Mod Seçimi",
-        "description": "Genel Yetenek - Genel Kültür dersleri, deneme sınavı ve konu testleri seçim ekranı."
+        "title": "KPSS Sınav Merkezi & Ana Panel",
+        "description": "Genel Yetenek - Genel Kültür dersleri, günlük hedef takibi ve hızlı erişim kartları."
+      },
+      {
+        "src": "assets/projects/KPSS-Sinav-Hazirlik/02_cikmis_sorular_ve_yil_secimi.png",
+        "title": "Son 16 Yılın Çıkmış KPSS Soruları",
+        "description": "2010–2025 arası ÖSYM çıkmış sınavlarının yıl ve branş bazlı ilerleme listesi."
+      },
+      {
+        "src": "assets/projects/KPSS-Sinav-Hazirlik/03_130_dk_sinav_simulatoru.png",
+        "title": "130 Dakikalık Gerçek Sınav Simülatörü",
+        "description": "120 soruluk tam zamanlı deneme sınavı ve süre yönetimi simülasyonu."
+      },
+      {
+        "src": "assets/projects/KPSS-Sinav-Hazirlik/04_soru_bankasi_ve_brans_filtreleme.png",
+        "title": "Soru Bankası & Branş Filtreleme",
+        "description": "Tarih, Coğrafya, Vatandaşlık, Türkçe ve Matematik soru havuzları."
+      },
+      {
+        "src": "assets/projects/KPSS-Sinav-Hazirlik/05_konu_anlatimi_ve_calisma_notlari.png",
+        "title": "Konu Anlatımı & Çalışma Notları",
+        "description": "Ders bazlı özet konu anlatımları ve hızlı tekrar kartları."
+      },
+      {
+        "src": "assets/projects/KPSS-Sinav-Hazirlik/06_istatistik_ve_performans_analizi.png",
+        "title": "İstatistik & Performans Analizi",
+        "description": "Doğru/yanlış dağılımları, net ortalamaları ve konu bazlı başarı takibi."
       }
     ],
     "title": "KPSS Lisans GY-GK Hazırlık & Çıkmış Sorular Platformu",
@@ -1604,7 +1677,33 @@ const PROJECTS_DATA = [
   {
     "id": "cache-cleaner",
     "videoUrl": "assets/projects/cache-cleaner/demo_cache_cleaner.mp4",
-    "gallery": [],
+    "gallery": [
+      {
+        "src": "assets/projects/cache-cleaner/01_gelistirici_onbellek_tarama_paneli.png",
+        "title": "Sistem & Önbellek Temizleyici Ana Paneli",
+        "description": "Python pip, Astral uv, Node.js npm, PyTorch/HuggingFace ve Ollama önbelleklerini tek ekranda tarama."
+      },
+      {
+        "src": "assets/projects/cache-cleaner/02_node_modules_ve_proje_temizleyici.png",
+        "title": "Proje Temizleyici (node_modules & venv)",
+        "description": "Geliştirme klasörlerindeki atıl derleme ve bağımlılık klasörlerini güvenle temizleme."
+      },
+      {
+        "src": "assets/projects/cache-cleaner/03_disk_alani_ve_buyuk_dosya_analizi.png",
+        "title": "Büyük Dosya & Disk Alanı Analizi",
+        "description": "Diskte en çok yer kaplayan büyük dosyaları hızlıca tespit eden analiz ekranı."
+      },
+      {
+        "src": "assets/projects/cache-cleaner/04_mukerrer_dosya_bulucu.png",
+        "title": "Kopya (Mükerrer) Dosya Bulucu",
+        "description": "Hash tabanlı tarama ile tekrarlanan dosyaları belirleyip alanı geri kazanma."
+      },
+      {
+        "src": "assets/projects/cache-cleaner/05_guvenli_cop_kutusu_ve_ayarlar.png",
+        "title": "İstatistikler & Güvenlik Ayarları",
+        "description": "Geri kazanılan toplam alan, güvenli geri dönüşüm ve dil/tema yapılandırması."
+      }
+    ],
     "title": "Geliştirici Disk & Önbellek Temizleme Aracı",
     "category": "desktop",
     "categoryLabel": "Geliştirici Disk & Önbellek Aracı",
