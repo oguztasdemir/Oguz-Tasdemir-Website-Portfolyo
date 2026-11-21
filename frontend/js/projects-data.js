@@ -64,16 +64,6 @@ const PROJECTS_DATA = [
         "captionEn": "bist bilanco karlilik tahmini — Interface View #4"
       },
       {
-        "src": "assets/projects/bist-bilanco-karlilik-tahmini/05_kar_artis_yon_tahmini.png",
-        "caption": "Kâr Artış Yönü Tahmini (%68.8 Doğrulukla Gelecek Dönem Yön Öngörüsü)",
-        "captionEn": "bist bilanco karlilik tahmini — Interface View #5"
-      },
-      {
-        "src": "assets/projects/bist-bilanco-karlilik-tahmini/06_sektorel_rakip_kiyaslama.png",
-        "caption": "Sektörel Rakip Kıyaslama Modülü (Şirketler Arası Bilanço & Rasyo Matrisi)",
-        "captionEn": "bist bilanco karlilik tahmini — Interface View #6"
-      },
-      {
         "src": "assets/projects/bist-bilanco-karlilik-tahmini/07_yonetici_model_paneli.png",
         "caption": "Yönetici & Model Değerlendirme Konsolu (Model Doğruluk & Çapraz Doğrulama Raporu)",
         "captionEn": "bist bilanco karlilik tahmini — Interface View #7"
@@ -618,11 +608,6 @@ const PROJECTS_DATA = [
         "captionEn": "cortex planner — Interface View #1"
       },
       {
-        "src": "assets/projects/cortex-planner/02_hiyerarsik_gorev_dagilimi_ve_oncelikler.png",
-        "caption": "Hiyerarşik Görev Dağılımı & Öncelikler — Büyük yazılım hedeflerini atomik alt görevlere ve öncelik sıralarına bölen motor.",
-        "captionEn": "cortex planner — Interface View #2"
-      },
-      {
         "src": "assets/projects/cortex-planner/03_github_projects_ve_issue_esitleme.png",
         "caption": "GitHub Projects & Issue Senkronizasyonu — GitHub REST ve GraphQL API üzerinden açık issue'ları ve commit'leri yerelle senkronize etme.",
         "captionEn": "cortex planner — Interface View #3"
@@ -631,11 +616,6 @@ const PROJECTS_DATA = [
         "src": "assets/projects/cortex-planner/04_llm_mimari_analiz_ve_beyin_firtinasi.png",
         "caption": "LLM Mimari Beyin Fırtınası Asistanı — Yerel dil modeliyle projeye eklenebilecek yeni modülleri ve refactor adımlarını üretme.",
         "captionEn": "cortex planner — Interface View #4"
-      },
-      {
-        "src": "assets/projects/cortex-planner/05_yerel_yol_haritasi_ve_cevrimdisi_ajanda.png",
-        "caption": "Yerel Yol Haritası & SQLite WAL Ajandası — İnternet bağlantısı olmasa dahi geliştirici ajandasını ve proje notlarını saklayan sistem.",
-        "captionEn": "cortex planner — Interface View #5"
       }
     ]
   },
@@ -672,16 +652,6 @@ const PROJECTS_DATA = [
         "src": "assets/projects/Disk-Kurtarma-Araci/01_gosterge_paneli_ve_surucu_secimi.png",
         "caption": "Ana Gösterge Tablosu (Fiziksel Disk Seçimi, Donanım Telemetrisi & Kurtarma Durumu)",
         "captionEn": "Disk Kurtarma Araci — Interface View #1"
-      },
-      {
-        "src": "assets/projects/Disk-Kurtarma-Araci/02_kurtarilan_dosyalar_ve_agac_gorunumu.png",
-        "caption": "Kurtarılan Dosyalar Ağaç Görünümü (Kategorik Filtreleme, Dosya Boyutları & Durum)",
-        "captionEn": "Disk Kurtarma Araci — Interface View #2"
-      },
-      {
-        "src": "assets/projects/Disk-Kurtarma-Araci/04_medya_onizleme_ve_galeri_gorunumu.png",
-        "caption": "Medya Önizleme & Klasör Galeri Modu (Görseller, Videolar & Ses Dosyaları)",
-        "captionEn": "Disk Kurtarma Araci — Interface View #3"
       },
       {
         "src": "assets/projects/Disk-Kurtarma-Araci/05_gelismis_tarama_ve_kurtarma_ayarlari.png",
@@ -842,24 +812,9 @@ const PROJECTS_DATA = [
         "captionEn": "Oymapos Etiket Yazdirici — Interface View #1"
       },
       {
-        "src": "assets/projects/Oymapos-Etiket-Yazdirici/02_wifi_yerel_ag_senkronizasyon_paneli.png",
-        "caption": "Wi-Fi Çoklu PC & Cihaz Senkronizasyonu — Kasa bilgisayarını kasmadan yerel ağda çalışan bağımsız arka plan yazdırma servisi.",
-        "captionEn": "Oymapos Etiket Yazdirici — Interface View #2"
-      },
-      {
         "src": "assets/projects/Oymapos-Etiket-Yazdirici/03_mobil_wifi_reyon_fiyat_guncelleyici.png",
         "caption": "Mobil Reyon Terminali (Telefon Arayüzü) — Reyonda raftaki ürünün barkodunu kamerayla okutup anında yeni fiyat etiketi basma.",
         "captionEn": "Oymapos Etiket Yazdirici — Interface View #3"
-      },
-      {
-        "src": "assets/projects/Oymapos-Etiket-Yazdirici/04_termal_yazici_ean13_onizleme.png",
-        "caption": "Termal Yazıcı EAN-13 Barkod Kalibrasyonu — Argox ve Xprinter donanımlarına doğrudan ham bayt (RAW) seviyesinde yüksek DPI çıktısı.",
-        "captionEn": "Oymapos Etiket Yazdirici — Interface View #4"
-      },
-      {
-        "src": "assets/projects/Oymapos-Etiket-Yazdirici/05_toplu_fiyat_ve_barkod_esleme.png",
-        "caption": "Toplu Fiyat Listesi & Seri Baskı — Excel ve toptancı listelerinden tek tıkla yüzlerce raf etiketini sırayla yazdırma.",
-        "captionEn": "Oymapos Etiket Yazdirici — Interface View #5"
       }
     ]
   },
@@ -1141,16 +1096,6 @@ const PROJECTS_DATA = [
         "src": "assets/projects/ui-test-automation/02_opencv_sablon_esleme_ve_eleman_yakalama.png",
         "caption": "OpenCV Bilgisayarlı Görü ile Win32 / Qt Buton ve İkon Yakalama Motoru",
         "captionEn": "ui test automation — Interface View #2"
-      },
-      {
-        "src": "assets/projects/ui-test-automation/03_otomatik_ekran_goruntulu_pdf_hata_raporu.png",
-        "caption": "ReportLab ile Hata Anında Otomatik Ekran Görüntülü PDF Tanı Raporlayıcı",
-        "captionEn": "ui test automation — Interface View #3"
-      },
-      {
-        "src": "assets/projects/ui-test-automation/04_regresyon_ve_kararlilik_test_analitigi.png",
-        "caption": "Sürekli Regresyon Test Analitiği & Flaky Test İzolasyon Paneli",
-        "captionEn": "ui test automation — Interface View #4"
       },
       {
         "src": "assets/projects/ui-test-automation/05_yerel_llm_destekli_test_senaryosu_uretici.png",
@@ -1712,21 +1657,6 @@ const PROJECTS_DATA = [
         "src": "assets/projects/Telegram-Media-Hub/01_ana_dashboard_ve_kanal_baglanti.png",
         "caption": "Kanal Bağlantı & Medya Yönetim Merkezi — Telegram kanallarındaki dosya, arşiv ve ders materyallerini listeleyen ana kontrol paneli.",
         "captionEn": "Telegram Media Hub — Interface View #1"
-      },
-      {
-        "src": "assets/projects/Telegram-Media-Hub/02_medya_filtreleme_ve_kategori_secimi.png",
-        "caption": "Gelişmiş Medya & Format Filtresi — MIME türü, dosya boyutu, tarih ve anahtar kelimeye göre akıllı dosya ayıklama.",
-        "captionEn": "Telegram Media Hub — Interface View #2"
-      },
-      {
-        "src": "assets/projects/Telegram-Media-Hub/03_asenkron_indirme_kuyrugu_ve_hiz.png",
-        "caption": "Asenkron İndirme Kuyruğu & Çok Kanallı Hız — MTProto protokolü üzerinden paralel chunk transferi ve anlık indirme hızı takibi.",
-        "captionEn": "Telegram Media Hub — Interface View #3"
-      },
-      {
-        "src": "assets/projects/Telegram-Media-Hub/04_sinav_sorusu_ve_pdf_ayristirici.png",
-        "caption": "PDF & Sınav Sorusu Çıkarıcı Modül — Kanallarda paylaşılan PDF dokümanlarını tarayıp soruları otomatik parse eden araç.",
-        "captionEn": "Telegram Media Hub — Interface View #4"
       }
     ]
   },
@@ -1773,21 +1703,6 @@ const PROJECTS_DATA = [
         "src": "assets/projects/cache-cleaner/01_gelistirici_onbellek_tarama_paneli.png",
         "caption": "Sistem & Önbellek Temizleyici Ana Paneli — Python pip, Astral uv, Node.js npm, PyTorch/HuggingFace ve Ollama önbelleklerini tek ekranda tarama.",
         "captionEn": "cache cleaner — Interface View #1"
-      },
-      {
-        "src": "assets/projects/cache-cleaner/02_node_modules_ve_proje_temizleyici.png",
-        "caption": "Proje Temizleyici (node_modules & venv) — Geliştirme klasörlerindeki atıl derleme ve bağımlılık klasörlerini güvenle temizleme.",
-        "captionEn": "cache cleaner — Interface View #2"
-      },
-      {
-        "src": "assets/projects/cache-cleaner/03_disk_alani_ve_buyuk_dosya_analizi.png",
-        "caption": "Büyük Dosya & Disk Alanı Analizi — Diskte en çok yer kaplayan büyük dosyaları hızlıca tespit eden analiz ekranı.",
-        "captionEn": "cache cleaner — Interface View #3"
-      },
-      {
-        "src": "assets/projects/cache-cleaner/04_mukerrer_dosya_bulucu.png",
-        "caption": "Kopya (Mükerrer) Dosya Bulucu — Hash tabanlı tarama ile tekrarlanan dosyaları belirleyip alanı geri kazanma.",
-        "captionEn": "cache cleaner — Interface View #4"
       },
       {
         "src": "assets/projects/cache-cleaner/05_guvenli_cop_kutusu_ve_ayarlar.png",
