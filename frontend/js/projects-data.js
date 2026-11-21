@@ -808,13 +808,28 @@ const PROJECTS_DATA = [
     "screenshots": [
       {
         "src": "assets/projects/Oymapos-Etiket-Yazdirici/01_masaustu_raf_etiket_tasarim_studyo.png",
-        "caption": "Masaüstü Raf Etiket Tasarım Stüdyosu — Fiyat, birim gramaj, barkod ve mağaza logosu içeren görsel etiket şablonu arayüzü.",
-        "captionEn": "Oymapos Etiket Yazdirici — Interface View #1"
+        "caption": "Ana Kontrol Paneli — 4.925 Ürün Stoğu, Termal Yazıcı & Ağ Durumu",
+        "captionEn": "Main Control Panel — 4,925 Stock Items, Thermal Printer & Network Status"
+      },
+      {
+        "src": "assets/projects/Oymapos-Etiket-Yazdirici/02_urunler_ve_etiket_masasi.png",
+        "caption": "Ürünler & Etiket Masası — Canlı Barkod Arama ve Toplu Baskı Kuyruğu",
+        "captionEn": "Products & Label Desk — Live Barcode Search & Batch Print Queue"
       },
       {
         "src": "assets/projects/Oymapos-Etiket-Yazdirici/03_mobil_wifi_reyon_fiyat_guncelleyici.png",
-        "caption": "Mobil Reyon Terminali (Telefon Arayüzü) — Reyonda raftaki ürünün barkodunu kamerayla okutup anında yeni fiyat etiketi basma.",
-        "captionEn": "Oymapos Etiket Yazdirici — Interface View #3"
+        "caption": "Mobil Reyon Terminali — Akıllı Telefondan Barkod Okutma ve Anlık Etiket Basımı",
+        "captionEn": "Mobile Aisle Terminal — Smartphone Barcode Scanning & Instant Label Printing"
+      },
+      {
+        "src": "assets/projects/Oymapos-Etiket-Yazdirici/04_etiket_duzenle_ve_sablon_studyo.png",
+        "caption": "Etiket Düzenle & Şablon Stüdyosu — 58x40mm Termal Çıktı Tasarımcısı",
+        "captionEn": "Label Editor & Template Studio — 58x40mm Thermal Output Designer"
+      },
+      {
+        "src": "assets/projects/Oymapos-Etiket-Yazdirici/05_wifi_yerel_ag_ve_mobil_senkronizasyon.png",
+        "caption": "Bağlı Cihazlar & Yerel Wi-Fi Ağı — Çoklu Terminal & QR Eşleştirme Paneli",
+        "captionEn": "Connected Devices & Local Wi-Fi — Multi-Terminal & QR Pairing Panel"
       }
     ]
   },
